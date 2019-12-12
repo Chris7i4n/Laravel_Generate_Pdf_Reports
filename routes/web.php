@@ -12,7 +12,14 @@
 */
 
 
-// Route::get('/login');
-Route::resource('/', 'UserController')->except('show', 'update', 'destroy', 'edit','store', 'create');
-Route::get('/dashboard', 'DashboardController@index');
+Auth::routes();
+Route::get('/logout', 'Auth\LoginController@logout')->name('logout');
+
+Route::get('/', 'UserController@index');
+
+Route::group(['middleware' => ['auth']], function () {
+
+    Route::get('/dashboard', 'DashboardController@index');
+
+});
 

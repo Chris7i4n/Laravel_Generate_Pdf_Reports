@@ -21,6 +21,7 @@
 </head>
 
 <form method="POST" class="form-login" action="{{ route('login') }}">
+    @csrf
     <div class="auth-wrapper">
         <div class="auth-content">
             <div class="card">
@@ -31,11 +32,11 @@
                             <h4 class="mb-3 f-w-400">Login</h4>
                             <div class="form-group mb-3">
                                 <label class="floating-label" for="Email">Email</label>
-                                <input type="text" class="form-control" id="Email" placeholder="">
+                                <input type="text" class="form-control" name="email" id="email" placeholder="">
                             </div>
                             <div class="form-group mb-4">
-                                <label class="floating-label" for="Password">Senha</label>
-                                <input type="password" class="form-control" id="Password" placeholder="">
+                                <label class="floating-label" for="password">Senha</label>
+                                <input type="password" class="form-control" name= "password" id="password" placeholder="">
                             </div>
                             <div class="custom-control custom-checkbox text-left mb-4 mt-2">
                                 <input type="checkbox" class="custom-control-input" id="customCheck1">
