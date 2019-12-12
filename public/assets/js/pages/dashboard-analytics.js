@@ -46,6 +46,8 @@ function floatchart() {
                 fixed: {
                     enabled: false
                 },
+                enabled: false,
+
                 x: {
                     show: false
                 },
@@ -84,6 +86,13 @@ function floatchart() {
                     columnWidth: '60%'
                 }
             },
+            states: {
+                hover: {
+                    filter: {
+                        type: 'none',
+                    }
+                },
+            },
             series: [{
                 data: [25, 66, 41, 89, 63, 25, 44, 12, 36, 9, 54, 25, 66, 41, 89, 63, 54, 25, 66, 41, 89, 63, 25, 44, 12]
             }],
@@ -96,6 +105,7 @@ function floatchart() {
                 fixed: {
                     enabled: false
                 },
+                enabled: false,
                 x: {
                     show: false
                 },
@@ -155,10 +165,13 @@ function floatchart() {
                 fixed: {
                     enabled: false
                 },
+                enabled: false,
+
                 x: {
                     show: false
                 },
                 y: {
+                    show:false,
                     title: {
                         formatter: function(seriesName) {
                             return 'Profit Processed :'
@@ -328,6 +341,8 @@ function floatchart() {
                 fixed: {
                     enabled: false
                 },
+                enabled: false,
+
                 x: {
                     show: false
                 },
@@ -415,6 +430,8 @@ function floatchart() {
                 fixed: {
                     enabled: false
                 },
+                enabled: false,
+
                 x: {
                     show: false
                 },
@@ -465,6 +482,8 @@ function floatchart() {
                 fixed: {
                     enabled: false
                 },
+                enabled: false,
+
                 x: {
                     show: false
                 },
@@ -524,6 +543,8 @@ function floatchart() {
                 fixed: {
                     enabled: false
                 },
+                enabled: false,
+
                 x: {
                     show: false
                 },

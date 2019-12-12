@@ -15,11 +15,17 @@
 Auth::routes();
 Route::get('/logout', 'Auth\LoginController@logout')->name('logout');
 
-Route::get('/', 'UserController@index');
+Route::get('/', 'Auth\LoginController@index');
 
 Route::group(['middleware' => ['auth']], function () {
 
-    Route::get('/dashboard', 'DashboardController@index');
+    Route::prefix('/dashboard')->group(function () {
+
+        Route::get('/', 'DashboardController@index');
+        Route::get('/users', 'UserController@create');
+
+
+    });
 
 });
 

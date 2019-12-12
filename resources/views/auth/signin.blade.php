@@ -30,6 +30,17 @@
                         <div class="card-body">
                             {{-- <img src="assets/images/logo-dark.png" alt="" class="img-fluid mb-4"> --}}
                             <h4 class="mb-3 f-w-400">Login</h4>
+
+                            @if ($errors->has('email'))
+                                <strong style="color: red;">{{ $errors->first('email') }}</strong>
+                                <br>
+                            @endif
+
+                            @if ($errors->has('password'))
+                                <strong style="color: red;">{{ $errors->first('password') }}</strong>
+                                <br>
+                            @endif
+
                             <div class="form-group mb-3">
                                 <label class="floating-label" for="Email">Email</label>
                                 <input type="text" class="form-control" name="email" id="email" placeholder="">
