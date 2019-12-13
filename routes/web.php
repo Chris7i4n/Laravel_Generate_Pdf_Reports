@@ -29,3 +29,13 @@ Route::group(['middleware' => ['auth']], function () {
 
 });
 
+Route::group(['middleware' => ['auth']], function () {
+
+    Route::prefix('/client')->group(function () {
+
+        Route::get('/dashboard', 'DashboardController@index')->name('dashboard');
+
+    });
+
+});
+

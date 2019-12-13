@@ -19,7 +19,6 @@
     <link rel="icon" href="assets/images/favicon.ico" type="image/x-icon">
 
     <!-- vendor css -->
-    <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="{{ asset("assets/css/style.css") }}">
 
 
@@ -96,23 +95,16 @@
                             </div>
                             <button type="submit" class="btn btn-primary">Cadastrar</button>
                         </form>
+                    {{-- Notifications  --}}
+                    @if(\Session::has('message'))
+                        <input id = "notification" value = "{{\Session::get('message')}}" type = "hidden" class="btn notifications btn-success" data-type="success" data-from="bottom" data-align="right"/>
+                    @endif
 
-                        <div class="col-sm-12">
-                                <div class="card">
-                                    <div class="card-header">
-                                        <h5>Notification Position</h5>
-                                    </div>
-                                    <div class="card-body">
-                                        <p>Change data-type : <code> data-type="inverse"</code> to change notification color</p>
-                                        <button class="btn notifications btn-primary" data-type="primary" data-from="top" data-align="right" data-notify-icon="feather icon-layers">Primary</button>
-                                        <button class="btn notifications btn-info" data-type="info" data-from="top" data-align="right" data-notify-icon="feather icon-shopping-cart">Info</button>
-                                        <button class="btn notifications btn-success" data-type="success" data-from="top" data-align="right">success</button>
-                                        <button class="btn notifications btn-warning" data-type="warning" data-from="top" data-align="right">Warning</button>
-                                        <button class="btn notifications btn-danger" data-type="danger" data-from="top" data-align="right">Danger</button>
-                                        <button class="btn notifications btn-secondary" data-type="secondary" data-from="top" data-align="right" data-notify-icon="feather icon-bell">secondary</button>
-                                    </div>
-                                </div>
-                        </div>
+                    @if($errors->first())
+
+                        <input id = "notification" value = "{{$errors->first()}}" type = "hidden" class="btn notifications btn-danger" data-type="danger" data-from="bottom" data-align="right"/>
+
+                    @endif
                     </div>
                 </div>
             </div>
@@ -121,21 +113,20 @@
         <!-- [ Main Content ] end -->
     </div>
 </section>
-    <!-- Warning Section Ends -->
 
-    <!-- Required Js -->
-    <script src="{{ asset('assets/js/vendor-all.min.js') }}"></script>
-    <script src="{{ asset('assets/js/plugins/bootstrap.min.js') }}"></script>
-    <script src="{{ asset('assets/js/ripple.js') }}"></script>
-    <script src="{{ asset('assets/js/pcoded.min.js') }}"></script>
+<script src="{{ asset('assets/js/vendor-all.min.js') }}"></script>
+<script src="{{ asset('assets/js/plugins/bootstrap.min.js') }}"></script>
+<script src="{{ asset('assets/js/ripple.js') }}"></script>
+<script src="{{ asset('assets/js/pcoded.min.js') }}"></script>
 
-    <script src="{{ asset('assets/js/plugins/bootstrap-notify.min.js') }}"></script>
-    <script src="{{ asset("assets/js/pages/ac-notification.js") }}"></script>
+<script src="{{ asset('assets/js/plugins/bootstrap-notify.min.js') }}"></script>
+<script src="{{ asset("assets/js/pages/ac-notification.js") }}"></script>
 
 <!-- jquery-validation Js -->
 <script src="{{ asset('assets/js/plugins/jquery.validate.min.js') }}"></script>
 <!-- form-picker-custom Js -->
 <script src="{{ asset('assets/js/pages/form-validation.js') }}"></script>
+
 
 
 

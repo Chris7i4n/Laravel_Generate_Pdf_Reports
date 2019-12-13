@@ -1,37 +1,26 @@
 'use strict';
+
 $(window).on('load', function() {
-    function notify(message, type) {
-        $.notify({
-            message: message
-        }, {
-            type: type,
-            allow_dismiss: false,
-            label: 'Cancel',
-            className: 'btn-xs btn-inverse',
-            placement: {
-                from: 'bottom',
-                align: 'right'
-            },
-            delay: 2500,
-            animate: {
-                enter: 'animated fadeInRight',
-                exit: 'animated fadeOutRight'
-            },
-            offset: {
-                x: 30,
-                y: 30
-            }
-        });
-    };
-    notify('Welcome to Notification page', 'inverse');
+    function click(id)
+    {
+        var element = document.getElementById(id);
+        if(element.click)
+            element.click();
+        else if(document.createEvent)
+        {
+            var eventObj = document.createEvent('MouseEvents');
+            eventObj.initEvent('click',true,true);
+            element.dispatchEvent(eventObj);
+        }
+    }
+    click('notification');
 });
 
 $(document).ready(function() {
-    function notify(from, align, icon, type, animIn, animOut) {
+    function notify(from, align, icon, type, animIn, animOut, message) {
         $.notify({
             icon: icon,
-            title: ' Bootstrap notify ',
-            message: 'Turning standard Bootstrap alerts into awesome notifications',
+            message: message,
             url: ''
         }, {
             element: 'body',
@@ -69,7 +58,7 @@ $(document).ready(function() {
         });
     };
     // [ notification-button ]
-    $('.notifications.btn').on('click', function(e) {
+    $('#notification').on('click', function(e) {
         e.preventDefault();
         var nFrom = $(this).attr('data-from');
         var nAlign = $(this).attr('data-align');
@@ -77,6 +66,7 @@ $(document).ready(function() {
         var nType = $(this).attr('data-type');
         var nAnimIn = $(this).attr('data-animation-in');
         var nAnimOut = $(this).attr('data-animation-out');
-        notify(nFrom, nAlign, nIcons, nType, nAnimIn, nAnimOut);
+        var message =  $(this).attr('value');
+        notify(nFrom, nAlign, nIcons, nType, nAnimIn, nAnimOut, message);
     });
 });
