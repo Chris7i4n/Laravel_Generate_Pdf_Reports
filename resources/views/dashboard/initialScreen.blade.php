@@ -48,7 +48,7 @@
                 <div class="card amount-card overflow-hidden">
                     <div class="card-body">
                         <h2 class="f-w-400">23</h2>
-                        <p class="text-muted f-w-600 f-16"><span class="text-c-blue">Relatorios</span> Esperando Aprovação</p>
+                        <p class="text-muted f-w-600 f-16"><span class="text-c-blue">Relatórios</span> Esperando Aprovação</p>
                     </div>
                     <div id="amount-processed"></div>
                 </div>
@@ -57,21 +57,23 @@
                 <div class="card amount-card overflow-hidden">
                     <div class="card-body">
                         <h2 class="f-w-400">4</h2>
-                        <p class="text-muted f-w-600 f-16"><span class="text-c-green">Relatorios</span> Aprovados</p>
+                        <p class="text-muted f-w-600 f-16"><span class="text-c-green">Relatórios</span> Aprovados</p>
                     </div>
                     <div id="amount-spent"></div>
                 </div>
             </div>
-            <div class="col-md-12 col-xl-4">
-                <div class="card amount-card overflow-hidden">
-                    <div class="card-body">
-                        <h2 class="f-w-400">31</h2>
-                        <p class="text-muted f-w-600 f-16"><span class="text-c-yellow">Usuários</span> Cadastrados
-                        </p>
+            @if(Auth::user()->perfil)
+                <div class="col-md-12 col-xl-4">
+                    <div class="card amount-card overflow-hidden">
+                        <div class="card-body">
+                            <h2 class="f-w-400">{{$numberOfClients}}</h2>
+                                <p class="text-muted f-w-600 f-16"><span class="text-c-yellow">Clientes</span> Cadastrados
+                            </p>
+                        </div>
+                        <div id="profit-processed"></div>
                     </div>
-                    <div id="profit-processed"></div>
                 </div>
-            </div>
+            @endif
 
 
         </div>
