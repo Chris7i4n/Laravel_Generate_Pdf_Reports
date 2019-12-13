@@ -19,10 +19,10 @@ Route::get('/', 'Auth\LoginController@index');
 
 Route::group(['middleware' => ['auth']], function () {
 
-    Route::prefix('/dashboard')->group(function () {
+    Route::prefix('/admin')->group(function () {
 
-        Route::get('/', 'DashboardController@index');
-        Route::get('/users', 'UserController@create');
+        Route::get('/dashboard', 'DashboardController@index')->name('dashboard');
+        Route::resource('/users', 'UserController')->except('index', 'show', 'edit', 'update', 'destroy');
 
 
     });
