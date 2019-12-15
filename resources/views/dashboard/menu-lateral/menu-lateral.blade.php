@@ -20,7 +20,7 @@
                         @endif
 
                         @if(!Auth::user()->perfil)
-                            <li><a href="form-elements-advance.html">Gerar Relatório</a></li>
+                            <li><a href="{{ route('reports.create')}}">Gerar Relatório</a></li>
                         @endif
                     </ul>
                 </li>
