@@ -3992,6 +3992,9 @@ input[type="button"].btn-block {
 .custom-switch {
     padding-left: 2.25rem;
 }
+.switchForTable{
+    position: sticky !important;
+}
 
 .custom-switch .custom-control-label::before {
     left: -2.25rem;

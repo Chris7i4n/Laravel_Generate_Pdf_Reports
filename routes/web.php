@@ -22,6 +22,7 @@ Route::group(['middleware' => ['auth']], function () {
     Route::prefix('/admin')->group(function () {
 
         Route::get('/dashboard', 'DashboardController@index')->name('dashboard');
+        Route::get('/reports', 'ReportsController@index')->name('reports');
         Route::resource('/users', 'UserController')->except('index', 'show', 'edit', 'update', 'destroy');
 
 
