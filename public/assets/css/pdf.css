@@ -474,3 +474,10 @@ body {
     line-height:1.5;
     text-align: initial;
 }
+
+.logo-header{
+    height: 60px;
+    width: auto;
+    padding: 5px;
+    margin-top: 5px;
+}

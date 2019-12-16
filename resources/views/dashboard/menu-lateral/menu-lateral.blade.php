@@ -22,6 +22,10 @@
                         @if(!Auth::user()->perfil)
                             <li><a href="{{ route('reports.create')}}">Gerar Relatório</a></li>
                         @endif
+
+                        @if(!Auth::user()->perfil)
+                            <li><a href="{{ route('reports.index')}}">Visualizar Relatórios</a></li>
+                        @endif
                     </ul>
                 </li>
             </ul>

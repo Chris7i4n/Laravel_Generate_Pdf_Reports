@@ -2,7 +2,7 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <link href="{{ asset('assets/css/pdf.css') }}" rel="stylesheet" type="text/css"/>
+        <link href="{{ public_path('assets/css/pdf.css') }}" rel="stylesheet" type="text/css"/>
     </head>
     <body>
         {{--  {{ dd($documento->empresa) }}  --}}

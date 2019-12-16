@@ -35,7 +35,7 @@ Route::group(['middleware' => ['auth']], function () {
     Route::prefix('/client')->group(function () {
 
         Route::get('/dashboard', 'DashboardController@index')->name('dashboard');
-        Route::resource('reports', 'ReportsController')->except('index', 'show', 'edit', 'update', 'destroy');
+        Route::resource('reports', 'ReportsController')->except('show', 'edit', 'update', 'destroy');
 
     });
 
