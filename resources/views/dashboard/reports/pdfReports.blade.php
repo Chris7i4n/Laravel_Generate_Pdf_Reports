@@ -3,8 +3,8 @@
     <head>
         <meta charset="UTF-8">
         {{-- <link href="{{ public_path('assets/css/pdf.css') }}" rel="stylesheet" type="text/css"/> --}}
-        <link href="{{ asset('assets/css/pdf.css') }}" rel="stylesheet" type="text/css"/>
-        <link rel="stylesheet" href="{{ asset('assets/bootstrap/bootstrap.min.css') }}" >
+        <link href="{{ public_path('assets/css/pdf.css') }}" rel="stylesheet" type="text/css"/>
+        <link rel="stylesheet" href="{{ public_path('assets/bootstrap/bootstrap.min.css') }}" >
 
         <title>
             PDF
@@ -17,19 +17,19 @@
 
                     <th style="width: 3cm;">
                         <img
-                            src="{{ asset("storage/". $report->logoCompanyContracted) }}"
+                            src="{{ public_path("storage/". $report->logoCompanyContracted) }}"
                             class = "logo-header"
                         >
                     </th>
 
-                    <th style="width: 6cm;">Relatório Técnico de Inspeção de Sistemas de Proteção Contra Incêndio - SPCI
+                    <th style="width: 6cm;">Relatório Técnico de Inspeção de Sistemas de Proteção Contra Incêndio - {{$report->type}}
                         <div class = "separator"></div>
                         <div class = "clientDiv"> Cliente: {{$report->user->name}} </div>
                     </th>
 
                     <th style="width: 3cm;">
                         <img
-                        src="{{ asset("storage/". $report->logoCompanyContracting) }}"
+                        src="{{ public_path("storage/". $report->logoCompanyContracting) }}"
                         class = "logo-header"
                         >
                     </th>
@@ -47,4 +47,5 @@
 
         <div class="pagebreak"></div>
     </body>
+
 </html>

@@ -76,6 +76,50 @@
                                     </div>
                                 </div>
                             </div>
+
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label class="form-label">Período</label>
+                                        <select class="form-control" name="period">
+                                            <option selected disabled>Selecione...</option>
+                                            <option value="J-F-M">JAN-FEV-MAR</option>
+                                            <option value="A-M-J">ABR-MAI-JUN</option>
+                                            <option value="J-A-S">JUL-AGO-SET</option>
+                                            <option value="O-N-D">OUT-NOV-DEZ</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label class="form-label"> Número da inspeção</label>
+                                        <select class="form-control" name="inspection_number">
+                                            <option selected disabled>Selecione...</option>
+                                                <option value="1">1</option>
+                                                <option value="2">2</option>
+                                                <option value="3">3</option>
+                                                <option value="4">4</option>
+                                        </select>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label class="form-label">Ano da inspeção</label>
+                                        <select class="form-control" name="inspection_year">
+                                            <option selected disabled>Selecione...</option>
+                                                <option value="2020">2020</option>
+                                                <option value="2021">2021</option>
+                                                <option value="2022">2022</option>
+                                                <option value="2023">2023</option>
+                                        </select>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+
                             <button type="submit" class="btn btn-primary">Salvar Relatório</button>
                         </form>
                     </div>

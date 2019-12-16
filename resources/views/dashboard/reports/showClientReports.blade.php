@@ -60,7 +60,7 @@
                                 <tbody>
                                     @foreach ($reports as $report )
                                         <tr>
-                                            <td>1</td>
+                                            <td>{{$report->inspection_number}}</td>
                                             <td>1</td>
                                             <td>
                                                 {{$report->approved ? "Aprovado" : "Esperando aprovação"}}

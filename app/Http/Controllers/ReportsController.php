@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\ReportRequest;
 use App\Report;
+use App\User;
 use Illuminate\Http\Request;
 use PDF;
 use Illuminate\Support\Facades\Auth;
@@ -15,7 +16,9 @@ class ReportsController extends Controller
 
         if(Auth::user()->perfil == 1)
         {
-            return view('dashboard.reports.showReports');
+            $clients = User::where('perfil', 0)->get();
+            return view('dashboard.reports.showReports', compact('clients'));
+
         }else{
             $reports = Auth::user()->reports;
             return view('dashboard.reports.showClientReports', compact('reports'));
@@ -28,9 +31,15 @@ class ReportsController extends Controller
 
     public function show(Report $report)
     {
+        $footerHtml = view()->make('dashboard.footer.pdfFooter')->render();
         $pdf = PDF::loadView('dashboard.reports.pdfReports', array(
-                'report' => $report
-                ));
+                'report' => $report ))
+                ->setOption('margin-top', 5)
+                ->setOption('margin-bottom', 25)
+                ->setOption('margin-left', 11)
+                ->setOption('margin-right', 11)
+                ->setOption('footer-html', $footerHtml);
+
         // return view('dashboard.reports.pdfReports', compact('report'));
 
         return $pdf->stream('relatorio.pdf');
@@ -62,10 +71,8 @@ class ReportsController extends Controller
 
     public function store(ReportRequest $request)
     {
-        dd($request->all());
         $request['approved'] = 0;
         $request['user_id'] = Auth::user()->id;
-
         $request['logoCompanyContracted'] = $this->uploadFiles($request->file('logoContractedCompany'));
         $request['logoCompanyContracting'] = $this->uploadFiles($request->file('logoContractingCompany'));
 

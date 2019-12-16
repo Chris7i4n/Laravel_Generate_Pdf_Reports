@@ -10,7 +10,11 @@ class Report extends Model
         'approved',
         'logoCompanyContracted',
         'logoCompanyContracting',
-        'user_id'
+        'user_id',
+        'type',
+        'period',
+        'inspection_number',
+        'inspection_year',
     ];
 
     public function user(){
