@@ -52,20 +52,29 @@
                         <form method="POST" class="form-login" enctype="multipart/form-data"  action="{{ route('reports.store') }}" >
                             @csrf
                             <div class="row">
-                                <div class="col-md-6">
+                                <div class="col-md-4">
                                     <div class="form-group">
                                         <label class="form-label">Logo da empresa contratada</label>
                                         <input type="file" class="form-control" name="logoContractedCompany">
                                     </div>
                                 </div>
 
-                                <div class="col-md-6">
+                                <div class="col-md-4">
                                     <div class="form-group">
                                         <label class="form-label">Logo da empresa contratante</label>
                                         <input type="file" class="form-control" name="logoContractingCompany">
                                     </div>
                                 </div>
 
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label class="form-label">Tipo de relatório</label>
+                                        <select class="form-control" name="type">
+                                            <option selected disabled>Selecione...</option>
+                                            <option value="SPCI">SPCI</option>
+                                        </select>
+                                    </div>
+                                </div>
                             </div>
                             <button type="submit" class="btn btn-primary">Salvar Relatório</button>
                         </form>
@@ -74,8 +83,15 @@
             </div>
             <!-- [ Form Validation ] end -->
         </div>
+
         @if(\Session::has('message'))
             <input id = "notification" value = "{{\Session::get('message')}}" type = "hidden" class="btn notifications btn-success" data-type="success" data-from="bottom" data-align="right"/>
+        @endif
+
+        @if($errors->first())
+
+            <input id = "notification" value = "{{$errors->first()}}" type = "hidden" class="btn notifications btn-danger" data-type="danger" data-from="bottom" data-align="right"/>
+
         @endif
         <!-- [ Main Content ] end -->
     </div>
@@ -93,8 +109,6 @@
 <script src="{{ asset('assets/js/plugins/jquery.validate.min.js') }}"></script>
 <!-- form-picker-custom Js -->
 <script src="{{ asset('assets/js/pages/form-validation.js') }}"></script>
-
-
 
 
 </body>

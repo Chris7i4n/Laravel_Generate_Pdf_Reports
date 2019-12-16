@@ -481,3 +481,7 @@ body {
     padding: 5px;
     margin-top: 5px;
 }
+
+.table-width{
+    width: 95%;
+}
