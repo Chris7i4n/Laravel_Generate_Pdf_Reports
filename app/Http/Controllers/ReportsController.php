@@ -32,15 +32,15 @@ class ReportsController extends Controller
     public function show(Report $report)
     {
         $footerHtml = view()->make('dashboard.footer.pdfFooter')->render();
-        $pdf = PDF::loadView('dashboard.reports.pdfReports', array(
-                'report' => $report ));
+        // $pdf = PDF::loadView('dashboard.reports.pdfReports', array(
+        //         'report' => $report ));
                 // ->setOption('margin-top', 5)
                 // ->setOption('margin-bottom', 25)
                 // ->setOption('margin-left', 12)
                 // ->setOption('margin-right', 12)
                 // ->setOption('footer-html', $footerHtml);
 
-        // return view('dashboard.reports.pdfReports', compact('report'));
+        return view('dashboard.reports.pdfReports', compact('report'));
 
         return $pdf->stream('relatorio.pdf');
     }

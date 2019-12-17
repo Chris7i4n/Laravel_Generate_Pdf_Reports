@@ -3,8 +3,8 @@
     <head>
         <meta charset="UTF-8">
         {{-- <link href="{{ public_path('assets/css/pdf.css') }}" rel="stylesheet" type="text/css"/> --}}
-        <link href="{{ public_path('assets/css/pdf.css') }}" rel="stylesheet" type="text/css"/>
-        {{-- <link rel="stylesheet" href="{{ asset('assets/bootstrap/bootstrap.min.css') }}" > --}}
+        <link href="{{ asset('assets/css/pdf.css') }}" rel="stylesheet" type="text/css"/>
+        <link rel="stylesheet" href="{{ asset('assets/bootstrap/bootstrap.min.css') }}" >
 
         <title>
             PDF
@@ -16,11 +16,16 @@
                 <tr class="table-empregados-head">
                     <th>
                         <img
-                            src="{{ public_path("storage/". $report->logoCompanyContracted) }}"
+                            src="{{ asset("storage/". $report->logoCompanyContracted) }}"
                             class = "logo-header"
                         >
                     </th>
                     <th>
+                        {{-- <div class="row">
+                            <div class="col-12">
+
+                            </div>
+                        </div> --}}
                         <div class="table-title">
                             <h2>Relatório Técnico de Inspeção de Sistemas de Proteção Contra Incêndio - {{$report->type}}
                             </h2>
@@ -37,14 +42,14 @@
                     </th>
                     <th>
                         <img
-                            src="{{ public_path("storage/". $report->logoCompanyContracting) }}"
+                            src="{{ asset("storage/". $report->logoCompanyContracting) }}"
                             class = "logo-header"
                         >
                     </th>
 
                 </tr>
             </thead>
-            {{-- <tbody>
+            <tbody>
                 <tr class="table-id-fields">
                     <td>
                         <span>Unidade:</span>
@@ -80,7 +85,7 @@
                             <li><span><b>RESPONSÁVEL TÉCNICO:</b></span>Yasmin Demoin</li>
                     </td>
                 </tr>
-            </tbody> --}}
+            </tbody>
         </table>
 
         <div class="pagebreak"></div>
