@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\ReportRequest;
 use App\Report;
+use App\Unity;
 use App\User;
 use Illuminate\Http\Request;
 use PDF;
@@ -47,35 +48,18 @@ class ReportsController extends Controller
 
     public function create()
     {
-        return view('dashboard.reports.createReports');
+        $unities = Unity::all();
+        return view('dashboard.reports.createReports', compact('unities'));
     }
-
-
-    // public function create()
-    // {
-        // $headerHtml = view()->make('dashboard.header.pdfHeader')->render();
-        // $footerHtml = view()->make('dashboard.footer.pdfFooter')->render();
-        // $cover      = view()->make('dashboard.cover.pdfCover')->render();
-    //     $pdf = PDF::loadView('dashboard.reports.createReports');
-    //             // ->setOption('margin-top', 30)
-    //             // ->setOption('margin-bottom', 25)
-    //             // ->setOption('margin-left', 11)
-    //             // ->setOption('margin-right', 11)
-    //             // ->setOption('header-html', $headerHtml)
-    //             // ->setOption('footer-html', $footerHtml)
-    //             // ->setOption('cover', $cover);
-
-    //     // return view('dashboard.reports.createReports');
-    //     return $pdf->stream('nome-arquivo-pdf-gerado.pdf');
-
-    // }
 
     public function store(ReportRequest $request)
     {
+        $unity = Unity::where('id',$request['unity_id'])->first();
+        $company = $unity->company->first();
         $request['approved'] = 0;
         $request['user_id'] = Auth::user()->id;
         $request['logoCompanyContracted'] = $this->uploadFiles($request->file('logoContractedCompany'));
-        $request['logoCompanyContracting'] = $this->uploadFiles($request->file('logoContractingCompany'));
+        $request['logoCompanyContracting'] = $company->logo;
 
         Report::create($request->all());
 

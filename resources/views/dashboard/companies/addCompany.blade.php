@@ -32,11 +32,11 @@
                 <div class="row align-items-center">
                     <div class="col-md-12">
                         <div class="page-header-title">
-                            <h5 class="m-b-10">Relatório</h5>
+                            <h5 class="m-b-10">Empresas</h5>
                         </div>
                         <ul class="breadcrumb">
                             <li class="breadcrumb-item"><a href="{{route('dashboard')}}"><i class="feather icon-home"></i></a></li>
-                            <li class="breadcrumb-item"><a href="#!">Gerar Relatório</a></li>
+                            <li class="breadcrumb-item"><a href="#!">Cadastro de Empresas</a></li>
                         </ul>
                     </div>
                 </div>
@@ -49,33 +49,66 @@
             <div class="col-sm-12">
                 <div class="card">
                     <div class="card-body">
-                        <form method="POST" class="form-login" enctype="multipart/form-data"  action="{{ route('reports.store') }}" >
+                        <form method="POST" class="form-login" enctype="multipart/form-data" action="{{ route('companies.store') }}" >
                             @csrf
                             <div class="row">
+
                                 <div class="col-md-4">
                                     <div class="form-group">
-                                        <label class="form-label">Logo da empresa contratada</label>
+                                        <label class="form-label">Logo da empresa</label>
                                         <input type="file" class="form-control" name="logoContractedCompany">
                                     </div>
                                 </div>
 
                                 <div class="col-md-4">
                                     <div class="form-group">
-                                        <label class="form-label">Tipo de relatório</label>
-                                        <select class="form-control" name="type">
-                                            <option selected disabled>Selecione...</option>
-                                            <option value="SPCI">SPCI</option>
-                                        </select>
+                                        <label class="form-label">Nome da empresa</label>
+                                        <input type="text" class="form-control" name="company" placeholder="Nome da empresa">
                                     </div>
                                 </div>
 
                                 <div class="col-md-4">
                                     <div class="form-group">
-                                        <label class="form-label">Unidade</label>
+                                        <label class="form-label">Endereço da empresa</label>
+                                        <input type="text" class="form-control" name="address" placeholder="Endereço da empresa">
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <div class="row">
+
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label class="form-label">CNPJ</label>
+                                        <input type="text" class="form-control" name="cnpj" placeholder="CNPJ">
+                                    </div>
+                                </div>
+
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label class="form-label">Telefone da empresa</label>
+                                        <input type="text" class="form-control" name="phone" placeholder="Telefone da empresa">
+                                    </div>
+                                </div>
+
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label class="form-label">Responsável Contratante</label>
+                                        <input type="text" class="form-control" name="contracting_responsable" placeholder="Responsável contratante">
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label class="form-label">Unidades</label>
                                         <select class="form-control" name="unity_id">
                                             <option selected disabled>Selecione...</option>
-                                            @foreach ($unities as $unity )
-                                                <option value={{$unity->id}}>{{$unity->name}}</option>
+                                            @foreach ($unities as $unity)
+                                                <option value="{{$unity->id}}">{{$unity->name}}</option>
 
                                             @endforeach
                                         </select>
@@ -83,66 +116,23 @@
                                 </div>
                             </div>
 
-                            <div class="row">
-                                <div class="col-md-4">
-                                    <div class="form-group">
-                                        <label class="form-label">Período</label>
-                                        <select class="form-control" name="period">
-                                            <option selected disabled>Selecione...</option>
-                                            <option value="J-F-M">JAN-FEV-MAR</option>
-                                            <option value="A-M-J">ABR-MAI-JUN</option>
-                                            <option value="J-A-S">JUL-AGO-SET</option>
-                                            <option value="O-N-D">OUT-NOV-DEZ</option>
-                                        </select>
-                                    </div>
-                                </div>
-
-                                <div class="col-md-4">
-                                    <div class="form-group">
-                                        <label class="form-label"> Número da inspeção</label>
-                                        <select class="form-control" name="inspection_number">
-                                            <option selected disabled>Selecione...</option>
-                                                <option value="1">1</option>
-                                                <option value="2">2</option>
-                                                <option value="3">3</option>
-                                                <option value="4">4</option>
-                                        </select>
-                                        </select>
-                                    </div>
-                                </div>
-
-                                <div class="col-md-4">
-                                    <div class="form-group">
-                                        <label class="form-label">Ano da inspeção</label>
-                                        <select class="form-control" name="inspection_year">
-                                            <option selected disabled>Selecione...</option>
-                                                <option value="2020">2020</option>
-                                                <option value="2021">2021</option>
-                                                <option value="2022">2022</option>
-                                                <option value="2023">2023</option>
-                                        </select>
-                                        </select>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <button type="submit" class="btn btn-primary">Salvar Relatório</button>
+                            <button type="submit" class="btn btn-primary">Cadastrar</button>
                         </form>
+                    {{-- Notifications  --}}
+                    @if(\Session::has('message'))
+                        <input id = "notification" value = "{{\Session::get('message')}}" type = "hidden" class="btn notifications btn-success" data-type="success" data-from="bottom" data-align="right"/>
+                    @endif
+
+                    @if($errors->first())
+
+                        <input id = "notification" value = "{{$errors->first()}}" type = "hidden" class="btn notifications btn-danger" data-type="danger" data-from="bottom" data-align="right"/>
+
+                    @endif
                     </div>
                 </div>
             </div>
             <!-- [ Form Validation ] end -->
         </div>
-
-        @if(\Session::has('message'))
-            <input id = "notification" value = "{{\Session::get('message')}}" type = "hidden" class="btn notifications btn-success" data-type="success" data-from="bottom" data-align="right"/>
-        @endif
-
-        @if($errors->first())
-
-            <input id = "notification" value = "{{$errors->first()}}" type = "hidden" class="btn notifications btn-danger" data-type="danger" data-from="bottom" data-align="right"/>
-
-        @endif
         <!-- [ Main Content ] end -->
     </div>
 </section>
@@ -159,6 +149,8 @@
 <script src="{{ asset('assets/js/plugins/jquery.validate.min.js') }}"></script>
 <!-- form-picker-custom Js -->
 <script src="{{ asset('assets/js/pages/form-validation.js') }}"></script>
+
+
 
 
 </body>

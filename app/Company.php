@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Empresa extends Model
+class Company extends Model
 {
     protected $fillable = [
 
@@ -17,5 +17,7 @@ class Empresa extends Model
         'contracting_responsable'
     ];
 
-
+    public function unity(){
+        return $this->belongsToMany(Unity::class);
+    }
 }

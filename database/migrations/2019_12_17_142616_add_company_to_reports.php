@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class EmpresaUnity extends Migration
+class AddCompanyToReports extends Migration
 {
     /**
      * Run the migrations.
@@ -13,17 +13,13 @@ class EmpresaUnity extends Migration
      */
     public function up()
     {
-        Schema::create('company_unity', function (Blueprint $table) {
-            $table->integer('company_id')->unsigned();
+        Schema::table('reports', function (Blueprint $table) {
             $table->integer('unity_id')->unsigned();
-
-            $table->foreign('company_id')
-                ->references('id')->on('companies')
-                ->onDelete('cascade');
 
             $table->foreign('unity_id')
                 ->references('id')->on('unities')
                 ->onDelete('cascade');
+
         });
     }
 
@@ -34,6 +30,8 @@ class EmpresaUnity extends Migration
      */
     public function down()
     {
-        //
+        Schema::table('reports', function (Blueprint $table) {
+            //
+        });
     }
 }

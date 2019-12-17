@@ -15,6 +15,7 @@ class Report extends Model
         'period',
         'inspection_number',
         'inspection_year',
+        'unity_id'
     ];
 
     public function user(){

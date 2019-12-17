@@ -25,7 +25,6 @@ class ReportRequest extends FormRequest
     {
         return [
             'logoContractedCompany' => 'required|file',
-            'logoContractingCompany' => 'required|file',
             'type' => 'required',
             'period' => 'required',
             'inspection_number' => 'required',
