@@ -168,15 +168,13 @@ body {
   .table-empregados-head {
     color:black;
     background-color: white;
-    display: flex;
-    align-items: stretch;
+    display:  -webkit-box;
   }
 
   .table-empregados-head th {
     flex-grow: 1;
     display: flex;
     align-items: center;
-    width: 20%;
   }
 
   .table-empregados-head th:first-child {
@@ -185,16 +183,19 @@ body {
 
   .table-title{
       border-bottom: 1px solid #000;
-      /* box-sizing: content-box !important; */
   }
   .table-empregados-head th:last-child{
       border-left: 1px solid #000;
+
   }
+
+  .table-empregados-head th:first-child{
+        width: 20%;
+    }
 
   .table-empregados-head th img {
     margin: 0 auto;
   }
-
 
   .table-empregados-head th:nth-child(2) {
     width: 60%;
@@ -203,42 +204,58 @@ body {
 
   .clientDiv {
     display: flex;
-    width: 100%;
+    display: -webkit-box;
   }
 
   .clientDiv .inspecao {
-    flex-grow: 4;
+    width: 75%;
+
+  }
+
+  .clientDiv .inspecao h3{
+    text-align: center;
+
   }
 
   .clientDiv .periodo {
-    flex-grow: 1;
     border-left: 1px solid #000;
  }
 
 
   .table-id-fields {
-    display: flex;
     border-bottom: 1px solid #000;
+    display: -webkit-box;
+    width:  100%;
+
   }
 
+  .table-id-fields > * {
+    position: relative;
+
+  }
     .table-id-fields td:first-child{
-      border-right: 1px solid #000;
+        border-right: 1px solid #000;
+        width: 20%;
+
+    }
+
+    .table-id-fields td:nth-child(2) {
+        width: 40%;
     }
 
     .table-id-fields td:last-child{
         border-left: 1px solid #000;
+        width: 20%;
+
     }
 
-  .table-id-fields > * {
-    flex-grow: 1;
-    width: 100%;
-    position: relative;
-  }
 
   .table-id-fields td h3 {
     text-align: center;
     margin-top: 30px;
-  }
+
+}
+
 
   .table-id-fields td span {
     position: absolute;
@@ -249,19 +266,15 @@ body {
   }
 
   .table-data {
-    display: flex;
     border-top: 1px solid #000;
+    display: -webkit-box;
+    width: 100%;
+
   }
 
   .table-data td:first-child{
       border-right: 1px solid #000;
   }
-
-  .table-data > * {
-    flex-grow: 1;
-    width: 100%;
-  }
-
 
   .table-data td h3 {
     text-align: Center;
@@ -596,7 +609,9 @@ body {
     border-left: 1px solid #000;
     border-right: 1px solid #000;
     border-bottom: 1px solid #000;
+    display: -webkit-box;
 }
+
 
 .table-reports th{
     border-bottom: 1px solid #000;

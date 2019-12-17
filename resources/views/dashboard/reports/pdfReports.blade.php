@@ -2,47 +2,41 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        {{-- <link href="{{ public_path('assets/css/pdf.css') }}" rel="stylesheet" type="text/css"/> --}}
-        <link href="{{ asset('assets/css/pdf.css') }}" rel="stylesheet" type="text/css"/>
-        <link rel="stylesheet" href="{{ asset('assets/bootstrap/bootstrap.min.css') }}" >
+        <link href="{{ public_path('assets/css/pdf.css') }}" rel="stylesheet" type="text/css"/>
+        <link rel="stylesheet" href="{{ public_path('assets/bootstrap/bootstrap.min.css') }}" >
 
         <title>
             PDF
         </title>
     </head>
     <body>
-        <table class="table-reports table-small table-width">
+        <table class="table-reports table-small table-width" >
             <thead>
-                <tr class="table-empregados-head">
+                <tr class="table-empregados-head" >
                     <th>
                         <img
-                            src="{{ asset("storage/". $report->logoCompanyContracted) }}"
+                            src="{{ public_path("storage/". $report->logoCompanyContracted) }}"
                             class = "logo-header"
                         >
                     </th>
                     <th>
-                        {{-- <div class="row">
-                            <div class="col-12">
-
-                            </div>
-                        </div> --}}
-                        <div class="table-title">
+                        <div class="table-title" >
                             <h2>Relatório Técnico de Inspeção de Sistemas de Proteção Contra Incêndio - {{$report->type}}
                             </h2>
                         </div>
-                        <div class = "clientDiv">
-                            <div class="inspecao">
+                        <div class = "clientDiv" >
+                            <div class="inspecao " >
                                 <span>Inspeção: </span>
                                 <h3>{{$report->inspection_number}}ª  INSPEÇÃO - {{$report->inspection_year}}</h3>
                             </div>
-                            <div class="periodo">
+                            <div class="periodo" >
                                 <span>Periodo:</span>
                                 <p>{{$report->period}}</p>
                         </div>
                     </th>
                     <th>
                         <img
-                            src="{{ asset("storage/". $report->logoCompanyContracting) }}"
+                            src="{{ public_path("storage/". $report->logoCompanyContracting) }}"
                             class = "logo-header"
                         >
                     </th>
@@ -51,8 +45,8 @@
             </thead>
             <tbody>
                 <tr class="table-id-fields">
-                    <td>
-                        <span>Unidade:</span>
+                    <td >
+                        <span >Unidade:</span>
                         <h3>{{$report->unity->name}}</h3>
                     </td>
                     <td>
@@ -72,7 +66,7 @@
                             <li><span><b>ENDEREÇO:</b></span>Rua Tal</li>
                             <li><span><b>CNPJ:</b></span>2398473242</li>
                             <li><span><b>TELEFONE:</b></span>85 9832242</li>
-                            <li><span><b>RESPONSÁVEL TÉCNICO:</b></span>Yasmin </li>
+                            <li><span><b>RESPONSÁVEL TÉCNICO:</b></span>Yasmin Demoin</li>
                         </ul>
                     </td>
                     <td>
@@ -92,3 +86,71 @@
     </body>
 
 </html>
+
+{{-- <!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <link href="{{ public_path('assets/css/pdf.css') }}" rel="stylesheet" type="text/css"/>
+        <link rel="stylesheet" href="{{ public_path('assets/bootstrap/bootstrap.min.css') }}" >
+
+        <title>
+            PDF
+        </title>
+    </head>
+    <body>
+        <table class="table-reports table-small table-width">
+            <thead>
+                <tr class="">
+                    <th >
+                        <div class="row">
+                            <div class="col-12">
+                                <img
+                                    src="{{ public_path("storage/". $report->logoCompanyContracted) }}"
+                                    class = "logo-header"
+                                >
+                            </div>
+                        </div>
+                    </th>
+                    <th>
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="">
+                                    <h2>Relatório Técnico de Inspeção de Sistemas de Proteção Contra Incêndio - {{$report->type}}
+                                    </h2>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row" >
+                            <div class="col-8">
+                                <span>Inspeção: </span>
+                                <h3>{{$report->inspection_number}}ª  INSPEÇÃO - {{$report->inspection_year}}</h3>
+                            </div>
+                            <div class="col-4">
+                                <span>Periodo:</span>
+                                <p>{{$report->period}}</p>
+                            </div>
+                        </div>
+                    </th>
+                    <th>
+                        <div class="row">
+                            <div class="col-12">
+                                <img
+                                    src="{{ public_path("storage/". $report->logoCompanyContracting) }}"
+                                    class = "logo-header">
+                            </div>
+                        </div>
+                    </th>
+
+                </tr>
+            </thead>
+            <tbody>
+
+            </tbody>
+        </table>
+
+        <div class="pagebreak"></div>
+    </body>
+
+</html> --}}
+

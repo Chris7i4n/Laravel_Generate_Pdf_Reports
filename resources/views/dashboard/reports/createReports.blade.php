@@ -89,10 +89,10 @@
                                         <label class="form-label">Período</label>
                                         <select class="form-control" name="period">
                                             <option selected disabled>Selecione...</option>
-                                            <option value="J-F-M">JAN-FEV-MAR</option>
-                                            <option value="A-M-J">ABR-MAI-JUN</option>
-                                            <option value="J-A-S">JUL-AGO-SET</option>
-                                            <option value="O-N-D">OUT-NOV-DEZ</option>
+                                            <option value="AN-FEV-MAR">JAN-FEV-MAR</option>
+                                            <option value="ABR-MAI-JUN">ABR-MAI-JUN</option>
+                                            <option value="JUL-AGO-SET">JUL-AGO-SET</option>
+                                            <option value="OUT-NOV-DEZ">OUT-NOV-DEZ</option>
                                         </select>
                                     </div>
                                 </div>
