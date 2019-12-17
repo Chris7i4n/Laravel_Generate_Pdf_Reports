@@ -76,8 +76,7 @@
 
                                                 <td>
                                                     <div class="switch m-r-10">
-                                                        {{-- checked --}}
-                                                        <input type="checkbox" onchange=" changeReportStatus()" class="switcher-input" name="perfil" id="{{"switch-". $report->id}}">
+                                                        <input type="checkbox" {{$report->approved ? 'checked' : ""}} onchange=" changeReportStatus({{$report->id}})" class="switcher-input" name="perfil" id="{{"switch-". $report->id}}">
                                                         <label for="{{"switch-". $report->id}}" selected class="cr switchForTable"></label>
                                                     </div>
                                                 </td>
@@ -103,15 +102,15 @@
     <script src="{{ asset("assets/js/plugins/jquery.dataTables.min.js") }}"></script>
     <script src="{{ asset("assets/js/plugins/dataTables.bootstrap4.min.js") }}"></script>
     <script src="{{ asset("assets/js/pages/data-basic-custom.js") }}"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
     <script>
-        function changeReportStatus()
+        function changeReportStatus(id)
         {
-            console.log("teste");
-            axios.get('https://api.github.com/users/' + username)
-            .then(function(response){
-                console.log(response.data); // ex.: { user: 'Your User'}
-                console.log(response.status); // ex.: 200
+            axios.post('/admin/reports/change-status', {
+                id: id
             });
+
         }
 
 

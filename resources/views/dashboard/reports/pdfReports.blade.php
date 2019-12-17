@@ -4,45 +4,83 @@
         <meta charset="UTF-8">
         {{-- <link href="{{ public_path('assets/css/pdf.css') }}" rel="stylesheet" type="text/css"/> --}}
         <link href="{{ public_path('assets/css/pdf.css') }}" rel="stylesheet" type="text/css"/>
-        <link rel="stylesheet" href="{{ public_path('assets/bootstrap/bootstrap.min.css') }}" >
+        {{-- <link rel="stylesheet" href="{{ asset('assets/bootstrap/bootstrap.min.css') }}" > --}}
 
         <title>
             PDF
         </title>
     </head>
     <body>
-        <table class="table-empregados table-small bordered table-width">
+        <table class="table-reports table-small table-width">
             <thead>
-                <tr style="color:black;" bgcolor="white">
-
-                    <th style="width: 3cm;">
+                <tr class="table-empregados-head">
+                    <th>
                         <img
                             src="{{ public_path("storage/". $report->logoCompanyContracted) }}"
                             class = "logo-header"
                         >
                     </th>
-
-                    <th style="width: 6cm;">Relatório Técnico de Inspeção de Sistemas de Proteção Contra Incêndio - {{$report->type}}
-                        <div class = "separator"></div>
-                        <div class = "clientDiv"> Cliente: {{$report->user->name}} </div>
+                    <th>
+                        <div class="table-title">
+                            <h2>Relatório Técnico de Inspeção de Sistemas de Proteção Contra Incêndio - {{$report->type}}
+                            </h2>
+                        </div>
+                        <div class = "clientDiv">
+                            <div class="inspecao">
+                                <span>Inspeção: </span>
+                                <h3>{{$report->user->name}}</h3>
+                            </div>
+                            <div class="periodo">
+                                <span>Periodo:</span>
+                                <p>J-A-S</p>
+                        </div>
                     </th>
-
-                    <th style="width: 3cm;">
+                    <th>
                         <img
-                        src="{{ public_path("storage/". $report->logoCompanyContracting) }}"
-                        class = "logo-header"
+                            src="{{ public_path("storage/". $report->logoCompanyContracting) }}"
+                            class = "logo-header"
                         >
                     </th>
 
                 </tr>
             </thead>
-            <tbody>
-                {{-- <tr>
-                    <td></td>
-                    <td>aaa</td>
-                    <td>aaa</td>
-                </tr> --}}
-            </tbody>
+            {{-- <tbody>
+                <tr class="table-id-fields">
+                    <td>
+                        <span>Unidade:</span>
+                        <h3>Nome da Unidade</h3>
+                    </td>
+                    <td>
+                        <span>Número Documento:</span>
+                        <h3>2342342341423</h3>
+                    </td>
+                    <td>
+                        <span>Folha:</span>
+                        <h3>Página 1 de 21</h3>
+                    </td>
+                </tr>
+                <tr class="table-data">
+                    <td>
+                        <h3>Dados Contratada</h3>
+                        <ul>
+                            <li><span><b>EMPRESA:</b></span>Empresa X</li>
+                            <li><span><b>ENDEREÇO:</b></span>Rua Tal</li>
+                            <li><span><b>CNPJ:</b></span>2398473242</li>
+                            <li><span><b>TELEFONE:</b></span>85 9832242</li>
+                            <li><span><b>RESPONSÁVEL TÉCNICO:</b></span>Yasmin Demoin</li>
+                        </ul>
+                    </td>
+                    <td>
+                        <h3>Dados Contratante</h3>
+                        <ul>
+                            <li><span><b>EMPRESA:</b></span>Empresa X</li>
+                            <li><span><b>ENDEREÇO:</b></span>Rua Tal</li>
+                            <li><span><b>CNPJ:</b></span>2398473242</li>
+                            <li><span><b>TELEFONE:</b></span>85 9832242</li>
+                            <li><span><b>RESPONSÁVEL TÉCNICO:</b></span>Yasmin Demoin</li>
+                    </td>
+                </tr>
+            </tbody> --}}
         </table>
 
         <div class="pagebreak"></div>

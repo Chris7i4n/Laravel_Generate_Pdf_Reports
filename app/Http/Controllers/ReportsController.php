@@ -33,12 +33,12 @@ class ReportsController extends Controller
     {
         $footerHtml = view()->make('dashboard.footer.pdfFooter')->render();
         $pdf = PDF::loadView('dashboard.reports.pdfReports', array(
-                'report' => $report ))
-                ->setOption('margin-top', 5)
-                ->setOption('margin-bottom', 25)
-                ->setOption('margin-left', 11)
-                ->setOption('margin-right', 11)
-                ->setOption('footer-html', $footerHtml);
+                'report' => $report ));
+                // ->setOption('margin-top', 5)
+                // ->setOption('margin-bottom', 25)
+                // ->setOption('margin-left', 12)
+                // ->setOption('margin-right', 12)
+                // ->setOption('footer-html', $footerHtml);
 
         // return view('dashboard.reports.pdfReports', compact('report'));
 
@@ -49,6 +49,7 @@ class ReportsController extends Controller
     {
         return view('dashboard.reports.createReports');
     }
+
 
     // public function create()
     // {
@@ -87,6 +88,15 @@ class ReportsController extends Controller
         $fileNameExploaded = explode("/", $fileUploaded);
         $fileName = end($fileNameExploaded);
         return $fileName;
+    }
+
+    public function changeStatus(Request $request)
+    {
+        $report = Report::where('id', $request->id)->first();
+        $report->approved = !$report->approved;
+        $report->save();
+
+        return $report;
     }
 
 }

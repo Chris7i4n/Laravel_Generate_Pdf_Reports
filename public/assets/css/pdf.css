@@ -48,7 +48,6 @@ body {
   }
 
   ul {
-    padding-left: 1.5rem;
     margin: 0;
   }
 
@@ -115,11 +114,11 @@ body {
     width: 100%;
   }
 
-  table tr,
+  /* table tr,
   table td,
   table th {
     padding: 0.2rem 0.5rem;
-  }
+  } */
 
   table p {
     margin: 0;
@@ -164,6 +163,132 @@ body {
   table.table-empregados td,
   table.table-empregados th {
     padding: 0.1rem 0.2rem;
+  }
+
+  .table-empregados-head {
+    color:black;
+    background-color: white;
+    display: flex;
+    align-items: stretch;
+  }
+
+  .table-empregados-head th {
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    width: 20%;
+  }
+
+  .table-empregados-head th:first-child {
+      border-right: 1px solid #000;
+  }
+
+  .table-title{
+      border-bottom: 1px solid #000;
+      /* box-sizing: content-box !important; */
+  }
+  .table-empregados-head th:last-child{
+      border-left: 1px solid #000;
+  }
+
+  .table-empregados-head th img {
+    margin: 0 auto;
+  }
+
+
+  .table-empregados-head th:nth-child(2) {
+    width: 60%;
+    flex-direction: column;
+  }
+
+  .clientDiv {
+    display: flex;
+    width: 100%;
+  }
+
+  .clientDiv .inspecao {
+    flex-grow: 4;
+  }
+
+  .clientDiv .periodo {
+    flex-grow: 1;
+    border-left: 1px solid #000;
+ }
+
+
+  .table-id-fields {
+    display: flex;
+    border-bottom: 1px solid #000;
+  }
+
+    .table-id-fields td:first-child{
+      border-right: 1px solid #000;
+    }
+
+    .table-id-fields td:last-child{
+        border-left: 1px solid #000;
+    }
+
+  .table-id-fields > * {
+    flex-grow: 1;
+    width: 100%;
+    position: relative;
+  }
+
+  .table-id-fields td h3 {
+    text-align: center;
+    margin-top: 30px;
+  }
+
+  .table-id-fields td span {
+    position: absolute;
+    left: 4px;
+    top: 4px;
+    text-transform: uppercase;
+    text-align: left;
+  }
+
+  .table-data {
+    display: flex;
+    border-top: 1px solid #000;
+  }
+
+  .table-data td:first-child{
+      border-right: 1px solid #000;
+  }
+
+  .table-data > * {
+    flex-grow: 1;
+    width: 100%;
+  }
+
+
+  .table-data td h3 {
+    text-align: Center;
+    text-transform: uppercase;
+    margin-top: 5px;
+  }
+
+  .table-data td ul {
+    text-align: left;
+    list-style: none;
+    padding-inline-start: 0px;
+    border-top: 1px solid #000;
+    margin-bottom: 0;
+  }
+
+  .table-data td ul li {
+    padding: 10px 0;
+    border-bottom: 1px solid #000;
+  }
+
+  .table-data td ul li span{
+      margin-right: 20px;
+  }
+
+  .table-data td ul li:last-child{
+      border-bottom: none;
+      margin-bottom: none;
   }
 
   table.table-riscos {
@@ -416,27 +541,6 @@ body {
     font-size: 21px !important;
   }
 
-  .textos-ppra ul {
-    font-size: 21px !important;
-    padding-left: 30px;
-    margin: 0;
-  }
-
-  .textos-ppra ul li {
-    text-align: justify;
-  }
-
-  .textos-ltcat p {
-    font-size: 19px !important;
-    line-height: 130%;
-  }
-
-  .textos-ltcat ul {
-    font-size: 17px !important;
-    padding-left: 30px;
-    margin: 0;
-  }
-
   .textos-ltcat ul li {
     text-align: justify;
     line-height: 150%;
@@ -477,11 +581,27 @@ body {
 
 .logo-header{
     height: 60px;
-    width: 50%;
     padding: 5px;
+    width: 50%;
+    align-items: center;
     margin-top: 5px;
 }
 
 .table-width{
     width: 95%;
 }
+
+.table-reports{
+    border-top: 1px solid #000;
+    border-left: 1px solid #000;
+    border-right: 1px solid #000;
+    border-bottom: 1px solid #000;
+}
+
+.table-reports th{
+    border-bottom: 1px solid #000;
+}
+
+/* .table-empregados-head{
+    border-right: 1px solid #000;
+} */

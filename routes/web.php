@@ -12,6 +12,7 @@ Route::group(['middleware' => ['auth']], function () {
 
         Route::get('/dashboard', 'DashboardController@index')->name('dashboard');
         Route::get('/reports', 'ReportsController@index')->name('reports');
+        Route::post('/reports/change-status', 'ReportsController@changeStatus')->name('changeStatus');
         Route::resource('/users', 'UserController')->except('index', 'show', 'edit', 'update', 'destroy');
 
     });
