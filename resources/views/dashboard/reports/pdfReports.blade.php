@@ -33,11 +33,11 @@
                         <div class = "clientDiv">
                             <div class="inspecao">
                                 <span>Inspeção: </span>
-                                <h3>{{$report->user->name}}</h3>
+                                <h3>{{$report->inspection_number}}ª  INSPEÇÃO - {{$report->inspection_year}}</h3>
                             </div>
                             <div class="periodo">
                                 <span>Periodo:</span>
-                                <p>J-A-S</p>
+                                <p>{{$report->period}}</p>
                         </div>
                     </th>
                     <th>
@@ -53,7 +53,7 @@
                 <tr class="table-id-fields">
                     <td>
                         <span>Unidade:</span>
-                        <h3>Nome da Unidade</h3>
+                        <h3>{{$report->unity->name}}</h3>
                     </td>
                     <td>
                         <span>Número Documento:</span>
@@ -72,17 +72,17 @@
                             <li><span><b>ENDEREÇO:</b></span>Rua Tal</li>
                             <li><span><b>CNPJ:</b></span>2398473242</li>
                             <li><span><b>TELEFONE:</b></span>85 9832242</li>
-                            <li><span><b>RESPONSÁVEL TÉCNICO:</b></span>Yasmin Demoin</li>
+                            <li><span><b>RESPONSÁVEL TÉCNICO:</b></span>Yasmin </li>
                         </ul>
                     </td>
                     <td>
                         <h3>Dados Contratante</h3>
                         <ul>
-                            <li><span><b>EMPRESA:</b></span>Empresa X</li>
-                            <li><span><b>ENDEREÇO:</b></span>Rua Tal</li>
-                            <li><span><b>CNPJ:</b></span>2398473242</li>
-                            <li><span><b>TELEFONE:</b></span>85 9832242</li>
-                            <li><span><b>RESPONSÁVEL TÉCNICO:</b></span>Yasmin Demoin</li>
+                            <li><span><b>EMPRESA:</b></span> {{$report->unity->company->first()->company }} </li>
+                            <li><span><b>ENDEREÇO:</b></span>{{$report->unity->company->first()->address }} </li>
+                            <li><span><b>CNPJ:</b></span>{{$report->unity->company->first()->cnpj }} </li>
+                            <li><span><b>TELEFONE:</b></span>{{$report->unity->company->first()->phone }} </li>
+                            <li><span><b>RESPONSÁVEL CONTRATANTE:</b></span>{{$report->unity->company->first()->contracting_responsable }} </li>
                     </td>
                 </tr>
             </tbody>
