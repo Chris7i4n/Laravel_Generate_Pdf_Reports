@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class AddCodeNumberToCompanies extends Migration
+class AddUserIdToCompanies extends Migration
 {
     /**
      * Run the migrations.
@@ -14,8 +14,11 @@ class AddCodeNumberToCompanies extends Migration
     public function up()
     {
         Schema::table('companies', function (Blueprint $table) {
-            $table->integer('code_number')->nullable();
+            $table->integer('user_id')->unsigned();
 
+            $table->foreign('user_id')
+                ->references('id')->on('users')
+                ->onDelete('cascade');
         });
     }
 

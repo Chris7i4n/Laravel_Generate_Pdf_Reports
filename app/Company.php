@@ -14,7 +14,9 @@ class Company extends Model
         'cnpj',
         'phone',
         'tecnical_reponsable',
-        'contracting_responsable'
+        'contracting_responsable',
+        'code_number',
+        'user_id'
     ];
 
     public function unity(){

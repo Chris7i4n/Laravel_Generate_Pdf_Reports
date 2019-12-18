@@ -10,6 +10,8 @@ use Illuminate\Http\Request;
 use PDF;
 use Illuminate\Support\Facades\Auth;
 use Storage;
+use App\Company;
+
 class ReportsController extends Controller
 {
     public function index()
@@ -25,16 +27,17 @@ class ReportsController extends Controller
             return view('dashboard.reports.showClientReports', compact('reports'));
 
         }
-            // return view('dashboard.reports.pdfReports', compact('report'));
-
 
     }
 
     public function show(Report $report)
     {
         $footerHtml = view()->make('dashboard.footer.pdfFooter')->render();
+        $companyUserId = $report->unity->company->user_id;
+        $companyContracted = Company::where('user_id', $companyUserId)->whereNotNull('tecnical_reponsable')->first();
+
         $pdf = PDF::loadView('dashboard.reports.pdfReports', array(
-                'report' => $report ))
+                'report' => $report , 'companyContrated' => $companyContracted))
                 ->setOption('margin-top', 1)
                 // ->setOption('margin-bottom', 20)
                 ->setOption('margin-left', 3)
@@ -58,12 +61,23 @@ class ReportsController extends Controller
         $company = $unity->company->first();
         $request['approved'] = 0;
         $request['user_id'] = Auth::user()->id;
-        $request['logoCompanyContracted'] = $this->uploadFiles($request->file('logoContractedCompany'));
+
+        if(!Company::where('user_id', Auth::user()->id)->whereNotNull('tecnical_reponsable')->first())
+        {
+            return redirect()->back()->with(['errorMessage' => 'Uma empresa contratada precisa ser adicionada']);
+
+        }
+        $request['logoCompanyContracted'] = $this->getLogoContractedCompany();
         $request['logoCompanyContracting'] = $company->logo;
 
         Report::create($request->all());
 
         return redirect()->back()->with(['message' => 'Relatório gerado com sucesso']);
+    }
+
+    public function getLogoContractedCompany()
+    {
+        return Company::where('user_id', Auth::user()->id)->whereNotNull('tecnical_reponsable')->first()->logo;
     }
 
     public function uploadFiles($file)

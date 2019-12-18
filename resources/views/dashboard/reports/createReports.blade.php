@@ -52,12 +52,6 @@
                         <form method="POST" class="form-login" enctype="multipart/form-data"  action="{{ route('reports.store') }}" >
                             @csrf
                             <div class="row">
-                                <div class="col-md-4">
-                                    <div class="form-group">
-                                        <label class="form-label">Logo da empresa contratada</label>
-                                        <input type="file" class="form-control" name="logoContractedCompany">
-                                    </div>
-                                </div>
 
                                 <div class="col-md-4">
                                     <div class="form-group">
@@ -81,9 +75,7 @@
                                         </select>
                                     </div>
                                 </div>
-                            </div>
 
-                            <div class="row">
                                 <div class="col-md-4">
                                     <div class="form-group">
                                         <label class="form-label">Período</label>
@@ -96,6 +88,9 @@
                                         </select>
                                     </div>
                                 </div>
+                            </div>
+
+                            <div class="row">
 
                                 <div class="col-md-4">
                                     <div class="form-group">
@@ -137,6 +132,11 @@
         @if(\Session::has('message'))
             <input id = "notification" value = "{{\Session::get('message')}}" type = "hidden" class="btn notifications btn-success" data-type="success" data-from="bottom" data-align="right"/>
         @endif
+
+        @if(\Session::has('errorMessage'))
+            <input id = "notification" value = "{{\Session::get('message')}}" type = "hidden" class="btn notifications btn-danger" data-type="danger" data-from="bottom" data-align="right"/>
+        @endif
+
 
         @if($errors->first())
 

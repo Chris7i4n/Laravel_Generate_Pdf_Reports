@@ -21,17 +21,13 @@
 
                         @if(!Auth::user()->perfil)
                             <li><a href="{{ route('reports.create')}}">Gerar Relatório</a></li>
-                        @endif
 
-                        @if(!Auth::user()->perfil)
                             <li><a href="{{ route('reports.index')}}">Visualizar Relatórios</a></li>
-                        @endif
 
-                        @if(!Auth::user()->perfil)
                             <li><a href="{{ route('companies.index')}}">Adicionar Empresa Contratante</a></li>
-                        @endif
 
-                        @if(!Auth::user()->perfil)
+                            <li><a href="{{ route('companies.contracted')}}">Adicionar Empresa Contratada</a></li>
+
                             <li><a href="{{ route('companies.unities')}}">Adicionar Unidades</a></li>
                         @endif
                     </ul>

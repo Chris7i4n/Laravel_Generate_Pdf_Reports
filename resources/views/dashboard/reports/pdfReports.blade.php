@@ -51,7 +51,7 @@
                     </td>
                     <td>
                         <span>Número Documento:</span>
-                        <h3>2342342341423</h3>
+                        <h3>US19-RTSPCI-099-RGB-MATRIZ</h3>
                     </td>
                     <td>
                         <span>Folha:</span>
@@ -62,11 +62,11 @@
                     <td>
                         <h3>Dados Contratada</h3>
                         <ul>
-                            <li><span><b>EMPRESA:</b></span>Empresa X</li>
-                            <li><span><b>ENDEREÇO:</b></span>Rua Tal</li>
-                            <li><span><b>CNPJ:</b></span>2398473242</li>
-                            <li><span><b>TELEFONE:</b></span>85 9832242</li>
-                            <li><span><b>RESPONSÁVEL TÉCNICO:</b></span>Yasmin Demoin</li>
+                            <li><span><b>EMPRESA:</b></span>{{$companyContracted->company}}</li>
+                            <li><span><b>ENDEREÇO:</b></span>{{$companyContracted->address}}</li>
+                            <li><span><b>CNPJ:</b></span>{{$companyContracted->cnpj}}</li>
+                            <li><span><b>TELEFONE:</b></span>{{$companyContracted->phone}}</li>
+                            <li><span><b>RESPONSÁVEL TÉCNICO:</b></span>{{$companyContracted->tecnical_reponsable}}</li>
                         </ul>
                     </td>
                     <td>

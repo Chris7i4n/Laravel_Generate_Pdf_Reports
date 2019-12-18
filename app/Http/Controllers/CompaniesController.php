@@ -7,8 +7,9 @@ use Illuminate\Http\Request;
 use Storage;
 use App\Company;
 use App\Http\Requests\CompaniesRequest;
+use App\Http\Requests\CompanyContractedRequest;
 use App\Http\Requests\UnitiesRequest;
-
+use Auth;
 class CompaniesController extends Controller
 {
     public function index()
@@ -17,10 +18,30 @@ class CompaniesController extends Controller
         return view('dashboard.companies.addCompany', compact('unities'));
     }
 
+    public function createContractedCompany()
+    {
+        $unities = Unity::all();
+
+        return view('dashboard.companies.addContractedCompany', compact('unities'));
+    }
+
+    public function storeContractedCompany(CompanyContractedRequest $request)
+    {
+        if(Company::where('user_id', Auth::user()->id)->whereNotNull('tecnical_reponsable')->first())
+        {
+            return redirect()->back()->with(['errorMessage' => 'Empresa contratada já existe']);
+        }
+        $request['logo'] = $this->uploadFiles($request->file('logoContractedCompany'));
+        $request['user_id'] = Auth::user()->id;
+        $company = Company::create($request->all());
+
+        return redirect()->back()->with(['message' => 'Empresa adicionada com sucesso']);
+    }
+
     public function store(CompaniesRequest $request)
     {
-        $request['logo'] = $this->uploadFiles($request->file('logoContractedCompany'));
-
+        $request['logo'] = $this->uploadFiles($request->file('logoContractingCompany'));
+        $request['user_id'] = Auth::user()->id;
         $company = Company::create($request->all());
         foreach($request['unity_id'] as $unity_id)
         {

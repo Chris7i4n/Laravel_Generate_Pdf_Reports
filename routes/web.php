@@ -25,7 +25,10 @@ Route::group(['middleware' => ['auth']], function () {
 
         Route::get('/dashboard', 'DashboardController@index')->name('dashboard');
         Route::resource('reports', 'ReportsController')->except('edit', 'update', 'destroy');
-        Route::resource('companies', 'CompaniesController')->except('edit', 'update', 'destroy');
+        Route::resource('companies', 'CompaniesController')->except('edit', 'show', 'update', 'destroy');
+        Route::get('companies/contracted', 'CompaniesController@createContractedCompany')->name('companies.contracted');
+        Route::post('companies/contracted', 'CompaniesController@storeContractedCompany')->name('companies.contracted.store');
+
         Route::get('unities', 'CompaniesController@indexUnities')->name('companies.unities');
         Route::post('unities', 'CompaniesController@storeUnities')->name('unities.store');
 

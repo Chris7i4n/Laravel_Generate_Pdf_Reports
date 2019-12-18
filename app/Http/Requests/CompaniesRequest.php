@@ -24,7 +24,7 @@ class CompaniesRequest extends FormRequest
     public function rules()
     {
         return [
-            'logoContractedCompany' => 'required|file',
+            'logoContractingCompany' => 'required|file',
             'company' => 'required',
             'address' => 'required',
             'cnpj' => 'required',

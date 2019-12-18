@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Adicionar empresa contratante</title>
+    <title>Adicionar empresa contratada</title>
 
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
@@ -38,7 +38,7 @@
                         </div>
                         <ul class="breadcrumb">
                             <li class="breadcrumb-item"><a href="{{route('dashboard')}}"><i class="feather icon-home"></i></a></li>
-                            <li class="breadcrumb-item"><a href="#!">Cadastro de Empresas Contratantes</a></li>
+                            <li class="breadcrumb-item"><a href="#!">Cadastro de Empresa Contratada</a></li>
                         </ul>
                     </div>
                 </div>
@@ -51,14 +51,14 @@
             <div class="col-sm-12">
                 <div class="card">
                     <div class="card-body">
-                        <form method="POST" class="form-login" enctype="multipart/form-data" action="{{ route('companies.store') }}" >
+                        <form method="POST" class="form-login" enctype="multipart/form-data" action="{{ route('companies.contracted.store') }}" >
                             @csrf
                             <div class="row">
 
                                 <div class="col-md-4">
                                     <div class="form-group">
                                         <label class="form-label">Logo da empresa</label>
-                                        <input type="file" class="form-control" name="logoContractingCompany">
+                                        <input type="file" class="form-control" name="logoContractedCompany">
                                     </div>
                                 </div>
 
@@ -96,30 +96,8 @@
 
                                 <div class="col-md-4">
                                     <div class="form-group">
-                                        <label class="form-label">Responsável Contratante</label>
-                                        <input type="text" class="form-control" name="contracting_responsable" placeholder="Responsável contratante">
-                                    </div>
-                                </div>
-
-                            </div>
-
-                            <div class="row">
-                                <div class="col-md-4">
-                                    <div class="form-group">
-                                        <label class="form-label">Unidades</label>
-                                        <select class="js-example-basic-multiple col-sm-12" multiple="multiple" name="unity_id[]" >
-                                            @foreach ($unities as $unity)
-                                                <option value="{{$unity->id}}">{{$unity->name}}</option>
-
-                                            @endforeach
-                                        </select>
-                                    </div>
-                                </div>
-
-                                <div class="col-md-4">
-                                    <div class="form-group">
-                                        <label class="form-label">Código para o número do documento</label>
-                                        <input type="text" class="form-control" name="code_number" placeholder="Ex:10">
+                                        <label class="form-label">Responsável Técnico</label>
+                                        <input type="text" class="form-control" name="tecnical_reponsable" placeholder="Responsável técnico">
                                     </div>
                                 </div>
                             </div>
@@ -129,6 +107,10 @@
                     {{-- Notifications  --}}
                     @if(\Session::has('message'))
                         <input id = "notification" value = "{{\Session::get('message')}}" type = "hidden" class="btn notifications btn-success" data-type="success" data-from="bottom" data-align="right"/>
+                    @endif
+
+                    @if(\Session::has('errorMessage'))
+                        <input id = "notification" value = "{{\Session::get('message')}}" type = "hidden" class="btn notifications btn-danger" data-type="danger" data-from="bottom" data-align="right"/>
                     @endif
 
                     @if($errors->first())
