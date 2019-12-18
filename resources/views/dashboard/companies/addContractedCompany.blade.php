@@ -19,7 +19,7 @@
 
 </head>
 <body class="">
-    @include('dashboard.menu-lateral.menu-lateral')
+    @include('dashboard.sidebar.sidebar')
 
 	<header class="navbar pcoded-header navbar-expand-lg navbar-light header-blue">
 	    @include('dashboard.header.header')
@@ -97,7 +97,7 @@
                                 <div class="col-md-4">
                                     <div class="form-group">
                                         <label class="form-label">Responsável Técnico</label>
-                                        <input type="text" class="form-control" name="tecnical_reponsable" placeholder="Responsável técnico">
+                                        <input type="text" class="form-control" name="tecnical_responsable" placeholder="Responsável técnico">
                                     </div>
                                 </div>
                             </div>

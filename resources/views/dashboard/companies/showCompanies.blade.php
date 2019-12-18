@@ -54,35 +54,20 @@
                                 <thead>
                                     <tr>
                                         <th>Nome</th>
-                                        <th>Email</th>
-                                        <th>Número da inspeção</th>
-                                        <th>Visualizar relatório</th>
-                                        <th>Aprovar</th>
+                                        <th>Endereço</th>
+                                        <th>Cnpj</th>
+                                        <th>Responsável contratado</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    @foreach($clients as $client)
-                                        @foreach ($client->reports as $report)
+                                    @foreach($companies as $company)
                                             <tr>
-                                                <td>{{$report->user->name}}</td>
-                                                <td>{{$report->user->email}}</td>
-                                                <td>{{$report->inspection_number}}</td>
+                                                <td>{{$company->company}}</td>
+                                                <td>{{$company->address}}</td>
+                                                <td>{{$company->cnpj}}</td>
+                                                <td>{{$company->contracting_responsable}}</td>
 
-                                                <td>
-                                                    <a target="_blank" href="{{route('reports.show', $report->id)}}">
-                                                        Visualizar Relatório
-                                                    </a>
-                                                </td>
-
-                                                <td>
-                                                    <div class="switch m-r-10">
-                                                        <input type="checkbox" {{$report->approved ? 'checked' : ""}} onchange=" changeReportStatus({{$report->id}})" class="switcher-input" name="perfil" id="{{"switch-". $report->id}}">
-                                                        <label for="{{"switch-". $report->id}}" selected class="cr switchForTable"></label>
-                                                    </div>
-                                                </td>
                                             </tr>
-                                        @endforeach
-
                                     @endforeach
                             </table>
                         </div>
@@ -103,17 +88,5 @@
     <script src="{{ asset("assets/js/plugins/dataTables.bootstrap4.min.js") }}"></script>
     <script src="{{ asset("assets/js/pages/data-basic-custom.js") }}"></script>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-
-    <script>
-        function changeReportStatus(id)
-        {
-            axios.post('/admin/reports/change-status', {
-                id: id
-            });
-
-        }
-
-
-    </script>
 </body>
 </html>

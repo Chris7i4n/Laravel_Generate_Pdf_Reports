@@ -21,7 +21,7 @@ class CreateCompaniesTable extends Migration
             $table->string('address');
             $table->integer('cnpj');
             $table->integer('phone');
-            $table->string('tecnical_reponsable')->nullable();
+            $table->string('tecnical_responsable')->nullable();
             $table->string('contracting_responsable')->nullable();
 
 

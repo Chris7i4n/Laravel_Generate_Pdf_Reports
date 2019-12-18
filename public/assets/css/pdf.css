@@ -208,7 +208,7 @@ body {
   }
 
   .clientDiv .inspecao {
-    width: 75%;
+    width: 78%;
 
   }
 
@@ -219,7 +219,14 @@ body {
 
   .clientDiv .periodo {
     border-left: 1px solid #000;
+
  }
+
+ .clientDiv .periodo p {
+    text-align: center;
+
+ }
+
 
 
   .table-id-fields {

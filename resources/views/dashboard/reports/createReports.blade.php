@@ -17,7 +17,7 @@
 
 </head>
 <body class="">
-    @include('dashboard.menu-lateral.menu-lateral')
+    @include('dashboard.sidebar.sidebar')
 
 	<header class="navbar pcoded-header navbar-expand-lg navbar-light header-blue">
 	    @include('dashboard.header.header')
@@ -81,7 +81,7 @@
                                         <label class="form-label">Período</label>
                                         <select class="form-control" name="period">
                                             <option selected disabled>Selecione...</option>
-                                            <option value="AN-FEV-MAR">JAN-FEV-MAR</option>
+                                            <option value="JAN-FEV-MAR">JAN-FEV-MAR</option>
                                             <option value="ABR-MAI-JUN">ABR-MAI-JUN</option>
                                             <option value="JUL-AGO-SET">JUL-AGO-SET</option>
                                             <option value="OUT-NOV-DEZ">OUT-NOV-DEZ</option>

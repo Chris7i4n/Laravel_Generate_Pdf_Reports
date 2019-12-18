@@ -24,15 +24,37 @@
 
                             <li><a href="{{ route('reports.index')}}">Visualizar Relatórios</a></li>
 
-                            <li><a href="{{ route('companies.index')}}">Adicionar Empresa Contratante</a></li>
+                            <li><a href="{{ route('companies.create')}}">Adicionar Empresa Contratante</a></li>
 
-                            <li><a href="{{ route('companies.contracted')}}">Adicionar Empresa Contratada</a></li>
+                            <li><a href="{{ route('companies.contracted.create')}}">Adicionar Empresa Contratada</a></li>
 
                             <li><a href="{{ route('companies.unities')}}">Adicionar Unidades</a></li>
                         @endif
                     </ul>
                 </li>
             </ul>
+
+            @if(!Auth::user()->perfil)
+            <ul class="nav pcoded-inner-navbar ">
+                <li class="nav-item pcoded-menu-caption">
+                    <label>Empresas</label>
+                </li>
+
+                <li class="nav-item pcoded-hasmenu">
+                    <a href="#!" class="nav-link "><span class="pcoded-micon"><i class="feather icon-file-text"></i></span><span class="pcoded-mtext">Contratantes</span></a>
+                    <ul class="pcoded-submenu">
+                        <li><a href="{{ route('companies.index') }}">Visualizar empresas contratantes</a></li>
+                    </ul>
+                </li>
+
+                <li class="nav-item pcoded-hasmenu">
+                    <a href="#!" class="nav-link "><span class="pcoded-micon"><i class="feather icon-file-text"></i></span><span class="pcoded-mtext">Contratada</span></a>
+                    <ul class="pcoded-submenu">
+                        <li><a href="{{ route('companies.contracted.index') }}">Visualizar empresa contratada</a></li>
+                    </ul>
+                </li>
+            </ul>
+        @endif
 
             @if(Auth::user()->perfil)
                 <ul class="nav pcoded-inner-navbar ">

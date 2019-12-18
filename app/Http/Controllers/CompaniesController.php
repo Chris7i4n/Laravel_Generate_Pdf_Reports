@@ -12,10 +12,23 @@ use App\Http\Requests\UnitiesRequest;
 use Auth;
 class CompaniesController extends Controller
 {
-    public function index()
+    public function create()
     {
         $unities = Unity::all();
         return view('dashboard.companies.addCompany', compact('unities'));
+    }
+
+    public function index()
+    {
+        $companies = Company::where('user_id', Auth::user()->id)->whereNull('tecnical_responsable')->get();
+        return view('dashboard.companies.showCompanies', compact('companies'));
+
+    }
+
+    public function indexContractedCompany()
+    {
+        $company = Company::where('user_id', Auth::user()->id)->whereNotNull('tecnical_responsable')->first();
+        return view('dashboard.companies.showContractedCompany', compact('company'));
     }
 
     public function createContractedCompany()
@@ -27,7 +40,7 @@ class CompaniesController extends Controller
 
     public function storeContractedCompany(CompanyContractedRequest $request)
     {
-        if(Company::where('user_id', Auth::user()->id)->whereNotNull('tecnical_reponsable')->first())
+        if(Company::where('user_id', Auth::user()->id)->whereNotNull('tecnical_responsable')->first())
         {
             return redirect()->back()->with(['errorMessage' => 'Empresa contratada já existe']);
         }

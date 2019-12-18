@@ -66,7 +66,7 @@
                             <li><span><b>ENDEREÇO:</b></span>{{$companyContracted->address}}</li>
                             <li><span><b>CNPJ:</b></span>{{$companyContracted->cnpj}}</li>
                             <li><span><b>TELEFONE:</b></span>{{$companyContracted->phone}}</li>
-                            <li><span><b>RESPONSÁVEL TÉCNICO:</b></span>{{$companyContracted->tecnical_reponsable}}</li>
+                            <li><span><b>RESPONSÁVEL TÉCNICO:</b></span>{{$companyContracted->tecnical_responsable}}</li>
                         </ul>
                     </td>
                     <td>

@@ -17,7 +17,7 @@
 
 </head>
 <body class="">
-    @include('dashboard.menu-lateral.menu-lateral')
+    @include('dashboard.sidebar.sidebar')
 
 	<header class="navbar pcoded-header navbar-expand-lg navbar-light header-blue">
 	    @include('dashboard.header.header')

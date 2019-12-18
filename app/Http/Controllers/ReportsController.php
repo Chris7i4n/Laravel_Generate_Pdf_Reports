@@ -33,11 +33,11 @@ class ReportsController extends Controller
     public function show(Report $report)
     {
         $footerHtml = view()->make('dashboard.footer.pdfFooter')->render();
-        $companyUserId = $report->unity->company->user_id;
-        $companyContracted = Company::where('user_id', $companyUserId)->whereNotNull('tecnical_reponsable')->first();
+        $companyUserId = $report->unity->company->first()->user_id;
+        $companyContracted = Company::where('user_id', $companyUserId)->whereNotNull('tecnical_responsable')->first();
 
         $pdf = PDF::loadView('dashboard.reports.pdfReports', array(
-                'report' => $report , 'companyContrated' => $companyContracted))
+                'report' => $report , 'companyContracted' => $companyContracted))
                 ->setOption('margin-top', 1)
                 // ->setOption('margin-bottom', 20)
                 ->setOption('margin-left', 3)
@@ -62,7 +62,7 @@ class ReportsController extends Controller
         $request['approved'] = 0;
         $request['user_id'] = Auth::user()->id;
 
-        if(!Company::where('user_id', Auth::user()->id)->whereNotNull('tecnical_reponsable')->first())
+        if(!Company::where('user_id', Auth::user()->id)->whereNotNull('tecnical_responsable')->first())
         {
             return redirect()->back()->with(['errorMessage' => 'Uma empresa contratada precisa ser adicionada']);
 
@@ -77,7 +77,7 @@ class ReportsController extends Controller
 
     public function getLogoContractedCompany()
     {
-        return Company::where('user_id', Auth::user()->id)->whereNotNull('tecnical_reponsable')->first()->logo;
+        return Company::where('user_id', Auth::user()->id)->whereNotNull('tecnical_responsable')->first()->logo;
     }
 
     public function uploadFiles($file)

@@ -13,7 +13,7 @@ class Company extends Model
         'address',
         'cnpj',
         'phone',
-        'tecnical_reponsable',
+        'tecnical_responsable',
         'contracting_responsable',
         'code_number',
         'user_id'

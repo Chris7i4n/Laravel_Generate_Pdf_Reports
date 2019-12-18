@@ -29,7 +29,7 @@ class CompanyContractedRequest extends FormRequest
             'address' => 'required',
             'cnpj' => 'required',
             'phone' => 'required',
-            'tecnical_reponsable' => 'required',
+            'tecnical_responsable' => 'required',
         ];
     }
 
@@ -42,7 +42,7 @@ class CompanyContractedRequest extends FormRequest
                 'address.required' => 'O endereço da empresa contratada',
                 'cnpj.required' => 'O cnpj da empresa contratada é obrigatório',
                 'phone.required' => 'O telefone da empresa contratada é obrigatório',
-                'tecnical_reponsable.required' => 'O responsável técnico é um campo obrigatório',
+                'tecnical_responsable.required' => 'O responsável técnico é um campo obrigatório',
         ];
     }
 }
