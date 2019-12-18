@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Ablepro v8.0 bootstrap admin template by Phoenixcoded</title>
+    <title>Gerar relatório</title>
 
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
@@ -72,7 +72,7 @@
                                 <div class="col-md-4">
                                     <div class="form-group">
                                         <label class="form-label">Unidade</label>
-                                        <select class="form-control" name="unity_id">
+                                        <select class="form-control"  name="unity_id">
                                             <option selected disabled>Selecione...</option>
                                             @foreach ($unities as $unity )
                                                 <option value={{$unity->id}}>{{$unity->name}}</option>

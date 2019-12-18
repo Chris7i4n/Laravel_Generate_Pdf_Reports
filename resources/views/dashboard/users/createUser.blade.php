@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Ablepro v8.0 bootstrap admin template by Phoenixcoded</title>
+    <title>Criar usuário</title>
 
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
@@ -35,7 +35,7 @@
                             <h5 class="m-b-10">Usuários</h5>
                         </div>
                         <ul class="breadcrumb">
-                            <li class="breadcrumb-item"><a href="{{route('dashboard')}}"><i class="feather icon-home"></i></a></li>
+                            <li class="breadcrumb-item"><a href="{{route('dashboardAdmin')}}"><i class="feather icon-home"></i></a></li>
                             <li class="breadcrumb-item"><a href="#!">Cadastro de Usuários</a></li>
                         </ul>
                     </div>

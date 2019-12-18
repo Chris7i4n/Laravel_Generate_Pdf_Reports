@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Ablepro v8.0 bootstrap admin template by Phoenixcoded</title>
+    <title>Visualizar relatório</title>
 
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
@@ -35,7 +35,7 @@
                             <h5 class="m-b-10">Visualizar Relatórios</h5>
                         </div>
                         <ul class="breadcrumb">
-                            <li class="breadcrumb-item"><a href="index.html"><i class="feather icon-home"></i></a></li>
+                            <li class="breadcrumb-item"><a href="{{route('dashboardAdmin')}}"><i class="feather icon-home"></i></a></li>
                             <li class="breadcrumb-item"><a href="#!">Visualizar Relatórios</a></li>
                         </ul>
                     </div>

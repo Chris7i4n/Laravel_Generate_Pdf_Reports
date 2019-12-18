@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Ablepro v8.0 bootstrap admin template by Phoenixcoded</title>
+    <title>Adicionar empresa contratante</title>
 
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
@@ -14,6 +14,8 @@
 
     <!-- vendor css -->
     <link rel="stylesheet" href="{{ asset("assets/css/style.css") }}">
+    <!-- select2 css -->
+    <link rel="stylesheet" href="{{ asset('assets/css/plugins/select2.min.css') }}">
 
 </head>
 <body class="">
@@ -105,13 +107,19 @@
                                 <div class="col-md-4">
                                     <div class="form-group">
                                         <label class="form-label">Unidades</label>
-                                        <select class="form-control" name="unity_id">
-                                            <option selected disabled>Selecione...</option>
+                                        <select class="js-example-basic-multiple col-sm-12" multiple="multiple" name="unity_id[]" >
                                             @foreach ($unities as $unity)
                                                 <option value="{{$unity->id}}">{{$unity->name}}</option>
 
                                             @endforeach
                                         </select>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label class="form-label">Código para o número do documento</label>
+                                        <input type="text" class="form-control" name="code_number" placeholder="Ex:10">
                                     </div>
                                 </div>
                             </div>
@@ -150,6 +158,10 @@
 <!-- form-picker-custom Js -->
 <script src="{{ asset('assets/js/pages/form-validation.js') }}"></script>
 
+<!-- select2 Js -->
+<script src="{{ asset('assets/js/plugins/select2.full.min.js')}}"></script>
+<!-- form-select-custom Js -->
+<script src="{{ asset('assets/js/pages/form-select-custom.js')}}"></script>
 
 
 

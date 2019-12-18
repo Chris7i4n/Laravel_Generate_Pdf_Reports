@@ -274,12 +274,21 @@ body {
 
   .table-data td:first-child{
       border-right: 1px solid #000;
+      width: 47%;
+
   }
+
+  .table-data td:last-child{
+    margin-right: 1px;
+    width: 500px;
+
+}
 
   .table-data td h3 {
     text-align: Center;
     text-transform: uppercase;
     margin-top: 5px;
+
   }
 
   .table-data td ul {
@@ -288,9 +297,11 @@ body {
     padding-inline-start: 0px;
     border-top: 1px solid #000;
     margin-bottom: 0;
+
   }
 
   .table-data td ul li {
+    margin-left:  -40px;
     padding: 10px 0;
     border-bottom: 1px solid #000;
   }

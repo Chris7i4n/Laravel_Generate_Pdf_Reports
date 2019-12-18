@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <title>Ablepro v8.0 bootstrap admin template by Phoenixcoded</title>
+    <title>Dashboard</title>
 
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
@@ -47,7 +47,7 @@
             <div class="col-md-6 col-xl-4">
                 <div class="card amount-card overflow-hidden">
                     <div class="card-body">
-                        <h2 class="f-w-400">23</h2>
+                        <h2 class="f-w-400">{{$notApprovedReports}}</h2>
                         <p class="text-muted f-w-600 f-16"><span class="text-c-blue">Relatórios</span> Esperando Aprovação</p>
                     </div>
                     <div id="amount-processed"></div>
@@ -56,7 +56,7 @@
             <div class="col-md-6 col-xl-4">
                 <div class="card amount-card overflow-hidden">
                     <div class="card-body">
-                        <h2 class="f-w-400">4</h2>
+                        <h2 class="f-w-400">{{$approvedReports}}</h2>
                         <p class="text-muted f-w-600 f-16"><span class="text-c-green">Relatórios</span> Aprovados</p>
                     </div>
                     <div id="amount-spent"></div>
