@@ -67,7 +67,7 @@
                                             </td>
                                             <td>
                                                 @if($report->approved)
-                                                    <a href="{{route('reports.show', $report->id)}}">
+                                                    <a target="_blank" href="{{route('reports.show', $report->id)}}">
                                                         Visualizar Relatório
                                                     </a>
                                                 @else

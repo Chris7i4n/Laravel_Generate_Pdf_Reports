@@ -35,9 +35,24 @@ class ReportsController extends Controller
         $footerHtml = view()->make('dashboard.footer.pdfFooter')->render();
         $companyUserId = $report->unity->company->first()->user_id;
         $companyContracted = Company::where('user_id', $companyUserId)->whereNotNull('tecnical_responsable')->first();
+        $yearNumberForDocumentNumber = substr($report->inspection_year, 2, 3);
+        $codeNumberForDocumentNumber = $report->unity->company->first()->code_number;
+        $companyName = $report->unity->company->first()->company;
+        $companyNameForDocumentNumber = strtoupper(str_replace(' ','-', $companyName));
+        if(strlen($codeNumberForDocumentNumber) <= 2)
+        {
+            $codeNumberForDocumentNumber = "0". $codeNumberForDocumentNumber;
+        }
 
         $pdf = PDF::loadView('dashboard.reports.pdfReports', array(
-                'report' => $report , 'companyContracted' => $companyContracted))
+
+                    'report' => $report ,
+                    'companyContracted' => $companyContracted,
+                    'codeNumberForDocumentNumber' => $codeNumberForDocumentNumber,
+                    'yearNumberForDocumentNumber' => $yearNumberForDocumentNumber,
+                    'companyNameForDocumentNumber' => $companyNameForDocumentNumber,
+
+                ))
                 ->setOption('margin-top', 1)
                 // ->setOption('margin-bottom', 20)
                 ->setOption('margin-left', 3)

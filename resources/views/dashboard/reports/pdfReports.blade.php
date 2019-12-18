@@ -51,7 +51,7 @@
                     </td>
                     <td>
                         <span>Número Documento:</span>
-                        <h3>US19-RTSPCI-099-RGB-MATRIZ</h3>
+                        <h3>US{{$yearNumberForDocumentNumber}}-RTSPCI-{{$codeNumberForDocumentNumber}}-{{$companyNameForDocumentNumber}}</h3>
                     </td>
                     <td>
                         <span>Folha:</span>
