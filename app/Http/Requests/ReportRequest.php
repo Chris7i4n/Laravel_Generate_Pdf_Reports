@@ -28,7 +28,12 @@ class ReportRequest extends FormRequest
             'period' => 'required',
             'inspection_number' => 'required',
             'inspection_year' => 'required',
-
+            'data_first_revision' => 'required',
+            'description_first_revision' => 'required',
+            'first_inspector_first_revision' => 'required',
+            'second_inspector_first_revision' => 'required',
+            'elaborator_first_revision' => 'required',
+            'approved_for_first_revision' => 'required',
 
         ];
     }

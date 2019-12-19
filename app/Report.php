@@ -15,6 +15,12 @@ class Report extends Model
         'period',
         'inspection_number',
         'inspection_year',
+        'data_first_revision',
+        'description_first_revision',
+        'first_inspector_first_revision',
+        'second_inspector_first_revision',
+        'elaborator_first_revision',
+        'approved_for_first_revision',
         'unity_id'
     ];
 

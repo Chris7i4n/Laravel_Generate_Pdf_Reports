@@ -151,7 +151,7 @@
                                 <div class="col-md-4">
                                     <div class="form-group">
                                         <label class="form-label">Inspecionado por: </label>
-                                        <input type="text" class="form-control" name="second_inspection_first_revision" placeholder="Nome do funcionário que inspecionou">
+                                        <input type="text" class="form-control" name="second_inspector_first_revision" placeholder="Nome do funcionário que inspecionou">
                                     </div>
                                 </div>
                                 <div class="col-md-4">
