@@ -365,6 +365,110 @@ body {
     margin-left: 105px;
   }
 
+  .lista-de-revisoes{
+    border-top: 1px solid #000;
+    display: -webkit-box;
+    width: 100%;
+  }
+
+  .lista-de-revisoes-numero{
+        width: 20%;
+        border-right: 1px solid #000;
+    }
+
+  .lista-de-descricoes{
+    width: 519px;
+
+  }
+  .lista-de-revisoes-numero h3{
+    text-transform: uppercase;
+    text-align: center;
+    margin-bottom: 2px;
+    margin-top: 2px;
+    padding: 7px;
+  }
+
+  .lista-de-descricoes h3{
+    font-size: 18px;
+    margin-bottom: 2px;
+    margin-left: 10px;
+    margin-top: 2px;
+    padding: 7px;
+  }
+
+    .resultado-das-revisoes{
+        border-top: 1px solid #000;
+        display: -webkit-box;
+        width: 100%;
+    }
+
+    .resultado-das-revisoes td:first-child{
+        width: 130px;
+    }
+
+    .resultado-das-revisoes td:nth-child(2){
+        width: 200px;
+    }
+
+    .resultado-das-revisoes td:nth-child(3){
+        width: 190px;
+    }
+
+    .resultado-das-revisoes td:nth-child(4){
+        width: 200px;
+    }
+
+    .resultado-das-revisoes td{
+      border-right: 1px solid #000;
+    }
+
+    .resultado-das-revisoes td h3{
+        margin-left: 60px;
+        margin-top: 8px;
+    }
+
+    .resultado-das-revisoes td:last-child{
+        border-right: none;
+    }
+
+    .resultado-das-revisoes-colunas{
+        border-top: 1px solid #000;
+        display: -webkit-box;
+        width: 100%;
+    }
+
+    .resultado-das-revisoes-colunas td:first-child{
+        border-right: 1px solid #000;
+        width: 130px;
+    }
+    .resultado-das-revisoes-colunas td:nth-child(2){
+        width: 200px;
+    }
+
+    .resultado-das-revisoes-colunas td:nth-child(3){
+        width: 190px;
+    }
+
+    .resultado-das-revisoes-colunas td:nth-child(4){
+        width: 200px;
+    }
+
+
+    .resultado-das-revisoes-colunas td {
+        border-right: 1px solid #000;
+        /* width: 500px; */
+    }
+
+    .resultado-das-revisoes-colunas td:last-child {
+        border-right: none;
+    }
+
+    .resultado-das-revisoes-colunas td h3{
+        font-size: 15px;
+        margin-left: 4px;
+        margin-top: 10px;
+    }
+
   .card-header {
     background-color: #ddd;
     font-size: 17px;

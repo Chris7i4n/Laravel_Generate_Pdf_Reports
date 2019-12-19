@@ -92,6 +92,150 @@
                         <h3> Descrição e/ou folhas atingidas</h3>
                     </td>
                 </tr>
+
+                <tr class="lista-de-revisoes">
+                    <td class = "lista-de-revisoes-numero">
+                        <h3>0</h3>
+                    </td>
+                    <td class="lista-de-descricoes">
+                        <h3> {{$report->description_first_revision }}</h3>
+                    </td>
+                </tr>
+
+                <tr class="lista-de-revisoes">
+                    <td class = "lista-de-revisoes-numero">
+                        <h3>1</h3>
+                    </td>
+                    <td class="lista-de-descricoes">
+                        <h3> {{$report->description_first_revision }}</h3>
+                    </td>
+                </tr>
+
+                <tr class="lista-de-revisoes">
+                    <td class = "lista-de-revisoes-numero">
+                        <h3>2</h3>
+                    </td>
+                    <td class="lista-de-descricoes">
+                        <h3> {{$report->description_first_revision }}</h3>
+                    </td>
+                </tr>
+
+                <tr class="lista-de-revisoes">
+                    <td class = "lista-de-revisoes-numero">
+                        <h3>3</h3>
+                    </td>
+                    <td class="lista-de-descricoes">
+                        <h3> {{$report->description_first_revision }}</h3>
+                    </td>
+                </tr>
+
+                <tr class="resultado-das-revisoes">
+                    <td>
+                        <h3></h3>
+                    </td>
+                    <td>
+                        <h3>REV.0</h3>
+                    </td>
+                    <td>
+                        <h3>REV.1</h3>
+                    </td>
+                    <td>
+                        <h3>REV.2</h3>
+                    </td>
+                    <td>
+                        <h3>REV.3</h3>
+                    </td>
+                </tr>
+
+                <tr class="resultado-das-revisoes-colunas">
+                    <td>
+                        <h3>Data</h3>
+                    </td>
+                    <td>
+                        <h3>{{ date('d/m/Y', strtotime($report->data_first_revision))  }}</h3>
+                    </td>
+                    <td>
+                        <h3>20/12/2020</h3>
+                    </td>
+                    <td>
+                        <h3>20/12/2020</h3>
+                    </td>
+                    <td>
+                        <h3>20/12/2020</h3>
+                    </td>
+                </tr>
+
+                <tr class="resultado-das-revisoes-colunas">
+                    <td>
+                        <h3>Inspecionado por</h3>
+                    </td>
+                    <td>
+                        <h3>{{$report->first_inspector_first_revision }}</h3>
+                    </td>
+                    <td>
+                        <h3>funcionario</h3>
+                    </td>
+                    <td>
+                        <h3>funcionario</h3>
+                    </td>
+                    <td>
+                        <h3>funcionario</h3>
+                    </td>
+                </tr>
+
+                <tr class="resultado-das-revisoes-colunas">
+                    <td>
+                        <h3>Inspecionado por</h3>
+                    </td>
+                    <td>
+                        <h3>{{$report->second_inspector_first_revision }}</h3>
+                    </td>
+                    <td>
+                        <h3>funcionario</h3>
+                    </td>
+                    <td>
+                        <h3>funcionario</h3>
+                    </td>
+                    <td>
+                        <h3>funcionario</h3>
+                    </td>
+                </tr>
+
+                <tr class="resultado-das-revisoes-colunas">
+                    <td>
+                        <h3>Elaborado por</h3>
+                    </td>
+                    <td>
+                        <h3>{{$report->elaborator_first_revision }}</h3>
+                    </td>
+                    <td>
+                        <h3>funcionario</h3>
+                    </td>
+                    <td>
+                        <h3>funcionario</h3>
+                    </td>
+                    <td>
+                        <h3>funcionario</h3>
+                    </td>
+                </tr>
+
+                <tr class="resultado-das-revisoes-colunas">
+                    <td>
+                        <h3>Aprovado por</h3>
+                    </td>
+                    <td>
+                        <h3>{{$report->approved_for_first_revision }}</h3>
+                    </td>
+                    <td>
+                        <h3>funcionario</h3>
+                    </td>
+                    <td>
+                        <h3>funcionario</h3>
+                    </td>
+                    <td>
+                        <h3>funcionario</h3>
+                    </td>
+                </tr>
             </tbody>
         </table>
 
