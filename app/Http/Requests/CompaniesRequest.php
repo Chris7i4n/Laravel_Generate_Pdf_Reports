@@ -26,10 +26,6 @@ class CompaniesRequest extends FormRequest
         return [
             'logoContractingCompany' => 'required|file',
             'company' => 'required',
-            'address' => 'required',
-            'cnpj' => 'required',
-            'phone' => 'required',
-            'contracting_responsable' => 'required',
             'unity_id' => 'required',
             'code_number' => 'required|numeric',
         ];

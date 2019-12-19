@@ -25,6 +25,10 @@ class UnitiesRequest extends FormRequest
     {
         return [
             'name' => 'required',
+            'cnpj' => 'required',
+            'address' => 'required',
+            'phone' => 'required',
+            'contracting_responsable', 'required'
         ];
     }
 
@@ -33,6 +37,10 @@ class UnitiesRequest extends FormRequest
         return [
 
             'name.required' => 'O nome da unidade é obrigatório',
+            'cnpj.required' => 'O cnpj da unidade é obrigatório',
+            'address.required' => 'O endereço da unidade é obrigatório',
+            'phone.required' => 'O telefone da unidade é obrigatório',
+            'contracting_responsable' => 'O contratante responsável é obrigatório'
 
         ];
     }

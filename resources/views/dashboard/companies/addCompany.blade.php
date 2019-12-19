@@ -69,41 +69,7 @@
                                     </div>
                                 </div>
 
-                                <div class="col-md-4">
-                                    <div class="form-group">
-                                        <label class="form-label">Endereço da empresa</label>
-                                        <input type="text" class="form-control" name="address" placeholder="Endereço da empresa">
-                                    </div>
-                                </div>
 
-                            </div>
-
-                            <div class="row">
-
-                                <div class="col-md-4">
-                                    <div class="form-group">
-                                        <label class="form-label">CNPJ</label>
-                                        <input type="text" class="form-control" name="cnpj" placeholder="CNPJ">
-                                    </div>
-                                </div>
-
-                                <div class="col-md-4">
-                                    <div class="form-group">
-                                        <label class="form-label">Telefone da empresa</label>
-                                        <input type="text" class="form-control" name="phone" placeholder="Telefone da empresa">
-                                    </div>
-                                </div>
-
-                                <div class="col-md-4">
-                                    <div class="form-group">
-                                        <label class="form-label">Responsável Contratante</label>
-                                        <input type="text" class="form-control" name="contracting_responsable" placeholder="Responsável contratante">
-                                    </div>
-                                </div>
-
-                            </div>
-
-                            <div class="row">
                                 <div class="col-md-4">
                                     <div class="form-group">
                                         <label class="form-label">Unidades</label>
@@ -115,6 +81,10 @@
                                         </select>
                                     </div>
                                 </div>
+
+                            </div>
+
+                            <div class="row">
 
                                 <div class="col-md-4">
                                     <div class="form-group">

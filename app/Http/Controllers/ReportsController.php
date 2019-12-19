@@ -35,6 +35,7 @@ class ReportsController extends Controller
         $footerHtml = view()->make('dashboard.footer.pdfFooter')->render();
         $companyUserId = $report->unity->company->first()->user_id;
         $companyContracted = Company::where('user_id', $companyUserId)->whereNotNull('tecnical_responsable')->first();
+        // for document number
         $yearNumberForDocumentNumber = substr($report->inspection_year, 2, 3);
         $codeNumberForDocumentNumber = $report->unity->company->first()->code_number;
         $companyName = $report->unity->company->first()->company;
@@ -74,6 +75,12 @@ class ReportsController extends Controller
     {
         $unity = Unity::where('id',$request['unity_id'])->first();
         $company = $unity->company->first();
+        if(!$company)
+        {
+
+            return redirect()->back()->with(['errorMessage' => 'A unidade precisa ser adicionada a uma empresa']);
+
+        }
         $request['approved'] = 0;
         $request['user_id'] = Auth::user()->id;
 

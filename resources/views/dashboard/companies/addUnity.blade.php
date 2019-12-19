@@ -53,12 +53,45 @@
                             @csrf
                             <div class="row">
 
-                                <div class="col-md-12">
+                                <div class="col-md-4">
                                     <div class="form-group">
                                         <label class="form-label">Nome da unidade</label>
                                         <input type="text" class="form-control" name="name" placeholder="Nome da unidade">
                                     </div>
                                 </div>
+
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label class="form-label">Cnpj</label>
+                                        <input type="text" class="form-control" name="cnpj" placeholder="CNPJ da unidade">
+                                    </div>
+                                </div>
+
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label class="form-label">Endereço</label>
+                                        <input type="text" class="form-control" name="address" placeholder="Endereço da unidade">
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <div class="row">
+
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label class="form-label">Telefone da unidade</label>
+                                        <input type="text" class="form-control" name="phone" placeholder="Telefone da unidade">
+                                    </div>
+                                </div>
+
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label class="form-label">Responsável Contratado</label>
+                                        <input type="text" class="form-control" name="contracting_responsable" placeholder="Responsável contratado da unidade">
+                                    </div>
+                                </div>
+
                             </div>
 
                             <button type="submit" class="btn btn-primary">Cadastrar</button>

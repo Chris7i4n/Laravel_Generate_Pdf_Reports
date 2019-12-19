@@ -73,10 +73,10 @@
                         <h3>Dados Contratante</h3>
                         <ul>
                             <li><span><b>EMPRESA:</b></span> {{$report->unity->company->first()->company }} </li>
-                            <li><span><b>ENDEREÇO:</b></span>{{$report->unity->company->first()->address }} </li>
-                            <li><span><b>CNPJ:</b></span>{{$report->unity->company->first()->cnpj }} </li>
-                            <li><span><b>TELEFONE:</b></span>{{$report->unity->company->first()->phone }} </li>
-                            <li><span><b>RESPONSÁVEL CONTRATANTE:</b></span>{{$report->unity->company->first()->contracting_responsable }} </li>
+                            <li><span><b>ENDEREÇO:</b></span>{{$report->unity->address }} </li>
+                            <li><span><b>CNPJ:</b></span>{{$report->unity->cnpj }} </li>
+                            <li><span><b>TELEFONE:</b></span>{{$report->unity->phone }} </li>
+                            <li><span><b>RESPONSÁVEL CONTRATANTE:</b></span>{{$report->unity->contracting_responsable }} </li>
                     </td>
                 </tr>
             </tbody>

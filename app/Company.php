@@ -14,7 +14,6 @@ class Company extends Model
         'cnpj',
         'phone',
         'tecnical_responsable',
-        'contracting_responsable',
         'code_number',
         'user_id'
     ];

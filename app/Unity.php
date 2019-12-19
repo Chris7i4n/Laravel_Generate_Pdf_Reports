@@ -9,6 +9,10 @@ class Unity extends Model
     protected $fillable = [
 
         'name',
+        'address',
+        'cnpj',
+        'phone',
+        'contracting_responsable',
 
     ];
 
