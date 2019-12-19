@@ -31,7 +31,7 @@
                             </div>
                             <div class="periodo" >
                                 <span>Periodo:</span>
-                                <p>{{$report->period}}</p>
+                                <h3>{{$report->period}}</h3>
                         </div>
                     </th>
                     <th>
@@ -82,6 +82,14 @@
                 <tr class="indice-de-revisoes">
                     <td>
                         <h3>Índice de revisões</h3>
+                    </td>
+                </tr>
+                <tr class="revisoes-descricoes">
+                    <td class = "revisoes">
+                        <h3>Rev.</h3>
+                    </td>
+                    <td class="descricoes">
+                        <h3> Descrição e/ou folhas atingidas</h3>
                     </td>
                 </tr>
             </tbody>
