@@ -24,6 +24,15 @@ class ReportsController extends Controller
 
         }else{
             $reports = Auth::user()->reports;
+
+            foreach($reports as $report)
+            {
+                $report['codeNumberForDocumentNumber'] =  $this->getCodeNumber($report);
+                $report['yearNumberForDocumentNumber'] =  $this->getYearNumber($report);
+                $report['companyNameForDocumentNumber'] =  $this->getCompanyName($report);
+
+            }
+
             return view('dashboard.reports.showClientReports', compact('reports'));
 
         }
@@ -35,15 +44,9 @@ class ReportsController extends Controller
         $footerHtml = view()->make('dashboard.footer.pdfFooter')->render();
         $companyUserId = $report->unity->company->first()->user_id;
         $companyContracted = Company::where('user_id', $companyUserId)->whereNotNull('tecnical_responsable')->first();
-        // for document number
-        $yearNumberForDocumentNumber = substr($report->inspection_year, 2, 3);
-        $codeNumberForDocumentNumber = $report->unity->company->first()->code_number;
-        $companyName = $report->unity->company->first()->company;
-        $companyNameForDocumentNumber = strtoupper(str_replace(' ','-', $companyName));
-        if(strlen($codeNumberForDocumentNumber) <= 2)
-        {
-            $codeNumberForDocumentNumber = "0". $codeNumberForDocumentNumber;
-        }
+        $codeNumberForDocumentNumber = $this->getCodeNumber($report);
+        $yearNumberForDocumentNumber = $this->getYearNumber($report);
+        $companyNameForDocumentNumber = $this->getCompanyName($report);
 
         $pdf = PDF::loadView('dashboard.reports.pdfReports', array(
 
@@ -65,6 +68,34 @@ class ReportsController extends Controller
         return $pdf->stream('relatorio.pdf');
     }
 
+    public function getYearNumber($report)
+    {
+        $yearNumberForDocumentNumber = substr($report->inspection_year, 2, 3);
+        return $yearNumberForDocumentNumber;
+    }
+
+    public function getCompanyName($report)
+    {
+        $companyName = $report->unity->name;
+        $companyNameForDocumentNumber = strtoupper(str_replace('-','', $companyName));
+        $replacedSpaceCompanyName = preg_replace('/\s\s+/', ' ', $companyNameForDocumentNumber);
+        $companyNameForDocumentNumber = str_replace(' ','-', $replacedSpaceCompanyName);
+
+        return $companyNameForDocumentNumber;
+
+    }
+
+    public function getCodeNumber($report)
+    {
+         $codeNumberForDocumentNumber = $report->unity->company->first()->code_number;
+
+         if(strlen($codeNumberForDocumentNumber) <= 2)
+         {
+             $codeNumberForDocumentNumber = "0". $codeNumberForDocumentNumber;
+         }
+        return $codeNumberForDocumentNumber;
+    }
+
     public function create()
     {
         $unities = Unity::all();
@@ -75,12 +106,14 @@ class ReportsController extends Controller
     {
         $unity = Unity::where('id',$request['unity_id'])->first();
         $company = $unity->company->first();
+
         if(!$company)
         {
 
             return redirect()->back()->with(['errorMessage' => 'A unidade precisa ser adicionada a uma empresa']);
 
         }
+
         $request['approved'] = 0;
         $request['user_id'] = Auth::user()->id;
 

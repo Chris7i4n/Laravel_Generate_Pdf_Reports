@@ -53,20 +53,24 @@
                             <table id="order-table" class="table table-striped table-bordered nowrap">
                                 <thead>
                                     <tr>
+                                        <th>Logo</th>
                                         <th>Nome</th>
-                                        <th>Endereço</th>
-                                        <th>Cnpj</th>
-                                        <th>Responsável contratado</th>
+                                        <th>Código</th>
+                                        <th>Quantidade de unidades</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     @foreach($companies as $company)
                                             <tr>
+                                                <td style="display: flex; justify-content: center;">
+                                                    <img
+                                                        src="{{ asset("storage/". $company->logo) }}"
+                                                        style= "width: 100px; height:50px;"
+                                                    >
+                                                </td>
                                                 <td>{{$company->company}}</td>
-                                                <td>{{$company->address}}</td>
-                                                <td>{{$company->cnpj}}</td>
-                                                <td>{{$company->contracting_responsable}}</td>
-
+                                                <td>{{$company->code_number}}</td>
+                                                <td>{{$company->unity->count()}}</td>
                                             </tr>
                                     @endforeach
                             </table>

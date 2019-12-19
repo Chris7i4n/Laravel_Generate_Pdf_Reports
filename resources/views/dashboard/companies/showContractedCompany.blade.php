@@ -61,10 +61,10 @@
                                 </thead>
                                 <tbody>
                                     <tr>
-                                        <td>{{$company->company}}</td>
-                                        <td>{{$company->address}}</td>
-                                        <td>{{$company->cnpj}}</td>
-                                        <td>{{$company->tecnical_responsable}}</td>
+                                        <td>{{$company ? $company->company : ""}}</td>
+                                        <td>{{$company ? $company->address : ""}}</td>
+                                        <td>{{$company ? $company->cnpj : ""}}</td>
+                                        <td>{{$company ? $company->tecnical_responsable : ""}}</td>
                                     </tr>
                             </table>
                         </div>

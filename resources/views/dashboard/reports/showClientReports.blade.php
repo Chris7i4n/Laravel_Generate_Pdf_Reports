@@ -61,7 +61,7 @@
                                     @foreach ($reports as $report )
                                         <tr>
                                             <td>{{$report->inspection_number}}</td>
-                                            <td>1</td>
+                                            <td>US{{$report->codeNumberForDocumentNumber}}-RTSPCI-{{$report->codeNumberForDocumentNumber}}-{{$report->companyNameForDocumentNumber}}</td>
                                             <td>
                                                 {{$report->approved ? "Aprovado" : "Esperando aprovação"}}
                                             </td>

@@ -79,6 +79,11 @@
                             <li><span><b>RESPONSÁVEL CONTRATANTE:</b></span>{{$report->unity->contracting_responsable }} </li>
                     </td>
                 </tr>
+                <tr class="indice-de-revisoes">
+                    <td>
+                        <h3>Índice de revisões</h3>
+                    </td>
+                </tr>
             </tbody>
         </table>
 

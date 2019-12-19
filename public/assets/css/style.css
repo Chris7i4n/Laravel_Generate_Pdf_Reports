@@ -32669,3 +32669,8 @@ new-task label input[type=checkbox] {
 }
 
 /**====== user card css end ======**/
+
+.card-header-space{
+    padding-bottom: 5px;
+    margin-bottom: 10px;
+}

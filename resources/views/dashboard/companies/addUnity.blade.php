@@ -32,11 +32,11 @@
                 <div class="row align-items-center">
                     <div class="col-md-12">
                         <div class="page-header-title">
-                            <h5 class="m-b-10">Empresas</h5>
+                            <h5 class="m-b-10">Unidades</h5>
                         </div>
                         <ul class="breadcrumb">
                             <li class="breadcrumb-item"><a href="{{route('dashboard')}}"><i class="feather icon-home"></i></a></li>
-                            <li class="breadcrumb-item"><a href="#!">Cadastro de Empresas</a></li>
+                            <li class="breadcrumb-item"><a href="#!">Cadastro de Unidades</a></li>
                         </ul>
                     </div>
                 </div>
@@ -87,7 +87,7 @@
 
                                 <div class="col-md-4">
                                     <div class="form-group">
-                                        <label class="form-label">Responsável Contratado</label>
+                                        <label class="form-label">Responsável Contratante</label>
                                         <input type="text" class="form-control" name="contracting_responsable" placeholder="Responsável contratado da unidade">
                                     </div>
                                 </div>
