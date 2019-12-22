@@ -75,10 +75,14 @@
                                                 </td>
 
                                                 <td>
-                                                    <div class="switch m-r-10">
-                                                        <input type="checkbox" {{$report->approved ? 'checked' : ""}} onchange=" changeReportStatus({{$report->id}})" class="switcher-input" name="perfil" id="{{"switch-". $report->id}}">
-                                                        <label for="{{"switch-". $report->id}}" selected class="cr switchForTable"></label>
-                                                    </div>
+                                                    @if($report->user->perfil)
+                                                        ADMIN
+                                                    @else
+                                                        <div class="switch m-r-10">
+                                                            <input type="checkbox" {{$report->approved ? 'checked' : ""}} onchange=" changeReportStatus({{$report->id}})" class="switcher-input" name="perfil" id="{{"switch-". $report->id}}">
+                                                            <label for="{{"switch-". $report->id}}" selected class="cr switchForTable"></label>
+                                                        </div>
+                                                    @endif
                                                 </td>
                                             </tr>
                                         @endforeach

@@ -17,6 +17,9 @@
                     <ul class="pcoded-submenu">
                         @if(Auth::user()->perfil)
                             <li><a href="{{ route('users.create') }}">Cadastro de Usuário</a></li>
+
+                            <li><a href="{{ route('reports.create')}}">Gerar Relatório</a></li>
+
                         @endif
 
                         @if(!Auth::user()->perfil)

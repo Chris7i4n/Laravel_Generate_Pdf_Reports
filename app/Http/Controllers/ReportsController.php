@@ -18,7 +18,7 @@ class ReportsController extends Controller
 
         if(Auth::user()->perfil == 1)
         {
-            $clients = User::where('perfil', 0)->get();
+            $clients = User::all();
             return view('dashboard.reports.showReports', compact('clients'));
 
         }else{
