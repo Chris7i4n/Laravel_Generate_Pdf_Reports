@@ -24,11 +24,11 @@
 
                             <li><a href="{{ route('reports.index')}}">Visualizar Relatórios</a></li>
 
-                            <li><a href="{{ route('companies.create')}}">Adicionar Empresa Contratante</a></li>
+                            <li><a style = "color: #e6e60f;"  href="{{ route('companies.create')}}">Adicionar Empresa Contratante</a></li>
 
-                            <li><a href="{{ route('companies.contracted.create')}}">Adicionar Empresa Contratada</a></li>
+                            <li><a style = "color: #e6e60f;" href="{{ route('companies.contracted.create')}}">Adicionar Empresa Contratada</a></li>
 
-                            <li><a href="{{ route('companies.unities')}}">Adicionar Unidades</a></li>
+                            <li><a style = "color: #e6e60f;"  href="{{ route('companies.unities')}}">Adicionar Unidades</a></li>
                         @endif
                     </ul>
                 </li>
@@ -48,9 +48,9 @@
                 </li>
 
                 <li class="nav-item pcoded-hasmenu">
-                    <a href="#!" class="nav-link "><span class="pcoded-micon"><i class="feather icon-file-text"></i></span><span class="pcoded-mtext">Contratada</span></a>
+                    <a href="#!" class="nav-link "><span class="pcoded-micon"><i class="feather icon-file-text"></i></span><span class="pcoded-mtext">Contratadas</span></a>
                     <ul class="pcoded-submenu">
-                        <li><a href="{{ route('companies.contracted.index') }}">Visualizar empresa contratada</a></li>
+                        <li><a href="{{ route('companies.contracted.index') }}">Visualizar empresa contratadas</a></li>
                     </ul>
                 </li>
             </ul>

@@ -21,4 +21,8 @@ class Company extends Model
     public function unity(){
         return $this->belongsToMany(Unity::class);
     }
+
+    public function report(){
+        return $this->belongsToMany(Report::class);
+    }
 }

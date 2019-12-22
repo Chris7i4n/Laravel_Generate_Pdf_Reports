@@ -119,6 +119,20 @@
                                         </select>
                                     </div>
                                 </div>
+
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label class="form-label">Empresa Contratada</label>
+                                        <select class="form-control"  name="company_id">
+                                            <option selected disabled>Selecione...</option>
+                                            @foreach ($contractedCompanies as $contractedCompany )
+                                                <option value={{$contractedCompany->id}}>{{$contractedCompany->company}}</option>
+
+                                            @endforeach
+                                        </select>
+                                    </div>
+                                </div>
+
                             </div>
 
                             <div class="card-header card-header-space" >

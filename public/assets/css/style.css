@@ -449,8 +449,9 @@ a {
     background-color: transparent;
 }
 
+
 a:hover {
-    color: #9ccc65;
+    color: #9ccc65 !important;
     text-decoration: underline;
 }
 
@@ -25340,7 +25341,7 @@ pre[class*=language-]:before {
 }
 
 .pcoded-navbar.menu-light .pcoded-inner-navbar li.pcoded-hasmenu .pcoded-submenu li.active > a:before, .pcoded-navbar.menu-light .pcoded-inner-navbar li.pcoded-hasmenu .pcoded-submenu li.pcoded-trigger > a:before, .pcoded-navbar.menu-light .pcoded-inner-navbar li.pcoded-hasmenu .pcoded-submenu li:hover > a:before {
-    color: #9ccc65;
+    /* color: #9ccc65; */
 }
 
 .pcoded-navbar.menu-light .pcoded-inner-navbar li.pcoded-hasmenu .pcoded-submenu li + li > a {

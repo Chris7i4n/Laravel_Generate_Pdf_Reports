@@ -34,6 +34,7 @@ class ReportRequest extends FormRequest
             'second_inspector_first_revision' => 'required',
             'elaborator_first_revision' => 'required',
             'approved_for_first_revision' => 'required',
+            'company_id' => 'required',
 
         ];
     }

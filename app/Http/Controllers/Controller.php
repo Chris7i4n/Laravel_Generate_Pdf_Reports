@@ -44,9 +44,9 @@ class Controller extends BaseController
         return $codeNumberForDocumentNumber;
     }
 
-    public function getLogoContractedCompany()
+    public function getLogoContractedCompany($companyId)
     {
-        return Company::where('user_id', Auth::user()->id)->whereNotNull('tecnical_responsable')->first()->logo;
+        return Company::where('id', $companyId)->first()->logo;
     }
 
     public function uploadFiles($file)

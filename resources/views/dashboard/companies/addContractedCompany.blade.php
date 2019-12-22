@@ -110,7 +110,7 @@
                     @endif
 
                     @if(\Session::has('errorMessage'))
-                        <input id = "notification" value = "{{\Session::get('message')}}" type = "hidden" class="btn notifications btn-danger" data-type="danger" data-from="bottom" data-align="right"/>
+                        <input id = "notification" value = "{{\Session::get('errorMessage')}}" type = "hidden" class="btn notifications btn-danger" data-type="danger" data-from="bottom" data-align="right"/>
                     @endif
 
                     @if($errors->first())

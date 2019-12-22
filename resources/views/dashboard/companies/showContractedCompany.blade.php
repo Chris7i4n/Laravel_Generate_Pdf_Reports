@@ -60,12 +60,15 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr>
-                                        <td>{{$company ? $company->company : ""}}</td>
-                                        <td>{{$company ? $company->address : ""}}</td>
-                                        <td>{{$company ? $company->cnpj : ""}}</td>
-                                        <td>{{$company ? $company->tecnical_responsable : ""}}</td>
-                                    </tr>
+                                    @foreach ($companies as $company )
+                                        <tr>
+                                            <td>{{$company ? $company->company : ""}}</td>
+                                            <td>{{$company ? $company->address : ""}}</td>
+                                            <td>{{$company ? $company->cnpj : ""}}</td>
+                                            <td>{{$company ? $company->tecnical_responsable : ""}}</td>
+                                        </tr>
+                                    @endforeach
+
                             </table>
                         </div>
                     </div>

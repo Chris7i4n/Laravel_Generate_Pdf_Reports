@@ -20,15 +20,15 @@ class CompaniesController extends Controller
 
     public function index()
     {
-        $companies = Company::where('user_id', Auth::user()->id)->whereNull('tecnical_responsable')->get();
+        $companies = Company::whereNull('tecnical_responsable')->get();
         return view('dashboard.companies.showCompanies', compact('companies'));
 
     }
 
     public function indexContractedCompany()
     {
-        $company = Company::where('user_id', Auth::user()->id)->whereNotNull('tecnical_responsable')->first();
-        return view('dashboard.companies.showContractedCompany', compact('company'));
+        $companies = Company::whereNotNull('tecnical_responsable')->get();
+        return view('dashboard.companies.showContractedCompany', compact('companies'));
     }
 
     public function createContractedCompany()
@@ -40,10 +40,6 @@ class CompaniesController extends Controller
 
     public function storeContractedCompany(CompanyContractedRequest $request)
     {
-        if(Company::where('user_id', Auth::user()->id)->whereNotNull('tecnical_responsable')->first())
-        {
-            return redirect()->back()->with(['errorMessage' => 'Empresa contratada já existe']);
-        }
         $request['logo'] = $this->uploadFiles($request->file('logoContractedCompany'));
         $request['user_id'] = Auth::user()->id;
         $company = Company::create($request->all());

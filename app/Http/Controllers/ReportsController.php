@@ -42,7 +42,7 @@ class ReportsController extends Controller
     {
         $footerHtml = view()->make('dashboard.footer.pdfFooter')->render();
         $companyUserId = $report->unity->company->first()->user_id;
-        $companyContracted = Company::where('user_id', $companyUserId)->whereNotNull('tecnical_responsable')->first();
+        $companyContracted = $report->company;
 
         // for document number
         $codeNumberForDocumentNumber = $this->getCodeNumber($report);
@@ -73,7 +73,8 @@ class ReportsController extends Controller
     public function create()
     {
         $unities = Unity::all();
-        return view('dashboard.reports.createReports', compact('unities'));
+        $contractedCompanies = Company::whereNotNull('tecnical_responsable')->get();
+        return view('dashboard.reports.createReports', compact('unities', 'contractedCompanies'));
     }
 
     public function store(ReportRequest $request)
@@ -81,15 +82,14 @@ class ReportsController extends Controller
 
         $company = $this->getCompany($request['unity_id']);
 
-        if(!Company::where('user_id', Auth::user()->id)->whereNotNull('tecnical_responsable')->first())
+        if(!Company::whereNotNull('tecnical_responsable')->first())
         {
             return redirect()->back()->with(['errorMessage' => 'Uma empresa contratada precisa ser adicionada']);
 
         }
-
         $request['approved'] = 0;
         $request['user_id'] = Auth::user()->id;
-        $request['logoCompanyContracted'] = $this->getLogoContractedCompany();
+        $request['logoCompanyContracted'] = $this->getLogoContractedCompany($request['company_id']);
         $request['logoCompanyContracting'] = $company->logo;
 
         Report::create($request->all());
