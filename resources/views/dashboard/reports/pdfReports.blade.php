@@ -107,7 +107,7 @@
                         <h3>1</h3>
                     </td>
                     <td class="lista-de-descricoes">
-                        <h3> {{$report->description_first_revision }}</h3>
+                        <h3> {{$report->description_second_revision}}</h3>
                     </td>
                 </tr>
 

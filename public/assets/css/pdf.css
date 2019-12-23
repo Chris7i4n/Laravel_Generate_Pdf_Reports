@@ -100,6 +100,41 @@ body {
     padding-top: 0.5rem;
   }
 
+  .company-datas p{
+      display: -webkit-box;
+      float: right;
+      clear: right;
+      font-size: 10px;
+  }
+  .separator{
+    height: 1px;
+    width: 220px;
+    background: #9ccc65;
+  }
+
+  .separator-two{
+    height: 1px;
+    width: 5px;
+    background: #ffff;
+  }
+  .separator-tree{
+    height: 1px;
+    width: 740px;
+    background: rgb(136, 136, 138);
+  }
+
+
+  .footer-table{
+    border:none;
+    display: -webkit-box;
+  }
+
+  .logo-footer{
+    height: 40px;
+    width: 70px;
+    margin-top: 5px;
+  }
+
   hr {
     border-color: #ccc;
     border-left: none !important;

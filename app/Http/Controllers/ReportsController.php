@@ -40,14 +40,17 @@ class ReportsController extends Controller
 
     public function show(Report $report)
     {
-        $footerHtml = view()->make('dashboard.footer.pdfFooter')->render();
+        $footerHtml = view()->make('dashboard.footer.pdfFooter', compact('report'))->render();
         $companyUserId = $report->unity->company->first()->user_id;
         $companyContracted = $report->company;
+
+        // return view('dashboard.footer.pdfFooter', compact('report'));
 
         // for document number
         $codeNumberForDocumentNumber = $this->getCodeNumber($report);
         $yearNumberForDocumentNumber = $this->getYearNumber($report);
         $companyNameForDocumentNumber = $this->getCompanyName($report);
+        // return view('dashboard.reports.pdfReports', compact('report', 'companyContracted', 'codeNumberForDocumentNumber', 'yearNumberForDocumentNumber','companyNameForDocumentNumber'));
 
         $pdf = PDF::loadView('dashboard.reports.pdfReports', array(
 
@@ -59,10 +62,10 @@ class ReportsController extends Controller
 
                 ))
                 ->setOption('margin-top', 1)
-                // ->setOption('margin-bottom', 20)
+                ->setOption('margin-bottom', 18)
                 ->setOption('margin-left', 3)
-                ->setOption('margin-right', 2);
-                // ->setOption('footer-html', $footerHtml);
+                ->setOption('margin-right', 2)
+                ->setOption('footer-html', $footerHtml);
 
         // return view('dashboard.reports.pdfReports', compact('report'));
 
