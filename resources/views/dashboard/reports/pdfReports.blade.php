@@ -155,7 +155,7 @@
                         <h3>{{ date('d/m/Y', strtotime($report->data_first_revision))  }}</h3>
                     </td>
                     <td>
-                        <h3>20/12/2020</h3>
+                        <h3>{{ date('d/m/Y', strtotime($report->data_second_revision))  }}</h3>
                     </td>
                     <td>
                         <h3>20/12/2020</h3>
@@ -173,7 +173,7 @@
                         <h3>{{$report->first_inspector_first_revision }}</h3>
                     </td>
                     <td>
-                        <h3>funcionario</h3>
+                        <h3>{{$report->first_inspector_second_revision }}</h3>
                     </td>
                     <td>
                         <h3>funcionario</h3>
@@ -191,7 +191,7 @@
                         <h3>{{$report->second_inspector_first_revision }}</h3>
                     </td>
                     <td>
-                        <h3>funcionario</h3>
+                        <h3>{{$report->second_inspector_second_revision }}</h3>
                     </td>
                     <td>
                         <h3>funcionario</h3>
@@ -209,7 +209,7 @@
                         <h3>{{$report->elaborator_first_revision }}</h3>
                     </td>
                     <td>
-                        <h3>funcionario</h3>
+                        <h3>{{$report->elaborator_second_revision }}</h3>
                     </td>
                     <td>
                         <h3>funcionario</h3>
@@ -227,7 +227,7 @@
                         <h3>{{$report->approved_for_first_revision }}</h3>
                     </td>
                     <td>
-                        <h3>funcionario</h3>
+                        <h3>{{$report->approved_for_second_revision }}</h3>
                     </td>
                     <td>
                         <h3>funcionario</h3>

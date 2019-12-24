@@ -31,6 +31,12 @@ class Report extends Model
         'footer_address',
         'footer_phone',
         'footer_site',
+        'data_second_revision',
+        'description_second_revision',
+        'first_inspector_second_revision',
+        'second_inspector_second_revision',
+        'elaborator_second_revision',
+        'approved_for_second_revision',
 
     ];
 
