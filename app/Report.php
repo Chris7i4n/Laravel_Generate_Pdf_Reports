@@ -27,6 +27,8 @@ class Report extends Model
         'footer_logo_1',
         'footer_logo_2',
         'footer_logo_3',
+        'footer_logo_4',
+        'footer_logo_5',
         'footer_social_reason',
         'footer_address',
         'footer_phone',

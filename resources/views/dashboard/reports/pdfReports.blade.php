@@ -237,76 +237,8 @@
                 </tr>
             </tbody>
         </table>
-
+        @include('dashboard.footer.pdfFooter')
         <div class="pagebreak"></div>
     </body>
 
 </html>
-
-{{-- <!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="UTF-8">
-        <link href="{{ public_path('assets/css/pdf.css') }}" rel="stylesheet" type="text/css"/>
-        <link rel="stylesheet" href="{{ public_path('assets/bootstrap/bootstrap.min.css') }}" >
-
-        <title>
-            PDF
-        </title>
-    </head>
-    <body>
-        <table class="table-reports table-small table-width">
-            <thead>
-                <tr class="">
-                    <th >
-                        <div class="row">
-                            <div class="col-12">
-                                <img
-                                    src="{{ public_path("storage/". $report->logoCompanyContracted) }}"
-                                    class = "logo-header"
-                                >
-                            </div>
-                        </div>
-                    </th>
-                    <th>
-                        <div class="row">
-                            <div class="col-12">
-                                <div class="">
-                                    <h2>Relatório Técnico de Inspeção de Sistemas de Proteção Contra Incêndio - {{$report->type}}
-                                    </h2>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row" >
-                            <div class="col-8">
-                                <span>Inspeção: </span>
-                                <h3>{{$report->inspection_number}}ª  INSPEÇÃO - {{$report->inspection_year}}</h3>
-                            </div>
-                            <div class="col-4">
-                                <span>Periodo:</span>
-                                <p>{{$report->period}}</p>
-                            </div>
-                        </div>
-                    </th>
-                    <th>
-                        <div class="row">
-                            <div class="col-12">
-                                <img
-                                    src="{{ public_path("storage/". $report->logoCompanyContracting) }}"
-                                    class = "logo-header">
-                            </div>
-                        </div>
-                    </th>
-
-                </tr>
-            </thead>
-            <tbody>
-
-            </tbody>
-        </table>
-
-        <div class="pagebreak"></div>
-    </body>
-
-</html> --}}
-

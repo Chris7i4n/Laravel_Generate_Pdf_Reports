@@ -35,13 +35,6 @@ class ReportRequest extends FormRequest
             'elaborator_first_revision' => 'required',
             'approved_for_first_revision' => 'required',
             'company_id' => 'required',
-            'logo_footer_1' => 'required',
-            'logo_footer_2' => 'required',
-            'logo_footer_3' => 'required',
-            'footer_social_reason' => 'required',
-            'footer_address' => 'required',
-            'footer_phone' => 'required',
-            'footer_site' => 'required',
 
         ];
     }

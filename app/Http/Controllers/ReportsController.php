@@ -44,8 +44,6 @@ class ReportsController extends Controller
         $companyUserId = $report->unity->company->first()->user_id;
         $companyContracted = $report->company;
 
-        // return view('dashboard.footer.pdfFooter', compact('report'));
-
         // for document number
         $codeNumberForDocumentNumber = $this->getCodeNumber($report);
         $yearNumberForDocumentNumber = $this->getYearNumber($report);
@@ -62,12 +60,10 @@ class ReportsController extends Controller
 
                 ))
                 ->setOption('margin-top', 1)
-                ->setOption('margin-bottom', 18)
+                // ->setOption('margin-bottom', 18)
                 ->setOption('margin-left', 3)
-                ->setOption('margin-right', 2)
-                ->setOption('footer-html', $footerHtml);
-
-        // return view('dashboard.reports.pdfReports', compact('report'));
+                ->setOption('margin-right', 2);
+                // ->setOption('footer-html', $footerHtml);
 
         return $pdf->stream('relatorio.pdf');
     }
@@ -84,6 +80,7 @@ class ReportsController extends Controller
     {
 
         $company = $this->getCompany($request['unity_id']);
+        $contractedCompany = $this->getContractedCompany($request['company_id']);
 
         if(!$company)
         {
@@ -101,10 +98,15 @@ class ReportsController extends Controller
         $request['user_id'] = Auth::user()->id;
         $request['logoCompanyContracted'] = $this->getLogoContractedCompany($request['company_id']);
         $request['logoCompanyContracting'] = $company->logo;
-        $request['footer_logo_1'] = $this->uploadFiles($request['logo_footer_1']);
-        $request['footer_logo_2'] = $this->uploadFiles($request['logo_footer_2']);
-        $request['footer_logo_3'] = $this->uploadFiles($request['logo_footer_3']);
-
+        $request['footer_logo_1'] = $contractedCompany->logo;
+        $request['footer_logo_2'] = $contractedCompany->footer_logo_1;
+        $request['footer_logo_3'] = $contractedCompany->footer_logo_2;
+        $request['footer_logo_4'] = $contractedCompany->footer_logo_3;
+        $request['footer_logo_5'] = $contractedCompany->footer_logo_4;
+        $request['footer_address'] = $contractedCompany->address;
+        $request['footer_site'] = $contractedCompany->footer_site;
+        $request['footer_social_reason'] = $contractedCompany->footer_social_reason;
+        $request['footer_phone'] = $contractedCompany->phone;
 
         Report::create($request->all());
 

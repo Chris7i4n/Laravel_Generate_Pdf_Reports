@@ -41,6 +41,11 @@ class CompaniesController extends Controller
     public function storeContractedCompany(CompanyContractedRequest $request)
     {
         $request['logo'] = $this->uploadFiles($request->file('logoContractedCompany'));
+        $request['footer_logo_1'] = $request['logo_footer_1'] ? $this->uploadFiles($request->file('logo_footer_1')) : null;
+        $request['footer_logo_2'] = $request['logo_footer_2'] ? $this->uploadFiles($request->file('logo_footer_2')) : null;
+        $request['footer_logo_3'] = $request['logo_footer_3'] ? $this->uploadFiles($request->file('logo_footer_3')) : null;
+        $request['footer_logo_4'] = $request['logo_footer_4'] ? $this->uploadFiles($request->file('logoContractedCompany')) : null;
+
         $request['user_id'] = Auth::user()->id;
         $company = Company::create($request->all());
 

@@ -30,12 +30,21 @@ class CompanyContractedRequest extends FormRequest
             'cnpj' => 'required',
             'phone' => 'required',
             'tecnical_responsable' => 'required',
+            'logo_footer_1' => 'required',
+            'logo_footer_2' => 'required',
+            'footer_social_reason' => 'required',
+            'footer_site' => 'required'
+
         ];
     }
 
     public function messages()
     {
         return [
+                'footer_social_reason.required' => 'A razão social da empresa é necessária',
+                'footer_site.required' => 'O site da empresa é necessário',
+                'logo_footer_1.required' => 'São necessário pelo menos três logos',
+                'logo_footer_2.required' => 'São necessário pelo menos três logos',
                 'logoContractedCompany.required' => 'A logo da empresa contratada é obrigatória',
                 'logoContractedCompany.file' => 'A logo da empresa contratada precisa ser uma imagem',
                 'company.required' => 'O nome da empresa contratada é obrigatório',

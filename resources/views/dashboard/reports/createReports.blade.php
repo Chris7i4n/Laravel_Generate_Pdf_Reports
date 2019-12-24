@@ -136,62 +136,6 @@
                             </div>
 
                             <div class="card-header card-header-space" >
-                                <h5>Rodapé</h5>
-                            </div>
-
-                            <div class="row">
-                                <div class="col-md-4">
-                                    <div class="form-group">
-                                        <label class="form-label">Primeiro logo rodapé</label>
-                                        <input type="file" class="form-control" name="logo_footer_1">
-                                    </div>
-                                </div>
-                                <div class="col-md-4">
-                                    <div class="form-group">
-                                        <label class="form-label">Segundo logo rodapé</label>
-                                        <input type="file" class="form-control" name="logo_footer_2">
-                                    </div>
-                                </div>
-                                <div class="col-md-4">
-                                    <div class="form-group">
-                                        <label class="form-label">Terceiro logo rodapé</label>
-                                        <input type="file" class="form-control" name="logo_footer_3">
-                                    </div>
-                                </div>
-
-                            </div>
-
-                            <div class="row">
-                                <div class="col-md-4">
-                                    <div class="form-group">
-                                        <label class="form-label">Razão social rodapé</label>
-                                        <input type="text" class="form-control" name="footer_social_reason" placeholder="Razão Social">
-                                    </div>
-                                </div>
-                                <div class="col-md-4">
-                                    <div class="form-group">
-                                        <label class="form-label">Endereço rodapé</label>
-                                        <input type="text" class="form-control" name="footer_address" placeholder="Endereço">
-                                    </div>
-                                </div>
-                                <div class="col-md-4">
-                                    <div class="form-group">
-                                        <label class="form-label">Telefone rodapé</label>
-                                        <input type="text" class="form-control" name="footer_phone" placeholder="Telefone">
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="row">
-                                <div class="col-md-4">
-                                    <div class="form-group">
-                                        <label class="form-label">Site Rodapé</label>
-                                        <input type="text" class="form-control" name="footer_site" placeholder="Site">
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="card-header card-header-space" >
                                 <h5>Primeira Revisão</h5>
                             </div>
 

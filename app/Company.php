@@ -15,7 +15,14 @@ class Company extends Model
         'phone',
         'tecnical_responsable',
         'code_number',
-        'user_id'
+        'user_id',
+        'footer_logo_1',
+        'footer_logo_2',
+        'footer_logo_3',
+        'footer_logo_4',
+        'footer_social_reason',
+        'footer_site',
+
     ];
 
     public function unity(){

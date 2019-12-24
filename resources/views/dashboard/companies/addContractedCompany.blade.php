@@ -64,8 +64,46 @@
 
                                 <div class="col-md-4">
                                     <div class="form-group">
+                                        <label class="form-label">Segundo logo </label>
+                                        <input type="file" class="form-control" name="logo_footer_1">
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label class="form-label">Terceiro logo </label>
+                                        <input type="file" class="form-control" name="logo_footer_2">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label class="form-label">Quarto logo </label>
+                                        <input type="file" class="form-control" name="logo_footer_3">
+                                    </div>
+                                </div>
+
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label class="form-label">Quinto logo </label>
+                                        <input type="file" class="form-control" name="logo_footer_4">
+                                    </div>
+                                </div>
+
+
+                                <div class="col-md-4">
+                                    <div class="form-group">
                                         <label class="form-label">Nome da empresa</label>
                                         <input type="text" class="form-control" name="company" placeholder="Nome da empresa">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label class="form-label">Razão social rodapé</label>
+                                        <input type="text" class="form-control" name="footer_social_reason" placeholder="Razão Social">
                                     </div>
                                 </div>
 
@@ -73,6 +111,13 @@
                                     <div class="form-group">
                                         <label class="form-label">Endereço da empresa</label>
                                         <input type="text" class="form-control" name="address" placeholder="Endereço da empresa">
+                                    </div>
+                                </div>
+
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label class="form-label">Site Rodapé</label>
+                                        <input type="text" class="form-control" name="footer_site" placeholder="Site">
                                     </div>
                                 </div>
 

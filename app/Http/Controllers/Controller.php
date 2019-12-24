@@ -49,6 +49,11 @@ class Controller extends BaseController
         return Company::where('id', $companyId)->first()->logo;
     }
 
+    public function getContractedCompany($companyId)
+    {
+        return Company::where('id', $companyId)->first();
+    }
+
     public function uploadFiles($file)
     {
         $fileUploaded = Storage::putFileAs('public/', $file , $file->getClientOriginalName());
