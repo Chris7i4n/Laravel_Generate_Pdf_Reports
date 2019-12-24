@@ -4,7 +4,6 @@
         <meta charset="UTF-8">
         <link href="{{ public_path('assets/css/pdf.css') }}" rel="stylesheet" type="text/css"/>
         <link rel="stylesheet" href="{{ public_path('assets/bootstrap/bootstrap.min.css') }}" >
-
         <title>
             PDF
         </title>
@@ -125,7 +124,7 @@
                         <h3>3</h3>
                     </td>
                     <td class="lista-de-descricoes">
-                        <h3> {{$report->description_first_revision }}</h3>
+                        <h3> {{$report->description_fourth_revision }}</h3>
                     </td>
                 </tr>
 
@@ -155,13 +154,13 @@
                         <h3>{{ date('d/m/Y', strtotime($report->data_first_revision))  }}</h3>
                     </td>
                     <td>
-                        <h3>{{ date('d/m/Y', strtotime($report->data_second_revision))  }}</h3>
+                        <h3>{{ $report->data_second_revision ? date('d/m/Y', strtotime($report->data_second_revision)) : "" }}</h3>
                     </td>
                     <td>
-                        <h3>{{ date('d/m/Y', strtotime($report->data_third_revision))  }}</h3>
+                        <h3>{{ $report->data_third_revision ? date('d/m/Y', strtotime($report->data_third_revision)) : "" }}</h3>
                     </td>
                     <td>
-                        <h3>20/12/2020</h3>
+                        <h3>{{ $report->data_fourth_revision ? date('d/m/Y', strtotime($report->data_fourth_revision)) : "" }}</h3>
                     </td>
                 </tr>
 
@@ -179,7 +178,7 @@
                         <h3>{{$report->first_inspector_third_revision }}</h3>
                     </td>
                     <td>
-                        <h3>funcionario</h3>
+                        <h3>{{$report->first_inspector_fourth_revision }}</h3>
                     </td>
                 </tr>
 
@@ -197,7 +196,7 @@
                         <h3>{{$report->second_inspector_third_revision }}</h3>
                     </td>
                     <td>
-                        <h3>funcionario</h3>
+                        <h3>{{$report->second_inspector_fourth_revision }}</h3>
                     </td>
                 </tr>
 
@@ -215,7 +214,7 @@
                         <h3>{{$report->elaborator_third_revision }}</h3>
                     </td>
                     <td>
-                        <h3>funcionario</h3>
+                        <h3>{{$report->elaborator_fourth_revision }}</h3>
                     </td>
                 </tr>
 
@@ -233,7 +232,7 @@
                         <h3>{{$report->approved_for_third_revision }}</h3>
                     </td>
                     <td>
-                        <h3>funcionario</h3>
+                        <h3>{{$report->approved_for_fourth_revision }}</h3>
                     </td>
                 </tr>
             </tbody>

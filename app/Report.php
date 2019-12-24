@@ -43,6 +43,12 @@ class Report extends Model
         'second_inspector_third_revision',
         'elaborator_third_revision',
         'approved_for_third_revision',
+        'data_fourth_revision',
+        'description_fourth_revision',
+        'first_inspector_fourth_revision',
+        'second_inspector_fourth_revision',
+        'elaborator_fourth_revision',
+        'approved_for_fourth_revision',
 
     ];
 

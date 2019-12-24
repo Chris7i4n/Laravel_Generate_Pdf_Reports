@@ -332,6 +332,53 @@
                                 </div>
                             </div>
 
+                            <div class="card-header card-header-space" >
+                                <h5>Quarta Revisão</h5>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label class="form-label">Data da quarta revisão</label>
+                                        <input type="date" class="form-control" name="data_fourth_revision" placeholder="Responsável contratado da unidade">
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label class="form-label">Descrição: </label>
+                                        <input type="text" class="form-control" name="description_fourth_revision" placeholder="Emissão Original para Aprovação">
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label class="form-label">Inspecionado por: </label>
+                                        <input type="text" class="form-control" name="first_inspector_fourth_revision" placeholder="Nome do funcionário que inspecionou">
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label class="form-label">Inspecionado por: </label>
+                                        <input type="text" class="form-control" name="second_inspector_fourth_revision" placeholder="Nome do funcionário que inspecionou">
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label class="form-label">Elaborado por: </label>
+                                        <input type="text" class="form-control" name="elaborator_fourth_revision" placeholder="Nome do funcionário que elaborou a revisão">
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label class="form-label">Aprovado por: </label>
+                                        <input type="text" class="form-control" name="approved_for_fourth_revision" placeholder="Nome do funcionário que aprovou a revisão">
+                                    </div>
+                                </div>
+                            </div>
+
                             <button type="submit" class="btn btn-primary">Salvar Relatório</button>
                         </form>
                     </div>
