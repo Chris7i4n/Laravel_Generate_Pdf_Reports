@@ -60,10 +60,10 @@ class ReportsController extends Controller
 
                 ))
                 ->setOption('margin-top', 1)
-                // ->setOption('margin-bottom', 18)
+                ->setOption('margin-bottom', 18)
                 ->setOption('margin-left', 3)
-                ->setOption('margin-right', 2);
-                // ->setOption('footer-html', $footerHtml);
+                ->setOption('margin-right', 2)
+                ->setOption('footer-html', $footerHtml);
 
         return $pdf->stream('relatorio.pdf');
     }

@@ -237,8 +237,9 @@
                 </tr>
             </tbody>
         </table>
-        @include('dashboard.footer.pdfFooter')
+        {{-- @include('dashboard.footer.pdfFooter') --}}
         <div class="pagebreak"></div>
+        <div> oiq</div>
     </body>
 
 </html>
