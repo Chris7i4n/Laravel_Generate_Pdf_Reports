@@ -116,7 +116,7 @@
                         <h3>2</h3>
                     </td>
                     <td class="lista-de-descricoes">
-                        <h3> {{$report->description_first_revision }}</h3>
+                        <h3> {{$report->description_third_revision }}</h3>
                     </td>
                 </tr>
 
@@ -158,7 +158,7 @@
                         <h3>{{ date('d/m/Y', strtotime($report->data_second_revision))  }}</h3>
                     </td>
                     <td>
-                        <h3>20/12/2020</h3>
+                        <h3>{{ date('d/m/Y', strtotime($report->data_third_revision))  }}</h3>
                     </td>
                     <td>
                         <h3>20/12/2020</h3>
@@ -176,7 +176,7 @@
                         <h3>{{$report->first_inspector_second_revision }}</h3>
                     </td>
                     <td>
-                        <h3>funcionario</h3>
+                        <h3>{{$report->first_inspector_third_revision }}</h3>
                     </td>
                     <td>
                         <h3>funcionario</h3>
@@ -194,7 +194,7 @@
                         <h3>{{$report->second_inspector_second_revision }}</h3>
                     </td>
                     <td>
-                        <h3>funcionario</h3>
+                        <h3>{{$report->second_inspector_third_revision }}</h3>
                     </td>
                     <td>
                         <h3>funcionario</h3>
@@ -212,7 +212,7 @@
                         <h3>{{$report->elaborator_second_revision }}</h3>
                     </td>
                     <td>
-                        <h3>funcionario</h3>
+                        <h3>{{$report->elaborator_third_revision }}</h3>
                     </td>
                     <td>
                         <h3>funcionario</h3>
@@ -230,7 +230,7 @@
                         <h3>{{$report->approved_for_second_revision }}</h3>
                     </td>
                     <td>
-                        <h3>funcionario</h3>
+                        <h3>{{$report->approved_for_third_revision }}</h3>
                     </td>
                     <td>
                         <h3>funcionario</h3>
