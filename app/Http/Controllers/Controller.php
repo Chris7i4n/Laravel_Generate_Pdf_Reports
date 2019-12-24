@@ -61,13 +61,6 @@ class Controller extends BaseController
     {
         $unity = Unity::where('id',$unity)->first();
         $company = $unity->company->first();
-
-        if(!$company)
-        {
-
-            return redirect()->back()->with(['errorMessage' => 'A unidade precisa estar vinculada a uma empresa']);
-
-        }
-        else return $company;
+        return $company;
     }
 }

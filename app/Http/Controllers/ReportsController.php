@@ -85,15 +85,26 @@ class ReportsController extends Controller
 
         $company = $this->getCompany($request['unity_id']);
 
+        if(!$company)
+        {
+
+            return redirect()->back()->with(['errorMessage' => 'A unidade precisa estar vinculada a uma empresa']);
+
+        }
+
         if(!Company::whereNotNull('tecnical_responsable')->first())
         {
             return redirect()->back()->with(['errorMessage' => 'Uma empresa contratada precisa ser adicionada']);
-
         }
+
         $request['approved'] = 0;
         $request['user_id'] = Auth::user()->id;
         $request['logoCompanyContracted'] = $this->getLogoContractedCompany($request['company_id']);
         $request['logoCompanyContracting'] = $company->logo;
+        $request['footer_logo_1'] = $this->uploadFiles($request['logo_footer_1']);
+        $request['footer_logo_2'] = $this->uploadFiles($request['logo_footer_2']);
+        $request['footer_logo_3'] = $this->uploadFiles($request['logo_footer_3']);
+
 
         Report::create($request->all());
 

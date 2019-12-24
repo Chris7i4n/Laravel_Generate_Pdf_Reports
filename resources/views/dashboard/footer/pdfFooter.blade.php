@@ -18,24 +18,24 @@
                     <tr>
                         <td>
                             <img
-                                src="{{ public_path("storage/". $report->logoCompanyContracting) }}"
+                                src="{{ public_path("storage/". $report->footer_logo_1) }}"
                                 class = "logo-footer"
                             >
                             <img
-                                src="{{ public_path("storage/". $report->logoCompanyContracting) }}"
+                                src="{{ public_path("storage/". $report->footer_logo_2) }}"
                                 class = "logo-footer"
                             >
                             <img
-                                src="{{ public_path("storage/". $report->logoCompanyContracting) }}"
+                                src="{{ public_path("storage/". $report->footer_logo_3) }}"
                                 class = "logo-footer"
                             >
                         </td>
                         <td></td>
                         <td class="company-datas">
-                            <p>Razão social LTDA</p>
-                            <p>Rua felino barroso, 291</p>
-                            <p>Telefone: (85)999758410</p>
-                            <p>Site: www.site.com.br </p>
+                            <p>{{ $report->footer_social_reason }}</p>
+                            <p>{{ $report->footer_address }}</p>
+                            <p>{{ $report->footer_phone }}</p>
+                            <p> {{ $report->footer_site }}</p>
                         </td>
                     </tr>
 

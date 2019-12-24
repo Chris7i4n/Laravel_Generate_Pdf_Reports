@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Report extends Model
 {
     protected $fillable = [
+
         'approved',
         'logoCompanyContracted',
         'logoCompanyContracting',
@@ -22,7 +23,15 @@ class Report extends Model
         'elaborator_first_revision',
         'approved_for_first_revision',
         'unity_id',
-        'company_id'
+        'company_id',
+        'footer_logo_1',
+        'footer_logo_2',
+        'footer_logo_3',
+        'footer_social_reason',
+        'footer_address',
+        'footer_phone',
+        'footer_site',
+
     ];
 
     public function user()
