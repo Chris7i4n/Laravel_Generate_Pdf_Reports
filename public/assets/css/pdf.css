@@ -247,6 +247,16 @@ body {
 
   }
 
+  .clientDiv .client {
+    width: 95%;
+
+  }
+
+  .clientDiv .client h3{
+    text-align: center;
+
+  }
+
   .clientDiv .periodo {
     border-left: 1px solid #000;
 
@@ -356,6 +366,52 @@ body {
       border-bottom: none;
       margin-bottom: none;
   }
+
+  .sumario{
+    border-top: 1px solid #000;
+    display: -webkit-box;
+    width: 100%;
+    height: 800px;
+    white-space: nowrap;
+
+  }
+
+  .sumario td h3{
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 20px;
+    text-align: center;
+    padding-top: 5px;
+    width:850px;
+
+  }
+
+
+  .sumario td ol li{
+      padding-top: 10px;
+      margin-top: 8px;
+      font-size: 20px;
+      /* margin-right: 100px; */
+
+  }
+
+  .sumario td ol li h5{
+    display: inline-block;
+    padding-right: 20px;
+    /* margin-right: 100px; */
+
+}
+
+  .sumario ol li span{
+    display: -webkit-box;
+    float: right;
+    clear: right;
+  }
+
+  ol {
+    list-style: none;
+
+  }
   .indice-de-revisoes{
 
     border-top: 1px solid #000;
@@ -409,6 +465,8 @@ body {
   .lista-de-revisoes-numero{
         width: 20%;
         border-right: 1px solid #000;
+        height: 50px;
+
     }
 
   .lista-de-descricoes{
@@ -470,38 +528,44 @@ body {
         border-top: 1px solid #000;
         display: -webkit-box;
         width: 100%;
+
     }
 
     .resultado-das-revisoes-colunas td:first-child{
-        border-right: 1px solid #000;
         width: 130px;
+
     }
     .resultado-das-revisoes-colunas td:nth-child(2){
         width: 200px;
+
     }
 
     .resultado-das-revisoes-colunas td:nth-child(3){
         width: 190px;
+
     }
 
     .resultado-das-revisoes-colunas td:nth-child(4){
         width: 200px;
+
     }
 
 
     .resultado-das-revisoes-colunas td {
         border-right: 1px solid #000;
-        /* width: 500px; */
+
     }
 
     .resultado-das-revisoes-colunas td:last-child {
         border-right: none;
+
     }
 
     .resultado-das-revisoes-colunas td h3{
         font-size: 15px;
         margin-left: 4px;
-        margin-top: 10px;
+        margin-top: 22px;
+        height: 35px;
     }
 
   .card-header {
