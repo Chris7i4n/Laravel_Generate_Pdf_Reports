@@ -51,6 +51,8 @@ class Report extends Model
         'second_inspector_fourth_revision',
         'elaborator_fourth_revision',
         'approved_for_fourth_revision',
+        'data_goals',
+        'article_goals'
 
     ];
 

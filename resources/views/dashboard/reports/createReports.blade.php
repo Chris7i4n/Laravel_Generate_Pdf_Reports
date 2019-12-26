@@ -136,6 +136,26 @@
                             </div>
 
                             <div class="card-header card-header-space" >
+                                <h5>Objetivo</h5>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label class="form-label">Data para o objetivo</label>
+                                        <input type="date" class="form-control" name="data_goals">
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label class="form-label">Artigo para o objetivo</label>
+                                        <input type="text" class="form-control" name="article_goals" placeholder="Artigo dos objetivos">
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <div class="card-header card-header-space" >
                                 <h5>Primeira Revisão</h5>
                             </div>
 

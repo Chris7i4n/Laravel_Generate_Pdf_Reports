@@ -35,6 +35,8 @@ class ReportRequest extends FormRequest
             'elaborator_first_revision' => 'required',
             'approved_for_first_revision' => 'required',
             'company_id' => 'required',
+            'data_goals' => 'required',
+            'article_goals' => 'required'
 
         ];
     }
