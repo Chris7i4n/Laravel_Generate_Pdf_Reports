@@ -237,12 +237,12 @@ body {
     display: -webkit-box;
   }
 
-  .clientDiv .inspecao {
+  .clientDiv .inspection {
     width: 78%;
 
   }
 
-  .clientDiv .inspecao h3{
+  .clientDiv .inspection h3{
     text-align: center;
 
   }
@@ -257,15 +257,15 @@ body {
 
   }
 
-  .clientDiv .periodo {
+  .clientDiv .period {
     border-left: 1px solid #000;
 
  }
- .clientDiv .periodo span {
+ .clientDiv .period span {
     margin-left: 2px;
  }
 
- .clientDiv .periodo h3 {
+ .clientDiv .period h3 {
     margin-top: 4px;
     margin-left: 5px;
     font-size: 15px;
@@ -367,7 +367,7 @@ body {
       margin-bottom: none;
   }
 
-  .sumario{
+  .summary{
     border-top: 1px solid #000;
     display: -webkit-box;
     width: 100%;
@@ -376,7 +376,7 @@ body {
 
   }
 
-  .sumario td h3{
+  .summary td h3{
     text-transform: uppercase;
     font-weight: bold;
     font-size: 20px;
@@ -387,7 +387,7 @@ body {
   }
 
 
-  .sumario td ol li{
+  .summary td ol li{
       padding-top: 10px;
       margin-top: 8px;
       font-size: 20px;
@@ -395,18 +395,35 @@ body {
 
   }
 
-  .sumario td ol li h5{
+  .summary td ol li h5{
     display: inline-block;
     padding-right: 20px;
 
 }
 
-  .sumario ol li span{
+  .summary ol li span{
     display: -webkit-box;
     float: right;
     clear: right;
   }
 
+  .metodology li p{
+
+    padding-right: 20px;
+    padding-top: 10px;
+    text-align: justify;
+    font-size: 20px;
+
+  }
+
+  .metodology ol{
+    padding-top: 15px;
+    display: -webkit-box;
+  }
+
+  .metodology li h5{
+      font-weight: bold;
+  }
   .goals ol {
     padding-top: 15px;
     display: -webkit-box;
@@ -421,6 +438,7 @@ body {
       padding-right: 20px;
       padding-top: 10px;
       text-align: justify;
+      font-size: 17px;
   }
 
   .in-line-paragrapher{
@@ -431,7 +449,7 @@ body {
     list-style: none;
 
   }
-  .indice-de-revisoes{
+  .index-of-revisions{
 
     border-top: 1px solid #000;
     display: -webkit-box;
@@ -439,7 +457,7 @@ body {
 
   }
 
-  .indice-de-revisoes td h3{
+  .index-of-revisions td h3{
     text-transform: uppercase;
     font-weight: bold;
     margin-bottom: 2px;
@@ -448,13 +466,13 @@ body {
     margin-left: 320px;
   }
 
-  .revisoes-descricoes{
+  .revisions-description{
     border-top: 1px solid #000;
     display: -webkit-box;
     width: 100%;
   }
 
-  .revisoes-descricoes h3{
+  .revisions-description h3{
     text-transform: uppercase;
     font-weight: bold;
     text-align: center;
@@ -463,36 +481,36 @@ body {
     padding: 5px;
   }
 
-  .revisoes{
+  .revisions{
     width: 20%;
     border-right: 1px solid #000;
   }
 
-  .descricoes{
+  .descriptions{
     width: 80%;
   }
-  .descricoes h3{
+  .descriptions h3{
     margin-left: 105px;
   }
 
-  .lista-de-revisoes{
+  .list-of-revisions{
     border-top: 1px solid #000;
     display: -webkit-box;
     width: 100%;
   }
 
-  .lista-de-revisoes-numero{
+  .list-of-revisions-number{
         width: 20%;
         border-right: 1px solid #000;
         height: 50px;
 
     }
 
-  .lista-de-descricoes{
+  .list-of-descriptions{
     width: 519px;
 
   }
-  .lista-de-revisoes-numero h3{
+  .list-of-revisions-number h3{
     text-transform: uppercase;
     text-align: center;
     margin-bottom: 2px;
@@ -500,7 +518,7 @@ body {
     padding: 7px;
   }
 
-  .lista-de-descricoes h3{
+  .list-of-descriptions h3{
     font-size: 18px;
     margin-bottom: 2px;
     margin-left: 10px;
@@ -508,160 +526,160 @@ body {
     padding: 7px;
   }
 
-  .responsabilidades{
+  .responsabilities{
     display: -webkit-box;
     padding-left: 50px;
     padding-right: 50px;
 
   }
 
-  .responsabilidades td h3{
+  .responsabilities td h3{
       margin-top: 5px;
       text-align: center;
   }
 
-  .responsabilidades td{
+  .responsabilities td{
       border: 1px solid #59a106;
         background-color: #9ccc65;
       width: 500px;
 
   }
 
-  .responsabilidades-datas{
+  .responsabilities-datas{
     display: -webkit-box;
     padding-left: 50px;
     padding-right: 50px;
   }
 
-  .responsabilidades-datas td {
+  .responsabilities-datas td {
       border: 1px solid #9ccc65;
   }
 
-  .responsabilidades-datas td:first-child {
+  .responsabilities-datas td:first-child {
         width: 192px;
         text-align: center;
     }
 
-    .responsabilidades-datas-last-child td:first-child {
+    .responsabilities-datas-last-child td:first-child {
         width: 192px;
         text-align: center;
     }
 
-    .responsabilidades-datas td:nth-child(2) {
+    .responsabilities-datas td:nth-child(2) {
         width: 247px;
         text-align: center;
     }
 
-    .responsabilidades-datas-last-child td:nth-child(2) {
+    .responsabilities-datas-last-child td:nth-child(2) {
         width: 247px;
         text-align: center;
     }
 
-    .responsabilidades-datas td:nth-child(3) {
+    .responsabilities-datas td:nth-child(3) {
         width: 200px;
         text-align: center;
     }
 
-    .responsabilidades-datas-last-child td:nth-child(3) {
+    .responsabilities-datas-last-child td:nth-child(3) {
         width: 200px;
         text-align: center;
     }
 
-    .responsabilidades-datas td:last-child {
+    .responsabilities-datas td:last-child {
         width: 176px;
         text-align: center;
     }
 
-    .responsabilidades-datas-last-child td:last-child {
+    .responsabilities-datas-last-child td:last-child {
         width: 176px;
         text-align: center;
     }
-    .responsabilidades-datas-last-child{
+    .responsabilities-datas-last-child{
         padding-bottom: 15px;
         display: -webkit-box;
         padding-left: 50px;
         padding-right: 50px;
     }
 
-    .responsabilidades-datas-last-child td{
+    .responsabilities-datas-last-child td{
         border: 1px solid #9ccc65;
     }
 
 
 
-    .resultado-das-revisoes{
+    .result-of-revisions-number{
         border-top: 1px solid #000;
         display: -webkit-box;
         width: 100%;
     }
 
-    .resultado-das-revisoes td:first-child{
+    .result-of-revisions-number td:first-child{
         width: 130px;
     }
 
-    .resultado-das-revisoes td:nth-child(2){
+    .result-of-revisions-number td:nth-child(2){
         width: 200px;
     }
 
-    .resultado-das-revisoes td:nth-child(3){
+    .result-of-revisions-number td:nth-child(3){
         width: 190px;
     }
 
-    .resultado-das-revisoes td:nth-child(4){
+    .result-of-revisions-number td:nth-child(4){
         width: 200px;
     }
 
-    .resultado-das-revisoes td{
+    .result-of-revisions-number td{
       border-right: 1px solid #000;
     }
 
-    .resultado-das-revisoes td h3{
+    .result-of-revisions-number td h3{
         margin-left: 60px;
         margin-top: 8px;
     }
 
-    .resultado-das-revisoes td:last-child{
+    .result-of-revisions-number td:last-child{
         border-right: none;
     }
 
-    .resultado-das-revisoes-colunas{
+    .result-of-revisions-number-columns{
         border-top: 1px solid #000;
         display: -webkit-box;
         width: 100%;
 
     }
 
-    .resultado-das-revisoes-colunas td:first-child{
+    .result-of-revisions-number-columns td:first-child{
         width: 130px;
 
     }
-    .resultado-das-revisoes-colunas td:nth-child(2){
+    .result-of-revisions-number-columns td:nth-child(2){
         width: 200px;
 
     }
 
-    .resultado-das-revisoes-colunas td:nth-child(3){
+    .result-of-revisions-number-columns td:nth-child(3){
         width: 190px;
 
     }
 
-    .resultado-das-revisoes-colunas td:nth-child(4){
+    .result-of-revisions-number-columns td:nth-child(4){
         width: 200px;
 
     }
 
 
-    .resultado-das-revisoes-colunas td {
+    .result-of-revisions-number-columns td {
         border-right: 1px solid #000;
 
     }
 
-    .resultado-das-revisoes-colunas td:last-child {
+    .result-of-revisions-number-columns td:last-child {
         border-right: none;
 
     }
 
-    .resultado-das-revisoes-colunas td h3{
+    .result-of-revisions-number-columns td h3{
         font-size: 15px;
         margin-left: 4px;
         margin-top: 22px;

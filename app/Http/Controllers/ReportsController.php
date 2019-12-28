@@ -95,7 +95,7 @@ class ReportsController extends Controller
         {
             return redirect()->back()->with(['errorMessage' => 'Uma empresa contratada precisa ser adicionada']);
         }
-
+        //for create report
         $request['approved'] = 0;
         $request['user_id'] = Auth::user()->id;
         $request['logoCompanyContracted'] = $this->getLogoContractedCompany($request['company_id']);

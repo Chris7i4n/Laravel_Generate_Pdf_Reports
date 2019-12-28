@@ -14,6 +14,8 @@
         @include('dashboard.reports.pageTwoReportsPdf')
         <div class="pagebreak"></div>
         @include('dashboard.reports.pageThreeReportsPdf')
+        <div class="pagebreak"></div>
+        @include('dashboard.reports.pageFourReportsPdf')
     </body>
 
 </html>

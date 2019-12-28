@@ -77,7 +77,7 @@
             </td>
 
         </tr>
-        <tr class = "responsabilidades">
+        <tr class = "responsabilities">
             <td>
                 <h3>ETAPAS</h3>
             </td>
@@ -91,7 +91,7 @@
                 <h3>DATA</h3>
             </td>
         </tr>
-        <tr class = "responsabilidades-datas">
+        <tr class = "responsabilities-datas">
             <td>
                 <h3>Inspeção</h3>
             </td>
@@ -106,7 +106,7 @@
             </td>
         </tr>
 
-        <tr class = "responsabilidades-datas">
+        <tr class = "responsabilities-datas">
             <td>
                 <h3>Inspeção</h3>
             </td>
@@ -121,7 +121,7 @@
             </td>
         </tr>
 
-        <tr class = "responsabilidades-datas">
+        <tr class = "responsabilities-datas">
             <td>
                 <h3>Elaboração do Relatório</h3>
             </td>
@@ -136,7 +136,7 @@
             </td>
         </tr>
 
-        <tr class = "responsabilidades-datas">
+        <tr class = "responsabilities-datas">
             <td>
                 <h3>Revisão do Relatório</h3>
             </td>
@@ -151,7 +151,7 @@
             </td>
         </tr>
 
-        <tr class = "responsabilidades-datas-last-child">
+        <tr class = "responsabilities-datas-last-child">
             <td>
                 <h3>Aprovação do Relatório</h3>
             </td>

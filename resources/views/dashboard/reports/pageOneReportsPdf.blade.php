@@ -13,12 +13,12 @@
                     </h2>
                 </div>
                 <div class = "clientDiv" >
-                    <div class="inspecao " >
+                    <div class="inspection " >
                         <span>Inspeção: </span>
                         <h3>{{$report->inspection_number}}ª  INSPEÇÃO - {{$report->inspection_year}}</h3>
                     </div>
-                    <div class="periodo" >
-                        <span>Periodo:</span>
+                    <div class="period" >
+                        <span>period:</span>
                         <h3>{{$report->period}}</h3>
                 </div>
             </th>
@@ -67,57 +67,57 @@
                     <li><span><b>RESPONSÁVEL CONTRATANTE:</b></span>{{$report->unity->contracting_responsable }} </li>
             </td>
         </tr>
-        <tr class="indice-de-revisoes">
+        <tr class="index-of-revisions">
             <td>
                 <h3>Índice de revisões</h3>
             </td>
         </tr>
-        <tr class="revisoes-descricoes">
-            <td class = "revisoes">
+        <tr class="revisions-description">
+            <td class = "revisions">
                 <h3>Rev.</h3>
             </td>
-            <td class="descricoes">
+            <td class="descriptions">
                 <h3> Descrição e/ou folhas atingidas</h3>
             </td>
         </tr>
 
-        <tr class="lista-de-revisoes">
-            <td class = "lista-de-revisoes-numero">
+        <tr class="list-of-revisions">
+            <td class = "list-of-revisions-number">
                 <h3>0</h3>
             </td>
-            <td class="lista-de-descricoes">
+            <td class="list-of-descriptions">
                 <h3> {{$report->description_first_revision }}</h3>
             </td>
         </tr>
 
-        <tr class="lista-de-revisoes">
-            <td class = "lista-de-revisoes-numero">
+        <tr class="list-of-revisions">
+            <td class = "list-of-revisions-number">
                 <h3>1</h3>
             </td>
-            <td class="lista-de-descricoes">
+            <td class="list-of-descriptions">
                 <h3> {{$report->description_second_revision}}</h3>
             </td>
         </tr>
 
-        <tr class="lista-de-revisoes">
-            <td class = "lista-de-revisoes-numero">
+        <tr class="list-of-revisions">
+            <td class = "list-of-revisions-number">
                 <h3>2</h3>
             </td>
-            <td class="lista-de-descricoes">
+            <td class="list-of-descriptions">
                 <h3> {{$report->description_third_revision }}</h3>
             </td>
         </tr>
 
-        <tr class="lista-de-revisoes">
-            <td class = "lista-de-revisoes-numero">
+        <tr class="list-of-revisions">
+            <td class = "list-of-revisions-number">
                 <h3>3</h3>
             </td>
-            <td class="lista-de-descricoes">
+            <td class="list-of-descriptions">
                 <h3> {{$report->description_fourth_revision }}</h3>
             </td>
         </tr>
 
-        <tr class="resultado-das-revisoes">
+        <tr class="result-of-revisions-number">
             <td>
                 <h3></h3>
             </td>
@@ -135,7 +135,7 @@
             </td>
         </tr>
 
-        <tr class="resultado-das-revisoes-colunas">
+        <tr class="result-of-revisions-number-columns">
             <td>
                 <h3>Data</h3>
             </td>
@@ -153,7 +153,7 @@
             </td>
         </tr>
 
-        <tr class="resultado-das-revisoes-colunas">
+        <tr class="result-of-revisions-number-columns">
             <td>
                 <h3>Inspecionado por</h3>
             </td>
@@ -171,7 +171,7 @@
             </td>
         </tr>
 
-        <tr class="resultado-das-revisoes-colunas">
+        <tr class="result-of-revisions-number-columns">
             <td>
                 <h3>Inspecionado por</h3>
             </td>
@@ -189,7 +189,7 @@
             </td>
         </tr>
 
-        <tr class="resultado-das-revisoes-colunas">
+        <tr class="result-of-revisions-number-columns">
             <td>
                 <h3>Elaborado por</h3>
             </td>
@@ -207,7 +207,7 @@
             </td>
         </tr>
 
-        <tr class="resultado-das-revisoes-colunas">
+        <tr class="result-of-revisions-number-columns">
             <td>
                 <h3>Aprovado por</h3>
             </td>

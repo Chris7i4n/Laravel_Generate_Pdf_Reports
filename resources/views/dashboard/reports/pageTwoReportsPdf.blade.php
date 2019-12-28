@@ -42,7 +42,7 @@
                 <h3>Página 2 de 21</h3>
             </td>
         </tr>
-        <tr class="sumario">
+        <tr class="summary">
             <td>
                 <h3>Sumário</h3>
                 <ol>
