@@ -398,7 +398,6 @@ body {
   .sumario td ol li h5{
     display: inline-block;
     padding-right: 20px;
-    /* margin-right: 100px; */
 
 }
 
@@ -406,6 +405,26 @@ body {
     display: -webkit-box;
     float: right;
     clear: right;
+  }
+
+  .goals ol {
+    padding-top: 15px;
+    display: -webkit-box;
+  }
+
+  .goals li h5{
+      font-weight: bold;
+  }
+
+
+  .goals li p{
+      padding-right: 20px;
+      padding-top: 10px;
+      text-align: justify;
+  }
+
+  .in-line-paragrapher{
+    white-space: nowrap;
   }
 
   ol {
@@ -488,6 +507,87 @@ body {
     margin-top: 2px;
     padding: 7px;
   }
+
+  .responsabilidades{
+    display: -webkit-box;
+    padding-left: 50px;
+    padding-right: 50px;
+
+  }
+
+  .responsabilidades td h3{
+      margin-top: 5px;
+      text-align: center;
+  }
+
+  .responsabilidades td{
+      border: 1px solid #59a106;
+        background-color: #9ccc65;
+      width: 500px;
+
+  }
+
+  .responsabilidades-datas{
+    display: -webkit-box;
+    padding-left: 50px;
+    padding-right: 50px;
+  }
+
+  .responsabilidades-datas td {
+      border: 1px solid #9ccc65;
+  }
+
+  .responsabilidades-datas td:first-child {
+        width: 192px;
+        text-align: center;
+    }
+
+    .responsabilidades-datas-last-child td:first-child {
+        width: 192px;
+        text-align: center;
+    }
+
+    .responsabilidades-datas td:nth-child(2) {
+        width: 247px;
+        text-align: center;
+    }
+
+    .responsabilidades-datas-last-child td:nth-child(2) {
+        width: 247px;
+        text-align: center;
+    }
+
+    .responsabilidades-datas td:nth-child(3) {
+        width: 200px;
+        text-align: center;
+    }
+
+    .responsabilidades-datas-last-child td:nth-child(3) {
+        width: 200px;
+        text-align: center;
+    }
+
+    .responsabilidades-datas td:last-child {
+        width: 176px;
+        text-align: center;
+    }
+
+    .responsabilidades-datas-last-child td:last-child {
+        width: 176px;
+        text-align: center;
+    }
+    .responsabilidades-datas-last-child{
+        padding-bottom: 15px;
+        display: -webkit-box;
+        padding-left: 50px;
+        padding-right: 50px;
+    }
+
+    .responsabilidades-datas-last-child td{
+        border: 1px solid #9ccc65;
+    }
+
+
 
     .resultado-das-revisoes{
         border-top: 1px solid #000;

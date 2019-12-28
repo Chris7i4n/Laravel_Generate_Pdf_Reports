@@ -36,7 +36,13 @@ class ReportRequest extends FormRequest
             'approved_for_first_revision' => 'required',
             'company_id' => 'required',
             'data_goals' => 'required',
-            'article_goals' => 'required'
+            'article_goals' => 'required',
+            'reviewed_for' => 'required',
+            'reviewed_for_function' => 'required',
+            'first_inspector_function_first_revision' => 'required',
+            'second_inspector_function_first_revision' => 'required',
+            'elaborator_function_first_revision' => 'required',
+            'approved_for_function_first_revision' => 'required'
 
         ];
     }

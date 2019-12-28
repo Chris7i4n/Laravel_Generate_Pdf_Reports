@@ -156,6 +156,25 @@
                             </div>
 
                             <div class="card-header card-header-space" >
+                                <h5>Responsabilidades</h5>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label class="form-label">Funcionário que revisou o relatório:</label>
+                                        <input type="text" class="form-control" name="reviewed_for" placeholder="Funcionário que revisou o relatório">
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label class="form-label">Função do funcionário que revisou o relatório:</label>
+                                        <input type="text" class="form-control" name="reviewed_for_function" placeholder="Função do funcionário que revisou o relatório">
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="card-header card-header-space" >
                                 <h5>Primeira Revisão</h5>
                             </div>
 
@@ -180,8 +199,13 @@
                                 </div>
 
                             </div>
-
                             <div class="row">
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label class="form-label">Função do funcionário que inspecionou: </label>
+                                        <input type="text" class="form-control" name="first_inspector_function_first_revision" placeholder="Função do funcionário que inspecionou">
+                                    </div>
+                                </div>
                                 <div class="col-md-4">
                                     <div class="form-group">
                                         <label class="form-label">Inspecionado por: </label>
@@ -190,14 +214,38 @@
                                 </div>
                                 <div class="col-md-4">
                                     <div class="form-group">
+                                        <label class="form-label">Função do funcionário que inspecionou: </label>
+                                        <input type="text" class="form-control" name="second_inspector_function_first_revision" placeholder="Função do segundo funcionário que inspecionou">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+
+                                <div class="col-md-4">
+                                    <div class="form-group">
                                         <label class="form-label">Elaborado por: </label>
                                         <input type="text" class="form-control" name="elaborator_first_revision" placeholder="Nome do funcionário que elaborou a revisão">
                                     </div>
                                 </div>
                                 <div class="col-md-4">
                                     <div class="form-group">
+                                        <label class="form-label">Função do funcionário que elaborou: </label>
+                                        <input type="text" class="form-control" name="elaborator_function_first_revision" placeholder="Função do funcionário que elaborou">
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group">
                                         <label class="form-label">Aprovado por: </label>
                                         <input type="text" class="form-control" name="approved_for_first_revision" placeholder="Nome do funcionário que aprovou a revisão">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label class="form-label">Função do funcionário que aprovou: </label>
+                                        <input type="text" class="form-control" name="approved_for_function_first_revision" placeholder="Função do funcionário que elaborou">
                                     </div>
                                 </div>
                             </div>

@@ -68,4 +68,24 @@ class Controller extends BaseController
         $company = $unity->company->first();
         return $company;
     }
+
+    public function getMonth($date)
+    {
+
+        $englishMonth = date('F', strtotime($date));
+
+        if($englishMonth == "January") return $month = "janeiro";
+        if($englishMonth == "February") return $month = "fevereiro";
+        if($englishMonth == "March") return $month = "março";
+        if($englishMonth == "April") return $month = "abril";
+        if($englishMonth == "May") return $month = "maio";
+        if($englishMonth == "June") return $month = "junho";
+        if($englishMonth == "July") return $month = "julho";
+        if($englishMonth == "August") return $month = "agosto";
+        if($englishMonth == "September") return $month = "setembro";
+        if($englishMonth == "October") return $month = "outubro";
+        if($englishMonth == "Novemer") return $month = "novembro";
+        if($englishMonth == "December") return $month = "dezembro";
+
+    }
 }

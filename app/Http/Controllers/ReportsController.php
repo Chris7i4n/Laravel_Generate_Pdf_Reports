@@ -43,6 +43,7 @@ class ReportsController extends Controller
         $footerHtml = view()->make('dashboard.footer.pdfFooter', compact('report'))->render();
         $companyUserId = $report->unity->company->first()->user_id;
         $companyContracted = $report->company;
+        $monthOfTheGoal = $this->getMonth($report->data_goals);
 
         // for document number
         $codeNumberForDocumentNumber = $this->getCodeNumber($report);
@@ -57,6 +58,7 @@ class ReportsController extends Controller
                     'codeNumberForDocumentNumber' => $codeNumberForDocumentNumber,
                     'yearNumberForDocumentNumber' => $yearNumberForDocumentNumber,
                     'companyNameForDocumentNumber' => $companyNameForDocumentNumber,
+                    'monthOfTheGoal' => $monthOfTheGoal,
 
                 ))
                 ->setOption('margin-top', 1)

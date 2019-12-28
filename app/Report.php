@@ -52,7 +52,13 @@ class Report extends Model
         'elaborator_fourth_revision',
         'approved_for_fourth_revision',
         'data_goals',
-        'article_goals'
+        'article_goals',
+        'reviewed_for',
+        'reviewed_for_function',
+        'first_inspector_function_first_revision',
+        'second_inspector_function_first_revision',
+        'elaborator_function_first_revision',
+        'approved_for_function_first_revision'
 
     ];
 
