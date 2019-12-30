@@ -136,7 +136,7 @@
                             </div>
 
                             <div class="card-header card-header-space" >
-                                <h5>Objetivo</h5>
+                                <h5>1. Objetivo</h5>
                             </div>
 
                             <div class="row">
@@ -156,7 +156,7 @@
                             </div>
 
                             <div class="card-header card-header-space" >
-                                <h5>Responsabilidades</h5>
+                                <h5>4. Responsabilidades</h5>
                             </div>
 
                             <div class="row">
@@ -174,6 +174,21 @@
                                 </div>
 
                             </div>
+
+                            <div class="card-header card-header-space" >
+                                <h5>6.1 Central de Detecção e Alarme</h5>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label class="form-label">Descrição do Sistema</label>
+                                        <input type="text" class="form-control" name="description_of_system" placeholder="Descrição do Sistema">
+                                    </div>
+                                </div>
+
+                            </div>
+
                             <div class="card-header card-header-space" >
                                 <h5>Primeira Revisão</h5>
                             </div>

@@ -38,7 +38,11 @@
                         </div>
                         <ul class="breadcrumb">
                             <li class="breadcrumb-item"><a href="{{route('dashboard')}}"><i class="feather icon-home"></i></a></li>
-                            <li class="breadcrumb-item"><a href="#!">Cadastro de Equipamentos</a></li>
+                            @if(isset($equipment))
+                                <li class="breadcrumb-item"><a href="{{route('equipment.index')}}">Lista de equipamentos</a></li>
+                            @else
+                                <li class="breadcrumb-item"><a href="#!">Cadastro de Equipamentos</a></li>
+                            @endif
                         </ul>
                     </div>
                 </div>

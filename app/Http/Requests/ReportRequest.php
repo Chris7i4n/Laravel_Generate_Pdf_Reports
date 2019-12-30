@@ -42,7 +42,8 @@ class ReportRequest extends FormRequest
             'first_inspector_function_first_revision' => 'required',
             'second_inspector_function_first_revision' => 'required',
             'elaborator_function_first_revision' => 'required',
-            'approved_for_function_first_revision' => 'required'
+            'approved_for_function_first_revision' => 'required',
+            'description_of_system' => 'required',
 
         ];
     }

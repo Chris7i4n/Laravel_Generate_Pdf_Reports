@@ -58,7 +58,8 @@ class Report extends Model
         'first_inspector_function_first_revision',
         'second_inspector_function_first_revision',
         'elaborator_function_first_revision',
-        'approved_for_function_first_revision'
+        'approved_for_function_first_revision',
+        'description_of_system'
 
     ];
 

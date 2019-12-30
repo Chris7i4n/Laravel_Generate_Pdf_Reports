@@ -424,6 +424,19 @@ body {
   .metodology li h5{
       font-weight: bold;
   }
+
+  .field-inspection ol{
+    padding-top: 15px;
+    display: -webkit-box;
+  }
+
+  .field-inspection li h5{
+    font-weight: bold;
+  }
+
+  .field-inspection li p{
+    padding-top: 2px;
+  }
   .goals ol {
     padding-top: 15px;
     display: -webkit-box;
@@ -526,6 +539,51 @@ body {
     padding: 7px;
   }
 
+  .tag-localization-condition{
+    display: -webkit-box;
+    padding-left: 50px;
+    padding-right: 50px;
+    padding-bottom: 15px;
+  }
+
+  .tag-localization-condition td{
+    border: 1px solid #59a106;
+    background-color: #9ccc65;
+    text-align: center;
+    padding-top: 5px;
+    width: 267px;
+  }
+
+  .description-of-system{
+    display: -webkit-box;
+    padding-left: 50px;
+    padding-right: 50px;
+  }
+
+  .description-of-system td{
+    border: 1px solid #59a106;
+    background-color: #9ccc65;
+    width: 800px;
+  }
+
+  .description-of-system td h3{
+    margin-top: 5px;
+    text-align: left;
+  }
+
+  .description-of-system-datas{
+    display: -webkit-box;
+    padding-left: 50px;
+    padding-right: 50px;
+  }
+
+
+  .description-of-system-datas td{
+    border: 1px solid #9ccc65;
+    padding-top: 10px;
+    width: 800px;
+  }
+
   .responsabilities{
     display: -webkit-box;
     padding-left: 50px;
@@ -540,6 +598,7 @@ body {
 
   .responsabilities td{
       border: 1px solid #59a106;
+
         background-color: #9ccc65;
       width: 500px;
 
@@ -552,6 +611,7 @@ body {
   }
 
   .responsabilities-datas td {
+
       border: 1px solid #9ccc65;
   }
 

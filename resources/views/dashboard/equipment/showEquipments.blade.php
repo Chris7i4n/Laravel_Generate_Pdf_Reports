@@ -73,10 +73,14 @@
                             </table>
                         </div>
                     </div>
+
+
                 </div>
         </div>
+
         <!-- [ Main Content ] end -->
     </div>
+
 </section>
     <!-- Required Js -->
     <script src="{{ asset('assets/js/vendor-all.min.js') }}"></script>

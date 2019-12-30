@@ -33,6 +33,6 @@ class EquipmentController extends Controller
     {
         $equipment->update($request->all());
         $equipment->save();
-        return redirect()->back()->with(['message'=>'Equipamento atualizado com sucesso']);
+        return redirect()->back()->with('message', 'Equipamento atualizado com sucesso');
     }
 }

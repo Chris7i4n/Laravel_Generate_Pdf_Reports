@@ -78,7 +78,7 @@
        for(var j = 0; j < y.length; j++)
        {
           // if current page equals total pages
-          if (vars[x[2]] != vars[x[1]])
+          if (vars['page'] == 1)
           {
 
             document.getElementById("footer").style.display = 'none';
@@ -87,3 +87,4 @@
        }
     }
  </script>
+
