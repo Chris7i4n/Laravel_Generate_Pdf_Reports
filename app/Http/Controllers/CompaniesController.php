@@ -57,6 +57,7 @@ class CompaniesController extends Controller
         $request['logo'] = $this->uploadFiles($request->file('logoContractingCompany'));
         $request['user_id'] = Auth::user()->id;
         $company = Company::create($request->all());
+
         foreach($request['unity_id'] as $unity_id)
         {
 
@@ -65,14 +66,6 @@ class CompaniesController extends Controller
         }
 
         return redirect()->back()->with(['message' => 'Empresa adicionada com sucesso']);
-    }
-
-    public function uploadFiles($file)
-    {
-        $fileUploaded = Storage::putFileAs('public/', $file , $file->getClientOriginalName());
-        $fileNameExploaded = explode("/", $fileUploaded);
-        $fileName = end($fileNameExploaded);
-        return $fileName;
     }
 
     public function indexUnities()

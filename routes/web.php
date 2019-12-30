@@ -34,6 +34,7 @@ Route::group(['middleware' => ['auth']], function () {
         Route::get('unities', 'CompaniesController@indexUnities')->name('companies.unities');
         Route::post('unities', 'CompaniesController@storeUnities')->name('unities.store');
 
+        Route::resource('equipment', 'EquipmentController')->except('show', 'destroy');
 
 
     });

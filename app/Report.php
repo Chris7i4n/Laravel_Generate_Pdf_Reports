@@ -78,4 +78,8 @@ class Report extends Model
         return $this->belongsTo(Company::class);
 
     }
+
+    public function equipment(){
+        return $this->belongsTo(Equipment::class);
+    }
 }
