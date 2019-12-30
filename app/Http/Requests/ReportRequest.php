@@ -44,6 +44,7 @@ class ReportRequest extends FormRequest
             'elaborator_function_first_revision' => 'required',
             'approved_for_function_first_revision' => 'required',
             'description_of_system' => 'required',
+            'equipment_id' => 'required',
 
         ];
     }

@@ -10,6 +10,7 @@ use Illuminate\Http\Request;
 use PDF;
 use Illuminate\Support\Facades\Auth;
 use App\Company;
+use App\Equipment;
 
 class ReportsController extends Controller
 {
@@ -75,7 +76,8 @@ class ReportsController extends Controller
     {
         $unities = Unity::all();
         $contractedCompanies = Company::whereNotNull('tecnical_responsable')->get();
-        return view('dashboard.reports.createReports', compact('unities', 'contractedCompanies'));
+        $equipments = Equipment::all();
+        return view('dashboard.reports.createReports', compact('unities', 'contractedCompanies', 'equipments'));
     }
 
     public function store(ReportRequest $request)
@@ -110,8 +112,14 @@ class ReportsController extends Controller
         $request['footer_social_reason'] = $contractedCompany->footer_social_reason;
         $request['footer_phone'] = $contractedCompany->phone;
 
-        Report::create($request->all());
+        $report = Report::create($request->all());
 
+        foreach($request['equipment_id'] as $equipment_id)
+        {
+
+            $report->equipment()->attach($equipment_id);
+
+        }
         return redirect()->back()->with(['message' => 'Relatório gerado com sucesso']);
     }
 

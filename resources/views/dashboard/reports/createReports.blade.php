@@ -14,6 +14,7 @@
 
     <!-- vendor css -->
     <link rel="stylesheet" href="{{ asset("assets/css/style.css") }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/plugins/select2.min.css') }}">
 
 </head>
 <body class="">
@@ -180,10 +181,20 @@
                             </div>
 
                             <div class="row">
-                                <div class="col-md-6">
+                                <div class="col-md-4">
                                     <div class="form-group">
                                         <label class="form-label">Descrição do Sistema</label>
                                         <input type="text" class="form-control" name="description_of_system" placeholder="Descrição do Sistema">
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label class="form-label">Equipamentos</label>
+                                        <select class="js-example-basic-multiple col-sm-12" multiple="multiple" name="equipment_id[]" >
+                                            @foreach ($equipments as $equipment)
+                                                <option value="{{$equipment->id}}">{{$equipment->localization}}</option>
+                                            @endforeach
+                                        </select>
                                     </div>
                                 </div>
 
@@ -444,6 +455,8 @@
 <!-- form-picker-custom Js -->
 <script src="{{ asset('assets/js/pages/form-validation.js') }}"></script>
 
-
+<script src="{{ asset('assets/js/plugins/select2.full.min.js')}}"></script>
+<!-- form-select-custom Js -->
+<script src="{{ asset('assets/js/pages/form-select-custom.js')}}"></script>
 </body>
 </html>

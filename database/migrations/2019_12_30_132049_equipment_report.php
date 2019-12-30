@@ -19,14 +19,13 @@ class EquipmentReport extends Migration
             $table->integer('equipment_id')->unsigned();
 
             $table->foreign('report_id')
-                ->references('id')->on('companies')
+                ->references('id')->on('reports')
                 ->onDelete('cascade');
 
             $table->foreign('equipment_id')
-                ->references('id')->on('unities')
+                ->references('id')->on('equipment')
                 ->onDelete('cascade');
         });
-
     }
 
     /**
