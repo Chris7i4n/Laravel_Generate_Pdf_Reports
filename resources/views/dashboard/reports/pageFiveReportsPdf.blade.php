@@ -1,6 +1,6 @@
 <table class="table-reports table-small table-width" >
     <thead>
-        <tr class="table-empregados-head" >
+        <tr class="table-employee-head" >
             <th>
                 <img
                     src="{{ public_path("storage/". $report->logoCompanyContracted) }}"
@@ -64,7 +64,7 @@
         </tr>
         <tr class = "description-of-system-datas">
             <td>
-                <h3>{{$report->description_of_system}}</h3>
+                <h3 class="italic-padding">{{$report->description_of_system}}</h3>
             </td>
         </tr>
         <tr class = "tag-localization-condition">
@@ -78,6 +78,67 @@
                 <h3>Condition</h3>
             </td>
         </tr>
-
+        @foreach($equipments as $equipment)
+            <tr class = "tag-localization-condition-datas">
+                <td>
+                    <h3>{{$equipment->tag}}</h3>
+                </td>
+                <td>
+                    <h3>{{$equipment->localization}}</h3>
+                </td>
+                @if($equipment->condition == "C")
+                    <td class = "initials" style="background-color: #59a106;">
+                        <h3>C</h3>
+                    </td>
+                    <td class = "conditions">
+                        <h3>Aprovado</h3>
+                    </td>
+                @elseif($equipment->condition == "NC")
+                    <td class = "initials" style="background-color: red;">
+                        <h3>NC</h3>
+                    </td>
+                    <td class = "conditions">
+                        <h3>Não se comunica com a central</h3>
+                    </td>
+                @elseif($equipment->condition == "NR")
+                    <td class = "initials" style="background-color: blue;">
+                        <h3>NR</h3>
+                    </td>
+                    <td class = "conditions">
+                        <h3>Não realizada</h3>
+                    </td>
+                @elseif($equipment->condition == "N/A")
+                    <td class = "initials">
+                        <h3>N/A</h3>
+                    </td>
+                    <td class = "conditions">
+                        <h3>Não aplicável</h3>
+                    </td>
+                @endif
+            </tr>
+        @endforeach
+        <tr class = "conclusion-of-system">
+            <td>
+                <h3>Conclusão</h3>
+            </td>
+        </tr>
+        <tr class = "description-of-system-datas">
+            <td>
+                <h3 class="italic-padding">{{$report->description_of_conclusion}}</h3>
+            </td>
+        </tr>
+        <tr class = "description-of-system-datas">
+            <td>
+                <img
+                    src="{{ public_path("storage/". $report->conclusion_image) }}"
+                    class="conclusion-image"
+                >
+            </td>
+        </tr>
+        <tr class = "legend-of-conclusion" >
+            <td>
+                <h3 class="italic-padding">{{$report->legend_of_conclusion}}</h3>
+            </td>
+        </tr>
     </tbody>
 </table>

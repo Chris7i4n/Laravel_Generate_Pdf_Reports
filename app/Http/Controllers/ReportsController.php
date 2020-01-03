@@ -42,10 +42,9 @@ class ReportsController extends Controller
     public function show(Report $report)
     {
         $footerHtml = view()->make('dashboard.footer.pdfFooter', compact('report'))->render();
-        $companyUserId = $report->unity->company->first()->user_id;
         $companyContracted = $report->company;
         $monthOfTheGoal = $this->getMonth($report->data_goals);
-
+        $equipments = $report->equipment;
         // for document number
         $codeNumberForDocumentNumber = $this->getCodeNumber($report);
         $yearNumberForDocumentNumber = $this->getYearNumber($report);
@@ -60,6 +59,7 @@ class ReportsController extends Controller
                     'yearNumberForDocumentNumber' => $yearNumberForDocumentNumber,
                     'companyNameForDocumentNumber' => $companyNameForDocumentNumber,
                     'monthOfTheGoal' => $monthOfTheGoal,
+                    'equipments' => $equipments,
 
                 ))
                 ->setOption('margin-top', 1)
@@ -97,11 +97,14 @@ class ReportsController extends Controller
         {
             return redirect()->back()->with(['errorMessage' => 'Uma empresa contratada precisa ser adicionada']);
         }
+
         //for create report
-        $request['approved'] = 0;
+        if(Auth::user()->perfil == 1){$request['approved'] = 1;}
+        else $request['approved'] = 0;
         $request['user_id'] = Auth::user()->id;
         $request['logoCompanyContracted'] = $this->getLogoContractedCompany($request['company_id']);
         $request['logoCompanyContracting'] = $company->logo;
+        $request['conclusion_image'] = $this->uploadFiles($request['image_of_conclusion']);
         $request['footer_logo_1'] = $contractedCompany->logo;
         $request['footer_logo_2'] = $contractedCompany->footer_logo_1;
         $request['footer_logo_3'] = $contractedCompany->footer_logo_2;

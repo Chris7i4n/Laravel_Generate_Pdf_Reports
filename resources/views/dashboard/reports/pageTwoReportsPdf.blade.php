@@ -1,6 +1,6 @@
 <table class="table-reports table-small table-width" >
     <thead>
-        <tr class="table-empregados-head" >
+        <tr class="table-employee-head" >
             <th>
                 <img
                     src="{{ public_path("storage/". $report->logoCompanyContracted) }}"

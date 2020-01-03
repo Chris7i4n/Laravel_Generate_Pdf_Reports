@@ -198,7 +198,33 @@
                                     </div>
                                 </div>
 
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label class="form-label">Descrição da conclusão</label>
+                                        <input type="text" class="form-control" name="description_of_conclusion" placeholder="Descrição da conclusão">
+                                    </div>
+                                </div>
+
                             </div>
+
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label class="form-label">Imagem da conclusão</label>
+                                        <input type="file" class="form-control" name="image_of_conclusion">
+                                    </div>
+                                </div>
+
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label class="form-label">Legenda da conclusão</label>
+                                        <input type="text" class="form-control" name="legend_of_conclusion" placeholder="Legenda da conclusão">
+                                    </div>
+                                </div>
+
+                            </div>
+
+
 
                             <div class="card-header card-header-space" >
                                 <h5>Primeira Revisão</h5>

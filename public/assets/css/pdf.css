@@ -195,39 +195,39 @@ body {
   }
 
 
-  .table-empregados-head {
+  .table-employee-head {
     color:black;
     background-color: white;
     display:  -webkit-box;
   }
 
-  .table-empregados-head th {
+  .table-employee-head th {
     flex-grow: 1;
     display: flex;
     align-items: center;
   }
 
-  .table-empregados-head th:first-child {
+  .table-employee-head th:first-child {
       border-right: 1px solid #000;
   }
 
   .table-title{
       border-bottom: 1px solid #000;
   }
-  .table-empregados-head th:last-child{
+  .table-employee-head th:last-child{
       border-left: 1px solid #000;
 
   }
 
-  .table-empregados-head th:first-child{
+  .table-employee-head th:first-child{
         width: 20%;
     }
 
-  .table-empregados-head th img {
+  .table-employee-head th img {
     margin: 0 auto;
   }
 
-  .table-empregados-head th:nth-child(2) {
+  .table-employee-head th:nth-child(2) {
     width: 60%;
     flex-direction: column;
   }
@@ -543,7 +543,6 @@ body {
     display: -webkit-box;
     padding-left: 50px;
     padding-right: 50px;
-    padding-bottom: 15px;
   }
 
   .tag-localization-condition td{
@@ -554,6 +553,41 @@ body {
     width: 267px;
   }
 
+  .tag-localization-condition-datas{
+    display: -webkit-box;
+    padding-left: 50px;
+    padding-right: 50px;
+
+  }
+
+  .tag-localization-condition-datas td{
+    text-align: center;
+    padding-top: 5px;
+    border: 1px solid #59a106;
+  }
+
+  .tag-localization-condition-datas td:first-child{
+    width: 267px;
+  }
+  .tag-localization-condition-datas td:nth-child(2){
+
+    width: 267px;
+  }
+  .tag-localization-condition-datas td:nth-child(3){
+    width: 60px;
+  }
+  .tag-localization-condition-datas td:last-child{
+
+    width: 207px;
+
+  }
+  .conclusion-image{
+    display: -webkit-box;
+    margin-left: auto;
+    margin-right: auto;
+    height: 400px;
+    width: 400px;
+  }
   .description-of-system{
     display: -webkit-box;
     padding-left: 50px;
@@ -576,12 +610,49 @@ body {
     padding-left: 50px;
     padding-right: 50px;
   }
-
-
   .description-of-system-datas td{
-    border: 1px solid #9ccc65;
+    border-right: 1px solid #9ccc65;
+    border-left: 1px solid #9ccc65;
     padding-top: 10px;
     width: 800px;
+  }
+
+  .legend-of-conclusion{
+    display: -webkit-box;
+    padding-left: 50px;
+    padding-right: 50px;
+    padding-bottom: 20px;
+
+  }
+  .legend-of-conclusion td{
+    border-right: 1px solid #9ccc65;
+    border-left: 1px solid #9ccc65;
+    border-bottom: 1px solid #9ccc65;
+    padding-top: 10px;
+    width: 800px;
+  }
+
+  .italic-padding{
+    font-style:italic;
+    padding-left: 5px;
+  }
+
+
+  .conclusion-of-system{
+    display: -webkit-box;
+    padding-left: 50px;
+    padding-right: 50px;
+  }
+
+  .conclusion-of-system td{
+    border: 1px solid #59a106;
+    background-color: #9ccc65;
+    width: 800px;
+  }
+
+  .conclusion-of-system td h3{
+    margin-top: 5px;
+    text-align: center;
   }
 
   .responsabilities{

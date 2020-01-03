@@ -45,6 +45,9 @@ class ReportRequest extends FormRequest
             'approved_for_function_first_revision' => 'required',
             'description_of_system' => 'required',
             'equipment_id' => 'required',
+            'description_of_conclusion' => 'required',
+            'legend_of_conclusion' => 'required',
+            'image_of_conclusion' => 'required|file' ,
 
         ];
     }
