@@ -425,6 +425,15 @@ body {
       font-weight: bold;
   }
 
+  .triggers ol {
+    padding-top: 15px;
+  }
+
+  .triggers li h5{
+      font-weight: bold;
+      padding-left: 20px;
+  }
+
   .field-inspection ol{
     padding-top: 15px;
     display: -webkit-box;
@@ -539,6 +548,55 @@ body {
     padding: 7px;
   }
 
+  .triggers-inspection-table{
+    display: -webkit-box;
+    padding-left: 50px;
+    padding-right: 50px;
+  }
+
+  .triggers-inspection-table td{
+    border: 1px solid #59a106;
+    background-color: #9ccc65;
+    text-align: center;
+    padding-top: 5px;
+    width: 400px;
+    padding-right: 43px;
+  }
+
+  .triggers-inspection-table td:first-child{
+      border-right: none;
+      padding-left: 3px;
+  }
+
+  .triggers-inspection-table td:nth-child(2){
+    border-left: none;
+  }
+
+  .triggers-inspection-table td ol{
+      padding-top: 10px;
+  }
+
+  .triggers-inspection-table td ol li{
+    margin-bottom: -10px;
+  }
+
+  .triggers-inspection-table td ol li:first-child h3{
+    background-color: rgb(173, 173, 173);
+
+  }
+
+  .triggers-inspection-table td ol li h3{
+      display: inline-block;
+      border: 1px solid #59a106;
+      background-color: white;
+      width: 320px;
+  }
+  .triggers-inspection-table td ol li span{
+        border-right: 1px solid #59a106;
+        float: left;
+        width: 35px;
+  }
+
   .tag-localization-condition{
     display: -webkit-box;
     padding-left: 50px;
@@ -588,6 +646,43 @@ body {
     height: 400px;
     width: 400px;
   }
+
+  .triggers-header-table{
+    display: -webkit-box;
+    padding-left: 50px;
+    padding-right: 50px;
+  }
+  .triggers-header-table td{
+    border: 1px solid #59a106;
+    border-left: none;
+    border-right: none;
+    background-color: #9ccc65;
+
+  }
+  .triggers-header-table td:first-child{
+    border-left: 1px solid #59a106 !important;
+
+  }
+  .triggers-header-table td:last-child{
+      border-right: 1px solid #59a106 !important;
+
+  }
+  .triggers-header-table td h3{
+    font-size: 20px;
+    /* width: 201px; */
+    margin-top: 5px;
+    text-align: left;
+    white-space: nowrap;
+  }
+  .according{
+      color: #437a03;
+  }
+  .non-according{
+      color: red;
+  }
+  .non-done{
+    color: blue;
+  }
   .description-of-system{
     display: -webkit-box;
     padding-left: 50px;
@@ -603,6 +698,8 @@ body {
   .description-of-system td h3{
     margin-top: 5px;
     text-align: left;
+    white-space: nowrap;
+
   }
 
   .description-of-system-datas{
