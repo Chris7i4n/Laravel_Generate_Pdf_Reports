@@ -88,4 +88,12 @@ class Controller extends BaseController
         if($englishMonth == "December") return $month = "dezembro";
 
     }
+
+    public function getDescriptionOfElements($descriptionOfElements)
+    {
+        $descriptionOfElementsWithOutSpace = str_replace(' ', '', $descriptionOfElements);
+        $descriptionOfElementsArray = explode(",", $descriptionOfElementsWithOutSpace);
+        return  $descriptionOfElementsArray;
+
+    }
 }

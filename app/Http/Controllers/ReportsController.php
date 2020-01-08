@@ -45,6 +45,7 @@ class ReportsController extends Controller
         $companyContracted = $report->company;
         $monthOfTheGoal = $this->getMonth($report->data_goals);
         $equipments = $report->equipment;
+        $descriptionOfElements = $this->getDescriptionOfElements($report->description_of_elements);
         // for document number
         $codeNumberForDocumentNumber = $this->getCodeNumber($report);
         $yearNumberForDocumentNumber = $this->getYearNumber($report);
@@ -60,6 +61,7 @@ class ReportsController extends Controller
                     'companyNameForDocumentNumber' => $companyNameForDocumentNumber,
                     'monthOfTheGoal' => $monthOfTheGoal,
                     'equipments' => $equipments,
+                    'descriptionOfElements' => $descriptionOfElements,
 
                 ))
                 ->setOption('margin-top', 1)

@@ -48,6 +48,7 @@ class ReportRequest extends FormRequest
             'description_of_conclusion' => 'required',
             'legend_of_conclusion' => 'required',
             'image_of_conclusion' => 'required|file' ,
+            'description_of_elements' => 'required'
 
         ];
     }

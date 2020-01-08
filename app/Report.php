@@ -62,7 +62,8 @@ class Report extends Model
         'description_of_system',
         'description_of_conclusion',
         'legend_of_conclusion',
-        'conclusion_image'
+        'conclusion_image',
+        'description_of_elements',
 
     ];
 

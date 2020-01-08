@@ -224,7 +224,18 @@
 
                             </div>
 
+                            <div class="card-header card-header-space" >
+                                <h5>6.2 Acionadores Manuais e Sirenes Audiovisuais</h5>
+                            </div>
 
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label class="form-label">Descrição dos elementos</label>
+                                        <input type="text" class="form-control" name="description_of_elements" placeholder="Ex: Descrição 1, descrição 2">
+                                    </div>
+                                </div>
+                            </div>
 
                             <div class="card-header card-header-space" >
                                 <h5>Primeira Revisão</h5>

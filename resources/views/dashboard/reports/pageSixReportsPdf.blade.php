@@ -120,12 +120,11 @@
         </tr>
         <tr class = "description-of-elements-list">
             <td>
-                <li>
-                    <h3> Acionadores manuais </h3>
-                </li>
-                <li>
-                    <h3>Sirenes Audiovisuais</h3>
-                </li>
+                @foreach($descriptionOfElements as $descriptionOfElement)
+                    <li>
+                        <h3> {{$descriptionOfElement}} </h3>
+                    </li>
+                @endforeach
             </td>
         </tr>
         <tr class = "localization-of-equipments">
