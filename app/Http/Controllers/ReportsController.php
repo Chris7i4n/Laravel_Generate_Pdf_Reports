@@ -64,7 +64,7 @@ class ReportsController extends Controller
                     'descriptionOfElements' => $descriptionOfElements,
 
                 ))
-                ->setOption('margin-top', 1)
+                ->setOption('margin-top', 5)
                 ->setOption('margin-bottom', 18)
                 ->setOption('margin-left', 3)
                 ->setOption('margin-right', 2)

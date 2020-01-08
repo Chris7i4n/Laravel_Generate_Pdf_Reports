@@ -18,7 +18,7 @@
                         <h3>{{$report->inspection_number}}ª  INSPEÇÃO - {{$report->inspection_year}}</h3>
                     </div>
                     <div class="period" >
-                        <span>period:</span>
+                        <span>periodo:</span>
                         <h3>{{$report->period}}</h3>
                 </div>
             </th>
@@ -81,7 +81,7 @@
             </td>
         </tr>
 
-        <tr class="list-of-revisions">
+        <tr class="list-of-revisions border-list">
             <td class = "list-of-revisions-number">
                 <h3>0</h3>
             </td>
@@ -90,32 +90,65 @@
             </td>
         </tr>
 
-        <tr class="list-of-revisions">
-            <td class = "list-of-revisions-number">
-                <h3>1</h3>
-            </td>
-            <td class="list-of-descriptions">
-                <h3> {{$report->description_second_revision}}</h3>
-            </td>
-        </tr>
+        @if($report->description_second_revision != null)
+            <tr class="list-of-revisions">
+                <td class = "list-of-revisions-number">
+                    <h3>1</h3>
+                </td>
+                <td class="list-of-descriptions">
+                    <h3> {{$report->description_second_revision}}</h3>
+                </td>
+            </tr>
+        @else
+            <tr class="list-of-revisions">
+                <td class = "list-of-revisions-number">
+                    <h3></h3>
+                </td>
+                <td class="list-of-descriptions">
+                    <h3> {{$report->description_second_revision}}</h3>
+                </td>
+            </tr>
+        @endif
 
-        <tr class="list-of-revisions">
-            <td class = "list-of-revisions-number">
-                <h3>2</h3>
-            </td>
-            <td class="list-of-descriptions">
-                <h3> {{$report->description_third_revision }}</h3>
-            </td>
-        </tr>
+        @if($report->description_third_revision != null)
+            <tr class="list-of-revisions">
+                <td class = "list-of-revisions-number">
+                    <h3>2</h3>
+                </td>
+                <td class="list-of-descriptions">
+                    <h3> {{$report->description_third_revision }}</h3>
+                </td>
+            </tr>
+        @else
+            <tr class="list-of-revisions">
+                <td class = "list-of-revisions-number">
+                    <h3></h3>
+                </td>
+                <td class="list-of-descriptions">
+                    <h3> {{$report->description_third_revision }}</h3>
+                </td>
+            </tr>
+        @endif
 
-        <tr class="list-of-revisions">
-            <td class = "list-of-revisions-number">
-                <h3>3</h3>
-            </td>
-            <td class="list-of-descriptions">
-                <h3> {{$report->description_fourth_revision }}</h3>
-            </td>
-        </tr>
+        @if($report->description_fourth_revision != null)
+            <tr class="list-of-revisions">
+                <td class = "list-of-revisions-number">
+                    <h3>3</h3>
+                </td>
+                <td class="list-of-descriptions">
+                    <h3> {{$report->description_fourth_revision }}</h3>
+                </td>
+            </tr>
+        @else
+            <tr class="list-of-revisions">
+                <td class = "list-of-revisions-number">
+                    <h3></h3>
+                </td>
+                <td class="list-of-descriptions">
+                    <h3> {{$report->description_fourth_revision }}</h3>
+                </td>
+            </tr>
+        @endif
 
         <tr class="result-of-revisions-number">
             <td>

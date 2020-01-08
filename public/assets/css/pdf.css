@@ -130,7 +130,7 @@ body {
   }
 
   .logo-footer{
-    height: 40px;
+    height: 57px;
     width: 70px;
     margin-top: 5px;
   }
@@ -516,16 +516,18 @@ body {
   }
 
   .list-of-revisions{
-    border-top: 1px solid #000;
     display: -webkit-box;
     width: 100%;
+  }
+
+  .border-list{
+        border-top: 1px solid #000 !important;
   }
 
   .list-of-revisions-number{
         width: 20%;
         border-right: 1px solid #000;
-        height: 50px;
-
+        height: 110px;
     }
 
   .list-of-descriptions{
@@ -775,6 +777,10 @@ body {
 
   }
 
+  .color-white{
+      color: white;
+  }
+
   .according{
       color: #437a03;
   }
@@ -943,7 +949,7 @@ body {
     }
 
     .result-of-revisions-number td:first-child{
-        width: 130px;
+        width: 129px;
     }
 
     .result-of-revisions-number td:nth-child(2){
@@ -979,7 +985,7 @@ body {
     }
 
     .result-of-revisions-number-columns td:first-child{
-        width: 130px;
+        width: 129px;
 
     }
     .result-of-revisions-number-columns td:nth-child(2){
@@ -1009,10 +1015,15 @@ body {
     }
 
     .result-of-revisions-number-columns td h3{
-        font-size: 15px;
+        font-size: 12px;
         margin-left: 4px;
-        margin-top: 22px;
-        height: 35px;
+        margin-top: 15px;
+        margin-bottom: 15px;
+        height: 7px;
+    }
+
+    .result-of-revisions-number-columns td:nth-child(n+2):nth-child(-n+5) h3{
+        text-align: center;
     }
 
   .card-header {
@@ -1038,11 +1049,9 @@ body {
 }
 
 .logo-header{
-    height: 60px;
-    padding: 5px;
-    width: 50%;
+    height: 167px;
+    width: 100%;
     align-items: center;
-    margin-top: 5px;
 }
 
 .table-width{

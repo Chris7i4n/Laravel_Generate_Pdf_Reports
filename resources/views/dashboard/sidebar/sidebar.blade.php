@@ -29,6 +29,8 @@
 
                             <li><a style = "color: #e6e60f;"  href="{{ route('equipment.create')}}">Adicionar Equipamentos</a></li>
 
+                            <li><a style = "color: #e6e60f;"  href="{{ route('triggers.create')}}">Adicionar Acionadores</a></li>
+
                             <li><a style = "color: #e6e60f;"  href="{{ route('companies.create')}}">Adicionar Empresa Contratante</a></li>
 
                             <li><a style = "color: #e6e60f;" href="{{ route('companies.contracted.create')}}">Adicionar Empresa Contratada</a></li>
@@ -69,6 +71,19 @@
                     <a href="#!" class="nav-link "><span class="pcoded-micon"><i class="feather icon-file-text"></i></span><span class="pcoded-mtext">Equipamentos</span></a>
                     <ul class="pcoded-submenu">
                         <li><a href="{{ route('equipment.index') }}">Visualizar equipamentos cadastrados</a></li>
+                    </ul>
+                </li>
+            </ul>
+
+            <ul class="nav pcoded-inner-navbar ">
+                <li class="nav-item pcoded-menu-caption">
+                    <label>Acionadores</label>
+                </li>
+
+                <li class="nav-item pcoded-hasmenu">
+                    <a href="#!" class="nav-link "><span class="pcoded-micon"><i class="feather icon-file-text"></i></span><span class="pcoded-mtext">Acionadores</span></a>
+                    <ul class="pcoded-submenu">
+                        <li><a href="{{ route('triggers.index') }}">Visualizar acionadores cadastrados</a></li>
                     </ul>
                 </li>
             </ul>

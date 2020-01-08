@@ -35,6 +35,7 @@ Route::group(['middleware' => ['auth']], function () {
         Route::post('unities', 'CompaniesController@storeUnities')->name('unities.store');
 
         Route::resource('equipment', 'EquipmentController')->except('show', 'destroy');
+        Route::resource('triggers', 'TriggersController')->except('show', 'destroy');
 
 
     });

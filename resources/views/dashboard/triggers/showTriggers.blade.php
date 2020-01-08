@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Visualizar equipamentos</title>
+    <title>Visualizar acionadores</title>
 
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
@@ -32,11 +32,11 @@
                 <div class="row align-items-center">
                     <div class="col-md-12">
                         <div class="page-header-title">
-                            <h5 class="m-b-10">Visualizar Equipamentos</h5>
+                            <h5 class="m-b-10">Visualizar Acionadores</h5>
                         </div>
                         <ul class="breadcrumb">
                             <li class="breadcrumb-item"><a href="{{route('dashboardAdmin')}}"><i class="feather icon-home"></i></a></li>
-                            <li class="breadcrumb-item"><a href="#!">Visualizar Equipamentos</a></li>
+                            <li class="breadcrumb-item"><a href="#!">Visualizar Acionadores</a></li>
                         </ul>
                     </div>
                 </div>
@@ -46,27 +46,45 @@
             <div class="col-sm-12">
                 <div class="card">
                     <div class="card-header">
-                        <h5>Equipamentos</h5>
+                        <h5>Acionadores</h5>
                     </div>
                     <div class="card-body">
                         <div class="dt-responsive table-responsive">
                             <table id="order-table" class="table table-striped table-bordered nowrap">
                                 <thead>
                                     <tr>
-                                        <th>Tag</th>
+                                        <th>Sigla</th>
                                         <th>Localização</th>
-                                        <th>Condição</th>
+                                        <th>01</th>
+                                        <th>02</th>
+                                        <th>03</th>
+                                        <th>04</th>
+                                        <th>05</th>
+                                        <th>06</th>
+                                        <th>07</th>
+                                        <th>08</th>
+                                        <th>09</th>
+                                        <th>10</th>
                                         <th>Editar</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    @foreach($equipments as $equipment)
+                                    @foreach($triggers as $trigger)
                                         <tr>
-                                            <td>{{$equipment->tag}}</td>
-                                            <td>{{$equipment->localization}}</td>
-                                            <td>{{$equipment->condition}}</td>
+                                            <td>{{$trigger->initials}}</td>
+                                            <td>{{$trigger->localization}}</td>
+                                            <td>{{$trigger->question_01}}</td>
+                                            <td>{{$trigger->question_02}}</td>
+                                            <td>{{$trigger->question_03}}</td>
+                                            <td>{{$trigger->question_04}}</td>
+                                            <td>{{$trigger->question_05}}</td>
+                                            <td>{{$trigger->question_06}}</td>
+                                            <td>{{$trigger->question_07}}</td>
+                                            <td>{{$trigger->question_08}}</td>
+                                            <td>{{$trigger->question_09}}</td>
+                                            <td>{{$trigger->question_10}}</td>
                                             <td>
-                                                <a href="{{ route('equipment.edit', $equipment->id) }}">Editar</a>
+                                                <a href="{{ route('triggers.edit', $trigger->id) }}">Editar</a>
                                             </td>
                                         </tr>
                                     @endforeach

@@ -176,34 +176,34 @@
                 <h3 class="localization-of-equipments-h3" >ADM - Estacionamento Interno</h3>
             </td>
             <td>
-                <h3>C</h3>
+                <h3 class="color-white">C</h3>
             </td>
             <td>
-                <h3>C</h3>
+                <h3 class="color-white">C</h3>
             </td>
             <td>
-                <h3>C</h3>
+                <h3 class="color-white">C</h3>
             </td>
             <td>
-                <h3>C</h3>
+                <h3 class="color-white">C</h3>
             </td>
             <td>
-                <h3>C</h3>
+                <h3 class="color-white">C</h3>
             </td>
             <td>
-                <h3>C</h3>
+                <h3 class="color-white">C</h3>
             </td>
             <td>
-                <h3>C</h3>
+                <h3 class="color-white">C</h3>
             </td>
             <td>
-                <h3>C</h3>
+                <h3 class="color-white">C</h3>
             </td>
             <td>
-                <h3>C</h3>
+                <h3 class="color-white">C</h3>
             </td>
             <td>
-                <h3>C</h3>
+                <h3 class="color-white">C</h3>
             </td>
             <td class="localization-of-equipments-data">
                 <h3>Sirene queimada</h3>
