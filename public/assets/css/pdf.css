@@ -612,7 +612,17 @@ body {
     background-color: #9ccc65;
     text-align: center;
     padding-top: 5px;
+  }
+
+  .tag-localization-condition td:first-child{
     width: 267px;
+  }
+  .tag-localization-condition td:nth-child(2){
+
+    width: 267px;
+  }
+  .tag-localization-condition td:nth-child(3){
+    width: 266px;
   }
 
   .tag-localization-condition-datas{
@@ -625,7 +635,8 @@ body {
   .tag-localization-condition-datas td{
     text-align: center;
     padding-top: 5px;
-    border: 1px solid #59a106;
+    border-right: 1px solid #59a106;
+    border-left: 1px solid #59a106;
   }
 
   .tag-localization-condition-datas td:first-child{
@@ -640,7 +651,7 @@ body {
   }
   .tag-localization-condition-datas td:last-child{
 
-    width: 207px;
+    width: 206px;
 
   }
   .conclusion-image{
