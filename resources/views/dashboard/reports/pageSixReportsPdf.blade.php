@@ -61,10 +61,10 @@
                 <h3>NC - <span class="non-according">NÃO CONFORME&nbsp;</span></h3>
             </td>
             <td>
-                <h3>NR - <span class="non-done">NÃO REALIZADA&nbsp;</span></h3>
+                <h3>&nbsp;NR - <span class="non-done">NÃO REALIZADA&nbsp;</span></h3>
             </td>
             <td>
-                <h3>N/A - NÃO APLICÁVEL&nbsp;</h3>
+                <h3>&nbsp;N/A - NÃO APLICÁVEL&nbsp;</h3>
             </td>
         </tr>
         <tr class = "triggers-inspection-table">
@@ -111,6 +111,103 @@
                         <h3><span>05</span> Botão acionador</h3>
                     </li>
                 </ol>
+            </td>
+        </tr>
+        <tr class = "description-of-elements">
+            <td>
+                <h3>DESCRIÇÃO DOS ELEMENTOS</h3>
+            </td>
+        </tr>
+        <tr class = "description-of-elements-list">
+            <td>
+                <li>
+                    <h3> Acionadores manuais </h3>
+                </li>
+                <li>
+                    <h3>Sirenes Audiovisuais</h3>
+                </li>
+            </td>
+        </tr>
+        <tr class = "localization-of-equipments">
+            <td>
+                <h3>#</h3>
+            </td>
+            <td>
+                <h3>Localização</h3>
+            </td>
+            <td>
+                <h3>1</h3>
+            </td>
+            <td>
+                <h3>2</h3>
+            </td>
+            <td>
+                <h3>3</h3>
+            </td>
+            <td>
+                <h3>4</h3>
+            </td>
+            <td>
+                <h3>5</h3>
+            </td>
+            <td>
+                <h3>6</h3>
+            </td>
+            <td>
+                <h3>7</h3>
+            </td>
+            <td>
+                <h3>8</h3>
+            </td>
+            <td>
+                <h3>9</h3>
+            </td>
+            <td>
+                <h3>10</h3>
+            </td>
+            <td>
+                <h3>Observação</h3>
+            </td>
+        </tr>
+        <tr class = "localization-of-equipments">
+            <td class="localization-of-equipments-data">
+                <h3>AC-01</h3>
+            </td>
+            <td class="localization-of-equipments-data">
+                <h3 class="localization-of-equipments-h3" >ADM - Estacionamento Interno</h3>
+            </td>
+            <td>
+                <h3>C</h3>
+            </td>
+            <td>
+                <h3>C</h3>
+            </td>
+            <td>
+                <h3>C</h3>
+            </td>
+            <td>
+                <h3>C</h3>
+            </td>
+            <td>
+                <h3>C</h3>
+            </td>
+            <td>
+                <h3>C</h3>
+            </td>
+            <td>
+                <h3>C</h3>
+            </td>
+            <td>
+                <h3>C</h3>
+            </td>
+            <td>
+                <h3>C</h3>
+            </td>
+            <td>
+                <h3>C</h3>
+            </td>
+            <td class="localization-of-equipments-data">
+                <h3>Sirene queimada</h3>
             </td>
         </tr>
     </tbody>

@@ -72,10 +72,10 @@
                 <h3>Tag</h3>
             </td>
             <td>
-                <h3>Localization</h3>
+                <h3>Localização</h3>
             </td>
             <td>
-                <h3>Condition</h3>
+                <h3>Condição</h3>
             </td>
         </tr>
         @foreach($equipments as $equipment)
