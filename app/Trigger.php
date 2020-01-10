@@ -24,4 +24,8 @@ class Trigger extends Model
         'note'
 
     ];
+
+    public function report(){
+        return $this->belongsToMany(Report::class);
+    }
 }

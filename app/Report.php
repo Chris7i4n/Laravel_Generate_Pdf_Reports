@@ -64,6 +64,10 @@ class Report extends Model
         'legend_of_conclusion',
         'conclusion_image',
         'description_of_elements',
+        'conclusion_of_trigger',
+        'conclusion_image_trigger_1',
+        'conclusion_image_trigger_2',
+        'conclusion_legend',
 
     ];
 
@@ -86,5 +90,9 @@ class Report extends Model
 
     public function equipment(){
         return $this->belongsToMany(Equipment::class);
+    }
+
+    public function trigger(){
+        return $this->belongsToMany(Trigger::class);
     }
 }

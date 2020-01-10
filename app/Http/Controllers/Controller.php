@@ -96,4 +96,26 @@ class Controller extends BaseController
         return  $descriptionOfElementsArray;
 
     }
+
+    public function attachEquipment($report, $request)
+    {
+        foreach($request['equipment_id'] as $equipment_id)
+        {
+
+            $report->equipment()->attach($equipment_id);
+
+        }
+        return;
+    }
+
+    public function attachTrigger($report, $request)
+    {
+        foreach($request['trigger_id'] as $trigger_id)
+        {
+
+            $report->trigger()->attach($trigger_id);
+
+        }
+        return;
+    }
 }

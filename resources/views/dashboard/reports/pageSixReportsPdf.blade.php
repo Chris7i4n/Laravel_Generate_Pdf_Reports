@@ -168,46 +168,79 @@
                 <h3>Observação</h3>
             </td>
         </tr>
-        <tr class = "localization-of-equipments">
-            <td class="localization-of-equipments-data">
-                <h3>AC-01</h3>
-            </td>
-            <td class="localization-of-equipments-data">
-                <h3 class="localization-of-equipments-h3" >ADM - Estacionamento Interno</h3>
-            </td>
+
+        @foreach ($triggers as $key => $trigger )
+            <tr class = "localization-of-equipments-datas">
+                <td class="localization-of-equipments-data">
+                    <h3>{{$trigger->initials}}-{{$key+1}}</h3>
+                </td>
+                <td class="localization-of-equipments-data">
+                    <h3 class="localization-of-equipments-h3" >{{$trigger->localization}}</h3>
+                </td>
+                <td>
+                    <h3 class="color-white"> {{$trigger->question_01}}</h3>
+                </td>
+                <td>
+                    <h3 class="color-white">{{$trigger->question_02}}</h3>
+                </td>
+                <td>
+                    <h3 class="color-white">{{$trigger->question_03}}</h3>
+                </td>
+                <td>
+                    <h3 class="color-white">{{$trigger->question_04}}</h3>
+                </td>
+                <td>
+                    <h3 class="color-white">{{$trigger->question_05}}</h3>
+                </td>
+                <td>
+                    <h3 class="color-white">{{$trigger->question_06}}</h3>
+                </td>
+                <td>
+                    <h3 class="color-white">{{$trigger->question_07}}</h3>
+                </td>
+                <td>
+                    <h3 class="color-white">{{$trigger->question_08}}</h3>
+                </td>
+                <td>
+                    <h3 class="color-white">{{$trigger->question_09}}</h3>
+                </td>
+                <td>
+                    <h3 class="color-white">{{$trigger->question_10}}</h3>
+                </td>
+                <td class="localization-of-equipments-data">
+                    <h3>{{$trigger->note}}</h3>
+                </td>
+            </tr>
+        @endforeach
+        <tr class = "conclusion-of-trigger">
             <td>
-                <h3 class="color-white">C</h3>
-            </td>
-            <td>
-                <h3 class="color-white">C</h3>
-            </td>
-            <td>
-                <h3 class="color-white">C</h3>
-            </td>
-            <td>
-                <h3 class="color-white">C</h3>
-            </td>
-            <td>
-                <h3 class="color-white">C</h3>
-            </td>
-            <td>
-                <h3 class="color-white">C</h3>
-            </td>
-            <td>
-                <h3 class="color-white">C</h3>
-            </td>
-            <td>
-                <h3 class="color-white">C</h3>
-            </td>
-            <td>
-                <h3 class="color-white">C</h3>
-            </td>
-            <td>
-                <h3 class="color-white">C</h3>
-            </td>
-            <td class="localization-of-equipments-data">
-                <h3>Sirene queimada</h3>
+                <h3>Conclusão</h3>
             </td>
         </tr>
+        <tr class = "conclusion-of-trigger-datas">
+            <td>
+                <h3>{{$report->conclusion_of_trigger}}</h3>
+            </td>
+        </tr>
+        <tr class = "conclusion-of-trigger-images">
+            <td>
+                <img
+                    src="{{ public_path("storage/". $report->conclusion_image_trigger_1) }}"
+                    class="conclusion-trigger-image"
+                >
+            </td>
+            <td>
+                <img
+                    src="{{ public_path("storage/". $report->conclusion_image_trigger_2) }}"
+                    class="conclusion-trigger-image"
+                >
+            </td>
+        </tr>
+        <tr class = "legend-of-trigger fixed-padding">
+            <td>
+                <h3>{{$report->conclusion_legend}}</h3>
+            </td>
+        </tr>
+
     </tbody>
 </table>

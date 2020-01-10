@@ -10,6 +10,7 @@ use Illuminate\Http\Request;
 use PDF;
 use Illuminate\Support\Facades\Auth;
 use App\Company;
+use App\Trigger;
 use App\Equipment;
 
 class ReportsController extends Controller
@@ -45,6 +46,7 @@ class ReportsController extends Controller
         $companyContracted = $report->company;
         $monthOfTheGoal = $this->getMonth($report->data_goals);
         $equipments = $report->equipment;
+        $triggers = $report->trigger;
         $descriptionOfElements = $this->getDescriptionOfElements($report->description_of_elements);
         // for document number
         $codeNumberForDocumentNumber = $this->getCodeNumber($report);
@@ -61,6 +63,7 @@ class ReportsController extends Controller
                     'companyNameForDocumentNumber' => $companyNameForDocumentNumber,
                     'monthOfTheGoal' => $monthOfTheGoal,
                     'equipments' => $equipments,
+                    'triggers' => $triggers,
                     'descriptionOfElements' => $descriptionOfElements,
 
                 ))
@@ -79,7 +82,8 @@ class ReportsController extends Controller
         $unities = Unity::all();
         $contractedCompanies = Company::whereNotNull('tecnical_responsable')->get();
         $equipments = Equipment::all();
-        return view('dashboard.reports.createReports', compact('unities', 'contractedCompanies', 'equipments'));
+        $triggers = Trigger::all();
+        return view('dashboard.reports.createReports', compact('unities', 'contractedCompanies', 'equipments', 'triggers'));
     }
 
     public function store(ReportRequest $request)
@@ -106,7 +110,9 @@ class ReportsController extends Controller
         $request['user_id'] = Auth::user()->id;
         $request['logoCompanyContracted'] = $this->getLogoContractedCompany($request['company_id']);
         $request['logoCompanyContracting'] = $company->logo;
-        $request['conclusion_image'] = $this->uploadFiles($request['image_of_conclusion']);
+        $request['conclusion_image'] = $this->uploadFiles($request['conclusion_image_1']);
+        $request['conclusion_image_trigger_1'] = $this->uploadFiles($request['conclusion_image_1']);
+        $request['conclusion_image_trigger_2'] = $this->uploadFiles($request['conclusion_image_2']);
         $request['footer_logo_1'] = $contractedCompany->logo;
         $request['footer_logo_2'] = $contractedCompany->footer_logo_1;
         $request['footer_logo_3'] = $contractedCompany->footer_logo_2;
@@ -118,13 +124,9 @@ class ReportsController extends Controller
         $request['footer_phone'] = $contractedCompany->phone;
 
         $report = Report::create($request->all());
+        $this->attachEquipment($report, $request);
+        $this->attachTrigger($report, $request);
 
-        foreach($request['equipment_id'] as $equipment_id)
-        {
-
-            $report->equipment()->attach($equipment_id);
-
-        }
         return redirect()->back()->with(['message' => 'Relatório gerado com sucesso']);
     }
 

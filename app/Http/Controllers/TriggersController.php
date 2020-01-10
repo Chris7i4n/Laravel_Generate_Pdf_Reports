@@ -24,15 +24,15 @@ class TriggersController extends Controller
         return redirect()->back()->with(['message'=>'Acionador cadastrado com sucesso']);
     }
 
-    public function edit(Equipment $equipment)
+    public function edit(Trigger $trigger)
     {
-        return view('dashboard.equipment.addEquipment', compact('equipment'));
+        return view('dashboard.triggers.addTrigger', compact('trigger'));
     }
 
-    public function update(Request $request, Equipment $equipment)
+    public function update(Request $request, Trigger $trigger)
     {
-        $equipment->update($request->all());
-        $equipment->save();
-        return redirect()->back()->with('message', 'Equipamento atualizado com sucesso');
+        $trigger->update($request->all());
+        $trigger->save();
+        return redirect()->back()->with('message', 'Acionador atualizado com sucesso');
     }
 }

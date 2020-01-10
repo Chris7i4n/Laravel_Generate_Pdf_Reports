@@ -229,12 +229,57 @@
                             </div>
 
                             <div class="row">
+
                                 <div class="col-md-4">
                                     <div class="form-group">
                                         <label class="form-label">Descrição dos elementos</label>
                                         <input type="text" class="form-control" name="description_of_elements" placeholder="Ex: Descrição 1, descrição 2">
                                     </div>
                                 </div>
+
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label class="form-label">Acionadores</label>
+                                        <select class="js-example-basic-multiple col-sm-12" multiple="multiple" name="trigger_id[]" >
+                                            @foreach ($triggers as $trigger)
+                                                <option value="{{$trigger->id}}">{{$trigger->name}}</option>
+                                            @endforeach
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label class="form-label">Conclusão</label>
+                                        <input type="text" class="form-control" name="conclusion_of_trigger" placeholder="Conclusão do acionador">
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <div class="row">
+
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label class="form-label">Imagem para a conclusão</label>
+                                        <input type="file" class="form-control" name="conclusion_image_1">
+                                    </div>
+                                </div>
+
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label class="form-label">Segunda imagem para a conclusão</label>
+                                        <input type="file" class="form-control" name="conclusion_image_2">
+                                    </div>
+                                </div>
+
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label class="form-label">Legenda</label>
+                                        <input type="text" class="form-control" name="conclusion_legend" placeholder="Legenda da conclusão">
+                                    </div>
+                                </div>
+
                             </div>
 
                             <div class="card-header card-header-space" >
