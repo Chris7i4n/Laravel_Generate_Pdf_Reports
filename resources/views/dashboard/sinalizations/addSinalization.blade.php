@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Adicionar acionadores</title>
+    <title>Adicionar sinalizadores</title>
 
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
@@ -34,14 +34,14 @@
                 <div class="row align-items-center">
                     <div class="col-md-12">
                         <div class="page-header-title">
-                            <h5 class="m-b-10">Acionadores</h5>
+                            <h5 class="m-b-10">Sinalizadores</h5>
                         </div>
                         <ul class="breadcrumb">
                             <li class="breadcrumb-item"><a href="{{route('dashboard')}}"><i class="feather icon-home"></i></a></li>
                             @if(isset($trigger))
-                                <li class="breadcrumb-item"><a href="{{route('triggers.index')}}">Lista de acionadores</a></li>
+                                <li class="breadcrumb-item"><a href="{{route('sinalizations.index')}}">Lista de sinalizadores</a></li>
                             @else
-                                <li class="breadcrumb-item"><a href="#!">Cadastro de acionadores</a></li>
+                                <li class="breadcrumb-item"><a href="#!">Cadastro de sinalizadores</a></li>
                             @endif
                         </ul>
                     </div>
@@ -55,33 +55,33 @@
             <div class="col-sm-12">
                 <div class="card">
                     <div class="card-body">
-                        @if(isset($trigger))
-                            <form method="POST" class="form-login" enctype="multipart/form-data" action="{{ route('triggers.update', $trigger->id) }}" >
+                        @if(isset($sinalization))
+                            <form method="POST" class="form-login" enctype="multipart/form-data" action="{{ route('sinalizations.update', $sinalization->id) }}" >
                                 @method('put')
                         @else
-                            <form method="POST" class="form-login" enctype="multipart/form-data" action="{{ route('triggers.store') }}" >
+                            <form method="POST" class="form-login" enctype="multipart/form-data" action="{{ route('sinalizations.store') }}" >
                         @endif
                             @csrf
                             <div class="row">
 
                                 <div class="col-md-4">
                                     <div class="form-group">
-                                        <label class="form-label">Nome do acionador</label>
-                                        <input type="text" class="form-control" name="name" value="{{isset($trigger) ? $trigger->name : ""}}" placeholder="Nome do acionador">
+                                        <label class="form-label">Nome do sinalizador</label>
+                                        <input type="text" class="form-control" name="name" value="{{isset($sinalization) ? $sinalization->name : ""}}" placeholder="Nome da sinalização">
                                     </div>
                                 </div>
 
                                 <div class="col-md-4">
                                     <div class="form-group">
                                         <label class="form-label">Sigla</label>
-                                        <input type="text" class="form-control" name="initials" value="{{isset($trigger) ? $trigger->initials : ""}}" placeholder="Ex: AC">
+                                        <input type="text" class="form-control" name="initials" value="{{isset($sinalization) ? $sinalization->initials : ""}}" placeholder="Ex: AC">
                                     </div>
                                 </div>
 
                                 <div class="col-md-4">
                                     <div class="form-group">
                                         <label class="form-label">Localização</label>
-                                        <input type="text" class="form-control" name="localization" value="{{isset($trigger) ? $trigger->localization : ""}}" placeholder="Localização">
+                                        <input type="text" class="form-control" name="localization" value="{{isset($sinalization) ? $sinalization->localization : ""}}" placeholder="Localização">
                                     </div>
                                 </div>
 
@@ -90,13 +90,13 @@
                             <div class="row">
                                 <div class="col-md-4">
                                     <div class="form-group">
-                                        <label class="form-label">Condições da botoeira</label>
+                                        <label class="form-label">Tamanho: As placas podem ser vistas?</label>
                                         <select class="form-control" name="question_01">
-                                            @if(isset($trigger))
-                                                <option @if($trigger->question_01 == "C") selected @endif value="C">C</option>
-                                                <option @if($trigger->question_01 == "NC") selected @endif value="NC">NC</option>
-                                                <option @if($trigger->question_01 == "NR") selected @endif value="NR">NR</option>
-                                                <option @if($trigger->question_01 == "N/A") selected @endif value="N/A">N/A</option>
+                                            @if(isset($sinalization))
+                                                <option @if($sinalization->question_01 == "C") selected @endif value="C">C</option>
+                                                <option @if($sinalization->question_01 == "NC") selected @endif value="NC">NC</option>
+                                                <option @if($sinalization->question_01 == "NR") selected @endif value="NR">NR</option>
+                                                <option @if($sinalization->question_01 == "N/A") selected @endif value="N/A">N/A</option>
                                             @else
                                                 <option value="C" selected >C</option>
                                                 <option value="NC">NC</option>
@@ -109,13 +109,13 @@
 
                                 <div class="col-md-4">
                                     <div class="form-group">
-                                        <label class="form-label">Condições do vidro</label>
+                                        <label class="form-label">Girando 360°, é possível ver as placas?</label>
                                         <select class="form-control" name="question_02">
-                                            @if(isset($trigger))
-                                                <option @if($trigger->question_02 == "C") selected @endif value="C">C</option>
-                                                <option @if($trigger->question_02 == "NC") selected @endif value="NC">NC</option>
-                                                <option @if($trigger->question_02 == "NR") selected @endif value="NR">NR</option>
-                                                <option @if($trigger->question_02 == "N/A") selected @endif value="N/A">N/A</option>
+                                            @if(isset($sinalization))
+                                                <option @if($sinalization->question_02 == "C") selected @endif value="C">C</option>
+                                                <option @if($sinalization->question_02 == "NC") selected @endif value="NC">NC</option>
+                                                <option @if($sinalization->question_02 == "NR") selected @endif value="NR">NR</option>
+                                                <option @if($sinalization->question_02 == "N/A") selected @endif value="N/A">N/A</option>
                                             @else
                                                 <option value="C" selected >C</option>
                                                 <option value="NC">NC</option>
@@ -128,13 +128,13 @@
 
                                 <div class="col-md-4">
                                     <div class="form-group">
-                                        <label class="form-label">Condições do LED verde</label>
+                                        <label class="form-label">A altura da sinalização está correta?</label>
                                         <select class="form-control" name="question_03">
-                                            @if(isset($trigger))
-                                                <option @if($trigger->question_03 == "C") selected @endif value="C">C</option>
-                                                <option @if($trigger->question_03 == "NC") selected @endif value="NC">NC</option>
-                                                <option @if($trigger->question_03 == "NR") selected @endif value="NR">NR</option>
-                                                <option @if($trigger->question_03 == "N/A") selected @endif value="N/A">N/A</option>
+                                            @if(isset($sinalization))
+                                                <option @if($sinalization->question_03 == "C") selected @endif value="C">C</option>
+                                                <option @if($sinalization->question_03 == "NC") selected @endif value="NC">NC</option>
+                                                <option @if($sinalization->question_03 == "NR") selected @endif value="NR">NR</option>
+                                                <option @if($sinalization->question_03 == "N/A") selected @endif value="N/A">N/A</option>
                                             @else
                                                 <option value="C" selected >C</option>
                                                 <option value="NC">NC</option>
@@ -149,13 +149,13 @@
                             <div class="row">
                                 <div class="col-md-4">
                                     <div class="form-group">
-                                        <label class="form-label">Condições do LED vermelho</label>
+                                        <label class="form-label">As placas possuem CNPJ?</label>
                                         <select class="form-control" name="question_04">
-                                            @if(isset($trigger))
-                                                <option @if($trigger->question_04 == "C") selected @endif value="C">C</option>
-                                                <option @if($trigger->question_04 == "NC") selected @endif value="NC">NC</option>
-                                                <option @if($trigger->question_04 == "NR") selected @endif value="NR">NR</option>
-                                                <option @if($trigger->question_04 == "N/A") selected @endif value="N/A">N/A</option>
+                                            @if(isset($sinalization))
+                                                <option @if($sinalization->question_04 == "C") selected @endif value="C">C</option>
+                                                <option @if($sinalization->question_04 == "NC") selected @endif value="NC">NC</option>
+                                                <option @if($sinalization->question_04 == "NR") selected @endif value="NR">NR</option>
+                                                <option @if($sinalization->question_04 == "N/A") selected @endif value="N/A">N/A</option>
                                             @else
                                                 <option value="C" selected >C</option>
                                                 <option value="NC">NC</option>
@@ -168,13 +168,13 @@
 
                                 <div class="col-md-4">
                                     <div class="form-group">
-                                        <label class="form-label">Botão acionador</label>
+                                        <label class="form-label">As placas são fotoluminescentes?</label>
                                         <select class="form-control" name="question_05">
-                                            @if(isset($trigger))
-                                                <option @if($trigger->question_05 == "C") selected @endif value="C">C</option>
-                                                <option @if($trigger->question_05 == "NC") selected @endif value="NC">NC</option>
-                                                <option @if($trigger->question_05 == "NR") selected @endif value="NR">NR</option>
-                                                <option @if($trigger->question_05 == "N/A") selected @endif value="N/A">N/A</option>
+                                            @if(isset($sinalization))
+                                                <option @if($sinalization->question_05 == "C") selected @endif value="C">C</option>
+                                                <option @if($sinalization->question_05 == "NC") selected @endif value="NC">NC</option>
+                                                <option @if($sinalization->question_05 == "NR") selected @endif value="NR">NR</option>
+                                                <option @if($sinalization->question_05 == "N/A") selected @endif value="N/A">N/A</option>
                                             @else
                                                 <option value="C" selected >C</option>
                                                 <option value="NC">NC</option>
@@ -187,13 +187,13 @@
 
                                 <div class="col-md-4">
                                     <div class="form-group">
-                                        <label class="form-label">Condição da luz(Flash)</label>
+                                        <label class="form-label">Elas estão devidamente fixadas?</label>
                                         <select class="form-control" name="question_06">
-                                            @if(isset($trigger))
-                                                <option @if($trigger->question_06 == "C") selected @endif value="C">C</option>
-                                                <option @if($trigger->question_06 == "NC") selected @endif value="NC">NC</option>
-                                                <option @if($trigger->question_06 == "NR") selected @endif value="NR">NR</option>
-                                                <option @if($trigger->question_06 == "N/A") selected @endif value="N/A">N/A</option>
+                                            @if(isset($sinalization))
+                                                <option @if($sinalization->question_06 == "C") selected @endif value="C">C</option>
+                                                <option @if($sinalization->question_06 == "NC") selected @endif value="NC">NC</option>
+                                                <option @if($sinalization->question_06 == "NR") selected @endif value="NR">NR</option>
+                                                <option @if($sinalization->question_06 == "N/A") selected @endif value="N/A">N/A</option>
                                             @else
                                                 <option value="C" selected >C</option>
                                                 <option value="NC">NC</option>
@@ -208,13 +208,13 @@
                             <div class="row">
                                 <div class="col-md-4">
                                     <div class="form-group">
-                                        <label class="form-label">Condições da Sirene</label>
+                                        <label class="form-label">Elas estão limpas?</label>
                                         <select class="form-control" name="question_07">
-                                            @if(isset($trigger))
-                                                <option @if($trigger->question_07 == "C") selected @endif value="C">C</option>
-                                                <option @if($trigger->question_07 == "NC") selected @endif value="NC">NC</option>
-                                                <option @if($trigger->question_07 == "NR") selected @endif value="NR">NR</option>
-                                                <option @if($trigger->question_07 == "N/A") selected @endif value="N/A">N/A</option>
+                                            @if(isset($sinalization))
+                                                <option @if($sinalization->question_07 == "C") selected @endif value="C">C</option>
+                                                <option @if($sinalization->question_07 == "NC") selected @endif value="NC">NC</option>
+                                                <option @if($sinalization->question_07 == "NR") selected @endif value="NR">NR</option>
+                                                <option @if($sinalization->question_07 == "N/A") selected @endif value="N/A">N/A</option>
                                             @else
                                                 <option value="C" selected >C</option>
                                                 <option value="NC">NC</option>
@@ -227,13 +227,13 @@
 
                                 <div class="col-md-4">
                                     <div class="form-group">
-                                        <label class="form-label">Condições da Tubulação</label>
+                                        <label class="form-label">Elas estão inteiras?</label>
                                         <select class="form-control" name="question_08">
-                                            @if(isset($trigger))
-                                                <option @if($trigger->question_08 == "C") selected @endif value="C">C</option>
-                                                <option @if($trigger->question_08 == "NC") selected @endif value="NC">NC</option>
-                                                <option @if($trigger->question_08 == "NR") selected @endif value="NR">NR</option>
-                                                <option @if($trigger->question_08 == "N/A") selected @endif value="N/A">N/A</option>
+                                            @if(isset($sinalization))
+                                                <option @if($sinalization->question_08 == "C") selected @endif value="C">C</option>
+                                                <option @if($sinalization->question_08 == "NC") selected @endif value="NC">NC</option>
+                                                <option @if($sinalization->question_08 == "NR") selected @endif value="NR">NR</option>
+                                                <option @if($sinalization->question_08 == "N/A") selected @endif value="N/A">N/A</option>
                                             @else
                                                 <option value="C" selected >C</option>
                                                 <option value="NC">NC</option>
@@ -246,13 +246,13 @@
 
                                 <div class="col-md-4">
                                     <div class="form-group">
-                                        <label class="form-label">Condições da Sinalização</label>
+                                        <label class="form-label">Há projeto de sinalização?</label>
                                         <select class="form-control" name="question_09">
-                                            @if(isset($trigger))
-                                                <option @if($trigger->question_09 == "C") selected @endif value="C">C</option>
-                                                <option @if($trigger->question_09 == "NC") selected @endif value="NC">NC</option>
-                                                <option @if($trigger->question_09 == "NR") selected @endif value="NR">NR</option>
-                                                <option @if($trigger->question_09 == "N/A") selected @endif value="N/A">N/A</option>
+                                            @if(isset($sinalization))
+                                                <option @if($sinalization->question_09 == "C") selected @endif value="C">C</option>
+                                                <option @if($sinalization->question_09 == "NC") selected @endif value="NC">NC</option>
+                                                <option @if($sinalization->question_09 == "NR") selected @endif value="NR">NR</option>
+                                                <option @if($sinalization->question_09 == "N/A") selected @endif value="N/A">N/A</option>
                                             @else
                                                 <option value="C" selected >C</option>
                                                 <option value="NC">NC</option>
@@ -267,13 +267,13 @@
                             <div class="row">
                                 <div class="col-md-4">
                                     <div class="form-group">
-                                        <label class="form-label">Obstruções</label>
+                                        <label class="form-label">As placas estão em acordo com o projeto?</label>
                                         <select class="form-control" name="question_10">
-                                            @if(isset($trigger))
-                                                <option @if($trigger->question_10 == "C") selected @endif value="C">C</option>
-                                                <option @if($trigger->question_10 == "NC") selected @endif value="NC">NC</option>
-                                                <option @if($trigger->question_10 == "NR") selected @endif value="NR">NR</option>
-                                                <option @if($trigger->question_10 == "N/A") selected @endif value="N/A">N/A</option>
+                                            @if(isset($sinalization))
+                                                <option @if($sinalization->question_10 == "C") selected @endif value="C">C</option>
+                                                <option @if($sinalization->question_10 == "NC") selected @endif value="NC">NC</option>
+                                                <option @if($sinalization->question_10 == "NR") selected @endif value="NR">NR</option>
+                                                <option @if($sinalization->question_10 == "N/A") selected @endif value="N/A">N/A</option>
                                             @else
                                                 <option value="C" selected >C</option>
                                                 <option value="NC">NC</option>
@@ -287,12 +287,11 @@
                                 <div class="col-md-4">
                                     <div class="form-group">
                                         <label class="form-label">Observação</label>
-                                        <input type="text" class="form-control" name="note" value="{{isset($trigger) ? $trigger->note : "APROVADO"}}" placeholder="Ex: APROVADO">
+                                        <input type="text" class="form-control" name="note" value="{{isset($sinalization) ? $sinalization->note : "APROVADO"}}" placeholder="Ex: APROVADO">
                                     </div>
                                 </div>
                             </div>
-
-                            @if(isset($trigger))
+                            @if(isset($sinalization))
                                 <button type="submit" class="btn btn-primary">Atualizar</button>
                             @else
                                 <button type="submit" class="btn btn-primary">Cadastrar</button>

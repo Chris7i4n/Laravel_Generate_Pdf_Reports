@@ -68,6 +68,11 @@ class Report extends Model
         'conclusion_image_trigger_1',
         'conclusion_image_trigger_2',
         'conclusion_legend',
+        'description_of_elements_sinalization',
+        'conclusion_of_sinalization',
+        'conclusion_image_sinalization_1',
+        'conclusion_image_sinalization_2',
+        'conclusion_legend_sinalization',
 
     ];
 
@@ -94,5 +99,9 @@ class Report extends Model
 
     public function trigger(){
         return $this->belongsToMany(Trigger::class);
+    }
+
+    public function sinalization(){
+        return $this->belongsToMany(Sinalization::class);
     }
 }

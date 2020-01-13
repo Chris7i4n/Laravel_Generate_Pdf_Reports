@@ -12,6 +12,7 @@ use Illuminate\Support\Facades\Auth;
 use App\Company;
 use App\Trigger;
 use App\Equipment;
+use App\Sinalization;
 
 class ReportsController extends Controller
 {
@@ -47,7 +48,10 @@ class ReportsController extends Controller
         $monthOfTheGoal = $this->getMonth($report->data_goals);
         $equipments = $report->equipment;
         $triggers = $report->trigger;
+        $sinalizations = $report->sinalization;
         $descriptionOfElements = $this->getDescriptionOfElements($report->description_of_elements);
+        $descriptionOfElementSinalizations = $this->getDescriptionOfElements($report->description_of_elements_sinalization);
+
         // for document number
         $codeNumberForDocumentNumber = $this->getCodeNumber($report);
         $yearNumberForDocumentNumber = $this->getYearNumber($report);
@@ -64,13 +68,15 @@ class ReportsController extends Controller
                     'monthOfTheGoal' => $monthOfTheGoal,
                     'equipments' => $equipments,
                     'triggers' => $triggers,
+                    'sinalizations' => $sinalizations,
+                    'descriptionOfElementSinalizations' => $descriptionOfElementSinalizations,
                     'descriptionOfElements' => $descriptionOfElements,
 
                 ))
                 ->setOption('margin-top', 5)
                 ->setOption('margin-bottom', 18)
-                ->setOption('margin-left', 3)
-                ->setOption('margin-right', 2)
+                ->setOption('margin-left', 2)
+                ->setOption('margin-right', 1)
                 ->setOption('footer-html', $footerHtml);
 
         return $pdf->stream('relatorio.pdf');
@@ -83,7 +89,8 @@ class ReportsController extends Controller
         $contractedCompanies = Company::whereNotNull('tecnical_responsable')->get();
         $equipments = Equipment::all();
         $triggers = Trigger::all();
-        return view('dashboard.reports.createReports', compact('unities', 'contractedCompanies', 'equipments', 'triggers'));
+        $sinalizations = Sinalization::all();
+        return view('dashboard.reports.createReports', compact('unities', 'contractedCompanies', 'equipments', 'triggers','sinalizations'));
     }
 
     public function store(ReportRequest $request)
@@ -113,6 +120,8 @@ class ReportsController extends Controller
         $request['conclusion_image'] = $this->uploadFiles($request['conclusion_image_1']);
         $request['conclusion_image_trigger_1'] = $this->uploadFiles($request['conclusion_image_1']);
         $request['conclusion_image_trigger_2'] = $this->uploadFiles($request['conclusion_image_2']);
+        $request['conclusion_image_sinalization_1'] = $this->uploadFiles($request['conclusion_image_1_sinalization']);
+        $request['conclusion_image_sinalization_2'] = $this->uploadFiles($request['conclusion_image_2_sinalization']);
         $request['footer_logo_1'] = $contractedCompany->logo;
         $request['footer_logo_2'] = $contractedCompany->footer_logo_1;
         $request['footer_logo_3'] = $contractedCompany->footer_logo_2;
@@ -126,6 +135,7 @@ class ReportsController extends Controller
         $report = Report::create($request->all());
         $this->attachEquipment($report, $request);
         $this->attachTrigger($report, $request);
+        $this->attachSinalization($report, $request);
 
         return redirect()->back()->with(['message' => 'Relatório gerado com sucesso']);
     }

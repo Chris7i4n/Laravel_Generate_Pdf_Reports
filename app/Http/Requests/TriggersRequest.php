@@ -44,7 +44,7 @@ class TriggersRequest extends FormRequest
     public function messages()
     {
         return [
-            'name.required' => 'O nome do acionador é obrigatório',
+            'name.required' => 'O nome é obrigatório',
             'initials.required' => 'A sigla é obrigatória',
             'localization.required' => 'A localização é obrigatória',
             'question_01.required' => 'A pergunta 1 é obrigatória',

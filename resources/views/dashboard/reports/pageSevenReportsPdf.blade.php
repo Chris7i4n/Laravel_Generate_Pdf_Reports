@@ -39,7 +39,7 @@
             </td>
             <td>
                 <span>Folha:</span>
-                <h3>Página 6 de 21</h3>
+                <h3>Página 7 de 21</h3>
             </td>
         </tr>
 
@@ -47,7 +47,7 @@
             <td class="triggers">
 
                 <ol>
-                    <li><b><h5>6.2 Acionadores Manuais e Sirenes Audiovisuais</h5></b></li>
+                    <li><b><h5>6.3 Sinalizações</h5></b></li>
                 </ol>
 
             </td>
@@ -71,47 +71,48 @@
             <td>
                 <ol>
                     <li>
-                        <h3><span>#</span> O que foi inspecionado?</h3>
+                        <h3><span>#</span> O que está sendo inspecionado?</h3>
                     </li>
                     <li>
-                        <h3><span>01</span> Condições da botoeira</h3>
+                        <h3><span>01</span>Tamanho: as placas podem ser vistas?</h3>
                     </li>
                     <li>
-                        <h3><span>02</span> Condições do vidro</h3>
+                        <h3><span>02</span>Girando 360°,é possível ver as placas?</h3>
                     </li>
                     <li>
-                        <h3><span>03</span> Condições do LED verde</h3>
+                        <h3><span>03</span>A altura da sinalização está correta?</h3>
                     </li>
                     <li>
-                        <h3><span>04</span> Condições do LED vermelho</h3>
+                        <h3><span>04</span>As placas possuem CNPJ?</h3>
                     </li>
                     <li>
-                        <h3><span>05</span> Botão acionador</h3>
+                        <h3><span>05</span>As placas são fotoluminescentes?</h3>
                     </li>
                 </ol>
             </td>
             <td>
                 <ol>
                     <li>
-                        <h3><span>#</span> O que foi inspecionado?</h3>
+                        <h3><span>#</span>  O que está sendo inspecionado?</h3>
                     </li>
                     <li>
-                        <h3><span>01</span> Condições da botoeira</h3>
+                        <h3><span>01</span>Elas estão devidamente fixadas?</h3>
                     </li>
                     <li>
-                        <h3><span>02</span> Condições do vidro</h3>
+                        <h3><span>02</span>Elas estão limpas?</h3>
                     </li>
                     <li>
-                        <h3><span>03</span> Condições do LED verde</h3>
+                        <h3><span>03</span>Elas estão inteiras?</h3>
                     </li>
                     <li>
-                        <h3><span>04</span> Condições do LED vermelho</h3>
+                        <h3><span>04</span>Há projeto de sinalização?</h3>
                     </li>
                     <li>
-                        <h3><span>05</span> Botão acionador</h3>
+                        <h3><span>05</span>As placas estão em acordo com o projeto?</h3>
                     </li>
                 </ol>
             </td>
+
         </tr>
         <tr class = "description-of-elements">
             <td>
@@ -120,9 +121,9 @@
         </tr>
         <tr class = "description-of-elements-list">
             <td>
-                @foreach($descriptionOfElements as $descriptionOfElement)
+                @foreach($descriptionOfElementSinalizations as $descriptionOfElementSinalization)
                     <li>
-                        <h3> {{$descriptionOfElement}} </h3>
+                        <h3> {{$descriptionOfElementSinalization}} </h3>
                     </li>
                 @endforeach
             </td>
@@ -169,196 +170,196 @@
             </td>
         </tr>
 
-        @foreach ($triggers as $key => $trigger )
+        @foreach ($sinalizations as $key => $sinalization )
             <tr class = "localization-of-equipments-datas">
                 <td class="localization-of-equipments-data">
-                    <h3>{{$trigger->initials}}-{{$key+1}}</h3>
+                    <h3>{{$sinalization->initials}}-{{$key+1}}</h3>
                 </td>
                 <td class="localization-of-equipments-data">
-                    <h3 class="localization-of-equipments-h3" >{{$trigger->localization}}</h3>
+                    <h3 class="localization-of-equipments-h3" >{{$sinalization->localization}}</h3>
                 </td>
-                @if($trigger->question_01 == "C")
+                @if($sinalization->question_01 == "C")
                     <td>
-                        <h3 class="color-white"> {{$trigger->question_01}}</h3>
+                        <h3 class="color-white"> {{$sinalization->question_01}}</h3>
                     </td>
-                @elseif($trigger->question_01 == "NC")
+                @elseif($sinalization->question_01 == "NC")
                     <td style="background-color: red;">
-                        <h3 class="color-white" > {{$trigger->question_01}}</h3>
+                        <h3 class="color-white" > {{$sinalization->question_01}}</h3>
                     </td>
-                @elseif($trigger->question_01 == "NR")
+                @elseif($sinalization->question_01 == "NR")
                     <td style="background-color: blue;">
-                        <h3 class="color-white" > {{$trigger->question_01}}</h3>
+                        <h3 class="color-white" > {{$sinalization->question_01}}</h3>
                     </td>
-                @elseif($trigger->question_01 == "N/A")
+                @elseif($sinalization->question_01 == "N/A")
                     <td style="background-color: black;">
-                        <h3 class="color-white" > {{$trigger->question_01}}</h3>
+                        <h3 class="color-white" > {{$sinalization->question_01}}</h3>
                     </td>
                 @endif
 
-                @if($trigger->question_02 == "C")
+                @if($sinalization->question_02 == "C")
                     <td>
-                        <h3 class="color-white"> {{$trigger->question_02}}</h3>
+                        <h3 class="color-white"> {{$sinalization->question_02}}</h3>
                     </td>
-                @elseif($trigger->question_02 == "NC")
+                @elseif($sinalization->question_02 == "NC")
                     <td style="background-color: red;">
-                        <h3 class="color-white" > {{$trigger->question_02}}</h3>
+                        <h3 class="color-white" > {{$sinalization->question_02}}</h3>
                     </td>
-                @elseif($trigger->question_02 == "NR")
+                @elseif($sinalization->question_02 == "NR")
                     <td style="background-color: blue;">
-                        <h3 class="color-white" > {{$trigger->question_02}}</h3>
+                        <h3 class="color-white" > {{$sinalization->question_02}}</h3>
                     </td>
-                @elseif($trigger->question_02 == "N/A")
+                @elseif($sinalization->question_02 == "N/A")
                     <td style="background-color: black;">
-                        <h3 class="color-white" > {{$trigger->question_02}}</h3>
+                        <h3 class="color-white" > {{$sinalization->question_02}}</h3>
                     </td>
                 @endif
 
-                @if($trigger->question_03 == "C")
+                @if($sinalization->question_03 == "C")
                     <td>
-                        <h3 class="color-white"> {{$trigger->question_03}}</h3>
+                        <h3 class="color-white"> {{$sinalization->question_03}}</h3>
                     </td>
-                @elseif($trigger->question_03 == "NC")
+                @elseif($sinalization->question_03 == "NC")
                     <td style="background-color: red;">
-                        <h3 class="color-white" > {{$trigger->question_03}}</h3>
+                        <h3 class="color-white" > {{$sinalization->question_03}}</h3>
                     </td>
-                @elseif($trigger->question_03 == "NR")
+                @elseif($sinalization->question_03 == "NR")
                     <td style="background-color: blue;">
-                        <h3 class="color-white" > {{$trigger->question_03}}</h3>
+                        <h3 class="color-white" > {{$sinalization->question_03}}</h3>
                     </td>
-                @elseif($trigger->question_03 == "N/A")
+                @elseif($sinalization->question_03 == "N/A")
                     <td style="background-color: black;">
-                        <h3 class="color-white" > {{$trigger->question_03}}</h3>
+                        <h3 class="color-white" > {{$sinalization->question_03}}</h3>
                     </td>
                 @endif
 
-                @if($trigger->question_04 == "C")
+                @if($sinalization->question_04 == "C")
                     <td>
-                        <h3 class="color-white"> {{$trigger->question_04}}</h3>
+                        <h3 class="color-white"> {{$sinalization->question_04}}</h3>
                     </td>
-                @elseif($trigger->question_04 == "NC")
+                @elseif($sinalization->question_04 == "NC")
                     <td style="background-color: red;">
-                        <h3 class="color-white" > {{$trigger->question_04}}</h3>
+                        <h3 class="color-white" > {{$sinalization->question_04}}</h3>
                     </td>
-                @elseif($trigger->question_04 == "NR")
+                @elseif($sinalization->question_04 == "NR")
                     <td style="background-color: blue;">
-                        <h3 class="color-white" > {{$trigger->question_04}}</h3>
+                        <h3 class="color-white" > {{$sinalization->question_04}}</h3>
                     </td>
-                @elseif($trigger->question_04 == "N/A")
+                @elseif($sinalization->question_04 == "N/A")
                     <td style="background-color: black;">
-                        <h3 class="color-white" > {{$trigger->question_04}}</h3>
+                        <h3 class="color-white" > {{$sinalization->question_04}}</h3>
                     </td>
                 @endif
 
-                @if($trigger->question_05 == "C")
+                @if($sinalization->question_05 == "C")
                     <td>
-                        <h3 class="color-white"> {{$trigger->question_05}}</h3>
+                        <h3 class="color-white"> {{$sinalization->question_05}}</h3>
                     </td>
-                @elseif($trigger->question_05 == "NC")
+                @elseif($sinalization->question_05 == "NC")
                     <td style="background-color: red;">
-                        <h3 class="color-white" > {{$trigger->question_05}}</h3>
+                        <h3 class="color-white" > {{$sinalization->question_05}}</h3>
                     </td>
-                @elseif($trigger->question_05 == "NR")
+                @elseif($sinalization->question_05 == "NR")
                     <td style="background-color: blue;">
-                        <h3 class="color-white" > {{$trigger->question_05}}</h3>
+                        <h3 class="color-white" > {{$sinalization->question_05}}</h3>
                     </td>
-                @elseif($trigger->question_05 == "N/A")
+                @elseif($sinalization->question_05 == "N/A")
                     <td style="background-color: black;">
-                        <h3 class="color-white" > {{$trigger->question_05}}</h3>
+                        <h3 class="color-white" > {{$sinalization->question_05}}</h3>
                     </td>
                 @endif
 
-                @if($trigger->question_06 == "C")
+                @if($sinalization->question_06 == "C")
                     <td>
-                        <h3 class="color-white"> {{$trigger->question_06}}</h3>
+                        <h3 class="color-white"> {{$sinalization->question_06}}</h3>
                     </td>
-                @elseif($trigger->question_06 == "NC")
+                @elseif($sinalization->question_06 == "NC")
                     <td style="background-color: red;">
-                        <h3 class="color-white" > {{$trigger->question_06}}</h3>
+                        <h3 class="color-white" > {{$sinalization->question_06}}</h3>
                     </td>
-                @elseif($trigger->question_06 == "NR")
+                @elseif($sinalization->question_06 == "NR")
                     <td style="background-color: blue;">
-                        <h3 class="color-white" > {{$trigger->question_06}}</h3>
+                        <h3 class="color-white" > {{$sinalization->question_06}}</h3>
                     </td>
-                @elseif($trigger->question_06 == "N/A")
+                @elseif($sinalization->question_06 == "N/A")
                     <td style="background-color: black;">
-                        <h3 class="color-white" > {{$trigger->question_06}}</h3>
+                        <h3 class="color-white" > {{$sinalization->question_06}}</h3>
                     </td>
                 @endif
 
-                @if($trigger->question_07 == "C")
+                @if($sinalization->question_07 == "C")
                     <td>
-                        <h3 class="color-white"> {{$trigger->question_07}}</h3>
+                        <h3 class="color-white"> {{$sinalization->question_07}}</h3>
                     </td>
-                @elseif($trigger->question_07 == "NC")
+                @elseif($sinalization->question_07 == "NC")
                     <td style="background-color: red;">
-                        <h3 class="color-white" > {{$trigger->question_07}}</h3>
+                        <h3 class="color-white" > {{$sinalization->question_07}}</h3>
                     </td>
-                @elseif($trigger->question_07 == "NR")
+                @elseif($sinalization->question_07 == "NR")
                     <td style="background-color: blue;">
-                        <h3 class="color-white" > {{$trigger->question_07}}</h3>
+                        <h3 class="color-white" > {{$sinalization->question_07}}</h3>
                     </td>
-                @elseif($trigger->question_07 == "N/A")
+                @elseif($sinalization->question_07 == "N/A")
                     <td style="background-color: black;">
-                        <h3 class="color-white" > {{$trigger->question_07}}</h3>
+                        <h3 class="color-white" > {{$sinalization->question_07}}</h3>
                     </td>
                 @endif
 
-                @if($trigger->question_08 == "C")
+                @if($sinalization->question_08 == "C")
                     <td>
-                        <h3 class="color-white"> {{$trigger->question_08}}</h3>
+                        <h3 class="color-white"> {{$sinalization->question_08}}</h3>
                     </td>
-                @elseif($trigger->question_08 == "NC")
+                @elseif($sinalization->question_08 == "NC")
                     <td style="background-color: red;">
-                        <h3 class="color-white" > {{$trigger->question_08}}</h3>
+                        <h3 class="color-white" > {{$sinalization->question_08}}</h3>
                     </td>
-                @elseif($trigger->question_08 == "NR")
+                @elseif($sinalization->question_08 == "NR")
                     <td style="background-color: blue;">
-                        <h3 class="color-white" > {{$trigger->question_08}}</h3>
+                        <h3 class="color-white" > {{$sinalization->question_08}}</h3>
                     </td>
-                @elseif($trigger->question_08 == "N/A")
+                @elseif($sinalization->question_08 == "N/A")
                     <td style="background-color: black;">
-                        <h3 class="color-white" > {{$trigger->question_08}}</h3>
+                        <h3 class="color-white" > {{$sinalization->question_08}}</h3>
                     </td>
                 @endif
 
-                @if($trigger->question_09 == "C")
+                @if($sinalization->question_09 == "C")
                     <td>
-                        <h3 class="color-white"> {{$trigger->question_09}}</h3>
+                        <h3 class="color-white"> {{$sinalization->question_09}}</h3>
                     </td>
-                @elseif($trigger->question_09 == "NC")
+                @elseif($sinalization->question_09 == "NC")
                     <td style="background-color: red;">
-                        <h3 class="color-white" > {{$trigger->question_09}}</h3>
+                        <h3 class="color-white" > {{$sinalization->question_09}}</h3>
                     </td>
-                @elseif($trigger->question_09 == "NR")
+                @elseif($sinalization->question_09 == "NR")
                     <td style="background-color: blue;">
-                        <h3 class="color-white" > {{$trigger->question_09}}</h3>
+                        <h3 class="color-white" > {{$sinalization->question_09}}</h3>
                     </td>
-                @elseif($trigger->question_09 == "N/A")
+                @elseif($sinalization->question_09 == "N/A")
                     <td style="background-color: black;">
-                        <h3 class="color-white" > {{$trigger->question_09}}</h3>
+                        <h3 class="color-white" > {{$sinalization->question_09}}</h3>
                     </td>
                 @endif
 
-                @if($trigger->question_10 == "C")
+                @if($sinalization->question_10 == "C")
                     <td>
-                        <h3 class="color-white"> {{$trigger->question_10}}</h3>
+                        <h3 class="color-white"> {{$sinalization->question_10}}</h3>
                     </td>
-                @elseif($trigger->question_10 == "NC")
+                @elseif($sinalization->question_10 == "NC")
                     <td style="background-color: red;">
-                        <h3 class="color-white" > {{$trigger->question_10}}</h3>
+                        <h3 class="color-white" > {{$sinalization->question_10}}</h3>
                     </td>
-                @elseif($trigger->question_10 == "NR")
+                @elseif($sinalization->question_10 == "NR")
                     <td style="background-color: blue;">
-                        <h3 class="color-white" > {{$trigger->question_10}}</h3>
+                        <h3 class="color-white" > {{$sinalization->question_10}}</h3>
                     </td>
-                @elseif($trigger->question_10 == "N/A")
+                @elseif($sinalization->question_10 == "N/A")
                     <td style="background-color: black;">
-                        <h3 class="color-white" > {{$trigger->question_10}}</h3>
+                        <h3 class="color-white" > {{$sinalization->question_10}}</h3>
                     </td>
                 @endif
 
                 <td class="localization-of-equipments-data">
-                    <h3>{{$trigger->note}}</h3>
+                    <h3>{{$sinalization->note}}</h3>
                 </td>
             </tr>
         @endforeach
@@ -369,26 +370,26 @@
         </tr>
         <tr class = "conclusion-of-trigger-datas">
             <td>
-                <h3>{{$report->conclusion_of_trigger}}</h3>
+                <h3>{{$report->conclusion_of_sinalization}}</h3>
             </td>
         </tr>
         <tr class = "conclusion-of-trigger-images">
             <td>
                 <img
-                    src="{{ public_path("storage/". $report->conclusion_image_trigger_1) }}"
+                    src="{{ public_path("storage/". $report->conclusion_image_sinalization_1) }}"
                     class="conclusion-trigger-image"
                 >
             </td>
             <td>
                 <img
-                    src="{{ public_path("storage/". $report->conclusion_image_trigger_2) }}"
+                    src="{{ public_path("storage/". $report->conclusion_image_sinalization_2) }}"
                     class="conclusion-trigger-image"
                 >
             </td>
         </tr>
         <tr class = "legend-of-trigger fixed-padding">
             <td>
-                <h3>{{$report->conclusion_legend}}</h3>
+                <h3>{{$report->conclusion_legend_sinalization}}</h3>
             </td>
         </tr>
 

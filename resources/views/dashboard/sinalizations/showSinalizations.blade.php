@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Visualizar acionadores</title>
+    <title>Visualizar sinalizadores</title>
 
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
@@ -32,11 +32,11 @@
                 <div class="row align-items-center">
                     <div class="col-md-12">
                         <div class="page-header-title">
-                            <h5 class="m-b-10">Visualizar Acionadores</h5>
+                            <h5 class="m-b-10">Visualizar Sinalizações</h5>
                         </div>
                         <ul class="breadcrumb">
                             <li class="breadcrumb-item"><a href="{{route('dashboardAdmin')}}"><i class="feather icon-home"></i></a></li>
-                            <li class="breadcrumb-item"><a href="#!">Visualizar Acionadores</a></li>
+                            <li class="breadcrumb-item"><a href="#!">Visualizar Sinalizações</a></li>
                         </ul>
                     </div>
                 </div>
@@ -46,7 +46,7 @@
             <div class="col-sm-12">
                 <div class="card">
                     <div class="card-header">
-                        <h5>Acionadores</h5>
+                        <h5>Sinalizações</h5>
                     </div>
                     <div class="card-body">
                         <div class="dt-responsive table-responsive">
@@ -55,7 +55,7 @@
                                     <tr>
                                         <th>Sigla</th>
                                         <th>Localização</th>
-                                        <th>Nome</th>
+                                        <th>Name</th>
                                         <th>01</th>
                                         <th>02</th>
                                         <th>03</th>
@@ -70,23 +70,23 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    @foreach($triggers as $trigger)
+                                    @foreach($sinalizations as $sinalization)
                                         <tr>
-                                            <td>{{$trigger->initials}}</td>
-                                            <td>{{$trigger->localization}}</td>
-                                            <td>{{$trigger->name}}</td>
-                                            <td>{{$trigger->question_01}}</td>
-                                            <td>{{$trigger->question_02}}</td>
-                                            <td>{{$trigger->question_03}}</td>
-                                            <td>{{$trigger->question_04}}</td>
-                                            <td>{{$trigger->question_05}}</td>
-                                            <td>{{$trigger->question_06}}</td>
-                                            <td>{{$trigger->question_07}}</td>
-                                            <td>{{$trigger->question_08}}</td>
-                                            <td>{{$trigger->question_09}}</td>
-                                            <td>{{$trigger->question_10}}</td>
+                                            <td>{{$sinalization->initials}}</td>
+                                            <td>{{$sinalization->localization}}</td>
+                                            <td>{{$sinalization->name}}</td>
+                                            <td>{{$sinalization->question_01}}</td>
+                                            <td>{{$sinalization->question_02}}</td>
+                                            <td>{{$sinalization->question_03}}</td>
+                                            <td>{{$sinalization->question_04}}</td>
+                                            <td>{{$sinalization->question_05}}</td>
+                                            <td>{{$sinalization->question_06}}</td>
+                                            <td>{{$sinalization->question_07}}</td>
+                                            <td>{{$sinalization->question_08}}</td>
+                                            <td>{{$sinalization->question_09}}</td>
+                                            <td>{{$sinalization->question_10}}</td>
                                             <td>
-                                                <a href="{{ route('triggers.edit', $trigger->id) }}">Editar</a>
+                                                <a href="{{ route('sinalizations.edit', $sinalization->id) }}">Editar</a>
                                             </td>
                                         </tr>
                                     @endforeach

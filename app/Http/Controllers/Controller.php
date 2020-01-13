@@ -91,8 +91,7 @@ class Controller extends BaseController
 
     public function getDescriptionOfElements($descriptionOfElements)
     {
-        $descriptionOfElementsWithOutSpace = str_replace(' ', '', $descriptionOfElements);
-        $descriptionOfElementsArray = explode(",", $descriptionOfElementsWithOutSpace);
+        $descriptionOfElementsArray = explode(",", $descriptionOfElements);
         return  $descriptionOfElementsArray;
 
     }
@@ -114,6 +113,18 @@ class Controller extends BaseController
         {
 
             $report->trigger()->attach($trigger_id);
+
+        }
+
+        return;
+    }
+
+    public function attachSinalization($report, $request)
+    {
+        foreach($request['sinalization_id'] as $sinalization_id)
+        {
+
+            $report->sinalization()->attach($sinalization_id);
 
         }
         return;

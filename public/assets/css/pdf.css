@@ -550,55 +550,75 @@ body {
     padding: 7px;
   }
 
-  .triggers-inspection-table{
+
+  .sinalization-inspection-table{
     display: -webkit-box;
     padding-left: 50px;
     padding-right: 50px;
   }
 
-  .triggers-inspection-table td{
+  .sinalization-inspection-table td{
     border: 1px solid #59a106;
     background-color: #b7df8b;
     text-align: center;
     padding-top: 5px;
-    width: 415px;
-    padding-right: 43px;
   }
 
-  .triggers-inspection-table td:first-child{
-      border-right: none;
-      padding-left: 3px;
+  .sinalization-inspection-table td:first-child{
+        border-right: none;
   }
 
-  .triggers-inspection-table td:nth-child(2){
+  .sinalization-inspection-table td:nth-child(2){
     border-left: none;
+
   }
 
-  .triggers-inspection-table td ol{
+  .sinalization-inspection-table td ol{
       padding-top: 10px;
   }
 
-  .triggers-inspection-table td ol li{
+  .sinalization-inspection-table td:first-child ol{
+    padding-left: 12px;
+  }
+  .sinalization-inspection-table td:last-child ol{
+    padding-right: 12px;
+  }
+
+  .sinalization-inspection-table td:first-child ol li{
     margin-bottom: -10px;
+    width: 366px;
   }
 
-  .triggers-inspection-table td ol li:first-child h3{
+  .sinalization-inspection-table td:last-child ol li{
+    margin-bottom: -10px;
+    width: 388px;
+
+  }
+
+  .sinalization-inspection-table td ol li:first-child h3{
     background-color: rgb(173, 173, 173);
-
   }
 
-  .triggers-inspection-table td ol li h3{
+
+  .sinalization-inspection-table td ol li h3{
       display: inline-block;
       border: 1px solid #59a106;
       background-color: white;
-      width: 320px;
+      width: 390px;
+      white-space: nowrap;
   }
-  .triggers-inspection-table td ol li span{
+
+  .sinalization-inspection-table td ol li span{
         border-right: 1px solid #59a106;
         float: left;
         width: 35px;
+        text-align: center;
   }
 
+  .sinalization-inspection-table td ol li:nth-child(n+2):nth-child(-n+6) h3{
+    font-size: 18px;
+    text-align: left;
+  }
 
 
   .tag-localization-condition{
