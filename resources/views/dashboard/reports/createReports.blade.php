@@ -309,7 +309,7 @@
                                 <div class="col-md-4">
                                     <div class="form-group">
                                         <label class="form-label">Conclusão</label>
-                                        <input type="text" class="form-control" name="conclusion_of_sinalization" placeholder="Conclusão do acionador">
+                                        <input type="text" class="form-control" name="conclusion_of_sinalization" placeholder="Conclusão dos sinalizadores">
                                     </div>
                                 </div>
 
@@ -335,6 +335,64 @@
                                     <div class="form-group">
                                         <label class="form-label">Legenda</label>
                                         <input type="text" class="form-control" name="conclusion_legend_sinalization" placeholder="Legenda da conclusão">
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <div class="card-header card-header-space" >
+                                <h5>6.4 Iluminação de Emergência</h5>
+                            </div>
+
+                            <div class="row">
+
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label class="form-label">Descrição dos elementos</label>
+                                        <input type="text" class="form-control" name="description_of_elements_lighting" placeholder="Ex: Descrição 1, descrição 2">
+                                    </div>
+                                </div>
+
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label class="form-label">Iluminações</label>
+                                        <select class="js-example-basic-multiple col-sm-12" multiple="multiple" name="lighting_id[]" >
+                                            @foreach ($lightings as $lighting)
+                                                <option value="{{$lighting->id}}">{{$lighting->name}}</option>
+                                            @endforeach
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label class="form-label">Conclusão</label>
+                                        <input type="text" class="form-control" name="conclusion_of_lighting" placeholder="Conclusão das iluminações">
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <div class="row">
+
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label class="form-label">Imagem para a conclusão</label>
+                                        <input type="file" class="form-control" name="conclusion_image_1_lighting">
+                                    </div>
+                                </div>
+
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label class="form-label">Segunda imagem para a conclusão</label>
+                                        <input type="file" class="form-control" name="conclusion_image_2_lighting">
+                                    </div>
+                                </div>
+
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label class="form-label">Legenda</label>
+                                        <input type="text" class="form-control" name="conclusion_legend_lighting" placeholder="Legenda da conclusão">
                                     </div>
                                 </div>
 

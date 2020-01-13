@@ -73,6 +73,11 @@ class Report extends Model
         'conclusion_image_sinalization_1',
         'conclusion_image_sinalization_2',
         'conclusion_legend_sinalization',
+        'description_of_elements_lighting',
+        'conclusion_of_lighting',
+        'conclusion_image_lighting_1',
+        'conclusion_image_lighting_2',
+        'conclusion_legend_lighting',
 
     ];
 
@@ -103,5 +108,9 @@ class Report extends Model
 
     public function sinalization(){
         return $this->belongsToMany(Sinalization::class);
+    }
+
+    public function lighting(){
+        return $this->belongsToMany(Lighting::class);
     }
 }

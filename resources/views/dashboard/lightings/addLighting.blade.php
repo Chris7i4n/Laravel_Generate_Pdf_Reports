@@ -34,14 +34,14 @@
                 <div class="row align-items-center">
                     <div class="col-md-12">
                         <div class="page-header-title">
-                            <h5 class="m-b-10">Sinalizadores</h5>
+                            <h5 class="m-b-10">iluminação</h5>
                         </div>
                         <ul class="breadcrumb">
                             <li class="breadcrumb-item"><a href="{{route('dashboard')}}"><i class="feather icon-home"></i></a></li>
-                            @if(isset($sinalization))
-                                <li class="breadcrumb-item"><a href="{{route('sinalizations.index')}}">Lista de sinalizadores</a></li>
+                            @if(isset($lighting))
+                                <li class="breadcrumb-item"><a href="{{route('sinalizations.index')}}">Lista de iluminação</a></li>
                             @else
-                                <li class="breadcrumb-item"><a href="#!">Cadastro de sinalizadores</a></li>
+                                <li class="breadcrumb-item"><a href="#!">Cadastro de iluminação</a></li>
                             @endif
                         </ul>
                     </div>
@@ -55,11 +55,11 @@
             <div class="col-sm-12">
                 <div class="card">
                     <div class="card-body">
-                        @if(isset($sinalization))
-                            <form method="POST" class="form-login" enctype="multipart/form-data" action="{{ route('sinalizations.update', $sinalization->id) }}" >
+                        @if(isset($lighting))
+                            <form method="POST" class="form-login" enctype="multipart/form-data" action="{{ route('lightings.update', $lighting->id) }}" >
                                 @method('put')
                         @else
-                            <form method="POST" class="form-login" enctype="multipart/form-data" action="{{ route('sinalizations.store') }}" >
+                            <form method="POST" class="form-login" enctype="multipart/form-data" action="{{ route('lightings.store') }}" >
                         @endif
                             @csrf
                             <div class="row">
@@ -67,21 +67,21 @@
                                 <div class="col-md-4">
                                     <div class="form-group">
                                         <label class="form-label">Nome do sinalizador</label>
-                                        <input type="text" class="form-control" name="name" value="{{isset($sinalization) ? $sinalization->name : ""}}" placeholder="Nome da sinalização">
+                                        <input type="text" class="form-control" name="name" value="{{isset($lighting) ? $lighting->name : ""}}" placeholder="Nome da iluminação">
                                     </div>
                                 </div>
 
                                 <div class="col-md-4">
                                     <div class="form-group">
                                         <label class="form-label">Sigla</label>
-                                        <input type="text" class="form-control" name="initials" value="{{isset($sinalization) ? $sinalization->initials : ""}}" placeholder="Ex: AC">
+                                        <input type="text" class="form-control" name="initials" value="{{isset($lighting) ? $lighting->initials : ""}}" placeholder="Ex: AC">
                                     </div>
                                 </div>
 
                                 <div class="col-md-4">
                                     <div class="form-group">
                                         <label class="form-label">Localização</label>
-                                        <input type="text" class="form-control" name="localization" value="{{isset($sinalization) ? $sinalization->localization : ""}}" placeholder="Localização">
+                                        <input type="text" class="form-control" name="localization" value="{{isset($lighting) ? $lighting->localization : ""}}" placeholder="Localização">
                                     </div>
                                 </div>
 
@@ -90,13 +90,13 @@
                             <div class="row">
                                 <div class="col-md-4">
                                     <div class="form-group">
-                                        <label class="form-label">Tamanho: As placas podem ser vistas?</label>
+                                        <label class="form-label">Há projeto?</label>
                                         <select class="form-control" name="question_01">
-                                            @if(isset($sinalization))
-                                                <option @if($sinalization->question_01 == "C") selected @endif value="C">C</option>
-                                                <option @if($sinalization->question_01 == "NC") selected @endif value="NC">NC</option>
-                                                <option @if($sinalization->question_01 == "NR") selected @endif value="NR">NR</option>
-                                                <option @if($sinalization->question_01 == "N/A") selected @endif value="N/A">N/A</option>
+                                            @if(isset($lighting))
+                                                <option @if($lighting->question_01 == "C") selected @endif value="C">C</option>
+                                                <option @if($lighting->question_01 == "NC") selected @endif value="NC">NC</option>
+                                                <option @if($lighting->question_01 == "NR") selected @endif value="NR">NR</option>
+                                                <option @if($lighting->question_01 == "N/A") selected @endif value="N/A">N/A</option>
                                             @else
                                                 <option value="C" selected >C</option>
                                                 <option value="NC">NC</option>
@@ -109,13 +109,13 @@
 
                                 <div class="col-md-4">
                                     <div class="form-group">
-                                        <label class="form-label">Girando 360°, é possível ver as placas?</label>
+                                        <label class="form-label">Atende aclaramento?</label>
                                         <select class="form-control" name="question_02">
-                                            @if(isset($sinalization))
-                                                <option @if($sinalization->question_02 == "C") selected @endif value="C">C</option>
-                                                <option @if($sinalization->question_02 == "NC") selected @endif value="NC">NC</option>
-                                                <option @if($sinalization->question_02 == "NR") selected @endif value="NR">NR</option>
-                                                <option @if($sinalization->question_02 == "N/A") selected @endif value="N/A">N/A</option>
+                                            @if(isset($lighting))
+                                                <option @if($lighting->question_02 == "C") selected @endif value="C">C</option>
+                                                <option @if($lighting->question_02 == "NC") selected @endif value="NC">NC</option>
+                                                <option @if($lighting->question_02 == "NR") selected @endif value="NR">NR</option>
+                                                <option @if($lighting->question_02 == "N/A") selected @endif value="N/A">N/A</option>
                                             @else
                                                 <option value="C" selected >C</option>
                                                 <option value="NC">NC</option>
@@ -128,13 +128,13 @@
 
                                 <div class="col-md-4">
                                     <div class="form-group">
-                                        <label class="form-label">A altura da sinalização está correta?</label>
+                                        <label class="form-label">Atende balizamento?</label>
                                         <select class="form-control" name="question_03">
-                                            @if(isset($sinalization))
-                                                <option @if($sinalization->question_03 == "C") selected @endif value="C">C</option>
-                                                <option @if($sinalization->question_03 == "NC") selected @endif value="NC">NC</option>
-                                                <option @if($sinalization->question_03 == "NR") selected @endif value="NR">NR</option>
-                                                <option @if($sinalization->question_03 == "N/A") selected @endif value="N/A">N/A</option>
+                                            @if(isset($lighting))
+                                                <option @if($lighting->question_03 == "C") selected @endif value="C">C</option>
+                                                <option @if($lighting->question_03 == "NC") selected @endif value="NC">NC</option>
+                                                <option @if($lighting->question_03 == "NR") selected @endif value="NR">NR</option>
+                                                <option @if($lighting->question_03 == "N/A") selected @endif value="N/A">N/A</option>
                                             @else
                                                 <option value="C" selected >C</option>
                                                 <option value="NC">NC</option>
@@ -149,13 +149,13 @@
                             <div class="row">
                                 <div class="col-md-4">
                                     <div class="form-group">
-                                        <label class="form-label">As placas possuem CNPJ?</label>
+                                        <label class="form-label">Luminância > 5 lux?</label>
                                         <select class="form-control" name="question_04">
-                                            @if(isset($sinalization))
-                                                <option @if($sinalization->question_04 == "C") selected @endif value="C">C</option>
-                                                <option @if($sinalization->question_04 == "NC") selected @endif value="NC">NC</option>
-                                                <option @if($sinalization->question_04 == "NR") selected @endif value="NR">NR</option>
-                                                <option @if($sinalization->question_04 == "N/A") selected @endif value="N/A">N/A</option>
+                                            @if(isset($lighting))
+                                                <option @if($lighting->question_04 == "C") selected @endif value="C">C</option>
+                                                <option @if($lighting->question_04 == "NC") selected @endif value="NC">NC</option>
+                                                <option @if($lighting->question_04 == "NR") selected @endif value="NR">NR</option>
+                                                <option @if($lighting->question_04 == "N/A") selected @endif value="N/A">N/A</option>
                                             @else
                                                 <option value="C" selected >C</option>
                                                 <option value="NC">NC</option>
@@ -168,13 +168,13 @@
 
                                 <div class="col-md-4">
                                     <div class="form-group">
-                                        <label class="form-label">As placas são fotoluminescentes?</label>
+                                        <label class="form-label">Espaçamento < 15m?</label>
                                         <select class="form-control" name="question_05">
-                                            @if(isset($sinalization))
-                                                <option @if($sinalization->question_05 == "C") selected @endif value="C">C</option>
-                                                <option @if($sinalization->question_05 == "NC") selected @endif value="NC">NC</option>
-                                                <option @if($sinalization->question_05 == "NR") selected @endif value="NR">NR</option>
-                                                <option @if($sinalization->question_05 == "N/A") selected @endif value="N/A">N/A</option>
+                                            @if(isset($lighting))
+                                                <option @if($lighting->question_05 == "C") selected @endif value="C">C</option>
+                                                <option @if($lighting->question_05 == "NC") selected @endif value="NC">NC</option>
+                                                <option @if($lighting->question_05 == "NR") selected @endif value="NR">NR</option>
+                                                <option @if($lighting->question_05 == "N/A") selected @endif value="N/A">N/A</option>
                                             @else
                                                 <option value="C" selected >C</option>
                                                 <option value="NC">NC</option>
@@ -187,13 +187,13 @@
 
                                 <div class="col-md-4">
                                     <div class="form-group">
-                                        <label class="form-label">Elas estão devidamente fixadas?</label>
+                                        <label class="form-label">A altura é adequada?</label>
                                         <select class="form-control" name="question_06">
-                                            @if(isset($sinalization))
-                                                <option @if($sinalization->question_06 == "C") selected @endif value="C">C</option>
-                                                <option @if($sinalization->question_06 == "NC") selected @endif value="NC">NC</option>
-                                                <option @if($sinalization->question_06 == "NR") selected @endif value="NR">NR</option>
-                                                <option @if($sinalization->question_06 == "N/A") selected @endif value="N/A">N/A</option>
+                                            @if(isset($lighting))
+                                                <option @if($lighting->question_06 == "C") selected @endif value="C">C</option>
+                                                <option @if($lighting->question_06 == "NC") selected @endif value="NC">NC</option>
+                                                <option @if($lighting->question_06 == "NR") selected @endif value="NR">NR</option>
+                                                <option @if($lighting->question_06 == "N/A") selected @endif value="N/A">N/A</option>
                                             @else
                                                 <option value="C" selected >C</option>
                                                 <option value="NC">NC</option>
@@ -208,13 +208,13 @@
                             <div class="row">
                                 <div class="col-md-4">
                                     <div class="form-group">
-                                        <label class="form-label">Elas estão limpas?</label>
+                                        <label class="form-label">Mantém 2h após interrupção de energia?</label>
                                         <select class="form-control" name="question_07">
-                                            @if(isset($sinalization))
-                                                <option @if($sinalization->question_07 == "C") selected @endif value="C">C</option>
-                                                <option @if($sinalization->question_07 == "NC") selected @endif value="NC">NC</option>
-                                                <option @if($sinalization->question_07 == "NR") selected @endif value="NR">NR</option>
-                                                <option @if($sinalization->question_07 == "N/A") selected @endif value="N/A">N/A</option>
+                                            @if(isset($lighting))
+                                                <option @if($lighting->question_07 == "C") selected @endif value="C">C</option>
+                                                <option @if($lighting->question_07 == "NC") selected @endif value="NC">NC</option>
+                                                <option @if($lighting->question_07 == "NR") selected @endif value="NR">NR</option>
+                                                <option @if($lighting->question_07 == "N/A") selected @endif value="N/A">N/A</option>
                                             @else
                                                 <option value="C" selected >C</option>
                                                 <option value="NC">NC</option>
@@ -227,13 +227,13 @@
 
                                 <div class="col-md-4">
                                     <div class="form-group">
-                                        <label class="form-label">Elas estão inteiras?</label>
+                                        <label class="form-label">Após a interrupção de energia, ela liga?</label>
                                         <select class="form-control" name="question_08">
-                                            @if(isset($sinalization))
-                                                <option @if($sinalization->question_08 == "C") selected @endif value="C">C</option>
-                                                <option @if($sinalization->question_08 == "NC") selected @endif value="NC">NC</option>
-                                                <option @if($sinalization->question_08 == "NR") selected @endif value="NR">NR</option>
-                                                <option @if($sinalization->question_08 == "N/A") selected @endif value="N/A">N/A</option>
+                                            @if(isset($lighting))
+                                                <option @if($lighting->question_08 == "C") selected @endif value="C">C</option>
+                                                <option @if($lighting->question_08 == "NC") selected @endif value="NC">NC</option>
+                                                <option @if($lighting->question_08 == "NR") selected @endif value="NR">NR</option>
+                                                <option @if($lighting->question_08 == "N/A") selected @endif value="N/A">N/A</option>
                                             @else
                                                 <option value="C" selected >C</option>
                                                 <option value="NC">NC</option>
@@ -246,13 +246,13 @@
 
                                 <div class="col-md-4">
                                     <div class="form-group">
-                                        <label class="form-label">Há projeto de sinalização?</label>
+                                        <label class="form-label">As tomadas de plug estão ok?</label>
                                         <select class="form-control" name="question_09">
-                                            @if(isset($sinalization))
-                                                <option @if($sinalization->question_09 == "C") selected @endif value="C">C</option>
-                                                <option @if($sinalization->question_09 == "NC") selected @endif value="NC">NC</option>
-                                                <option @if($sinalization->question_09 == "NR") selected @endif value="NR">NR</option>
-                                                <option @if($sinalization->question_09 == "N/A") selected @endif value="N/A">N/A</option>
+                                            @if(isset($lighting))
+                                                <option @if($lighting->question_09 == "C") selected @endif value="C">C</option>
+                                                <option @if($lighting->question_09 == "NC") selected @endif value="NC">NC</option>
+                                                <option @if($lighting->question_09 == "NR") selected @endif value="NR">NR</option>
+                                                <option @if($lighting->question_09 == "N/A") selected @endif value="N/A">N/A</option>
                                             @else
                                                 <option value="C" selected >C</option>
                                                 <option value="NC">NC</option>
@@ -267,13 +267,13 @@
                             <div class="row">
                                 <div class="col-md-4">
                                     <div class="form-group">
-                                        <label class="form-label">As placas estão em acordo com o projeto?</label>
+                                        <label class="form-label">O sistema de fixação está ok?</label>
                                         <select class="form-control" name="question_10">
-                                            @if(isset($sinalization))
-                                                <option @if($sinalization->question_10 == "C") selected @endif value="C">C</option>
-                                                <option @if($sinalization->question_10 == "NC") selected @endif value="NC">NC</option>
-                                                <option @if($sinalization->question_10 == "NR") selected @endif value="NR">NR</option>
-                                                <option @if($sinalization->question_10 == "N/A") selected @endif value="N/A">N/A</option>
+                                            @if(isset($lighting))
+                                                <option @if($lighting->question_10 == "C") selected @endif value="C">C</option>
+                                                <option @if($lighting->question_10 == "NC") selected @endif value="NC">NC</option>
+                                                <option @if($lighting->question_10 == "NR") selected @endif value="NR">NR</option>
+                                                <option @if($lighting->question_10 == "N/A") selected @endif value="N/A">N/A</option>
                                             @else
                                                 <option value="C" selected >C</option>
                                                 <option value="NC">NC</option>
@@ -287,11 +287,11 @@
                                 <div class="col-md-4">
                                     <div class="form-group">
                                         <label class="form-label">Observação</label>
-                                        <input type="text" class="form-control" name="note" value="{{isset($sinalization) ? $sinalization->note : "APROVADO"}}" placeholder="Ex: APROVADO">
+                                        <input type="text" class="form-control" name="note" value="{{isset($lighting) ? $lighting->note : "APROVADO"}}" placeholder="Ex: APROVADO">
                                     </div>
                                 </div>
                             </div>
-                            @if(isset($sinalization))
+                            @if(isset($lighting))
                                 <button type="submit" class="btn btn-primary">Atualizar</button>
                             @else
                                 <button type="submit" class="btn btn-primary">Cadastrar</button>
