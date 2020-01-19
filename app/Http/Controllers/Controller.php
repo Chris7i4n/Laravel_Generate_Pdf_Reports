@@ -152,6 +152,17 @@ class Controller extends BaseController
         return;
     }
 
+    public function attachHydrant($report, $request)
+    {
+        foreach($request['hydrant_id'] as $hydrant_id)
+        {
+
+            $report->hydrant()->attach($hydrant_id);
+
+        }
+        return;
+    }
+
     public function aditionalRequest($request)
     {
         $company = $this->getCompany($request['unity_id']);
@@ -170,6 +181,7 @@ class Controller extends BaseController
         }
         if(Auth::user()->perfil == 1){$request['approved'] = 1;}
         else $request['approved'] = 0;
+
         $request['user_id'] = Auth::user()->id;
         $request['logoCompanyContracted'] = $this->getLogoContractedCompany($request['company_id']);
         $request['logoCompanyContracting'] = $company->logo;
@@ -182,6 +194,8 @@ class Controller extends BaseController
         $request['conclusion_image_lighting_2'] = $this->uploadFiles($request['conclusion_image_2_lighting']);
         $request['conclusion_image_bomb_1'] = $this->uploadFiles($request['conclusion_image_1_bomb']);
         $request['conclusion_image_bomb_2'] = $this->uploadFiles($request['conclusion_image_2_bomb']);
+        $request['conclusion_image_hydrant_1'] = $this->uploadFiles($request['conclusion_image_1_hydrant']);
+        $request['conclusion_image_hydrant_2'] = $this->uploadFiles($request['conclusion_image_2_hydrant']);
         $request['footer_logo_1'] = $contractedCompany->logo;
         $request['footer_logo_2'] = $contractedCompany->footer_logo_1;
         $request['footer_logo_3'] = $contractedCompany->footer_logo_2;
@@ -191,6 +205,7 @@ class Controller extends BaseController
         $request['footer_site'] = $contractedCompany->footer_site;
         $request['footer_social_reason'] = $contractedCompany->footer_social_reason;
         $request['footer_phone'] = $contractedCompany->phone;
+
         return;
     }
 
@@ -203,11 +218,13 @@ class Controller extends BaseController
         $sinalizations = $report->sinalization;
         $lightings = $report->lighting;
         $bombs = $report->bomb;
+        $hydrants = $report->hydrant;
 
         $descriptionOfElements = $this->getDescriptionOfElements($report->description_of_elements);
         $descriptionOfElementSinalizations = $this->getDescriptionOfElements($report->description_of_elements_sinalization);
         $descriptionOfElementLightings = $this->getDescriptionOfElements($report->description_of_elements_lighting);
         $descriptionOfElementBombs = $this->getDescriptionOfElements($report->description_of_elements_bomb);
+        $descriptionOfElementHydrants = $this->getDescriptionOfElements($report->description_of_elements_hydrant);
 
         // for document number
         $codeNumberForDocumentNumber = $this->getCodeNumber($report);
@@ -228,6 +245,8 @@ class Controller extends BaseController
                         $descriptionOfElements,
                         $bombs,
                         $descriptionOfElementBombs,
+                        $hydrants,
+                        $descriptionOfElementHydrants,
                 );
     }
 }

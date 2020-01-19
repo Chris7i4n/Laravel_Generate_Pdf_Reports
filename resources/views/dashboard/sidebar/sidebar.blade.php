@@ -37,12 +37,13 @@
 
                             <li><a style = "color: #e6e60f;"  href="{{ route('bombs.create')}}">Adicionar Bombas</a></li>
 
+                            <li><a style = "color: #e6e60f;"  href="{{ route('hydrants.create')}}">Adicionar Hidrantes</a></li>
+
                             <li><a style = "color: #e6e60f;"  href="{{ route('companies.create')}}">Adicionar Empresa Contratante</a></li>
 
                             <li><a style = "color: #e6e60f;" href="{{ route('companies.contracted.create')}}">Adicionar Empresa Contratada</a></li>
 
                             <li><a style = "color: #e6e60f;"  href="{{ route('companies.unities')}}">Adicionar Unidades</a></li>
-
 
                         @endif
                     </ul>
@@ -131,6 +132,19 @@
                     <a href="#!" class="nav-link "><span class="pcoded-micon"><i class="feather icon-file-text"></i></span><span class="pcoded-mtext">Bombas</span></a>
                     <ul class="pcoded-submenu">
                         <li><a href="{{ route('bombs.index') }}">Visualizar bombas cadastradas</a></li>
+                    </ul>
+                </li>
+            </ul>
+
+            <ul class="nav pcoded-inner-navbar ">
+                <li class="nav-item pcoded-menu-caption">
+                    <label>Hidrantes</label>
+                </li>
+
+                <li class="nav-item pcoded-hasmenu">
+                    <a href="#!" class="nav-link "><span class="pcoded-micon"><i class="feather icon-file-text"></i></span><span class="pcoded-mtext">Hidrantes</span></a>
+                    <ul class="pcoded-submenu">
+                        <li><a href="{{ route('hydrants.index') }}">Visualizar hidrantes cadastrados</a></li>
                     </ul>
                 </li>
             </ul>

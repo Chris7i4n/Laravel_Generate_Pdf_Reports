@@ -11,7 +11,7 @@ class BombsController extends Controller
     public function index()
     {
         $bombs = Bomb::all();
-        return view('dashboard.bombs.showbombs', compact('bombs'));
+        return view('dashboard.bombs.showBombs', compact('bombs'));
     }
     public function create()
     {

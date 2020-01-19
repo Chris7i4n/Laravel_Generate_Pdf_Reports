@@ -13,6 +13,7 @@ use Illuminate\Support\Facades\Auth;
 use App\Company;
 use App\Trigger;
 use App\Equipment;
+use App\Hydrant;
 use App\Lighting;
 use App\Sinalization;
 
@@ -47,8 +48,8 @@ class ReportsController extends Controller
     {
         $footerHtml = view()->make('dashboard.footer.pdfFooter', compact('report'))->render();
         $aditionalItens = $this->showReportAditionalItens($report);
-        $pdf = PDF::loadView('dashboard.reports.pdfReports', array(
 
+        $pdf = PDF::loadView('dashboard.reports.pdfReports', array(
                     'report' => $report ,
                     'companyContracted' => $aditionalItens[0],
                     'codeNumberForDocumentNumber' => $aditionalItens[1],
@@ -64,13 +65,14 @@ class ReportsController extends Controller
                     'descriptionOfElements' => $aditionalItens[11],
                     'bombs' => $aditionalItens[12],
                     'descriptionOfElementBombs' => $aditionalItens[13],
-
-
+                    'hydrants' => $aditionalItens[14],
+                    'descriptionOfElementHydrants' => $aditionalItens[15]
                 ))
-                ->setOption('margin-top', 5)
-                ->setOption('margin-bottom', 18)
-                ->setOption('margin-left', 2)
-                ->setOption('margin-right', 1)
+
+                ->setOption('margin-top', 1)
+                ->setOption('margin-bottom', 20)
+                ->setOption('margin-left', 3)
+                ->setOption('margin-right', 2)
                 ->setOption('footer-html', $footerHtml);
 
         return $pdf->stream('relatorio.pdf');
@@ -86,8 +88,9 @@ class ReportsController extends Controller
         $sinalizations = Sinalization::all();
         $lightings = Lighting::all();
         $bombs = Bomb::all();
+        $hydrants = Hydrant::all();
 
-        return view('dashboard.reports.createReports', compact('unities', 'contractedCompanies', 'equipments', 'triggers','sinalizations', 'lightings', 'bombs'));
+        return view('dashboard.reports.createReports', compact('unities', 'contractedCompanies', 'equipments', 'triggers','sinalizations', 'lightings', 'bombs', 'hydrants'));
     }
 
     public function store(ReportRequest $request)
@@ -102,6 +105,7 @@ class ReportsController extends Controller
         $this->attachSinalization($report, $request);
         $this->attachLighting($report, $request);
         $this->attachBomb($report, $request);
+        $this->attachHydrant($report, $request);
 
         return redirect()->back()->with(['message' => 'Relatório gerado com sucesso']);
     }

@@ -83,6 +83,11 @@ class Report extends Model
         'conclusion_image_bomb_1',
         'conclusion_image_bomb_2',
         'conclusion_legend_bomb',
+        'description_of_elements_hydrant',
+        'conclusion_of_hydrant',
+        'conclusion_image_hydrant_1',
+        'conclusion_image_hydrant_2',
+        'conclusion_legend_hydrant',
 
     ];
 
@@ -121,5 +126,9 @@ class Report extends Model
 
     public function bomb(){
         return $this->belongsToMany(Bomb::class);
+    }
+
+    public function hydrant(){
+        return $this->belongsToMany(Hydrant::class);
     }
 }

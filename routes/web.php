@@ -39,6 +39,7 @@ Route::group(['middleware' => ['auth']], function () {
         Route::resource('sinalizations', 'SinalizationsController')->except('show', 'destroy');
         Route::resource('lightings', 'LightingsController')->except('show', 'destroy');
         Route::resource('bombs', 'BombsController')->except('show', 'destroy');
+        Route::resource('hydrants', 'HydrantsController')->except('show', 'destroy');
 
 
     });
