@@ -15,6 +15,7 @@ use App\Trigger;
 use App\Equipment;
 use App\Hydrant;
 use App\Lighting;
+use App\Recomendation;
 use App\Sinalization;
 
 class ReportsController extends Controller
@@ -66,12 +67,13 @@ class ReportsController extends Controller
                     'bombs' => $aditionalItens[12],
                     'descriptionOfElementBombs' => $aditionalItens[13],
                     'hydrants' => $aditionalItens[14],
-                    'descriptionOfElementHydrants' => $aditionalItens[15]
+                    'descriptionOfElementHydrants' => $aditionalItens[15],
+                    'recomendations' => $aditionalItens[16],
                 ))
 
                 ->setOption('margin-top', 1)
                 ->setOption('margin-bottom', 20)
-                ->setOption('margin-left', 3)
+                ->setOption('margin-left', 1)
                 ->setOption('margin-right', 2)
                 ->setOption('footer-html', $footerHtml);
 
@@ -89,8 +91,9 @@ class ReportsController extends Controller
         $lightings = Lighting::all();
         $bombs = Bomb::all();
         $hydrants = Hydrant::all();
+        $recomendations = Recomendation::all();
 
-        return view('dashboard.reports.createReports', compact('unities', 'contractedCompanies', 'equipments', 'triggers','sinalizations', 'lightings', 'bombs', 'hydrants'));
+        return view('dashboard.reports.createReports', compact('unities', 'contractedCompanies', 'equipments', 'triggers','sinalizations', 'lightings', 'bombs', 'hydrants','recomendations'));
     }
 
     public function store(ReportRequest $request)
@@ -106,6 +109,7 @@ class ReportsController extends Controller
         $this->attachLighting($report, $request);
         $this->attachBomb($report, $request);
         $this->attachHydrant($report, $request);
+        $this->attachRecomendation($report, $request);
 
         return redirect()->back()->with(['message' => 'Relatório gerado com sucesso']);
     }

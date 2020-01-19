@@ -131,4 +131,8 @@ class Report extends Model
     public function hydrant(){
         return $this->belongsToMany(Hydrant::class);
     }
+
+    public function recomendation(){
+        return $this->belongsToMany(Recomendation::class);
+    }
 }

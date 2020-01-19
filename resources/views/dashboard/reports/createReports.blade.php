@@ -514,6 +514,26 @@
 
                             </div>
 
+
+                            <div class="card-header card-header-space" >
+                                <h5>7.0 Recomendações</h5>
+                            </div>
+
+                            <div class="row">
+
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label class="form-label">Recomendações</label>
+                                        <select class="js-example-basic-multiple col-sm-12" multiple="multiple" name="recomendation_id[]" >
+                                            @foreach ($recomendations as $recomendations)
+                                                <option value="{{$recomendations->id}}">{{$recomendations->description}}</option>
+                                            @endforeach
+                                        </select>
+                                    </div>
+                                </div>
+
+                            </div>
+
                             <div class="card-header card-header-space" >
                                 <h5>Primeira Revisão</h5>
                             </div>

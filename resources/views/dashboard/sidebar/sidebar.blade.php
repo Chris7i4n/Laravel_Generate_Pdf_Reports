@@ -39,6 +39,8 @@
 
                             <li><a style = "color: #e6e60f;"  href="{{ route('hydrants.create')}}">Adicionar Hidrantes</a></li>
 
+                            <li><a style = "color: #e6e60f;"  href="{{ route('recomendations.create')}}">Adicionar Recomendações</a></li>
+
                             <li><a style = "color: #e6e60f;"  href="{{ route('companies.create')}}">Adicionar Empresa Contratante</a></li>
 
                             <li><a style = "color: #e6e60f;" href="{{ route('companies.contracted.create')}}">Adicionar Empresa Contratada</a></li>
@@ -145,6 +147,19 @@
                     <a href="#!" class="nav-link "><span class="pcoded-micon"><i class="feather icon-file-text"></i></span><span class="pcoded-mtext">Hidrantes</span></a>
                     <ul class="pcoded-submenu">
                         <li><a href="{{ route('hydrants.index') }}">Visualizar hidrantes cadastrados</a></li>
+                    </ul>
+                </li>
+            </ul>
+
+            <ul class="nav pcoded-inner-navbar ">
+                <li class="nav-item pcoded-menu-caption">
+                    <label>Recomendações</label>
+                </li>
+
+                <li class="nav-item pcoded-hasmenu">
+                    <a href="#!" class="nav-link "><span class="pcoded-micon"><i class="feather icon-file-text"></i></span><span class="pcoded-mtext">Recomendações</span></a>
+                    <ul class="pcoded-submenu">
+                        <li><a href="{{ route('recomendations.index') }}">Visualizar recomendações cadastradas</a></li>
                     </ul>
                 </li>
             </ul>

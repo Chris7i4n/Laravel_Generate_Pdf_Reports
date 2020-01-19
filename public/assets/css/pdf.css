@@ -1019,6 +1019,78 @@ body {
     text-align: center;
   }
 
+  .recomendations{
+    display: -webkit-box;
+    padding-left: 40px;
+    padding-right: 50px;
+
+  }
+
+  .recomendations td h3{
+      margin-top: 5px;
+      text-align: center;
+  }
+
+  .recomendations td{
+        border: 1px solid #59a106;
+        background-color: #9ccc65;
+  }
+
+  .recomendations td:first-child{
+    width: 97px;
+  }
+
+  .recomendations td:nth-child(2){
+    width: 400px;
+  }
+
+  .recomendations td:nth-child(3){
+    width: 200px;
+  }
+  .recomendations td:last-child{
+    width: 176px;
+  }
+
+  .recomendations-datas td:nth-child(2) h3{
+    margin-top: 5px;
+    text-align: left;
+}
+
+  .recomendations-datas{
+    display: -webkit-box;
+    padding-left: 40px;
+    padding-right: 50px;
+  }
+
+  .recomendations-datas td {
+
+      border: 1px solid #9ccc65;
+  }
+
+  .recomendations-datas td:first-child {
+        width: 100px;
+        text-align: center;
+    }
+
+    .recomendations-datas td:nth-child(2) {
+        width: 399px;
+        text-align: center;
+    }
+
+    .recomendations-datas td:nth-child(3) {
+        width: 203px;
+        text-align: center;
+    }
+
+    .recomendations-datas td:last-child {
+        width: 172px;
+        text-align: center;
+    }
+    .recomendations-datas td h3{
+        padding-top: 2px;
+  }
+
+
   .responsabilities{
     display: -webkit-box;
     padding-left: 50px;

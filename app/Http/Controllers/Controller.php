@@ -163,6 +163,18 @@ class Controller extends BaseController
         return;
     }
 
+
+    public function attachRecomendation($report, $request)
+    {
+        foreach($request['recomendation_id'] as $recomendation_id)
+        {
+
+            $report->recomendation()->attach($recomendation_id);
+
+        }
+        return;
+    }
+
     public function aditionalRequest($request)
     {
         $company = $this->getCompany($request['unity_id']);
@@ -219,6 +231,7 @@ class Controller extends BaseController
         $lightings = $report->lighting;
         $bombs = $report->bomb;
         $hydrants = $report->hydrant;
+        $recomendations = $report->recomendation;
 
         $descriptionOfElements = $this->getDescriptionOfElements($report->description_of_elements);
         $descriptionOfElementSinalizations = $this->getDescriptionOfElements($report->description_of_elements_sinalization);
@@ -247,6 +260,7 @@ class Controller extends BaseController
                         $descriptionOfElementBombs,
                         $hydrants,
                         $descriptionOfElementHydrants,
+                        $recomendations,
                 );
     }
 }
