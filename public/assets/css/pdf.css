@@ -518,6 +518,7 @@ body {
   .list-of-revisions{
     display: -webkit-box;
     width: 100%;
+
   }
 
   .border-list{
@@ -528,7 +529,7 @@ body {
         width: 20%;
         border-right: 1px solid #000;
         height: 110px;
-    }
+  }
 
   .list-of-descriptions{
     width: 519px;
@@ -1031,11 +1032,23 @@ body {
   }
 
   .responsabilities td{
-      border: 1px solid #59a106;
-
+        border: 1px solid #59a106;
         background-color: #9ccc65;
-      width: 500px;
+  }
 
+  .responsabilities td:first-child{
+    width: 192px;
+  }
+
+  .responsabilities td:nth-child(2){
+    width: 247px;
+  }
+
+  .responsabilities td:nth-child(3){
+    width: 200px;
+  }
+  .responsabilities td:last-child{
+    width: 176px;
   }
 
   .responsabilities-datas{
