@@ -47,7 +47,7 @@
             <td class="triggers">
 
                 <ol>
-                    <li><b><h5>6.5 Hidrantes</h5></b></li>
+                    <li><b><h5>6.6 Hidrantes</h5></b></li>
                 </ol>
 
             </td>
