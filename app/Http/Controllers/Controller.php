@@ -141,6 +141,17 @@ class Controller extends BaseController
         return;
     }
 
+    public function attachBomb($report, $request)
+    {
+        foreach($request['bomb_id'] as $bomb_id)
+        {
+
+            $report->bomb()->attach($bomb_id);
+
+        }
+        return;
+    }
+
     public function aditionalRequest($request)
     {
         $company = $this->getCompany($request['unity_id']);
@@ -169,6 +180,8 @@ class Controller extends BaseController
         $request['conclusion_image_sinalization_2'] = $this->uploadFiles($request['conclusion_image_2_sinalization']);
         $request['conclusion_image_lighting_1'] = $this->uploadFiles($request['conclusion_image_1_lighting']);
         $request['conclusion_image_lighting_2'] = $this->uploadFiles($request['conclusion_image_2_lighting']);
+        $request['conclusion_image_bomb_1'] = $this->uploadFiles($request['conclusion_image_1_bomb']);
+        $request['conclusion_image_bomb_2'] = $this->uploadFiles($request['conclusion_image_2_bomb']);
         $request['footer_logo_1'] = $contractedCompany->logo;
         $request['footer_logo_2'] = $contractedCompany->footer_logo_1;
         $request['footer_logo_3'] = $contractedCompany->footer_logo_2;
@@ -189,9 +202,12 @@ class Controller extends BaseController
         $triggers = $report->trigger;
         $sinalizations = $report->sinalization;
         $lightings = $report->lighting;
+        $bombs = $report->bomb;
+
         $descriptionOfElements = $this->getDescriptionOfElements($report->description_of_elements);
         $descriptionOfElementSinalizations = $this->getDescriptionOfElements($report->description_of_elements_sinalization);
         $descriptionOfElementLightings = $this->getDescriptionOfElements($report->description_of_elements_lighting);
+        $descriptionOfElementBombs = $this->getDescriptionOfElements($report->description_of_elements_bomb);
 
         // for document number
         $codeNumberForDocumentNumber = $this->getCodeNumber($report);
@@ -210,6 +226,8 @@ class Controller extends BaseController
                         $descriptionOfElementLightings,
                         $descriptionOfElementSinalizations,
                         $descriptionOfElements,
+                        $bombs,
+                        $descriptionOfElementBombs,
                 );
     }
 }

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Visualizar Iluminação</title>
+    <title>Visualizar Bombas</title>
 
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
@@ -32,11 +32,11 @@
                 <div class="row align-items-center">
                     <div class="col-md-12">
                         <div class="page-header-title">
-                            <h5 class="m-b-10">Visualizar Iluminação</h5>
+                            <h5 class="m-b-10">Visualizar Bombas</h5>
                         </div>
                         <ul class="breadcrumb">
                             <li class="breadcrumb-item"><a href="{{route('dashboardAdmin')}}"><i class="feather icon-home"></i></a></li>
-                            <li class="breadcrumb-item"><a href="#!">Visualizar Iluminação</a></li>
+                            <li class="breadcrumb-item"><a href="#!">Visualizar Bombas</a></li>
                         </ul>
                     </div>
                 </div>
@@ -46,7 +46,7 @@
             <div class="col-sm-12">
                 <div class="card">
                     <div class="card-header">
-                        <h5>Iluminação</h5>
+                        <h5>Bombas de incêndio</h5>
                     </div>
                     <div class="card-body">
                         <div class="dt-responsive table-responsive">
@@ -70,23 +70,23 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    @foreach($lightings as $lighting)
+                                    @foreach($bombs as $bomb)
                                         <tr>
-                                            <td>{{$lighting->initials}}</td>
-                                            <td>{{$lighting->localization}}</td>
-                                            <td>{{$lighting->name}}</td>
-                                            <td>{{$lighting->question_01}}</td>
-                                            <td>{{$lighting->question_02}}</td>
-                                            <td>{{$lighting->question_03}}</td>
-                                            <td>{{$lighting->question_04}}</td>
-                                            <td>{{$lighting->question_05}}</td>
-                                            <td>{{$lighting->question_06}}</td>
-                                            <td>{{$lighting->question_07}}</td>
-                                            <td>{{$lighting->question_08}}</td>
-                                            <td>{{$lighting->question_09}}</td>
-                                            <td>{{$lighting->question_10}}</td>
+                                            <td>{{$bomb->initials}}</td>
+                                            <td>{{$bomb->localization}}</td>
+                                            <td>{{$bomb->name}}</td>
+                                            <td>{{$bomb->question_01}}</td>
+                                            <td>{{$bomb->question_02}}</td>
+                                            <td>{{$bomb->question_03}}</td>
+                                            <td>{{$bomb->question_04}}</td>
+                                            <td>{{$bomb->question_05}}</td>
+                                            <td>{{$bomb->question_06}}</td>
+                                            <td>{{$bomb->question_07}}</td>
+                                            <td>{{$bomb->question_08}}</td>
+                                            <td>{{$bomb->question_09}}</td>
+                                            <td>{{$bomb->question_10}}</td>
                                             <td>
-                                                <a href="{{ route('lightings.edit', $lighting->id) }}">Editar</a>
+                                                <a href="{{ route('bombs.edit', $bomb->id) }}">Editar</a>
                                             </td>
                                         </tr>
                                     @endforeach

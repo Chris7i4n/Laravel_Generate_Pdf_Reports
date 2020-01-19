@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Bomb;
 use App\Http\Requests\ReportRequest;
 use App\Report;
 use App\Unity;
@@ -61,6 +62,9 @@ class ReportsController extends Controller
                     'descriptionOfElementLightings' => $aditionalItens[9],
                     'descriptionOfElementSinalizations' => $aditionalItens[10],
                     'descriptionOfElements' => $aditionalItens[11],
+                    'bombs' => $aditionalItens[12],
+                    'descriptionOfElementBombs' => $aditionalItens[13],
+
 
                 ))
                 ->setOption('margin-top', 5)
@@ -81,19 +85,23 @@ class ReportsController extends Controller
         $triggers = Trigger::all();
         $sinalizations = Sinalization::all();
         $lightings = Lighting::all();
-        return view('dashboard.reports.createReports', compact('unities', 'contractedCompanies', 'equipments', 'triggers','sinalizations', 'lightings'));
+        $bombs = Bomb::all();
+
+        return view('dashboard.reports.createReports', compact('unities', 'contractedCompanies', 'equipments', 'triggers','sinalizations', 'lightings', 'bombs'));
     }
 
     public function store(ReportRequest $request)
     {
 
         $this->aditionalRequest($request);
+
         $report = Report::create($request->all());
 
         $this->attachEquipment($report, $request);
         $this->attachTrigger($report, $request);
         $this->attachSinalization($report, $request);
         $this->attachLighting($report, $request);
+        $this->attachBomb($report, $request);
 
         return redirect()->back()->with(['message' => 'Relatório gerado com sucesso']);
     }

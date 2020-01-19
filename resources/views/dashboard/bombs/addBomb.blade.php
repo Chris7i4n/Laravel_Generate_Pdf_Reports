@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Adicionar iluminação</title>
+    <title>Adicionar bombas </title>
 
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
@@ -34,14 +34,14 @@
                 <div class="row align-items-center">
                     <div class="col-md-12">
                         <div class="page-header-title">
-                            <h5 class="m-b-10">iluminação</h5>
+                            <h5 class="m-b-10">Bombas de incêndio</h5>
                         </div>
                         <ul class="breadcrumb">
                             <li class="breadcrumb-item"><a href="{{route('dashboard')}}"><i class="feather icon-home"></i></a></li>
-                            @if(isset($lighting))
-                                <li class="breadcrumb-item"><a href="{{route('lightings.index')}}">Lista de iluminação</a></li>
+                            @if(isset($bomb))
+                                <li class="breadcrumb-item"><a href="{{route('bombs.index')}}">Lista de bombas de incêndio</a></li>
                             @else
-                                <li class="breadcrumb-item"><a href="#!">Cadastro de iluminação</a></li>
+                                <li class="breadcrumb-item"><a href="#!">Cadastro de bombas</a></li>
                             @endif
                         </ul>
                     </div>
@@ -55,33 +55,33 @@
             <div class="col-sm-12">
                 <div class="card">
                     <div class="card-body">
-                        @if(isset($lighting))
-                            <form method="POST" class="form-login" enctype="multipart/form-data" action="{{ route('lightings.update', $lighting->id) }}" >
+                        @if(isset($bomb))
+                            <form method="POST" class="form-login" enctype="multipart/form-data" action="{{ route('bombs.update', $bomb->id) }}" >
                                 @method('put')
                         @else
-                            <form method="POST" class="form-login" enctype="multipart/form-data" action="{{ route('lightings.store') }}" >
+                            <form method="POST" class="form-login" enctype="multipart/form-data" action="{{ route('bombs.store') }}" >
                         @endif
                             @csrf
                             <div class="row">
 
                                 <div class="col-md-4">
                                     <div class="form-group">
-                                        <label class="form-label">Nome do sinalizador</label>
-                                        <input type="text" class="form-control" name="name" value="{{isset($lighting) ? $lighting->name : ""}}" placeholder="Nome da iluminação">
+                                        <label class="form-label">Nome do bomba de incêndio</label>
+                                        <input type="text" class="form-control" name="name" value="{{isset($bomb) ? $bomb->name : ""}}" placeholder="Nome da bomba de incêndio">
                                     </div>
                                 </div>
 
                                 <div class="col-md-4">
                                     <div class="form-group">
                                         <label class="form-label">Sigla</label>
-                                        <input type="text" class="form-control" name="initials" value="{{isset($lighting) ? $lighting->initials : ""}}" placeholder="Ex: AC">
+                                        <input type="text" class="form-control" name="initials" value="{{isset($bomb) ? $bomb->initials : ""}}" placeholder="Ex: AC">
                                     </div>
                                 </div>
 
                                 <div class="col-md-4">
                                     <div class="form-group">
                                         <label class="form-label">Localização</label>
-                                        <input type="text" class="form-control" name="localization" value="{{isset($lighting) ? $lighting->localization : ""}}" placeholder="Localização">
+                                        <input type="text" class="form-control" name="localization" value="{{isset($bomb) ? $bomb->localization : ""}}" placeholder="Localização">
                                     </div>
                                 </div>
 
@@ -90,13 +90,13 @@
                             <div class="row">
                                 <div class="col-md-4">
                                     <div class="form-group">
-                                        <label class="form-label">Há projeto?</label>
+                                        <label class="form-label">Operação manual / automático</label>
                                         <select class="form-control" name="question_01">
-                                            @if(isset($lighting))
-                                                <option @if($lighting->question_01 == "C") selected @endif value="C">C</option>
-                                                <option @if($lighting->question_01 == "NC") selected @endif value="NC">NC</option>
-                                                <option @if($lighting->question_01 == "NR") selected @endif value="NR">NR</option>
-                                                <option @if($lighting->question_01 == "N/A") selected @endif value="N/A">N/A</option>
+                                            @if(isset($bomb))
+                                                <option @if($bomb->question_01 == "C") selected @endif value="C">C</option>
+                                                <option @if($bomb->question_01 == "NC") selected @endif value="NC">NC</option>
+                                                <option @if($bomb->question_01 == "NR") selected @endif value="NR">NR</option>
+                                                <option @if($bomb->question_01 == "N/A") selected @endif value="N/A">N/A</option>
                                             @else
                                                 <option value="C" selected >C</option>
                                                 <option value="NC">NC</option>
@@ -109,13 +109,13 @@
 
                                 <div class="col-md-4">
                                     <div class="form-group">
-                                        <label class="form-label">Atende aclaramento?</label>
+                                        <label class="form-label">Há vazamentos ?</label>
                                         <select class="form-control" name="question_02">
-                                            @if(isset($lighting))
-                                                <option @if($lighting->question_02 == "C") selected @endif value="C">C</option>
-                                                <option @if($lighting->question_02 == "NC") selected @endif value="NC">NC</option>
-                                                <option @if($lighting->question_02 == "NR") selected @endif value="NR">NR</option>
-                                                <option @if($lighting->question_02 == "N/A") selected @endif value="N/A">N/A</option>
+                                            @if(isset($bomb))
+                                                <option @if($bomb->question_02 == "C") selected @endif value="C">C</option>
+                                                <option @if($bomb->question_02 == "NC") selected @endif value="NC">NC</option>
+                                                <option @if($bomb->question_02 == "NR") selected @endif value="NR">NR</option>
+                                                <option @if($bomb->question_02 == "N/A") selected @endif value="N/A">N/A</option>
                                             @else
                                                 <option value="C" selected >C</option>
                                                 <option value="NC">NC</option>
@@ -128,13 +128,13 @@
 
                                 <div class="col-md-4">
                                     <div class="form-group">
-                                        <label class="form-label">Atende balizamento?</label>
+                                        <label class="form-label">Pressostato / Manômetro / Válvula </label>
                                         <select class="form-control" name="question_03">
-                                            @if(isset($lighting))
-                                                <option @if($lighting->question_03 == "C") selected @endif value="C">C</option>
-                                                <option @if($lighting->question_03 == "NC") selected @endif value="NC">NC</option>
-                                                <option @if($lighting->question_03 == "NR") selected @endif value="NR">NR</option>
-                                                <option @if($lighting->question_03 == "N/A") selected @endif value="N/A">N/A</option>
+                                            @if(isset($bomb))
+                                                <option @if($bomb->question_03 == "C") selected @endif value="C">C</option>
+                                                <option @if($bomb->question_03 == "NC") selected @endif value="NC">NC</option>
+                                                <option @if($bomb->question_03 == "NR") selected @endif value="NR">NR</option>
+                                                <option @if($bomb->question_03 == "N/A") selected @endif value="N/A">N/A</option>
                                             @else
                                                 <option value="C" selected >C</option>
                                                 <option value="NC">NC</option>
@@ -149,13 +149,13 @@
                             <div class="row">
                                 <div class="col-md-4">
                                     <div class="form-group">
-                                        <label class="form-label">Luminância > 5 lux?</label>
+                                        <label class="form-label">Instalação elétrica </label>
                                         <select class="form-control" name="question_04">
-                                            @if(isset($lighting))
-                                                <option @if($lighting->question_04 == "C") selected @endif value="C">C</option>
-                                                <option @if($lighting->question_04 == "NC") selected @endif value="NC">NC</option>
-                                                <option @if($lighting->question_04 == "NR") selected @endif value="NR">NR</option>
-                                                <option @if($lighting->question_04 == "N/A") selected @endif value="N/A">N/A</option>
+                                            @if(isset($bomb))
+                                                <option @if($bomb->question_04 == "C") selected @endif value="C">C</option>
+                                                <option @if($bomb->question_04 == "NC") selected @endif value="NC">NC</option>
+                                                <option @if($bomb->question_04 == "NR") selected @endif value="NR">NR</option>
+                                                <option @if($bomb->question_04 == "N/A") selected @endif value="N/A">N/A</option>
                                             @else
                                                 <option value="C" selected >C</option>
                                                 <option value="NC">NC</option>
@@ -168,13 +168,13 @@
 
                                 <div class="col-md-4">
                                     <div class="form-group">
-                                        <label class="form-label">Espaçamento < 15m?</label>
+                                        <label class="form-label">Pressão / vazão </label>
                                         <select class="form-control" name="question_05">
-                                            @if(isset($lighting))
-                                                <option @if($lighting->question_05 == "C") selected @endif value="C">C</option>
-                                                <option @if($lighting->question_05 == "NC") selected @endif value="NC">NC</option>
-                                                <option @if($lighting->question_05 == "NR") selected @endif value="NR">NR</option>
-                                                <option @if($lighting->question_05 == "N/A") selected @endif value="N/A">N/A</option>
+                                            @if(isset($bomb))
+                                                <option @if($bomb->question_05 == "C") selected @endif value="C">C</option>
+                                                <option @if($bomb->question_05 == "NC") selected @endif value="NC">NC</option>
+                                                <option @if($bomb->question_05 == "NR") selected @endif value="NR">NR</option>
+                                                <option @if($bomb->question_05 == "N/A") selected @endif value="N/A">N/A</option>
                                             @else
                                                 <option value="C" selected >C</option>
                                                 <option value="NC">NC</option>
@@ -187,13 +187,13 @@
 
                                 <div class="col-md-4">
                                     <div class="form-group">
-                                        <label class="form-label">A altura é adequada?</label>
+                                        <label class="form-label">Condição e nível da Caixa D'água</label>
                                         <select class="form-control" name="question_06">
-                                            @if(isset($lighting))
-                                                <option @if($lighting->question_06 == "C") selected @endif value="C">C</option>
-                                                <option @if($lighting->question_06 == "NC") selected @endif value="NC">NC</option>
-                                                <option @if($lighting->question_06 == "NR") selected @endif value="NR">NR</option>
-                                                <option @if($lighting->question_06 == "N/A") selected @endif value="N/A">N/A</option>
+                                            @if(isset($bomb))
+                                                <option @if($bomb->question_06 == "C") selected @endif value="C">C</option>
+                                                <option @if($bomb->question_06 == "NC") selected @endif value="NC">NC</option>
+                                                <option @if($bomb->question_06 == "NR") selected @endif value="NR">NR</option>
+                                                <option @if($bomb->question_06 == "N/A") selected @endif value="N/A">N/A</option>
                                             @else
                                                 <option value="C" selected >C</option>
                                                 <option value="NC">NC</option>
@@ -208,13 +208,13 @@
                             <div class="row">
                                 <div class="col-md-4">
                                     <div class="form-group">
-                                        <label class="form-label">Mantém 2h após interrupção de energia?</label>
+                                        <label class="form-label">Condição e nível do Tanque de Diesel</label>
                                         <select class="form-control" name="question_07">
-                                            @if(isset($lighting))
-                                                <option @if($lighting->question_07 == "C") selected @endif value="C">C</option>
-                                                <option @if($lighting->question_07 == "NC") selected @endif value="NC">NC</option>
-                                                <option @if($lighting->question_07 == "NR") selected @endif value="NR">NR</option>
-                                                <option @if($lighting->question_07 == "N/A") selected @endif value="N/A">N/A</option>
+                                            @if(isset($bomb))
+                                                <option @if($bomb->question_07 == "C") selected @endif value="C">C</option>
+                                                <option @if($bomb->question_07 == "NC") selected @endif value="NC">NC</option>
+                                                <option @if($bomb->question_07 == "NR") selected @endif value="NR">NR</option>
+                                                <option @if($bomb->question_07 == "N/A") selected @endif value="N/A">N/A</option>
                                             @else
                                                 <option value="C" selected >C</option>
                                                 <option value="NC">NC</option>
@@ -227,13 +227,13 @@
 
                                 <div class="col-md-4">
                                     <div class="form-group">
-                                        <label class="form-label">Após a interrupção de energia, ela liga?</label>
+                                        <label class="form-label">Condição do dique de contenção</label>
                                         <select class="form-control" name="question_08">
-                                            @if(isset($lighting))
-                                                <option @if($lighting->question_08 == "C") selected @endif value="C">C</option>
-                                                <option @if($lighting->question_08 == "NC") selected @endif value="NC">NC</option>
-                                                <option @if($lighting->question_08 == "NR") selected @endif value="NR">NR</option>
-                                                <option @if($lighting->question_08 == "N/A") selected @endif value="N/A">N/A</option>
+                                            @if(isset($bomb))
+                                                <option @if($bomb->question_08 == "C") selected @endif value="C">C</option>
+                                                <option @if($bomb->question_08 == "NC") selected @endif value="NC">NC</option>
+                                                <option @if($bomb->question_08 == "NR") selected @endif value="NR">NR</option>
+                                                <option @if($bomb->question_08 == "N/A") selected @endif value="N/A">N/A</option>
                                             @else
                                                 <option value="C" selected >C</option>
                                                 <option value="NC">NC</option>
@@ -246,13 +246,13 @@
 
                                 <div class="col-md-4">
                                     <div class="form-group">
-                                        <label class="form-label">As tomadas de plug estão ok?</label>
+                                        <label class="form-label">Controle de Acesso</label>
                                         <select class="form-control" name="question_09">
-                                            @if(isset($lighting))
-                                                <option @if($lighting->question_09 == "C") selected @endif value="C">C</option>
-                                                <option @if($lighting->question_09 == "NC") selected @endif value="NC">NC</option>
-                                                <option @if($lighting->question_09 == "NR") selected @endif value="NR">NR</option>
-                                                <option @if($lighting->question_09 == "N/A") selected @endif value="N/A">N/A</option>
+                                            @if(isset($bomb))
+                                                <option @if($bomb->question_09 == "C") selected @endif value="C">C</option>
+                                                <option @if($bomb->question_09 == "NC") selected @endif value="NC">NC</option>
+                                                <option @if($bomb->question_09 == "NR") selected @endif value="NR">NR</option>
+                                                <option @if($bomb->question_09 == "N/A") selected @endif value="N/A">N/A</option>
                                             @else
                                                 <option value="C" selected >C</option>
                                                 <option value="NC">NC</option>
@@ -267,13 +267,13 @@
                             <div class="row">
                                 <div class="col-md-4">
                                     <div class="form-group">
-                                        <label class="form-label">O sistema de fixação está ok?</label>
+                                        <label class="form-label">Limpeza e Organização</label>
                                         <select class="form-control" name="question_10">
-                                            @if(isset($lighting))
-                                                <option @if($lighting->question_10 == "C") selected @endif value="C">C</option>
-                                                <option @if($lighting->question_10 == "NC") selected @endif value="NC">NC</option>
-                                                <option @if($lighting->question_10 == "NR") selected @endif value="NR">NR</option>
-                                                <option @if($lighting->question_10 == "N/A") selected @endif value="N/A">N/A</option>
+                                            @if(isset($bomb))
+                                                <option @if($bomb->question_10 == "C") selected @endif value="C">C</option>
+                                                <option @if($bomb->question_10 == "NC") selected @endif value="NC">NC</option>
+                                                <option @if($bomb->question_10 == "NR") selected @endif value="NR">NR</option>
+                                                <option @if($bomb->question_10 == "N/A") selected @endif value="N/A">N/A</option>
                                             @else
                                                 <option value="C" selected >C</option>
                                                 <option value="NC">NC</option>
@@ -287,11 +287,11 @@
                                 <div class="col-md-4">
                                     <div class="form-group">
                                         <label class="form-label">Observação</label>
-                                        <input type="text" class="form-control" name="note" value="{{isset($lighting) ? $lighting->note : "APROVADO"}}" placeholder="Ex: APROVADO">
+                                        <input type="text" class="form-control" name="note" value="{{isset($bomb) ? $bomb->note : "APROVADO"}}" placeholder="Ex: APROVADO">
                                     </div>
                                 </div>
                             </div>
-                            @if(isset($lighting))
+                            @if(isset($bomb))
                                 <button type="submit" class="btn btn-primary">Atualizar</button>
                             @else
                                 <button type="submit" class="btn btn-primary">Cadastrar</button>

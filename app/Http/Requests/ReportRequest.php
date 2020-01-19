@@ -66,6 +66,12 @@ class ReportRequest extends FormRequest
             'conclusion_image_1_lighting' => 'required|file',
             'conclusion_image_2_lighting' => 'required|file',
             'conclusion_legend_lighting' => 'required',
+            'description_of_elements_bomb' => 'required',
+            'bomb_id' => 'required',
+            'conclusion_of_bomb' => 'required',
+            'conclusion_image_1_bomb' => 'required|file',
+            'conclusion_image_2_bomb' => 'required|file',
+            'conclusion_legend_bomb' => 'required',
 
         ];
     }

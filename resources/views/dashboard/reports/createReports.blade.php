@@ -398,6 +398,63 @@
 
                             </div>
 
+                            <div class="card-header card-header-space" >
+                                <h5>6.5 Bombas de Incêndio</h5>
+                            </div>
+
+                            <div class="row">
+
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label class="form-label">Descrição dos elementos</label>
+                                        <input type="text" class="form-control" name="description_of_elements_bomb" placeholder="Ex: Descrição 1, descrição 2">
+                                    </div>
+                                </div>
+
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label class="form-label">Bombas de Incêndio</label>
+                                        <select class="js-example-basic-multiple col-sm-12" multiple="multiple" name="bomb_id[]" >
+                                            @foreach ($bombs as $bomb)
+                                                <option value="{{$bomb->id}}">{{$bomb->name}}</option>
+                                            @endforeach
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label class="form-label">Conclusão</label>
+                                        <input type="text" class="form-control" name="conclusion_of_bomb" placeholder="Conclusão das iluminações">
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <div class="row">
+
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label class="form-label">Imagem para a conclusão</label>
+                                        <input type="file" class="form-control" name="conclusion_image_1_bomb">
+                                    </div>
+                                </div>
+
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label class="form-label">Segunda imagem para a conclusão</label>
+                                        <input type="file" class="form-control" name="conclusion_image_2_bomb">
+                                    </div>
+                                </div>
+
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label class="form-label">Legenda</label>
+                                        <input type="text" class="form-control" name="conclusion_legend_bomb" placeholder="Legenda da conclusão">
+                                    </div>
+                                </div>
+
+                            </div>
 
 
                             <div class="card-header card-header-space" >

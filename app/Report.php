@@ -78,6 +78,11 @@ class Report extends Model
         'conclusion_image_lighting_1',
         'conclusion_image_lighting_2',
         'conclusion_legend_lighting',
+        'description_of_elements_bomb',
+        'conclusion_of_bomb',
+        'conclusion_image_bomb_1',
+        'conclusion_image_bomb_2',
+        'conclusion_legend_bomb',
 
     ];
 
@@ -112,5 +117,9 @@ class Report extends Model
 
     public function lighting(){
         return $this->belongsToMany(Lighting::class);
+    }
+
+    public function bomb(){
+        return $this->belongsToMany(Bomb::class);
     }
 }

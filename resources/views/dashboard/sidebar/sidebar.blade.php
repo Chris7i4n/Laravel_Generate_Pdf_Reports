@@ -35,11 +35,15 @@
 
                             <li><a style = "color: #e6e60f;"  href="{{ route('lightings.create')}}">Adicionar iluminações</a></li>
 
+                            <li><a style = "color: #e6e60f;"  href="{{ route('bombs.create')}}">Adicionar Bombas</a></li>
+
                             <li><a style = "color: #e6e60f;"  href="{{ route('companies.create')}}">Adicionar Empresa Contratante</a></li>
 
                             <li><a style = "color: #e6e60f;" href="{{ route('companies.contracted.create')}}">Adicionar Empresa Contratada</a></li>
 
                             <li><a style = "color: #e6e60f;"  href="{{ route('companies.unities')}}">Adicionar Unidades</a></li>
+
+
                         @endif
                     </ul>
                 </li>
@@ -114,6 +118,19 @@
                     <a href="#!" class="nav-link "><span class="pcoded-micon"><i class="feather icon-file-text"></i></span><span class="pcoded-mtext">Iluminação</span></a>
                     <ul class="pcoded-submenu">
                         <li><a href="{{ route('lightings.index') }}">Visualizar iluminações cadastradas</a></li>
+                    </ul>
+                </li>
+            </ul>
+
+            <ul class="nav pcoded-inner-navbar ">
+                <li class="nav-item pcoded-menu-caption">
+                    <label>Bombas</label>
+                </li>
+
+                <li class="nav-item pcoded-hasmenu">
+                    <a href="#!" class="nav-link "><span class="pcoded-micon"><i class="feather icon-file-text"></i></span><span class="pcoded-mtext">Bombas</span></a>
+                    <ul class="pcoded-submenu">
+                        <li><a href="{{ route('bombs.index') }}">Visualizar bombas cadastradas</a></li>
                     </ul>
                 </li>
             </ul>
