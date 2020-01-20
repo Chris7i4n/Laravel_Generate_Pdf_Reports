@@ -48,6 +48,7 @@ class ReportsController extends Controller
     public function show(Report $report)
     {
         $footerHtml = view()->make('dashboard.footer.pdfFooter', compact('report'))->render();
+
         $aditionalItens = $this->showReportAditionalItens($report);
 
         $pdf = PDF::loadView('dashboard.reports.pdfReports', array(
@@ -69,6 +70,7 @@ class ReportsController extends Controller
                     'hydrants' => $aditionalItens[14],
                     'descriptionOfElementHydrants' => $aditionalItens[15],
                     'recomendations' => $aditionalItens[16],
+                    'endOfReport' => $aditionalItens[17],
                 ))
 
                 ->setOption('margin-top', 1)
@@ -110,6 +112,7 @@ class ReportsController extends Controller
         $this->attachBomb($report, $request);
         $this->attachHydrant($report, $request);
         $this->attachRecomendation($report, $request);
+        $this->attachEndOfReport($report, $request);
 
         return redirect()->back()->with(['message' => 'Relatório gerado com sucesso']);
     }

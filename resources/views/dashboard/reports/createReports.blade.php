@@ -535,6 +535,70 @@
                             </div>
 
                             <div class="card-header card-header-space" >
+                                <h5>8.0 Conclusão</h5>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label class="form-label">Descrição: </label>
+                                        <input type="text" class="form-control" name="end_of_report_description" placeholder="Ex: Colocar em condição normal de funcionamento">
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label class="form-label">Páginas: </label>
+                                        <input type="text" class="form-control" name="end_of_report_pages" placeholder="Ex: 17(dezessete) páginas">
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label class="form-label">Localização: </label>
+                                        <input type="text" class="form-control" name="end_of_report_localization" placeholder="Ex: Vinhedo/SP, 19 de Outubro de 2019">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label class="form-label">Nome: </label>
+                                        <input type="text" class="form-control" name="end_of_report_employee_name" placeholder="Ex: Nome e sobrenome do funcionário">
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label class="form-label">Função 1: </label>
+                                        <input type="text" class="form-control" name="end_of_report_employee_function_1" placeholder="Ex: Engenheiro Eletricista">
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label class="form-label">Função 2: </label>
+                                        <input type="text" class="form-control" name="end_of_report_employee_function_2" placeholder="Ex: Engenheiro de Segurança">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label class="form-label">Crea: </label>
+                                        <input type="text" class="form-control" name="end_of_report_employee_crea" placeholder="Ex: 4023293-SP">
+                                    </div>
+                                </div>
+
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label class="form-label">Assinatura digital</label>
+                                        <input type="file" class="form-control" name="conclusion_signature">
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <div class="card-header card-header-space" >
                                 <h5>Primeira Revisão</h5>
                             </div>
 

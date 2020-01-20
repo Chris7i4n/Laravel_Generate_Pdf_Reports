@@ -149,12 +149,6 @@ body {
     width: 100%;
   }
 
-  /* table tr,
-  table td,
-  table th {
-    padding: 0.2rem 0.5rem;
-  } */
-
   table p {
     margin: 0;
   }
@@ -407,6 +401,7 @@ body {
     clear: right;
   }
 
+
   .metodology li p{
 
     padding-right: 20px;
@@ -422,6 +417,24 @@ body {
   }
 
   .metodology li h5{
+      font-weight: bold;
+  }
+
+  .conclusion li p{
+
+    padding-right: 20px;
+    padding-top: 10px;
+    text-align: justify;
+    font-size: 17px;
+
+  }
+
+  .conclusion ol{
+    padding-top: 15px;
+    display: -webkit-box;
+  }
+
+  .conclusion li h5{
       font-weight: bold;
   }
 
@@ -1310,9 +1323,33 @@ body {
     display: -webkit-box;
 }
 
+.table-reports-page-break{
+    border-top: 1px solid #000;
+    border-left: 1px solid #000;
+    border-right: 1px solid #000;
+    border-bottom: 1px solid #000;
+    display: -webkit-box;
+}
+
 
 .table-reports th{
     border-bottom: 1px solid #000;
+}
+
+.signature{
+    height: 70px;
+    width: 70px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+
+.signature-responsable{
+    margin-left: 310px;
+    display: -webkit-box;
+    text-align: center;
+    white-space: nowrap;
+
 }
 
 

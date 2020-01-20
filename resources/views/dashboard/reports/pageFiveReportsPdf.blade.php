@@ -117,28 +117,30 @@
                 @endif
             </tr>
         @endforeach
-        <tr class = "conclusion-of-system">
-            <td>
-                <h3>Conclusão</h3>
-            </td>
-        </tr>
-        <tr class = "description-of-system-datas">
-            <td>
-                <h3 class="italic-padding">{{$report->description_of_conclusion}}</h3>
-            </td>
-        </tr>
-        <tr class = "description-of-system-datas">
-            <td>
-                <img
-                    src="{{ public_path("storage/". $report->conclusion_image) }}"
-                    class="conclusion-image"
-                >
-            </td>
-        </tr>
-        <tr class = "legend-of-conclusion" >
-            <td>
-                <h3 class="italic-padding">{{$report->legend_of_conclusion}}</h3>
-            </td>
-        </tr>
+            <tr class = "conclusion-of-system">
+                <td>
+                    <h3>Conclusão</h3>
+                </td>
+            </tr>
+            <tr class = "description-of-system-datas">
+                <td>
+                    <h3 class="italic-padding">{{$report->description_of_conclusion}}</h3>
+                </td>
+            </tr>
+            <tr class = "description-of-system-datas">
+                <td>
+                    <img
+                        src="{{ public_path("storage/". $report->conclusion_image) }}"
+                        class="conclusion-image"
+                    >
+                </td>
+            </tr>
+            <tr class = "legend-of-conclusion" >
+                <td>
+                    <h3 class="italic-padding">{{$report->legend_of_conclusion}}</h3>
+                </td>
+            </tr>
     </tbody>
+
 </table>
+

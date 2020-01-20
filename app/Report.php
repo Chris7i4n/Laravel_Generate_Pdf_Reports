@@ -135,4 +135,7 @@ class Report extends Model
     public function recomendation(){
         return $this->belongsToMany(Recomendation::class);
     }
+    public function endOfReport(){
+        return $this->hasOne(EndOfReport::class);
+    }
 }

@@ -7,6 +7,7 @@ use Illuminate\Foundation\Bus\DispatchesJobs;
 use Illuminate\Foundation\Validation\ValidatesRequests;
 use Illuminate\Routing\Controller as BaseController;
 use App\Company;
+use App\EndOfReport;
 use App\Unity;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Auth;
@@ -175,6 +176,13 @@ class Controller extends BaseController
         return;
     }
 
+    public function attachEndOfReport($report, $request)
+    {
+        $request['report_id'] = $report->id;
+        EndOfReport::create($request->all());
+        return;
+    }
+
     public function aditionalRequest($request)
     {
         $company = $this->getCompany($request['unity_id']);
@@ -208,6 +216,7 @@ class Controller extends BaseController
         $request['conclusion_image_bomb_2'] = $this->uploadFiles($request['conclusion_image_2_bomb']);
         $request['conclusion_image_hydrant_1'] = $this->uploadFiles($request['conclusion_image_1_hydrant']);
         $request['conclusion_image_hydrant_2'] = $this->uploadFiles($request['conclusion_image_2_hydrant']);
+        $request['end_of_report_signature'] = $this->uploadFiles($request['conclusion_signature']);
         $request['footer_logo_1'] = $contractedCompany->logo;
         $request['footer_logo_2'] = $contractedCompany->footer_logo_1;
         $request['footer_logo_3'] = $contractedCompany->footer_logo_2;
@@ -232,6 +241,7 @@ class Controller extends BaseController
         $bombs = $report->bomb;
         $hydrants = $report->hydrant;
         $recomendations = $report->recomendation;
+        $endOfReport = $report->endOfReport;
 
         $descriptionOfElements = $this->getDescriptionOfElements($report->description_of_elements);
         $descriptionOfElementSinalizations = $this->getDescriptionOfElements($report->description_of_elements_sinalization);
@@ -261,6 +271,7 @@ class Controller extends BaseController
                         $hydrants,
                         $descriptionOfElementHydrants,
                         $recomendations,
+                        $endOfReport,
                 );
     }
 }

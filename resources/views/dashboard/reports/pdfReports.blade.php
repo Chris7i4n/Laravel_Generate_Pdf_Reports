@@ -8,6 +8,7 @@
             PDF
         </title>
     </head>
+
     <body>
         @include('dashboard.reports.pageOneReportsPdf')
         <div class="pagebreak"></div>
@@ -30,6 +31,8 @@
         @include('dashboard.reports.pageTenReportsPdf')
         <div class="pagebreak"></div>
         @include('dashboard.reports.pageElevenReportsPdf')
+        <div class="pagebreak"></div>
+        @include('dashboard.reports.pageTwelveReportsPdf')
     </body>
 
 </html>
