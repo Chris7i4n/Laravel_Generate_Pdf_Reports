@@ -1,5 +1,4 @@
 <table class="table-reports table-small table-width" >
-    <thead>
         <tr class="table-employee-head" >
             <th>
                 <img
@@ -26,7 +25,6 @@
             </th>
 
         </tr>
-    </thead>
     <tbody>
         <tr class="table-id-fields">
             <td >

@@ -117,6 +117,10 @@ class ReportsController extends Controller
         return redirect()->back()->with(['message' => 'Relatório gerado com sucesso']);
     }
 
+    public function edit(Report $report)
+    {
+        return view('dashboard.reports.createReports', compact('report'));
+    }
 
     public function changeStatus(Request $request)
     {

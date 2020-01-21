@@ -1,5 +1,4 @@
 <table class="table-reports table-small table-width" >
-    <thead>
         <tr class="table-employee-head" >
             <th>
                 <img
@@ -26,7 +25,6 @@
             </th>
 
         </tr>
-    </thead>
     <tbody>
         <tr class="table-id-fields">
             <td >
@@ -165,5 +163,7 @@
                 <h3>{{ $report->approved ? date('d/m/Y', strtotime($report->updated_at)) : "Não aprovado"  }}</h3>
             </td>
         </tr>
+        <tr class = "margin-when-page-break"></tr>
+
     </tbody>
 </table>

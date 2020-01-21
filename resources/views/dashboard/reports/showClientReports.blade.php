@@ -54,6 +54,7 @@
                                         <th>Número da inspeção</th>
                                         <th>Número do documento</th>
                                         <th>Status</th>
+                                        {{-- <th>Editar Relatório</th> --}}
                                         <th>Visualizar Relatório</th>
                                     </tr>
                                 </thead>
@@ -65,6 +66,11 @@
                                             <td>
                                                 {{$report->approved ? "Aprovado" : "Esperando aprovação"}}
                                             </td>
+                                            {{-- <td>
+                                                <a target="_blank" href="{{route('reports.edit', $report->id)}}">
+                                                    Editar
+                                                </a>
+                                            </td> --}}
                                             <td>
                                                 @if($report->approved)
                                                     <a target="_blank" href="{{route('reports.show', $report->id)}}">

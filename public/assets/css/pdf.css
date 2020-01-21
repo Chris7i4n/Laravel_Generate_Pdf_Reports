@@ -169,12 +169,6 @@ body {
     border-left: 1px solid #ddd;
   }
 
-  table thead {
-    background-color: #ddd;
-    text-align: center;
-    font-weight: bold !important;
-  }
-
   table.table-small {
     font-size: 0.8rem !important;
   }
@@ -188,9 +182,13 @@ body {
     background-color: #f2f2f2;
   }
 
+  .margin-when-page-break{
+      height: 100px;
+  }
 
   .table-employee-head {
     color:black;
+    text-align: center;
     background-color: white;
     display:  -webkit-box;
   }
@@ -795,7 +793,7 @@ body {
   .localization-of-equipments td{
     border-top: 1px solid #59a106;
     border-right: 1px solid #59a106;
-    border-bottom: 1px solid #59a106;
+    /* border-bottom: 1px solid #59a106; */
     background-color: #9ccc65;
     text-align: center;
     padding-top: 5px;
@@ -823,6 +821,12 @@ body {
     .localization-of-equipments td h3{
         font-size: 18px;
     }
+    .localization-of-equipments-h3 {
+        float: left;
+        margin-left: 1px;
+        padding-left: 1px;
+        display: block;
+    }
 
   .localization-of-equipments-data{
     background-color: white !important;
@@ -830,13 +834,6 @@ body {
 
   .localization-of-equipments-data h3{
       font-size: 14px;
-  }
-
-  .localization-of-equipments-h3 {
-    float: left;
-    margin-left: 1px;
-    padding-left: 1px;
-    display: block;
   }
 
   .localization-of-equipments-datas{
@@ -847,7 +844,7 @@ body {
   }
 
   .localization-of-equipments-datas td{
-    border-bottom: 1px solid #59a106;
+    border-top: 1px solid #59a106;
     border-right: 1px solid #59a106;
     background-color: #9ccc65;
     text-align: center;
@@ -881,9 +878,7 @@ body {
   }
 
   .conclusion-of-trigger td{
-    border-right: 1px solid #59a106;
-    border-left: 1px solid #59a106;
-    border-bottom: 1px solid #59a106;
+    border: 1px solid #59a106;
     background-color: #9ccc65;
     width: 899px;
   }
@@ -940,7 +935,7 @@ body {
     display: -webkit-box;
     margin-left: auto;
     margin-right: auto;
-    height: 400px;
+    height: 330px;
     width: 400px;
   }
 

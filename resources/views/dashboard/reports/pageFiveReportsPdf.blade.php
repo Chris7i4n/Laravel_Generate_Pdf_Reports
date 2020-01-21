@@ -1,5 +1,4 @@
 <table class="table-reports table-small table-width" >
-    <thead>
         <tr class="table-employee-head" >
             <th>
                 <img
@@ -24,9 +23,7 @@
                     class = "logo-header"
                 >
             </th>
-
         </tr>
-    </thead>
     <tbody>
         <tr class="table-id-fields">
             <td >
@@ -140,6 +137,7 @@
                     <h3 class="italic-padding">{{$report->legend_of_conclusion}}</h3>
                 </td>
             </tr>
+            <tr class = "margin-when-page-break"></tr>
     </tbody>
 
 </table>
