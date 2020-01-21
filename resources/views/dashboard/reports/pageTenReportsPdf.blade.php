@@ -390,6 +390,7 @@
                 <h3>{{$report->conclusion_legend_hydrant}}</h3>
             </td>
         </tr>
+        <tr class = "margin-when-page-break"></tr>
 
     </tbody>
 </table>

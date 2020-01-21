@@ -83,5 +83,7 @@
         </tr>
         <tr class = "responsabilities-datas-last-child">
         </tr>
+        <tr class = "margin-when-page-break"></tr>
+
     </tbody>
 </table>

@@ -62,7 +62,7 @@
                             >
 
                         </p>
-                        <p class="signature-responsable">________________________________</p>
+                        <p class="signature-responsable">_________________________________</p>
                         <p class="signature-responsable">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{$endOfReport->end_of_report_employee_name}}</p>
                         <p class="signature-responsable">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{$endOfReport->end_of_report_employee_function_1}}</p>
                         <p class="signature-responsable">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{$endOfReport->end_of_report_employee_function_2}}</p>
