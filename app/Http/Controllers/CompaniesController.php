@@ -57,13 +57,7 @@ class CompaniesController extends Controller
         $request['logo'] = $this->uploadFiles($request->file('logoContractingCompany'));
         $request['user_id'] = Auth::user()->id;
         $company = Company::create($request->all());
-
-        foreach($request['unity_id'] as $unity_id)
-        {
-
-            $company->unity()->attach($unity_id);
-
-        }
+        $this->attachUnity($request,$company);
 
         return redirect()->back()->with(['message' => 'Empresa adicionada com sucesso']);
     }

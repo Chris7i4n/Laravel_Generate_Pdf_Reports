@@ -97,6 +97,17 @@ class Controller extends BaseController
 
     }
 
+    public function attachUnity($request,$company)
+    {
+        foreach($request['unity_id'] as $unity_id)
+        {
+
+            $company->unity()->attach($unity_id);
+
+        }
+        return;
+    }
+
     public function attachEquipment($report, $request)
     {
         foreach($request['equipment_id'] as $equipment_id)
