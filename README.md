@@ -9,10 +9,6 @@ PHP >= 7.3.3
 ```
 
 ```
-PostgreSQL
-```
-
-```
 Laravel >= 5.8
 ```
 
