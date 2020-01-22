@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Adicionar iluminação</title>
+    <title>Adicionar Iluminação</title>
 
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
@@ -34,14 +34,14 @@
                 <div class="row align-items-center">
                     <div class="col-md-12">
                         <div class="page-header-title">
-                            <h5 class="m-b-10">iluminação</h5>
+                            <h5 class="m-b-10">Iluminação</h5>
                         </div>
                         <ul class="breadcrumb">
                             <li class="breadcrumb-item"><a href="{{route('dashboard')}}"><i class="feather icon-home"></i></a></li>
                             @if(isset($lighting))
-                                <li class="breadcrumb-item"><a href="{{route('lightings.index')}}">Lista de iluminação</a></li>
+                                <li class="breadcrumb-item"><a href="{{route('lightings.index')}}">Lista de Iluminação</a></li>
                             @else
-                                <li class="breadcrumb-item"><a href="#!">Cadastro de iluminação</a></li>
+                                <li class="breadcrumb-item"><a href="#!">Cadastro de Iluminação</a></li>
                             @endif
                         </ul>
                     </div>

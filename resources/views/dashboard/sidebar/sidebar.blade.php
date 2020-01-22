@@ -33,7 +33,7 @@
 
                             <li><a style = "color: #e6e60f;"  href="{{ route('sinalizations.create')}}">Adicionar Sinalizações</a></li>
 
-                            <li><a style = "color: #e6e60f;"  href="{{ route('lightings.create')}}">Adicionar iluminações</a></li>
+                            <li><a style = "color: #e6e60f;"  href="{{ route('lightings.create')}}">Adicionar Iluminações</a></li>
 
                             <li><a style = "color: #e6e60f;"  href="{{ route('bombs.create')}}">Adicionar Bombas</a></li>
 
