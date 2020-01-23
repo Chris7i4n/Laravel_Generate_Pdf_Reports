@@ -17,6 +17,10 @@ Composer
 ```
 
 ```
+Npm
+```
+
+```
 Snappy pdf library: https://github.com/barryvdh/laravel-snappy
 ```
 
@@ -26,6 +30,10 @@ Snappy pdf library: https://github.com/barryvdh/laravel-snappy
 
 ```
 composer update
+```
+
+```
+npm install
 ```
 
 - Install pdf library
