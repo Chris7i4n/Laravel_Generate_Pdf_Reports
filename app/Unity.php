@@ -13,6 +13,7 @@ class Unity extends Model
         'cnpj',
         'phone',
         'contracting_responsable',
+        'code_number'
 
     ];
 

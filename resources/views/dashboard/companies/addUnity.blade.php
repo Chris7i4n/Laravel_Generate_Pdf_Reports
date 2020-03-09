@@ -91,7 +91,13 @@
                                         <input type="text" class="form-control" name="contracting_responsable" placeholder="Responsável contratado da unidade">
                                     </div>
                                 </div>
-
+                                
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label class="form-label">Código da unidade</label>
+                                        <input type="text" class="form-control" name="code_number" placeholder="Ex:10">
+                                    </div>
+                                </div>
                             </div>
 
                             <button type="submit" class="btn btn-primary">Cadastrar</button>

@@ -36,7 +36,7 @@ class Controller extends BaseController
 
     public function getCodeNumber($report)
     {
-         $codeNumberForDocumentNumber = $report->unity->company->first()->code_number;
+         $codeNumberForDocumentNumber = $report->unity->first()->code_number;
 
          if(strlen($codeNumberForDocumentNumber) <= 2)
          {

@@ -83,17 +83,7 @@
                                 </div>
 
                             </div>
-
-                            <div class="row">
-
-                                <div class="col-md-4">
-                                    <div class="form-group">
-                                        <label class="form-label">Código para o número do documento</label>
-                                        <input type="text" class="form-control" name="code_number" placeholder="Ex:10">
-                                    </div>
-                                </div>
-                            </div>
-
+                            
                             <button type="submit" class="btn btn-primary">Cadastrar</button>
                         </form>
                     {{-- Notifications  --}}

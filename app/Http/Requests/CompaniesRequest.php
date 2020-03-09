@@ -27,7 +27,6 @@ class CompaniesRequest extends FormRequest
             'logoContractingCompany' => 'required|file',
             'company' => 'required',
             'unity_id' => 'required',
-            'code_number' => 'required|numeric',
         ];
     }
 }

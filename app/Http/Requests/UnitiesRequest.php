@@ -28,7 +28,8 @@ class UnitiesRequest extends FormRequest
             'cnpj' => 'required',
             'address' => 'required',
             'phone' => 'required',
-            'contracting_responsable' => 'required'
+            'contracting_responsable' => 'required',
+            'code_number' => 'required|numeric',
         ];
     }
 
