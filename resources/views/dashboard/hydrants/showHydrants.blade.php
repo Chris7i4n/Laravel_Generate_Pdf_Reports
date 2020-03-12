@@ -55,7 +55,6 @@
                                     <tr>
                                         <th>Sigla</th>
                                         <th>Localização</th>
-                                        <th>Name</th>
                                         <th>01</th>
                                         <th>02</th>
                                         <th>03</th>
@@ -74,7 +73,6 @@
                                         <tr>
                                             <td>{{$hydrant->initials}}</td>
                                             <td>{{$hydrant->localization}}</td>
-                                            <td>{{$hydrant->name}}</td>
                                             <td>{{$hydrant->question_01}}</td>
                                             <td>{{$hydrant->question_02}}</td>
                                             <td>{{$hydrant->question_03}}</td>

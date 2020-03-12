@@ -8,7 +8,6 @@ class Sinalization extends Model
 {
     protected $fillable = [
 
-        'name',
         'initials',
         'localization',
         'question_01',

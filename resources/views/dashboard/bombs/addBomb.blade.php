@@ -63,28 +63,18 @@
                         @endif
                             @csrf
                             <div class="row">
-
-                                <div class="col-md-4">
-                                    <div class="form-group">
-                                        <label class="form-label">Nome do bomba de incêndio</label>
-                                        <input type="text" class="form-control" name="name" value="{{isset($bomb) ? $bomb->name : ""}}" placeholder="Nome da bomba de incêndio">
-                                    </div>
-                                </div>
-
                                 <div class="col-md-4">
                                     <div class="form-group">
                                         <label class="form-label">Sigla</label>
                                         <input type="text" class="form-control" name="initials" value="{{isset($bomb) ? $bomb->initials : ""}}" placeholder="Ex: AC">
                                     </div>
                                 </div>
-
                                 <div class="col-md-4">
                                     <div class="form-group">
                                         <label class="form-label">Localização</label>
                                         <input type="text" class="form-control" name="localization" value="{{isset($bomb) ? $bomb->localization : ""}}" placeholder="Localização">
                                     </div>
                                 </div>
-
                             </div>
 
                             <div class="row">

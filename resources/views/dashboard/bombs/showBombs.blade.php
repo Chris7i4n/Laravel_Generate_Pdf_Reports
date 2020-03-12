@@ -55,7 +55,6 @@
                                     <tr>
                                         <th>Sigla</th>
                                         <th>Localização</th>
-                                        <th>Name</th>
                                         <th>01</th>
                                         <th>02</th>
                                         <th>03</th>
@@ -74,7 +73,6 @@
                                         <tr>
                                             <td>{{$bomb->initials}}</td>
                                             <td>{{$bomb->localization}}</td>
-                                            <td>{{$bomb->name}}</td>
                                             <td>{{$bomb->question_01}}</td>
                                             <td>{{$bomb->question_02}}</td>
                                             <td>{{$bomb->question_03}}</td>

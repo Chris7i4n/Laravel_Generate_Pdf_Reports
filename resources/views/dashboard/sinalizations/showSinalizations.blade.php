@@ -55,7 +55,6 @@
                                     <tr>
                                         <th>Sigla</th>
                                         <th>Localização</th>
-                                        <th>Name</th>
                                         <th>01</th>
                                         <th>02</th>
                                         <th>03</th>
@@ -74,7 +73,6 @@
                                         <tr>
                                             <td>{{$sinalization->initials}}</td>
                                             <td>{{$sinalization->localization}}</td>
-                                            <td>{{$sinalization->name}}</td>
                                             <td>{{$sinalization->question_01}}</td>
                                             <td>{{$sinalization->question_02}}</td>
                                             <td>{{$sinalization->question_03}}</td>

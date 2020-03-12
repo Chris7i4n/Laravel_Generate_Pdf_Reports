@@ -63,14 +63,7 @@
                         @endif
                             @csrf
                             <div class="row">
-
-                                <div class="col-md-4">
-                                    <div class="form-group">
-                                        <label class="form-label">Nome do sinalizador</label>
-                                        <input type="text" class="form-control" name="name" value="{{isset($lighting) ? $lighting->name : ""}}" placeholder="Nome da iluminação">
-                                    </div>
-                                </div>
-
+                                
                                 <div class="col-md-4">
                                     <div class="form-group">
                                         <label class="form-label">Sigla</label>

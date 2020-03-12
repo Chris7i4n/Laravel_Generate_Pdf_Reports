@@ -7,8 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Bomb extends Model
 {
     protected $fillable = [
-
-        'name',
+        
         'initials',
         'localization',
         'question_01',

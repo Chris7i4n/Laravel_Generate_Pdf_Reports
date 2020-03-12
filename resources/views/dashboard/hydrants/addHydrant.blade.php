@@ -66,13 +66,6 @@
 
                                 <div class="col-md-4">
                                     <div class="form-group">
-                                        <label class="form-label">Nome do hidrante</label>
-                                        <input type="text" class="form-control" name="name" value="{{isset($hydrant) ? $hydrant->name : ""}}" placeholder="Nome do hidrante">
-                                    </div>
-                                </div>
-
-                                <div class="col-md-4">
-                                    <div class="form-group">
                                         <label class="form-label">Sigla</label>
                                         <input type="text" class="form-control" name="initials" value="{{isset($hydrant) ? $hydrant->initials : ""}}" placeholder="Ex: AC">
                                     </div>

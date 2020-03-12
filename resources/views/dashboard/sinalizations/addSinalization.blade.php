@@ -66,13 +66,6 @@
 
                                 <div class="col-md-4">
                                     <div class="form-group">
-                                        <label class="form-label">Nome do sinalizador</label>
-                                        <input type="text" class="form-control" name="name" value="{{isset($sinalization) ? $sinalization->name : ""}}" placeholder="Nome da sinalização">
-                                    </div>
-                                </div>
-
-                                <div class="col-md-4">
-                                    <div class="form-group">
                                         <label class="form-label">Sigla</label>
                                         <input type="text" class="form-control" name="initials" value="{{isset($sinalization) ? $sinalization->initials : ""}}" placeholder="Ex: AC">
                                     </div>

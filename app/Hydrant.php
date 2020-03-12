@@ -8,7 +8,6 @@ class Hydrant extends Model
 {
     protected $fillable = [
 
-        'name',
         'initials',
         'localization',
         'question_01',

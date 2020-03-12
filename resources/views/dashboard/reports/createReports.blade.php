@@ -190,12 +190,16 @@
                                 <div class="col-md-4">
                                     <div class="form-group">
                                         <label class="form-label">Equipamentos</label>
-                                        <select class="js-example-basic-multiple col-sm-12" multiple="multiple" name="equipment_id[]" >
+                                        <select class="js-example-basic-multiple col-sm-12" multiple="multiple" name="equipment_id[]" id="e1">
                                             @foreach ($equipments as $equipment)
                                                 <option value="{{$equipment->id}}">{{$equipment->localization}}</option>
                                             @endforeach
+                                            <option value="torresmo">torremos</option>
+                                            <option value="bolo de pote">bolo de pote</option>
                                         </select>
+                                        <input type="checkbox" id="checkbox"> Todos</button>
                                     </div>
+                                  
                                 </div>
 
                                 <div class="col-md-4">
@@ -242,7 +246,7 @@
                                         <label class="form-label">Acionadores</label>
                                         <select class="js-example-basic-multiple col-sm-12" multiple="multiple" name="trigger_id[]" >
                                             @foreach ($triggers as $trigger)
-                                                <option value="{{$trigger->id}}">{{$trigger->name}}</option>
+                                                <option value="{{$trigger->id}}">{{$trigger->initials}}</option>
                                             @endforeach
                                         </select>
                                     </div>
@@ -300,7 +304,7 @@
                                         <label class="form-label">Sinalizações</label>
                                         <select class="js-example-basic-multiple col-sm-12" multiple="multiple" name="sinalization_id[]" >
                                             @foreach ($sinalizations as $sinalization)
-                                                <option value="{{$sinalization->id}}">{{$sinalization->name}}</option>
+                                                <option value="{{$sinalization->id}}">{{$sinalization->initials}}</option>
                                             @endforeach
                                         </select>
                                     </div>
@@ -358,7 +362,7 @@
                                         <label class="form-label">Iluminações</label>
                                         <select class="js-example-basic-multiple col-sm-12" multiple="multiple" name="lighting_id[]" >
                                             @foreach ($lightings as $lighting)
-                                                <option value="{{$lighting->id}}">{{$lighting->name}}</option>
+                                                <option value="{{$lighting->id}}">{{$lighting->initials}}</option>
                                             @endforeach
                                         </select>
                                     </div>
@@ -416,7 +420,7 @@
                                         <label class="form-label">Bombas de Incêndio</label>
                                         <select class="js-example-basic-multiple col-sm-12" multiple="multiple" name="bomb_id[]" >
                                             @foreach ($bombs as $bomb)
-                                                <option value="{{$bomb->id}}">{{$bomb->name}}</option>
+                                                <option value="{{$bomb->id}}">{{$bomb->initials}}</option>
                                             @endforeach
                                         </select>
                                     </div>
@@ -474,7 +478,7 @@
                                         <label class="form-label">Hidrantes de Incêndio</label>
                                         <select class="js-example-basic-multiple col-sm-12" multiple="multiple" name="hydrant_id[]" >
                                             @foreach ($hydrants as $hydrant)
-                                                <option value="{{$hydrant->id}}">{{$hydrant->name}}</option>
+                                                <option value="{{$hydrant->id}}">{{$hydrant->initials}}</option>
                                             @endforeach
                                         </select>
                                     </div>
@@ -529,7 +533,9 @@
                                                 <option value="{{$recomendations->id}}">{{$recomendations->description}}</option>
                                             @endforeach
                                         </select>
+                                        <button type="button" class="btn btn-primary btn-sm">all</button>
                                     </div>
+                                    
                                 </div>
 
                             </div>
@@ -839,7 +845,25 @@
         <!-- [ Main Content ] end -->
     </div>
 </section>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script>
+    let 
+</script>
+<script>
+$(document).ready(function() {
+    $("#checkbox").click(function(){
+      if($("#checkbox").is(':checked') ){ 
+        $("#e1").find('option').prop("selected",true);
+        $("#e1").trigger('change');
+      } else { 
+        $("#e1").find('option').prop("selected",false);
+        $("#e1").trigger('change');
+      }
+  });
+});
 
+</script>
 <script src="{{ asset('assets/js/vendor-all.min.js') }}"></script>
 <script src="{{ asset('assets/js/plugins/bootstrap.min.js') }}"></script>
 <script src="{{ asset('assets/js/ripple.js') }}"></script>
