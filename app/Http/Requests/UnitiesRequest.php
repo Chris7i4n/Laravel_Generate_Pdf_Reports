@@ -30,6 +30,12 @@ class UnitiesRequest extends FormRequest
             'phone' => 'required',
             'contracting_responsable' => 'required',
             'code_number' => 'required|numeric',
+            'hydrant_id' => 'required',
+            'tigger_id' => 'required',
+            'sinalization_id' => 'required',
+            'equipment_id' => 'required',
+            'bomb_id' => 'required',
+            'lighting' => 'required'
         ];
     }
 

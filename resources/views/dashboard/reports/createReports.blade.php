@@ -194,10 +194,7 @@
                                             @foreach ($equipments as $equipment)
                                                 <option value="{{$equipment->id}}">{{$equipment->localization}}</option>
                                             @endforeach
-                                            <option value="torresmo">torremos</option>
-                                            <option value="bolo de pote">bolo de pote</option>
                                         </select>
-                                        <input type="checkbox" id="checkbox"> Todos</button>
                                     </div>
                                   
                                 </div>

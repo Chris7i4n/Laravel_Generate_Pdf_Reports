@@ -283,6 +283,6 @@ class Controller extends BaseController
                         $descriptionOfElementHydrants,
                         $recomendations,
                         $endOfReport,
-                );
+                    );
     }
 }

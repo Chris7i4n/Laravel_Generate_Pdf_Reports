@@ -3,6 +3,12 @@
 namespace App\Http\Controllers;
 
 use App\Unity;
+use App\Equipment;
+use App\Bomb;
+use App\Hydrant;
+use App\Sinalization;
+use App\Trigger;
+use App\Lighting;
 use Illuminate\Http\Request;
 use Storage;
 use App\Company;
@@ -15,6 +21,7 @@ class CompaniesController extends Controller
     public function create()
     {
         $unities = Unity::all();
+       
         return view('dashboard.companies.addCompany', compact('unities'));
     }
 
@@ -65,13 +72,29 @@ class CompaniesController extends Controller
 
     public function indexUnities()
     {
-        return view('dashboard.companies.addUnity');
+        $equipments = Equipment::all();
+        $bombs = Bomb::all();
+        $hydrants = Hydrant::all();
+        $sinalizations = Sinalization::all();
+        $triggers = Trigger::all();
+        $lightings = Lighting::all();
+        return view('dashboard.companies.addUnity',compact('equipments','bombs',
+                                                            'hydrants','sinalizations',
+                                                            'triggers','lightings'));
     }
 
     public function storeUnities(UnitiesRequest $request)
     {
-        
-        Unity::create($request->all());
+
+        $unity = Unity::create($request->all());
+        $this->attachBomb($unity, $request);
+        $this->attachEquipment($unity, $request);
+        $this->attachTrigger($unity, $request);
+        $this->attachSinalization($unity, $request);
+        $this->attachLighting($unity, $request);
+        $this->attachHydrant($unity, $request);
+       
+
         return redirect()->back()->with(['message' => 'Unidade cadastrada com sucesso']);
 
     }

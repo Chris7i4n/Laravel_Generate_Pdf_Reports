@@ -27,4 +27,7 @@ class Lighting extends Model
     public function report(){
         return $this->belongsToMany(Report::class);
     }
+    public function unity(){
+        return $this->belongsToMany(Unity::class);
+    }
 }
