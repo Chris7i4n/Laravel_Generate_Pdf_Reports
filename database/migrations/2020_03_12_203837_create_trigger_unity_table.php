@@ -14,8 +14,8 @@ class CreateTriggerUnityTable extends Migration
     public function up()
     {
         Schema::create('trigger_unity', function (Blueprint $table) {
-            $table->integer('unity_id')->unsigned;
-            $table->integer('trigger_id')->unsigned;
+            $table->integer('unity_id')->unsigned();
+            $table->integer('trigger_id')->unsigned();
 
             $table->foreign('trigger_id')
                 ->references('id')

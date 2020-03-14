@@ -31,11 +31,11 @@ class UnitiesRequest extends FormRequest
             'contracting_responsable' => 'required',
             'code_number' => 'required|numeric',
             'hydrant_id' => 'required',
-            'tigger_id' => 'required',
+            'trigger_id' => 'required',
             'sinalization_id' => 'required',
             'equipment_id' => 'required',
             'bomb_id' => 'required',
-            'lighting' => 'required'
+            'lighting_id' => 'required'
         ];
     }
 
@@ -47,8 +47,13 @@ class UnitiesRequest extends FormRequest
             'cnpj.required' => 'O cnpj da unidade é obrigatório',
             'address.required' => 'O endereço da unidade é obrigatório',
             'phone.required' => 'O telefone da unidade é obrigatório',
-            'contracting_responsable' => 'O contratante responsável é obrigatório'
-
+            'contracting_responsable' => 'O contratante responsável é obrigatório',
+            'hydrant_id.required' => 'O campo de Hidrantes é obrigatório',
+            'trigger_id.required' => 'O campo de Acionadores é obrigatório',
+            'sinalization_id.required' => 'O campo de Sinalizações é obrigatório',
+            'equipment_id.required' => 'O campo de Equipamentos é obrigatório',
+            'bomb_id.required' => 'O campo de Bombas é obrigatório',
+            'lighting_id.required' => 'O campo de Iluminações é obrigatório'
         ];
     }
 }

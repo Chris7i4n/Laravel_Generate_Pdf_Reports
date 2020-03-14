@@ -14,8 +14,8 @@ class CreateLightingUnityTable extends Migration
     public function up()
     {
         Schema::create('lighting_unity', function (Blueprint $table) {
-            $table->integer('unity_id')->unsigned;
-            $table->integer('lighting_id')->unsigned;
+            $table->integer('unity_id')->unsigned();
+            $table->integer('lighting_id')->unsigned();
 
             $table->foreign('lighting_id')
                 ->references('id')

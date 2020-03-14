@@ -14,8 +14,8 @@ class CreateSinalizationUnityTable extends Migration
     public function up()
     {
         Schema::create('sinalization_unity', function (Blueprint $table) {
-            $table->integer('unity_id')->unsigned;
-            $table->integer('sinalization_id')->unsigned;
+            $table->integer('unity_id')->unsigned();
+            $table->integer('sinalization_id')->unsigned();
 
             $table->foreign('sinalization_id')
                 ->references('id')

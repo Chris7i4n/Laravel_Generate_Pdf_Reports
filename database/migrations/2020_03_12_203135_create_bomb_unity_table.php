@@ -14,8 +14,8 @@ class CreateBombUnityTable extends Migration
     public function up()
     {
         Schema::create('bomb_unity', function (Blueprint $table) {
-            $table->integer('unity_id')->unsigned;
-            $table->integer('bomb_id')->unsigned;
+            $table->integer('unity_id')->unsigned();
+            $table->integer('bomb_id')->unsigned();
 
             $table->foreign('bomb_id')
                 ->references('id')

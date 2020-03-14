@@ -14,8 +14,18 @@ class CreateEquipmentUnityTable extends Migration
     public function up()
     {
         Schema::create('equipment_unity', function (Blueprint $table) {
-            $table->bigIncrements('id');
-            $table->timestamps();
+            $table->integer('unity_id')->unsigned();
+            $table->integer('equipment_id')->unsigned();
+
+            $table->foreign('equipment_id')
+                ->references('id')
+                ->on('equipment')
+                ->onDelete('cascade');
+            
+            $table->foreign('unity_id')
+                ->references('id')
+                ->on('unities')
+                ->onDelete('cascade');
         });
     }
 
