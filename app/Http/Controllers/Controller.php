@@ -210,8 +210,7 @@ class Controller extends BaseController
         {
             return redirect()->back()->with(['errorMessage' => 'Uma empresa contratada precisa ser adicionada']);
         }
-        if(Auth::user()->perfil == 1){$request['approved'] = 1;}
-        else $request['approved'] = 0;
+        
 
         $request['user_id'] = Auth::user()->id;
         $request['logoCompanyContracted'] = $this->getLogoContractedCompany($request['company_id']);
@@ -243,14 +242,15 @@ class Controller extends BaseController
 
     public function showReportAditionalItens($report)
     {
+        $unity = Unity::find($report->unity_id);
         $companyContracted = $report->company;
         $monthOfTheGoal = $this->getMonth($report->data_goals);
-        $equipments = $report->equipment;
-        $triggers = $report->trigger;
-        $sinalizations = $report->sinalization;
-        $lightings = $report->lighting;
-        $bombs = $report->bomb;
-        $hydrants = $report->hydrant;
+        $equipments = $unity->equipment;
+        $triggers = $unity->trigger;
+        $sinalizations = $unity->sinalization;
+        $lightings = $unity->lighting;
+        $bombs = $unity->bomb;
+        $hydrants = $unity->hydrant;
         $recomendations = $report->recomendation;
         $endOfReport = $report->endOfReport;
 

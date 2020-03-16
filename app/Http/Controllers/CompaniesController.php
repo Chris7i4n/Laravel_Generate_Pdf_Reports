@@ -98,4 +98,5 @@ class CompaniesController extends Controller
         return redirect()->back()->with(['message' => 'Unidade cadastrada com sucesso']);
 
     }
+
 }

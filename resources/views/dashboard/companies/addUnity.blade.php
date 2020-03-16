@@ -105,12 +105,19 @@
                                     <div class="col-md-4">
                                         <div class="form-group">
                                             <label class="form-label">Equipamentos</label>
-                                            <select class="js-example-basic-multiple col-sm-12" multiple="multiple" name="equipment_id[]" id="equipments">
+                                            <select class="js-example-basic-multiple col-sm-12" multiple="multiple" name="equipment_id[]" id="equipment">
                                                 @foreach ($equipments as $equipment)
-                                                <option value="{{$equipment->id}}">{{$equipment->localization}}</option>
+                                                <option value="{{$equipment->id}}">{{$equipment->tag}}</option>
                                                 @endforeach
                                             </select>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" value="" id="cbequipment">
+                                                <label class="form-check-label" for="cbequipment">
+                                                  Todos
+                                                </label>
+                                              </div>
                                         </div>
+                                        
                                     </div>
                                     <div class="col-md-4">
                                         <div class="form-group">
@@ -120,6 +127,12 @@
                                                 <option value="{{$hydrant->id}}">{{$hydrant->initials}}</option>
                                                 @endforeach
                                             </select>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" value="" id="cbhydrant">
+                                                <label class="form-check-label" for="cbhydrant">
+                                                  Todos
+                                                </label>
+                                            </div>
                                         </div>
                                     </div>
                                     <div class="col-md-4">
@@ -130,6 +143,12 @@
                                                 <option value="{{$bomb->id}}">{{$bomb->initials}}</option>
                                                 @endforeach
                                             </select>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" value="" id="cbbomb">
+                                                <label class="form-check-label" for="cbbomb">
+                                                  Todos
+                                                </label>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -142,6 +161,12 @@
                                                 <option value="{{$sinalization->id}}">{{$sinalization->initials}}</option>
                                                 @endforeach
                                             </select>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" value="" id="cbsinalization">
+                                                <label class="form-check-label" for="cbsinalization">
+                                                  Todos
+                                                </label>
+                                            </div>
                                         </div>
                                     </div>
                                     <div class="col-md-4">
@@ -152,6 +177,12 @@
                                                 <option value="{{$trigger->id}}">{{$trigger->initials}}</option>
                                                 @endforeach
                                             </select>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" value="" id="cbtrigger">
+                                                <label class="form-check-label" for="cbtrigger">
+                                                  Todos
+                                                </label>
+                                            </div>
                                         </div>
                                     </div>
                                     <div class="col-md-4">
@@ -162,6 +193,12 @@
                                                 <option value="{{$lighting->id}}">{{$lighting->initials}}</option>
                                                 @endforeach
                                             </select>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" value="" id="cblighting">
+                                                <label class="form-check-label" for="cblighting">
+                                                  Todos
+                                                </label>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -187,6 +224,68 @@
         </div>
     </section>
 
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script>
+    $(document).ready(function() {
+        $("#cbequipment").click(function(){
+          if($("#cbequipment").is(':checked') ){ 
+            $("#equipment").find('option').prop("selected",true);
+            $("#equipment").trigger('change');
+          } else { 
+            $("#equipment").find('option').prop("selected",false);
+            $("#equipment").trigger('change');
+          }
+      });
+      $("#cbhydrant").click(function(){
+          if($("#cbhydrant").is(':checked') ){ 
+            $("#hydrant").find('option').prop("selected",true);
+            $("#hydrant").trigger('change');
+          } else { 
+            $("#hydrant").find('option').prop("selected",false);
+            $("#hydrant").trigger('change');
+          }
+      });
+      $("#cbbomb").click(function(){
+          if($("#cbbomb").is(':checked') ){ 
+            $("#bomb").find('option').prop("selected",true);
+            $("#bomb").trigger('change');
+          } else { 
+            $("#bomb").find('option').prop("selected",false);
+            $("#bomb").trigger('change');
+          }
+      });
+      $("#cbsinalization").click(function(){
+          if($("#cbsinalization").is(':checked') ){ 
+            $("#sinalization").find('option').prop("selected",true);
+            $("#sinalization").trigger('change');
+          } else { 
+            $("#sinalization").find('option').prop("selected",false);
+            $("#sinalization").trigger('change');
+          }
+      });
+      $("#cbtrigger").click(function(){
+          if($("#cbtrigger").is(':checked') ){ 
+            $("#trigger").find('option').prop("selected",true);
+            $("#trigger").trigger('change');
+          } else { 
+            $("#trigger").find('option').prop("selected",false);
+            $("#trigger").trigger('change');
+          }
+      });
+      $("#cblighting").click(function(){
+          if($("#cblighting").is(':checked') ){ 
+            $("#lighting").find('option').prop("selected",true);
+            $("#lighting").trigger('change');
+          } else { 
+            $("#lighting").find('option').prop("selected",false);
+            $("#lighting").trigger('change');
+          }
+      });
+
+    });
+    
+    </script>
     <script src="{{ asset('assets/js/vendor-all.min.js') }}"></script>
     <script src="{{ asset('assets/js/plugins/bootstrap.min.js') }}"></script>
     <script src="{{ asset('assets/js/ripple.js') }}"></script>

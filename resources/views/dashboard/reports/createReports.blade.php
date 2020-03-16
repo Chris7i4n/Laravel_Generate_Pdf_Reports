@@ -187,17 +187,6 @@
                                         <input type="text" class="form-control" name="description_of_system" placeholder="Descrição do Sistema">
                                     </div>
                                 </div>
-                                <div class="col-md-4">
-                                    <div class="form-group">
-                                        <label class="form-label">Equipamentos</label>
-                                        <select class="js-example-basic-multiple col-sm-12" multiple="multiple" name="equipment_id[]" id="e1">
-                                            @foreach ($equipments as $equipment)
-                                                <option value="{{$equipment->id}}">{{$equipment->localization}}</option>
-                                            @endforeach
-                                        </select>
-                                    </div>
-                                  
-                                </div>
 
                                 <div class="col-md-4">
                                     <div class="form-group">
@@ -205,7 +194,13 @@
                                         <input type="text" class="form-control" name="description_of_conclusion" placeholder="Descrição da conclusão">
                                     </div>
                                 </div>
-
+                                
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label class="form-label">Legenda da conclusão</label>
+                                        <input type="text" class="form-control" name="legend_of_conclusion" placeholder="Legenda da conclusão">
+                                    </div>
+                                </div>
                             </div>
 
                             <div class="row">
@@ -214,14 +209,7 @@
                                         <label class="form-label">Imagem da conclusão</label>
                                         <input type="file" class="form-control" name="image_of_conclusion">
                                     </div>
-                                </div>
-
-                                <div class="col-md-4">
-                                    <div class="form-group">
-                                        <label class="form-label">Legenda da conclusão</label>
-                                        <input type="text" class="form-control" name="legend_of_conclusion" placeholder="Legenda da conclusão">
-                                    </div>
-                                </div>
+                                </div> 
 
                             </div>
 
@@ -240,21 +228,18 @@
 
                                 <div class="col-md-4">
                                     <div class="form-group">
-                                        <label class="form-label">Acionadores</label>
-                                        <select class="js-example-basic-multiple col-sm-12" multiple="multiple" name="trigger_id[]" >
-                                            @foreach ($triggers as $trigger)
-                                                <option value="{{$trigger->id}}">{{$trigger->initials}}</option>
-                                            @endforeach
-                                        </select>
-                                    </div>
-                                </div>
-
-                                <div class="col-md-4">
-                                    <div class="form-group">
                                         <label class="form-label">Conclusão</label>
                                         <input type="text" class="form-control" name="conclusion_of_trigger" placeholder="Conclusão do acionador">
                                     </div>
                                 </div>
+                                
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label class="form-label">Legenda</label>
+                                        <input type="text" class="form-control" name="conclusion_legend" placeholder="Legenda da conclusão">
+                                    </div>
+                                </div>
+
 
                             </div>
 
@@ -271,13 +256,6 @@
                                     <div class="form-group">
                                         <label class="form-label">Segunda imagem para a conclusão</label>
                                         <input type="file" class="form-control" name="conclusion_image_2">
-                                    </div>
-                                </div>
-
-                                <div class="col-md-4">
-                                    <div class="form-group">
-                                        <label class="form-label">Legenda</label>
-                                        <input type="text" class="form-control" name="conclusion_legend" placeholder="Legenda da conclusão">
                                     </div>
                                 </div>
 
@@ -298,21 +276,18 @@
 
                                 <div class="col-md-4">
                                     <div class="form-group">
-                                        <label class="form-label">Sinalizações</label>
-                                        <select class="js-example-basic-multiple col-sm-12" multiple="multiple" name="sinalization_id[]" >
-                                            @foreach ($sinalizations as $sinalization)
-                                                <option value="{{$sinalization->id}}">{{$sinalization->initials}}</option>
-                                            @endforeach
-                                        </select>
-                                    </div>
-                                </div>
-
-                                <div class="col-md-4">
-                                    <div class="form-group">
                                         <label class="form-label">Conclusão</label>
                                         <input type="text" class="form-control" name="conclusion_of_sinalization" placeholder="Conclusão dos sinalizadores">
                                     </div>
                                 </div>
+                                
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label class="form-label">Legenda</label>
+                                        <input type="text" class="form-control" name="conclusion_legend_sinalization" placeholder="Legenda da conclusão">
+                                    </div>
+                                </div>
+
 
                             </div>
 
@@ -329,13 +304,6 @@
                                     <div class="form-group">
                                         <label class="form-label">Segunda imagem para a conclusão</label>
                                         <input type="file" class="form-control" name="conclusion_image_2_sinalization">
-                                    </div>
-                                </div>
-
-                                <div class="col-md-4">
-                                    <div class="form-group">
-                                        <label class="form-label">Legenda</label>
-                                        <input type="text" class="form-control" name="conclusion_legend_sinalization" placeholder="Legenda da conclusão">
                                     </div>
                                 </div>
 
@@ -356,19 +324,15 @@
 
                                 <div class="col-md-4">
                                     <div class="form-group">
-                                        <label class="form-label">Iluminações</label>
-                                        <select class="js-example-basic-multiple col-sm-12" multiple="multiple" name="lighting_id[]" >
-                                            @foreach ($lightings as $lighting)
-                                                <option value="{{$lighting->id}}">{{$lighting->initials}}</option>
-                                            @endforeach
-                                        </select>
+                                        <label class="form-label">Conclusão</label>
+                                        <input type="text" class="form-control" name="conclusion_of_lighting" placeholder="Conclusão das iluminações">
                                     </div>
-                                </div>
+                                </div>                                
 
                                 <div class="col-md-4">
                                     <div class="form-group">
-                                        <label class="form-label">Conclusão</label>
-                                        <input type="text" class="form-control" name="conclusion_of_lighting" placeholder="Conclusão das iluminações">
+                                        <label class="form-label">Legenda</label>
+                                        <input type="text" class="form-control" name="conclusion_legend_lighting" placeholder="Legenda da conclusão">
                                     </div>
                                 </div>
 
@@ -390,13 +354,6 @@
                                     </div>
                                 </div>
 
-                                <div class="col-md-4">
-                                    <div class="form-group">
-                                        <label class="form-label">Legenda</label>
-                                        <input type="text" class="form-control" name="conclusion_legend_lighting" placeholder="Legenda da conclusão">
-                                    </div>
-                                </div>
-
                             </div>
 
                             <div class="card-header card-header-space" >
@@ -414,19 +371,15 @@
 
                                 <div class="col-md-4">
                                     <div class="form-group">
-                                        <label class="form-label">Bombas de Incêndio</label>
-                                        <select class="js-example-basic-multiple col-sm-12" multiple="multiple" name="bomb_id[]" >
-                                            @foreach ($bombs as $bomb)
-                                                <option value="{{$bomb->id}}">{{$bomb->initials}}</option>
-                                            @endforeach
-                                        </select>
-                                    </div>
-                                </div>
-
-                                <div class="col-md-4">
-                                    <div class="form-group">
                                         <label class="form-label">Conclusão</label>
                                         <input type="text" class="form-control" name="conclusion_of_bomb" placeholder="Conclusão das iluminações">
+                                    </div>
+                                </div>
+                                
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label class="form-label">Legenda</label>
+                                        <input type="text" class="form-control" name="conclusion_legend_bomb" placeholder="Legenda da conclusão">
                                     </div>
                                 </div>
 
@@ -448,13 +401,6 @@
                                     </div>
                                 </div>
 
-                                <div class="col-md-4">
-                                    <div class="form-group">
-                                        <label class="form-label">Legenda</label>
-                                        <input type="text" class="form-control" name="conclusion_legend_bomb" placeholder="Legenda da conclusão">
-                                    </div>
-                                </div>
-
                             </div>
 
                             <div class="card-header card-header-space" >
@@ -472,22 +418,17 @@
 
                                 <div class="col-md-4">
                                     <div class="form-group">
-                                        <label class="form-label">Hidrantes de Incêndio</label>
-                                        <select class="js-example-basic-multiple col-sm-12" multiple="multiple" name="hydrant_id[]" >
-                                            @foreach ($hydrants as $hydrant)
-                                                <option value="{{$hydrant->id}}">{{$hydrant->initials}}</option>
-                                            @endforeach
-                                        </select>
-                                    </div>
-                                </div>
-
-                                <div class="col-md-4">
-                                    <div class="form-group">
                                         <label class="form-label">Conclusão</label>
                                         <input type="text" class="form-control" name="conclusion_of_hydrant" placeholder="Conclusão das iluminações">
                                     </div>
                                 </div>
 
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label class="form-label">Legenda</label>
+                                        <input type="text" class="form-control" name="conclusion_legend_hydrant" placeholder="Legenda da conclusão">
+                                    </div>
+                                </div>
                             </div>
 
                             <div class="row">
@@ -503,13 +444,6 @@
                                     <div class="form-group">
                                         <label class="form-label">Segunda imagem para a conclusão</label>
                                         <input type="file" class="form-control" name="conclusion_image_2_hydrant">
-                                    </div>
-                                </div>
-
-                                <div class="col-md-4">
-                                    <div class="form-group">
-                                        <label class="form-label">Legenda</label>
-                                        <input type="text" class="form-control" name="conclusion_legend_hydrant" placeholder="Legenda da conclusão">
                                     </div>
                                 </div>
 
@@ -530,7 +464,6 @@
                                                 <option value="{{$recomendations->id}}">{{$recomendations->description}}</option>
                                             @endforeach
                                         </select>
-                                        <button type="button" class="btn btn-primary btn-sm">all</button>
                                     </div>
                                     
                                 </div>

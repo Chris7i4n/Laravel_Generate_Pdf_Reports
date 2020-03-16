@@ -100,17 +100,11 @@ class ReportsController extends Controller
 
     public function store(ReportRequest $request)
     {
-
+        
         $this->aditionalRequest($request);
-
+        Auth::user()->perfil == 1 ? $request['approved'] = 1 : $request['approved'] = 0;
         $report = Report::create($request->all());
-
-        $this->attachEquipment($report, $request);
-        $this->attachTrigger($report, $request);
-        $this->attachSinalization($report, $request);
-        $this->attachLighting($report, $request);
-        $this->attachBomb($report, $request);
-        $this->attachHydrant($report, $request);
+        
         $this->attachRecomendation($report, $request);
         $this->attachEndOfReport($report, $request);
 
