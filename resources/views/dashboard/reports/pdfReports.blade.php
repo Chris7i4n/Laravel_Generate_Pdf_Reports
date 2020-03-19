@@ -2,8 +2,8 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        {{-- <link href="{{ public_path('assets/css/pdf.css') }}" rel="stylesheet" type="text/css"/> --}}
-        {{-- <link rel="stylesheet" href="{{ public_path('assets/bootstrap/bootstrap.min.css') }}" > --}}
+        <link href="{{ public_path('assets/css/pdf.css') }}" rel="stylesheet" type="text/css"/>
+        <link rel="stylesheet" href="{{ public_path('assets/bootstrap/bootstrap.min.css') }}" >
         <title>
             PDF
         </title>
@@ -11,8 +11,8 @@
 
     <body>
         @include('dashboard.reports.pageOneReportsPdf')
-         <div class="pagebreak"></div>
-        {{--@include('dashboard.reports.pageTwoReportsPdf')
+        <div class="pagebreak"></div>
+        @include('dashboard.reports.pageTwoReportsPdf')
         <div class="pagebreak"></div>
         @include('dashboard.reports.pageThreeReportsPdf')
         <div class="pagebreak"></div>
@@ -31,8 +31,8 @@
         @include('dashboard.reports.pageTenReportsPdf')
         <div class="pagebreak"></div>
         @include('dashboard.reports.pageElevenReportsPdf')
-        <div class="pagebreak"></div>
-        @include('dashboard.reports.pageTwelveReportsPdf') --}}
+        <div class="pagebreak"></div> 
+        @include('dashboard.reports.pageTwelveReportsPdf') 
     </body>
 
 </html>

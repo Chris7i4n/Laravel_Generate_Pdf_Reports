@@ -418,12 +418,13 @@ body {
       font-weight: bold;
   }
 
-  .conclusion li p{
+  .conclusion-li-p{
 
-    padding-right: 20px;
+    padding-right: 27px;
     padding-top: 10px;
     text-align: justify;
     font-size: 17px;
+    margin: 0px 0px 0px 0px;
 
   }
 
@@ -1340,7 +1341,7 @@ body {
 }
 
 .signature-responsable{
-    margin-left: 310px;
+    margin-left: 320px;
     display: -webkit-box;
     text-align: center;
     white-space: nowrap;

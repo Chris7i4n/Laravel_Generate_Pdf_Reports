@@ -46,23 +46,22 @@
 
                 <ol>
                     <li><b><h5>8. Conclusão</h5></b>
-                        <p>&nbsp; &nbsp; &nbsp;No caso presente foi possível realizar em campo os levantamentos, e a inspeção dos equipamentos através dos checklists apresentados nos itens acima. </p>
-                        <p>&nbsp; &nbsp; &nbsp;<u>Após a uma criteriosa inspeção de campo, e mediante nossa avaliação técnica, definimos como {{$endOfReport->end_of_report_description}} Tal condição foi previamente comunicada a liderança do site, e está relacionada no plano de ação da Empresa. </u></p>
-                        <p>&nbsp; &nbsp; &nbsp;As considerações técnicas descritas neste relatório retratam a situação do momento em que foram feitas as vistorias. Uma reavaliação deverá ser realizada sempre que houverem mudanças significativas, pois em momento algum, essa situação deve ser encarada como definitiva para os riscos envolvendo a segurança dos operadores com relação a incêndios. A empresa contratante deverá assumir o compromisso de manter as inspeções e manutenções do sistema dentro dos parâmetros exigidos pela norma, mantendo o sistema saudável, além de administrar treinamentos para seus operadores e brigadistas, para que seja alcançado um bom nível de segurança funcional.</p>
-                        <p>&nbsp; &nbsp; &nbsp;Todas as ações descritas são frutos das observações feitas pelo responsável pela inspeção, durante a visita ou através de informações obtidas junto aos representantes da empresa.</p>
-                        <p>&nbsp; &nbsp; &nbsp;Sendo assim a Empresa, com a certeza de ter realizado corretamente este trabalho, dentro da técnica e ética profissional, agradece desde já, e se coloca à disposição para quaisquer dúvidas ou para efetuar revisões do escopo proposto.</p>
-                        <p>&nbsp; &nbsp; &nbsp;Nada mais havendo a considerar, encerramos aqui o presente RELATÓRIO TÉCNICO DE INSPEÇÃO DE SISTEMA DE PROTEÇÃO E COMBATE A INCÊNDIO - SPCI, segundo a Norma Regulamentadora NR 23, “Proteção contra incêndios”, e conforme os itens especificados na “ABNT NBR 17240, Sistemas de detecção e alarme de incêndio - Projeto, instalação, comissionamento e manutenção de sistemas de detecção e alarme de incêndio - Requisitos”, composto de {{$endOfReport->end_of_report_pages}} impressas por computador, somente anverso e rubricadas, com exceção desta que segue devidamente datada e assinada.</p>
-                        <br>
-                        <p>&nbsp; &nbsp; &nbsp;{{$endOfReport->end_of_report_localization}}</p>
+                        <p class="conclusion-li-p">&nbsp; &nbsp; &nbsp;No caso presente foi possível realizar em campo os levantamentos, e a inspeção dos equipamentos através dos checklists apresentados nos itens acima. </p>
+                        <p class="conclusion-li-p">&nbsp; &nbsp; &nbsp;<u>Após a uma criteriosa inspeção de campo, e mediante nossa avaliação técnica, definimos como {{$endOfReport->end_of_report_description}} Tal condição foi previamente comunicada a liderança do site, e está relacionada no plano de ação da Empresa. </u></p>
+                        <p class="conclusion-li-p">&nbsp; &nbsp; &nbsp;As considerações técnicas descritas neste relatório retratam a situação do momento em que foram feitas as vistorias. Uma reavaliação deverá ser realizada sempre que houverem mudanças significativas, pois em momento algum, essa situação deve ser encarada como definitiva para os riscos envolvendo a segurança dos operadores com relação a incêndios. A empresa contratante deverá assumir o compromisso de manter as inspeções e manutenções do sistema dentro dos parâmetros exigidos pela norma, mantendo o sistema saudável, além de administrar treinamentos para seus operadores e brigadistas, para que seja alcançado um bom nível de segurança funcional.</p>
+                        <p class="conclusion-li-p">&nbsp; &nbsp; &nbsp;Todas as ações descritas são frutos das observações feitas pelo responsável pela inspeção, durante a visita ou através de informações obtidas junto aos representantes da empresa.</p>
+                        <p class="conclusion-li-p">&nbsp; &nbsp; &nbsp;Sendo assim a Empresa, com a certeza de ter realizado corretamente este trabalho, dentro da técnica e ética profissional, agradece desde já, e se coloca à disposição para quaisquer dúvidas ou para efetuar revisões do escopo proposto.</p>
+                        <p class="conclusion-li-p" style="word-wrap: break-word">&nbsp; &nbsp; &nbsp;Nada mais havendo a considerar, encerramos aqui o presente RELATÓRIO TÉCNICO DE INSPEÇÃO DE SISTEMA DE PROTEÇÃO E COMBATE A INCÊNDIO - SPCI, segundo a Norma Regulamentadora NR 23, “Proteção contra; incêndios”, e conforme os itens especificados na “ABNT NBR 17240, Sistemas de detecção e alarme de incêndio - Projeto, instalação, comissionamento e manutenção de sistemas de detecção e alarme de incêndio - Requisitos”, composto de {{$endOfReport->end_of_report_pages}} impressas por computador, somente anverso e rubricadas, com exceção desta que segue devidamente datada e assinada.</p>
+                        <p class="conclusion-li-p">&nbsp; &nbsp; &nbsp;{{$endOfReport->end_of_report_localization}}</p>
 
-                        <p>
+                        <p style="padding= 0px 0px 0px 0px !important">
                             <img
                                 src="{{ public_path("storage/". $endOfReport->end_of_report_signature) }}"
                                 class = "signature"
                             >
 
                         </p>
-                        <p class="signature-responsable">_________________________________</p>
+                        <p class="signature-responsable" style="padding-bottom:">_________________________________</p>
                         <p class="signature-responsable">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{$endOfReport->end_of_report_employee_name}}</p>
                         <p class="signature-responsable">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{$endOfReport->end_of_report_employee_function_1}}</p>
                         <p class="signature-responsable">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{$endOfReport->end_of_report_employee_function_2}}</p>
