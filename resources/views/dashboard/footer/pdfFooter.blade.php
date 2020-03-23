@@ -43,10 +43,12 @@
                                     class = "logo-footer"
                                 >
                             @endif
-                            <p>{{ $report->footer_social_reason }}</p>
+                            <p id="pagination"></p>
+                            
+                            <p style="padding-top:7px;">{{ $report->footer_social_reason }}</p>
                             <p>{{ $report->footer_address }}</p>
                             <p>{{ $report->footer_phone }}</p>
-                            <p> {{ $report->footer_site }}</p>
+                            <p>{{ $report->footer_site }}</p>
                         </td>
                     </tr>
 
@@ -69,22 +71,16 @@
           var z = x[i].split('=',2);
           vars[z[0]] = unescape(z[1]);
        }
-
-       // an array of all the parameters passed into the footer file
-       var x = ['frompage', 'topage', 'page', 'webpage', 'section', 'subsection', 'subsubsection'];
-
-       // each page will have an element with class 'section' from the body of the footer HTML
-       var y = document.getElementsByClassName('section');
-       for(var j = 0; j < y.length; j++)
-       {
+   
           // if current page equals total pages
-          if (vars['page'] == 1)
-          {
-
+        if(vars['page'] == 1){
+            
             document.getElementById("footer").style.display = 'none';
-
-          }
-       }
+        
+        }
+        document.querySelector('#pagination').textContent = "Página " + vars['page'] +" de "+ vars['sitepages'] ;
     }
+
+
  </script>
 
