@@ -177,6 +177,18 @@
                         </ul>
                     </li>
                 </ul>
+                <ul class="nav pcoded-inner-navbar ">
+                    <li class="nav-item pcoded-menu-caption">
+                        <label>Clientes</label>
+                    </li>   
+    
+                    <li class="nav-item pcoded-hasmenu">
+                        <a href="#!" class="nav-link "><span class="pcoded-micon"><i class="feather icon-file-text"></i></span><span class="pcoded-mtext">Clientes</span></a>
+                        <ul class="pcoded-submenu">
+                            <li><a href="{{ route('users.index') }}">Visualizar Clientes</a></li>
+                        </ul>
+                    </li>
+                </ul>
             @endif
 
         </div>
