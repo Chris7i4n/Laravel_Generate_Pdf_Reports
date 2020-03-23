@@ -38,4 +38,7 @@ class Unity extends Model
     public function equipment(){
         return $this->belongsToMany(Equipment::class);
     }
+    public function report(){
+        return $this->hasMany(Report::class);
+    }
 }
