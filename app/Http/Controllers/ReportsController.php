@@ -103,7 +103,7 @@ class ReportsController extends Controller
         return redirect()->back()->with(['message' => 'Relatório gerado com sucesso']);
     }
 
-    public function edit(Request $report)
+    public function edit(Report $report)
     {
         $unities = Unity::all();
         $contractedCompanies = Company::whereNotNull('tecnical_responsable')->get();
@@ -114,7 +114,7 @@ class ReportsController extends Controller
 
     }
 
-    public function update(Request $request,Report $report){
+    public function update(Resquest $request, Report $report){
         
         $this->aditionalRequest($request);
         Auth::user()->perfil == 1 ? $request['approved'] = 1 : $request['approved'] = 0;

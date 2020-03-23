@@ -34,7 +34,7 @@
             <td>
                 <span>Número Documento:</span>
                 <h3>US{{$yearNumberForDocumentNumber}}-RTSPCI-{{$codeNumberForDocumentNumber}}-{{$companyNameForDocumentNumber}}</h3>
-            </td>
+            </td> 
         </tr>
 
         <tr>
