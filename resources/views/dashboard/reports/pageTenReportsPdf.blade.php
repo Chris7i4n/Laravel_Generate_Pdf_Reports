@@ -35,10 +35,6 @@
                 <span>Número Documento:</span>
                 <h3>US{{$yearNumberForDocumentNumber}}-RTSPCI-{{$codeNumberForDocumentNumber}}-{{$companyNameForDocumentNumber}}</h3>
             </td>
-            <td>
-                <span>Folha:</span>
-                <h3>Página 10 de 21</h3>
-            </td>
         </tr>
 
         <tr>
