@@ -42,13 +42,12 @@ class ReportsController extends Controller
             return view('dashboard.reports.showClientReports', compact('reports'));
 
         }
-
     }
 
     public function show(Report $report)
     {
+    
         $footerHtml = view()->make('dashboard.footer.pdfFooter', compact('report'))->render();
-
         $aditionalItens = $this->showReportAditionalItens($report);
 
         $pdf = PDF::loadView('dashboard.reports.pdfReports', array(
@@ -87,33 +86,43 @@ class ReportsController extends Controller
     {
         $unities = Unity::all();
         $contractedCompanies = Company::whereNotNull('tecnical_responsable')->get();
-        $equipments = Equipment::all();
-        $triggers = Trigger::all();
-        $sinalizations = Sinalization::all();
-        $lightings = Lighting::all();
-        $bombs = Bomb::all();
-        $hydrants = Hydrant::all();
         $recomendations = Recomendation::all();
 
-        return view('dashboard.reports.createReports', compact('unities', 'contractedCompanies', 'equipments', 'triggers','sinalizations', 'lightings', 'bombs', 'hydrants','recomendations'));
+        return view('dashboard.reports.createReports', compact('unities', 'contractedCompanies','recomendations'));
     }
 
-    public function store(ReportRequest $request)
+    public function store(Report $request)
     {
         
         $this->aditionalRequest($request);
         Auth::user()->perfil == 1 ? $request['approved'] = 1 : $request['approved'] = 0;
         $report = Report::create($request->all());
-        
         $this->attachRecomendation($report, $request);
         $this->attachEndOfReport($report, $request);
 
         return redirect()->back()->with(['message' => 'Relatório gerado com sucesso']);
     }
 
-    public function edit(Report $report)
+    public function edit(Request $report)
     {
-        return view('dashboard.reports.createReports', compact('report'));
+        $unities = Unity::all();
+        $contractedCompanies = Company::whereNotNull('tecnical_responsable')->get();
+        $recomendations = Recomendation::all();
+
+      
+        return view('dashboard.reports.createReports', compact('unities', 'contractedCompanies','recomendations','report'));
+
+    }
+
+    public function update(Request $request,Report $report){
+        
+        $this->aditionalRequest($request);
+        Auth::user()->perfil == 1 ? $request['approved'] = 1 : $request['approved'] = 0;
+        $report->update($request->all());
+        $report->save();
+        $this->attachRecomendation($report, $request);
+        $this->attachEndOfReport($report, $request);
+        return redirect()->back()->with('message', 'Bomba atualizado com sucesso');
     }
 
     public function changeStatus(Request $request)
@@ -124,5 +133,7 @@ class ReportsController extends Controller
 
         return $report;
     }
+
+   
 
 }
