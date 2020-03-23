@@ -33,7 +33,7 @@ class RecomendationsRequest extends FormRequest
     public function messages()
     {
         return [
-            'description.required' => 'A descrição é obrigatória',
+            'description.required' => 'A descrição ',
             'date.required' => 'A data é obrigatória',
             'responsable.required' => 'O responsável é obrigatório'
         ];

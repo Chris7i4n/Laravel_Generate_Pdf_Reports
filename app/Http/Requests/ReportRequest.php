@@ -70,5 +70,55 @@ class ReportRequest extends FormRequest
             'recomendation_id' => 'required'
 
         ];
+        
+    }
+    public function messages()
+    {
+        return [
+            'type.required' => 'Tipo é obrigatória',
+            'period.required' => 'Período é obrigatória',
+            'inspection_number.required' => 'Numero inspeção é obrigatória',
+            'inspection_year.required' => 'Ano da insperação é obrigatória',
+            'data_first_revision.required' => 'Data primeira revisão é obrigatória',
+            'description_first_revision.required' => 'Descrição primeira revisão é obrigatória',
+            'first_inspector_first_revision.required' => 'Primeiro descrição primeiro inspetor é obrigatória',
+            'second_inspector_first_revision.required' => 'Primeira descrição segundo inspertor é obrigatória',
+            'elaborator_first_revision.required' => 'Rvisão primeiro elaborador',
+            'approved_for_first_revision.required' => 'Aprovado primeira revisão é obrigatória',
+            'company_id.required' => 'company id',
+            'data_goals.required' => 'required',
+            'article_goals.required' => 'required',
+            'reviewed_for.required' => 'required',
+            'reviewed_for_function.required' => 'required',
+            'first_inspector_function_first_revision.required' => 'required',
+            'second_inspector_function_first_revision.required' => 'required',
+            'elaborator_function_first_revision.required' => 'required',
+            'approved_for_function_first_revision.required' => 'required',
+            'description_of_system.required' => 'required',
+            'description_of_conclusion.required' => 'required',
+            'legend_of_conclusion.required' => 'required',
+            'image_of_conclusion.required' => 'required|file' ,
+            'description_of_elements.required' => 'required',
+            'conclusion_of_trigger.required' => 'required',
+            'conclusion_image_1.required' => 'required|file',
+            'conclusion_image_2.required' => 'required|file',
+            'conclusion_legend.required' => 'required',
+            'description_of_elements_sinalization.required' => 'required',
+            'conclusion_of_sinalization.required' => 'required',
+            'conclusion_image_1_sinalization.required' => 'required|file',
+            'conclusion_image_2_sinalization.required' => 'required|file',
+            'conclusion_legend_sinalization.required' => 'required',
+            'description_of_elements_lighting.required' => 'required',
+            'conclusion_of_lighting.required' => 'required',
+            'conclusion_image_1_lighting.required' => 'required|file',
+            'conclusion_image_2_lighting.required' => 'required|file',
+            'conclusion_legend_lighting.required' => 'required',
+            'description_of_elements_bomb.required' => 'required',
+            'conclusion_of_bomb.required' => 'required',
+            'conclusion_image_1_bomb.required' => 'required|file',
+            'conclusion_image_2_bomb.required' => 'required|file',
+            'conclusion_legend_bomb.required' => 'required',
+            'recomendation_id.requiredv' => 'required'
+        ];
     }
 }
