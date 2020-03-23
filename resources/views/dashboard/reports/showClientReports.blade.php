@@ -56,6 +56,7 @@
                                         <th>Status</th>
                                         {{-- <th>Editar Relatório</th> --}}
                                         <th>Visualizar Relatório</th>
+                                        <th>Editar</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -80,9 +81,10 @@
                                                     Visualização não disponível
                                                 @endif
                                             </td>
+                                        <td><a href="{{ route('reports.edit',$report->id)}}">Editar Relatório</a></td>
                                         </tr>
                                     @endforeach
-
+3
                             </table>
                         </div>
                     </div>

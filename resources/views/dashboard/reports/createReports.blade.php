@@ -1,8 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Gerar relatório</title>
-
+    @if(isset($report))
+        <title>Editar relatório</title>
+    @else 
+        <title>Gerar relatório</title>
+    
+    @endif
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -50,7 +54,12 @@
             <div class="col-sm-12">
                 <div class="card">
                     <div class="card-body">
-                        <form method="POST" class="form-login" enctype="multipart/form-data"  action="{{ route('reports.store') }}" >
+                        @if(isset($report))
+                        <form method="POST" class="form-login" enctype="multipart/form-data" action="{{ route('reports.update', $report->id) }}" >
+                            @method('put')
+                        @else
+                        <form method="POST" class="form-login" enctype="multipart/form-data" action="{{ route('reports.store') }}" >
+                        @endif
                             @csrf
                             <div class="row">
 
@@ -58,8 +67,13 @@
                                     <div class="form-group">
                                         <label class="form-label">Tipo de relatório</label>
                                         <select class="form-control" name="type">
+                                            @if(isset($report))
+                                            <option selected disabled>Selecione...</option>
+                                            <option value="SPCI"{{$report->type == "SPCI" ? "selected" : ""}}>SPCI</option>
+                                            @else 
                                             <option selected disabled>Selecione...</option>
                                             <option value="SPCI">SPCI</option>
+                                            @endif
                                         </select>
                                     </div>
                                 </div>
@@ -68,11 +82,17 @@
                                     <div class="form-group">
                                         <label class="form-label">Unidade</label>
                                         <select class="form-control"  name="unity_id">
+                                            @if(isset($report))
                                             <option selected disabled>Selecione...</option>
+                                            @foreach ($unities as $unity )
+                                            <option value="{{$unity->id}}"{{$unity->id == $report->unity->id ? "selected":""}}>{{$unity->name}}</option>
+                                            @endforeach
+                                            @else 
                                             @foreach ($unities as $unity )
                                                 <option value={{$unity->id}}>{{$unity->name}}</option>
 
                                             @endforeach
+                                            @endif
                                         </select>
                                     </div>
                                 </div>
@@ -81,11 +101,19 @@
                                     <div class="form-group">
                                         <label class="form-label">Período</label>
                                         <select class="form-control" name="period">
+                                            @if(isset($report))
+                                            <option selected disabled>Selecione...</option>
+                                            <option value="JAN-FEV-MAR"{{$report->period == "JAN-FEV-MAR" ? "selected" : ""}}>JAN-FEV-MAR</option>
+                                            <option value="ABR-MAI-JUN"{{$report->period == "ABR-MAI-JUN" ? "selected" : ""}}>ABR-MAI-JUN</option>
+                                            <option value="JUL-AGO-SET"{{$report->period == "JUL-AGO-SET" ? "selected" : ""}}>JUL-AGO-SET</option>
+                                            <option value="OUT-NOV-DEZ"{{$report->period == "OUT-NOV-DEZ" ? "selected" : ""}}>OUT-NOV-DEZ</option>
+                                            @else 
                                             <option selected disabled>Selecione...</option>
                                             <option value="JAN-FEV-MAR">JAN-FEV-MAR</option>
                                             <option value="ABR-MAI-JUN">ABR-MAI-JUN</option>
                                             <option value="JUL-AGO-SET">JUL-AGO-SET</option>
                                             <option value="OUT-NOV-DEZ">OUT-NOV-DEZ</option>
+                                            @endif
                                         </select>
                                     </div>
                                 </div>
@@ -97,11 +125,19 @@
                                     <div class="form-group">
                                         <label class="form-label"> Número da inspeção</label>
                                         <select class="form-control" name="inspection_number">
+                                            @if(isset($report))
                                             <option selected disabled>Selecione...</option>
-                                                <option value="1">1</option>
-                                                <option value="2">2</option>
-                                                <option value="3">3</option>
-                                                <option value="4">4</option>
+                                            <option value="1"{{$report->inspection_number == "1" ? "selected" : ""}}>1</option>
+                                            <option value="2"{{$report->inspection_number == "2" ? "selected" : ""}}>2</option>
+                                            <option value="3"{{$report->inspection_number == "3" ? "selected" : ""}}>3</option>
+                                            <option value="4"{{$report->inspection_number == "4" ? "selected" : ""}}>4</option>
+                                            @else 
+                                            <option selected disabled>Selecione...</option>
+                                            <option value="1">1</option>
+                                            <option value="2">2</option>
+                                            <option value="3">3</option>
+                                            <option value="4">4</option>
+                                            @endif
                                         </select>
                                         </select>
                                     </div>
@@ -111,11 +147,19 @@
                                     <div class="form-group">
                                         <label class="form-label">Ano da inspeção</label>
                                         <select class="form-control" name="inspection_year">
+                                            @if(isset($report))
+                                            <option selected disabled>Selecione...</option>
+                                            <option value="2020"{{$report->inspection_year == "2020" ? "selected" : ""}}>2020</option>
+                                            <option value="2021"{{$report->inspection_year == "2021" ? "selected" : ""}}>2021</option>
+                                            <option value="2022"{{$report->inspection_year  == "2022" ? "selected" : ""}}>2022</option>
+                                            <option value="2023"{{$report->inspection_year  == "2023" ? "selected" : ""}}>2023</option>
+                                            @else 
                                             <option selected disabled>Selecione...</option>
                                                 <option value="2020">2020</option>
                                                 <option value="2021">2021</option>
                                                 <option value="2022">2022</option>
                                                 <option value="2023">2023</option>
+                                            @endif
                                         </select>
                                         </select>
                                     </div>
@@ -125,11 +169,19 @@
                                     <div class="form-group">
                                         <label class="form-label">Empresa Contratada</label>
                                         <select class="form-control"  name="company_id">
+                                            @if(isset($report))
+                                            <option selected disabled>Selecione...</option>
+                                            @foreach ($contractedCompanies as $contractedCompany )
+                                                <option value="{{$contractedCompany->id}}"{{$report->company_id == $contractedCompany->id? "selected":""}}>{{$contractedCompany->company}}</option>
+
+                                            @endforeach
+                                            @else 
                                             <option selected disabled>Selecione...</option>
                                             @foreach ($contractedCompanies as $contractedCompany )
                                                 <option value={{$contractedCompany->id}}>{{$contractedCompany->company}}</option>
 
                                             @endforeach
+                                            @endif
                                         </select>
                                     </div>
                                 </div>
@@ -144,13 +196,13 @@
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label class="form-label">Data para o objetivo</label>
-                                        <input type="date" class="form-control" name="data_goals">
+                                        <input type="date" class="form-control" name="data_goals" value="{{isset($report) ? $report->data_goals : ""}}">
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label class="form-label">Artigo para o objetivo</label>
-                                        <input type="text" class="form-control" name="article_goals" placeholder="Artigo dos objetivos">
+                                        <input type="text" class="form-control" name="article_goals" placeholder="Artigo dos objetivos" value="{{isset($report) ? $report->article_goals:""}}"">
                                     </div>
                                 </div>
 
@@ -164,13 +216,13 @@
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label class="form-label">Funcionário que revisou o relatório:</label>
-                                        <input type="text" class="form-control" name="reviewed_for" placeholder="Funcionário que revisou o relatório">
+                                        <input type="text" class="form-control" name="reviewed_for" placeholder="Funcionário que revisou o relatório" value="{{isset($report) ? $report->reviewed_for: ""}}">
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label class="form-label">Função do funcionário que revisou o relatório:</label>
-                                        <input type="text" class="form-control" name="reviewed_for_function" placeholder="Função do funcionário que revisou o relatório">
+                                        <input type="text" class="form-control" name="reviewed_for_function" placeholder="Função do funcionário que revisou o relatório" value="{{isset($report) ?$report->reviewed_for_function : ""}}">
                                     </div>
                                 </div>
 
@@ -184,21 +236,21 @@
                                 <div class="col-md-4">
                                     <div class="form-group">
                                         <label class="form-label">Descrição do Sistema</label>
-                                        <input type="text" class="form-control" name="description_of_system" placeholder="Descrição do Sistema">
+                                        <input type="text" class="form-control" name="description_of_system" placeholder="Descrição do Sistema" value="{{isset($report) ? $report->description_of_system : ""}}">
                                     </div>
                                 </div>
 
                                 <div class="col-md-4">
                                     <div class="form-group">
                                         <label class="form-label">Descrição da conclusão</label>
-                                        <input type="text" class="form-control" name="description_of_conclusion" placeholder="Descrição da conclusão">
+                                        <input type="text" class="form-control" name="description_of_conclusion" placeholder="Descrição da conclusão" value="{{isset($report) ?$report->description_of_conclusion : ""}}">
                                     </div>
                                 </div>
                                 
                                 <div class="col-md-4">
                                     <div class="form-group">
                                         <label class="form-label">Legenda da conclusão</label>
-                                        <input type="text" class="form-control" name="legend_of_conclusion" placeholder="Legenda da conclusão">
+                                        <input type="text" class="form-control" name="legend_of_conclusion" placeholder="Legenda da conclusão" value="{{isset($report) ? $report->legend_of_conclusion : ""}}">
                                     </div>
                                 </div>
                             </div>
@@ -222,21 +274,21 @@
                                 <div class="col-md-4">
                                     <div class="form-group">
                                         <label class="form-label">Descrição dos elementos</label>
-                                        <input type="text" class="form-control" name="description_of_elements" placeholder="Ex: Descrição 1, descrição 2">
+                                        <input type="text" class="form-control" name="description_of_elements" placeholder="Ex: Descrição 1, descrição 2" value="{{isset($report) ? $report->description_of_elements : ""}}">
                                     </div>
                                 </div>
 
                                 <div class="col-md-4">
                                     <div class="form-group">
                                         <label class="form-label">Conclusão</label>
-                                        <input type="text" class="form-control" name="conclusion_of_trigger" placeholder="Conclusão do acionador">
+                                        <input type="text" class="form-control" name="conclusion_of_trigger" placeholder="Conclusão do acionador" value="{{isset($report) ? $report->conclusion_of_trigger: ""}}">
                                     </div>
                                 </div>
                                 
                                 <div class="col-md-4">
                                     <div class="form-group">
                                         <label class="form-label">Legenda</label>
-                                        <input type="text" class="form-control" name="conclusion_legend" placeholder="Legenda da conclusão">
+                                        <input type="text" class="form-control" name="conclusion_legend" placeholder="Legenda da conclusão" value="{{isset($report) ?$report->conclusion_legend: ""}}">
                                     </div>
                                 </div>
 
@@ -270,21 +322,21 @@
                                 <div class="col-md-4">
                                     <div class="form-group">
                                         <label class="form-label">Descrição dos elementos</label>
-                                        <input type="text" class="form-control" name="description_of_elements_sinalization" placeholder="Ex: Descrição 1, descrição 2">
+                                        <input type="text" class="form-control" name="description_of_elements_sinalization" placeholder="Ex: Descrição 1, descrição 2" value="{{isset($report) ? $report->description_of_elements_sinalization : ""}}">
                                     </div>
                                 </div>
 
                                 <div class="col-md-4">
                                     <div class="form-group">
                                         <label class="form-label">Conclusão</label>
-                                        <input type="text" class="form-control" name="conclusion_of_sinalization" placeholder="Conclusão dos sinalizadores">
+                                        <input type="text" class="form-control" name="conclusion_of_sinalization" placeholder="Conclusão dos sinalizadores" value="{{isset($report) ? $report->conclusion_of_sinalization : ""}}">
                                     </div>
                                 </div>
                                 
                                 <div class="col-md-4">
                                     <div class="form-group">
                                         <label class="form-label">Legenda</label>
-                                        <input type="text" class="form-control" name="conclusion_legend_sinalization" placeholder="Legenda da conclusão">
+                                        <input type="text" class="form-control" name="conclusion_legend_sinalization" placeholder="Legenda da conclusão" value="{{isset($report) ?$report->conclusion_legend_sinalization: ""}}">
                                     </div>
                                 </div>
 
@@ -296,14 +348,14 @@
                                 <div class="col-md-4">
                                     <div class="form-group">
                                         <label class="form-label">Imagem para a conclusão</label>
-                                        <input type="file" class="form-control" name="conclusion_image_1_sinalization">
+                                        <input type="file" class="form-control" name="conclusion_image_1_sinalization" value="{{isset($report) ? $report->conclusion_image_1_sinalization: ""}}">
                                     </div>
                                 </div>
 
                                 <div class="col-md-4">
                                     <div class="form-group">
                                         <label class="form-label">Segunda imagem para a conclusão</label>
-                                        <input type="file" class="form-control" name="conclusion_image_2_sinalization">
+                                        <input type="file" class="form-control" name="conclusion_image_2_sinalization" value="{{isset($report) ? $report->conclusion_image_2_sinalization : ""}}">
                                     </div>
                                 </div>
 
@@ -318,21 +370,21 @@
                                 <div class="col-md-4">
                                     <div class="form-group">
                                         <label class="form-label">Descrição dos elementos</label>
-                                        <input type="text" class="form-control" name="description_of_elements_lighting" placeholder="Ex: Descrição 1, descrição 2">
+                                        <input type="text" class="form-control" name="description_of_elements_lighting" placeholder="Ex: Descrição 1, descrição 2" value="{{isset($report) ?$report->description_of_elements_lighting : ""}}">
                                     </div>
                                 </div>
 
                                 <div class="col-md-4">
                                     <div class="form-group">
                                         <label class="form-label">Conclusão</label>
-                                        <input type="text" class="form-control" name="conclusion_of_lighting" placeholder="Conclusão das iluminações">
+                                        <input type="text" class="form-control" name="conclusion_of_lighting" placeholder="Conclusão das iluminações" value="{{isset($report) ? $report->conclusion_of_lighting:""}}">
                                     </div>
                                 </div>                                
 
                                 <div class="col-md-4">
                                     <div class="form-group">
                                         <label class="form-label">Legenda</label>
-                                        <input type="text" class="form-control" name="conclusion_legend_lighting" placeholder="Legenda da conclusão">
+                                        <input type="text" class="form-control" name="conclusion_legend_lighting" placeholder="Legenda da conclusão" value="{{isset($report) ?$report->conclusion_legend_lighting : ""}}">
                                     </div>
                                 </div>
 
@@ -343,14 +395,14 @@
                                 <div class="col-md-4">
                                     <div class="form-group">
                                         <label class="form-label">Imagem para a conclusão</label>
-                                        <input type="file" class="form-control" name="conclusion_image_1_lighting">
+                                        <input type="file" class="form-control" name="conclusion_image_1_lighting" value="{{isset($report) ? $report->conclusion_image_1_lighting: ""}}">
                                     </div>
                                 </div>
 
                                 <div class="col-md-4">
                                     <div class="form-group">
                                         <label class="form-label">Segunda imagem para a conclusão</label>
-                                        <input type="file" class="form-control" name="conclusion_image_2_lighting">
+                                        <input type="file" class="form-control" name="conclusion_image_2_lighting" value="{{isset($report) ?$report->conclusion_image_2_lighting: ""}}">
                                     </div>
                                 </div>
 
@@ -365,21 +417,21 @@
                                 <div class="col-md-4">
                                     <div class="form-group">
                                         <label class="form-label">Descrição dos elementos</label>
-                                        <input type="text" class="form-control" name="description_of_elements_bomb" placeholder="Ex: Descrição 1, descrição 2">
+                                        <input type="text" class="form-control" name="description_of_elements_bomb" placeholder="Ex: Descrição 1, descrição 2" value="{{isset($report) ?$report->description_of_elements_bomb: ""}}"> 
                                     </div>
                                 </div>
 
                                 <div class="col-md-4">
                                     <div class="form-group">
                                         <label class="form-label">Conclusão</label>
-                                        <input type="text" class="form-control" name="conclusion_of_bomb" placeholder="Conclusão das iluminações">
+                                        <input type="text" class="form-control" name="conclusion_of_bomb" placeholder="Conclusão das iluminações" value="{{isset($report) ?$report->conclusion_of_bomb:""}}">
                                     </div>
                                 </div>
                                 
                                 <div class="col-md-4">
                                     <div class="form-group">
                                         <label class="form-label">Legenda</label>
-                                        <input type="text" class="form-control" name="conclusion_legend_bomb" placeholder="Legenda da conclusão">
+                                        <input type="text" class="form-control" name="conclusion_legend_bomb" placeholder="Legenda da conclusão" value="{{isset($report) ?$report->conclusion_legend_bomb: ""}}">
                                     </div>
                                 </div>
 
@@ -390,7 +442,7 @@
                                 <div class="col-md-4">
                                     <div class="form-group">
                                         <label class="form-label">Imagem para a conclusão</label>
-                                        <input type="file" class="form-control" name="conclusion_image_1_bomb">
+                                        <input type="file" class="form-control" name="conclusion_image_1_bomb" >
                                     </div>
                                 </div>
 
@@ -412,21 +464,21 @@
                                 <div class="col-md-4">
                                     <div class="form-group">
                                         <label class="form-label">Descrição dos elementos</label>
-                                        <input type="text" class="form-control" name="description_of_elements_hydrant" placeholder="Ex: Descrição 1, descrição 2">
+                                        <input type="text" class="form-control" name="description_of_elements_hydrant" placeholder="Ex: Descrição 1, descrição 2" value="{{isset($report) ? $report->description_of_elements_hydrant: ""}}">
                                     </div>
                                 </div>
 
                                 <div class="col-md-4">
                                     <div class="form-group">
                                         <label class="form-label">Conclusão</label>
-                                        <input type="text" class="form-control" name="conclusion_of_hydrant" placeholder="Conclusão das iluminações">
+                                        <input type="text" class="form-control" name="conclusion_of_hydrant" placeholder="Conclusão das iluminações" value="{{isset($report) ?$report->conclusion_of_hydrant: ""}}">
                                     </div>
                                 </div>
 
                                 <div class="col-md-4">
                                     <div class="form-group">
                                         <label class="form-label">Legenda</label>
-                                        <input type="text" class="form-control" name="conclusion_legend_hydrant" placeholder="Legenda da conclusão">
+                                        <input type="text" class="form-control" name="conclusion_legend_hydrant" placeholder="Legenda da conclusão" value="{{isset($report) ?$report->conclusion_legend_hydrant: ""}}">
                                     </div>
                                 </div>
                             </div>
@@ -460,9 +512,15 @@
                                     <div class="form-group">
                                         <label class="form-label">Recomendações</label>
                                         <select class="js-example-basic-multiple col-sm-12" multiple="multiple" name="recomendation_id[]" >
+                                            @if(isset($report))
+                                            @foreach ($recomendations as $recomendations)
+                                                <option value="{{$recomendations->id}}"{{$report->recomendation->contains($recomendations)?"selected":""}}>{{$recomendations->description}}</option>
+                                            @endforeach
+                                            @else 
                                             @foreach ($recomendations as $recomendations)
                                                 <option value="{{$recomendations->id}}">{{$recomendations->description}}</option>
                                             @endforeach
+                                            @endif
                                         </select>
                                     </div>
                                     
@@ -478,19 +536,19 @@
                                 <div class="col-md-4">
                                     <div class="form-group">
                                         <label class="form-label">Descrição: </label>
-                                        <input type="text" class="form-control" name="end_of_report_description" placeholder="Ex: Colocar em condição normal de funcionamento">
+                                        <input type="text" class="form-control" name="end_of_report_description" placeholder="Ex: Colocar em condição normal de funcionamento" value="{{isset($report) ? $report->endofreport->end_of_report_description : ""}}">
                                     </div>
                                 </div>
                                 <div class="col-md-4">
                                     <div class="form-group">
                                         <label class="form-label">Páginas: </label>
-                                        <input type="text" class="form-control" name="end_of_report_pages" placeholder="Ex: 17(dezessete) páginas">
+                                        <input type="text" class="form-control" name="end_of_report_pages" placeholder="Ex: 17(dezessete) páginas" value="{{isset($report) ? $report->endofreport->end_of_report_pages: ""}}">
                                     </div>
                                 </div>
                                 <div class="col-md-4">
                                     <div class="form-group">
                                         <label class="form-label">Localização: </label>
-                                        <input type="text" class="form-control" name="end_of_report_localization" placeholder="Ex: Vinhedo/SP, 19 de Outubro de 2019">
+                                        <input type="text" class="form-control" name="end_of_report_localization" placeholder="Ex: Vinhedo/SP, 19 de Outubro de 2019" value="{{isset($report) ? $report->endofreport->end_of_report_localization: ""}}">
                                     </div>
                                 </div>
                             </div>
@@ -499,19 +557,19 @@
                                 <div class="col-md-4">
                                     <div class="form-group">
                                         <label class="form-label">Nome: </label>
-                                        <input type="text" class="form-control" name="end_of_report_employee_name" placeholder="Ex: Nome e sobrenome do funcionário">
+                                        <input type="text" class="form-control" name="end_of_report_employee_name" placeholder="Ex: Nome e sobrenome do funcionário" value="{{isset($report) ? $report->endofreport->end_of_report_employee_name: ""}}">
                                     </div>
                                 </div>
                                 <div class="col-md-4">
                                     <div class="form-group">
                                         <label class="form-label">Função 1: </label>
-                                        <input type="text" class="form-control" name="end_of_report_employee_function_1" placeholder="Ex: Engenheiro Eletricista">
+                                        <input type="text" class="form-control" name="end_of_report_employee_function_1" placeholder="Ex: Engenheiro Eletricista" value="{{isset($report) ? $report->endofreport->end_of_report_employee_function_1: ""}}">
                                     </div>
                                 </div>
                                 <div class="col-md-4">
                                     <div class="form-group">
                                         <label class="form-label">Função 2: </label>
-                                        <input type="text" class="form-control" name="end_of_report_employee_function_2" placeholder="Ex: Engenheiro de Segurança">
+                                        <input type="text" class="form-control" name="end_of_report_employee_function_2" placeholder="Ex: Engenheiro de Segurança" value="{{isset($report) ?$report->endofreport->end_of_report_employee_function_2: ""}}">
                                     </div>
                                 </div>
                             </div>
@@ -521,7 +579,7 @@
                                 <div class="col-md-4">
                                     <div class="form-group">
                                         <label class="form-label">Crea: </label>
-                                        <input type="text" class="form-control" name="end_of_report_employee_crea" placeholder="Ex: 4023293-SP">
+                                        <input type="text" class="form-control" name="end_of_report_employee_crea" placeholder="Ex: 4023293-SP" value="{{isset($report) ? $report->endofreport->end_of_report_employee_crea : ""}}">
                                     </div>
                                 </div>
 
@@ -542,19 +600,19 @@
                                 <div class="col-md-4">
                                     <div class="form-group">
                                         <label class="form-label">Data da primeira revisão</label>
-                                        <input type="date" class="form-control" name="data_first_revision" placeholder="Responsável contratado da unidade">
+                                        <input type="date" class="form-control" name="data_first_revision" placeholder="Responsável contratado da unidade" value="{{isset($report) ?$report->data_first_revision : ""}}">
                                     </div>
                                 </div>
                                 <div class="col-md-4">
                                     <div class="form-group">
                                         <label class="form-label">Descrição: </label>
-                                        <input type="text" class="form-control" name="description_first_revision" value = "Emissão Original para Aprovação" placeholder="Emissão Original para Aprovação">
+                                        <input type="text" class="form-control" name="description_first_revision" value = "Emissão Original para Aprovação" placeholder="Emissão Original para Aprovação" value="{{isset($report) ?$report->description_first_revision :    ""}}">
                                     </div>
                                 </div>
                                 <div class="col-md-4">
                                     <div class="form-group">
                                         <label class="form-label">Inspecionado por: </label>
-                                        <input type="text" class="form-control" name="first_inspector_first_revision" placeholder="Nome do funcionário que inspecionou">
+                                        <input type="text" class="form-control" name="first_inspector_first_revision" placeholder="Nome do funcionário que inspecionou" value="{{isset($report) ? $report->first_inspector_first_revision: ""}}">
                                     </div>
                                 </div>
 
@@ -563,19 +621,19 @@
                                 <div class="col-md-4">
                                     <div class="form-group">
                                         <label class="form-label">Função do funcionário que inspecionou: </label>
-                                        <input type="text" class="form-control" name="first_inspector_function_first_revision" placeholder="Função do funcionário que inspecionou">
+                                        <input type="text" class="form-control" name="first_inspector_function_first_revision" placeholder="Função do funcionário que inspecionou" value="{{isset($report) ?$report->first_inspector_function_first_revision :""}}">
                                     </div>
                                 </div>
                                 <div class="col-md-4">
                                     <div class="form-group">
                                         <label class="form-label">Inspecionado por: </label>
-                                        <input type="text" class="form-control" name="second_inspector_first_revision" placeholder="Nome do funcionário que inspecionou">
+                                        <input type="text" class="form-control" name="second_inspector_first_revision" placeholder="Nome do funcionário que inspecionou" value="{{isset($report) ?$report->second_inspector_first_revision: ""}}">
                                     </div>
                                 </div>
                                 <div class="col-md-4">
                                     <div class="form-group">
                                         <label class="form-label">Função do funcionário que inspecionou: </label>
-                                        <input type="text" class="form-control" name="second_inspector_function_first_revision" placeholder="Função do segundo funcionário que inspecionou">
+                                        <input type="text" class="form-control" name="second_inspector_function_first_revision" placeholder="Função do segundo funcionário que inspecionou" value="{{isset($report) ?$report->second_inspector_function_first_revision: ""}}">
                                     </div>
                                 </div>
                             </div>
@@ -584,19 +642,19 @@
                                 <div class="col-md-4">
                                     <div class="form-group">
                                         <label class="form-label">Elaborado por: </label>
-                                        <input type="text" class="form-control" name="elaborator_first_revision" placeholder="Nome do funcionário que elaborou a revisão">
+                                        <input type="text" class="form-control" name="elaborator_first_revision" placeholder="Nome do funcionário que elaborou a revisão" value="{{isset($report) ?$report->elaborator_first_revision: ""}}">
                                     </div>
                                 </div>
                                 <div class="col-md-4">
                                     <div class="form-group">
                                         <label class="form-label">Função do funcionário que elaborou: </label>
-                                        <input type="text" class="form-control" name="elaborator_function_first_revision" placeholder="Função do funcionário que elaborou">
+                                        <input type="text" class="form-control" name="elaborator_function_first_revision" placeholder="Função do funcionário que elaborou" value="{{isset($report) ?$report->elaborator_function_first_revision : ""}}">
                                     </div>
                                 </div>
                                 <div class="col-md-4">
                                     <div class="form-group">
                                         <label class="form-label">Aprovado por: </label>
-                                        <input type="text" class="form-control" name="approved_for_first_revision" placeholder="Nome do funcionário que aprovou a revisão">
+                                        <input type="text" class="form-control" name="approved_for_first_revision" placeholder="Nome do funcionário que aprovou a revisão" value="{{isset($report) ?$report->approved_for_first_revision: ""}}">
                                     </div>
                                 </div>
                             </div>
@@ -605,7 +663,7 @@
                                 <div class="col-md-4">
                                     <div class="form-group">
                                         <label class="form-label">Função do funcionário que aprovou: </label>
-                                        <input type="text" class="form-control" name="approved_for_function_first_revision" placeholder="Função do funcionário que elaborou">
+                                        <input type="text" class="form-control" name="approved_for_function_first_revision" placeholder="Função do funcionário que elaborou" value="{{isset($report) ? $report->approved_for_function_first_revision : ""}}">
                                     </div>
                                 </div>
                             </div>
@@ -618,19 +676,19 @@
                                 <div class="col-md-4">
                                     <div class="form-group">
                                         <label class="form-label">Data da segunda revisão</label>
-                                        <input type="date" class="form-control" name="data_second_revision" placeholder="Responsável contratado da unidade">
+                                        <input type="date" class="form-control" name="data_second_revision" placeholder="Responsável contratado da unidade" value="{{isset($report) ?$report->data_second_revision : ""}}">
                                     </div>
                                 </div>
                                 <div class="col-md-4">
                                     <div class="form-group">
                                         <label class="form-label">Descrição: </label>
-                                        <input type="text" class="form-control" name="description_second_revision" placeholder="Emissão Original para Aprovação">
+                                        <input type="text" class="form-control" name="description_second_revision" placeholder="Emissão Original para Aprovação" value="{{isset($report) ?$report->description_second_revision :"" }}">
                                     </div>
                                 </div>
                                 <div class="col-md-4">
                                     <div class="form-group">
                                         <label class="form-label">Inspecionado por: </label>
-                                        <input type="text" class="form-control" name="first_inspector_second_revision" placeholder="Nome do funcionário que inspecionou">
+                                        <input type="text" class="form-control" name="first_inspector_second_revision" placeholder="Nome do funcionário que inspecionou" value="{{isset($report) ?$report->first_inspector_second_revision : ""}}">
                                     </div>
                                 </div>
 
@@ -640,19 +698,19 @@
                                 <div class="col-md-4">
                                     <div class="form-group">
                                         <label class="form-label">Inspecionado por: </label>
-                                        <input type="text" class="form-control" name="second_inspector_second_revision" placeholder="Nome do funcionário que inspecionou">
+                                        <input type="text" class="form-control" name="second_inspector_second_revision" placeholder="Nome do funcionário que inspecionou" value="{{isset($report) ?$report->second_inspector_second_revision : ""}}">
                                     </div>
                                 </div>
                                 <div class="col-md-4">
                                     <div class="form-group">
                                         <label class="form-label">Elaborado por: </label>
-                                        <input type="text" class="form-control" name="elaborator_second_revision" placeholder="Nome do funcionário que elaborou a revisão">
+                                        <input type="text" class="form-control" name="elaborator_second_revision" placeholder="Nome do funcionário que elaborou a revisão" value="{{ isset($report) ?$report->elaborator_second_revision : ""}}">
                                     </div>
                                 </div>
                                 <div class="col-md-4">
                                     <div class="form-group">
                                         <label class="form-label">Aprovado por: </label>
-                                        <input type="text" class="form-control" name="approved_for_second_revision" placeholder="Nome do funcionário que aprovou a revisão">
+                                        <input type="text" class="form-control" name="approved_for_second_revision" placeholder="Nome do funcionário que aprovou a revisão" value="{{isset($report) ?$report->approved_for_second_revision : ""}}">
                                     </div>
                                 </div>
                             </div>
@@ -665,19 +723,19 @@
                                 <div class="col-md-4">
                                     <div class="form-group">
                                         <label class="form-label">Data da terceira revisão</label>
-                                        <input type="date" class="form-control" name="data_third_revision" placeholder="Responsável contratado da unidade">
+                                        <input type="date" class="form-control" name="data_third_revision" placeholder="Responsável contratado da unidade" value="{{isset($report) ? $report->data_third_revision : ""}}">
                                     </div>
                                 </div>
                                 <div class="col-md-4">
                                     <div class="form-group">
                                         <label class="form-label">Descrição: </label>
-                                        <input type="text" class="form-control" name="description_third_revision" placeholder="Emissão Original para Aprovação">
+                                        <input type="text" class="form-control" name="description_third_revision" placeholder="Emissão Original para Aprovação" value="{{isset($report) ?$report->description_third_revision : ""}}">
                                     </div>
                                 </div>
                                 <div class="col-md-4">
                                     <div class="form-group">
                                         <label class="form-label">Inspecionado por: </label>
-                                        <input type="text" class="form-control" name="first_inspector_third_revision" placeholder="Nome do funcionário que inspecionou">
+                                        <input type="text" class="form-control" name="first_inspector_third_revision" placeholder="Nome do funcionário que inspecionou" value="{{isset($report) ?$report->first_inspector_third_revision: ""}}">
                                     </div>
                                 </div>
 
@@ -687,19 +745,19 @@
                                 <div class="col-md-4">
                                     <div class="form-group">
                                         <label class="form-label">Inspecionado por: </label>
-                                        <input type="text" class="form-control" name="second_inspector_third_revision" placeholder="Nome do funcionário que inspecionou">
+                                        <input type="text" class="form-control" name="second_inspector_third_revision" placeholder="Nome do funcionário que inspecionou" value="{{isset($report) ?$report->second_inspector_third_revision: ""}}">
                                     </div>
                                 </div>
                                 <div class="col-md-4">
                                     <div class="form-group">
                                         <label class="form-label">Elaborado por: </label>
-                                        <input type="text" class="form-control" name="elaborator_third_revision" placeholder="Nome do funcionário que elaborou a revisão">
+                                        <input type="text" class="form-control" name="elaborator_third_revision" placeholder="Nome do funcionário que elaborou a revisão" value="{{isset($report) ?$report->elaborator_third_revision: ""}}">
                                     </div>
                                 </div>
                                 <div class="col-md-4">
                                     <div class="form-group">
                                         <label class="form-label">Aprovado por: </label>
-                                        <input type="text" class="form-control" name="approved_for_third_revision" placeholder="Nome do funcionário que aprovou a revisão">
+                                        <input type="text" class="form-control" name="approved_for_third_revision" placeholder="Nome do funcionário que aprovou a revisão" value="{{isset($report) ?$report->approved_for_third_revision : ""}}">
                                     </div>
                                 </div>
                             </div>
@@ -712,19 +770,19 @@
                                 <div class="col-md-4">
                                     <div class="form-group">
                                         <label class="form-label">Data da quarta revisão</label>
-                                        <input type="date" class="form-control" name="data_fourth_revision" placeholder="Responsável contratado da unidade">
+                                        <input type="date" class="form-control" name="data_fourth_revision" placeholder="Responsável contratado da unidade" value="{{isset($report) ?$report->data_fourth_revision : ""}}">
                                     </div>
                                 </div>
                                 <div class="col-md-4">
                                     <div class="form-group">
                                         <label class="form-label">Descrição: </label>
-                                        <input type="text" class="form-control" name="description_fourth_revision" placeholder="Emissão Original para Aprovação">
+                                        <input type="text" class="form-control" name="description_fourth_revision" placeholder="Emissão Original para Aprovação" value="{{isset($report) ?$report->description_fourth_revision: ""}}">
                                     </div>
                                 </div>
                                 <div class="col-md-4">
                                     <div class="form-group">
                                         <label class="form-label">Inspecionado por: </label>
-                                        <input type="text" class="form-control" name="first_inspector_fourth_revision" placeholder="Nome do funcionário que inspecionou">
+                                        <input type="text" class="form-control" name="first_inspector_fourth_revision" placeholder="Nome do funcionário que inspecionou" value="{{isset($report) ?$report->first_inspector_fourth_revision : ""}}">
                                     </div>
                                 </div>
 
@@ -734,24 +792,28 @@
                                 <div class="col-md-4">
                                     <div class="form-group">
                                         <label class="form-label">Inspecionado por: </label>
-                                        <input type="text" class="form-control" name="second_inspector_fourth_revision" placeholder="Nome do funcionário que inspecionou">
+                                        <input type="text" class="form-control" name="second_inspector_fourth_revision" placeholder="Nome do funcionário que inspecionou" value="{{isset($report) ?$report->second_inspector_fourth_revision : ""}}">
                                     </div>
                                 </div>
                                 <div class="col-md-4">
                                     <div class="form-group">
                                         <label class="form-label">Elaborado por: </label>
-                                        <input type="text" class="form-control" name="elaborator_fourth_revision" placeholder="Nome do funcionário que elaborou a revisão">
+                                        <input type="text" class="form-control" name="elaborator_fourth_revision" placeholder="Nome do funcionário que elaborou a revisão" value="{{isset($report) ?$report->elaborator_fourth_revision :""}}">
                                     </div>
                                 </div>
                                 <div class="col-md-4">
                                     <div class="form-group">
                                         <label class="form-label">Aprovado por: </label>
-                                        <input type="text" class="form-control" name="approved_for_fourth_revision" placeholder="Nome do funcionário que aprovou a revisão">
+                                        <input type="text" class="form-control" name="approved_for_fourth_revision" placeholder="Nome do funcionário que aprovou a revisão" value="{{isset($report) ?$report->approved_for_fourth_revision : ""}}">
                                     </div>
                                 </div>
                             </div>
 
+                            @if(isset($report))
+                            <button type="submit" class="btn btn-primary">Salvar Edição</button>
+                            @else
                             <button type="submit" class="btn btn-primary">Salvar Relatório</button>
+                            @endif
                         </form>
                     </div>
                 </div>
@@ -777,21 +839,6 @@
 </section>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-<script>
-    let 
-</script>
-<script>
-$(document).ready(function() {
-    $("#checkbox").click(function(){
-      if($("#checkbox").is(':checked') ){ 
-        $("#e1").find('option').prop("selected",true);
-        $("#e1").trigger('change');
-      } else { 
-        $("#e1").find('option').prop("selected",false);
-        $("#e1").trigger('change');
-      }
-  });
-});
 
 </script>
 <script src="{{ asset('assets/js/vendor-all.min.js') }}"></script>
