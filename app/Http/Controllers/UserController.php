@@ -6,6 +6,7 @@ use App\Http\Requests\UserRequest;
 use Illuminate\Http\Request;
 use App\User;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Auth;
 
 
 class UserController extends Controller
@@ -31,5 +32,15 @@ class UserController extends Controller
 
     }
 
+    public function index(){
 
+        $users = User::all();
+        
+        return view('dashboard.users.showUsers',compact('users'));
+    }
+
+    public function deleteUser(Request $request){
+        $user = User::where('id',$request->id)->delete();
+        return response()->json($user);
+    }
 }

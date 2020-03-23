@@ -13,8 +13,10 @@ Route::group(['middleware' => ['auth']], function () {
         Route::get('/dashboard', 'DashboardController@index')->name('dashboardAdmin');
         Route::get('/reports', 'ReportsController@index')->name('reports');
         Route::post('/reports/change-status', 'ReportsController@changeStatus')->name('changeStatus');
-        Route::resource('/users', 'UserController')->except('index', 'show', 'edit', 'update', 'destroy');
-
+        Route::post('/users/delete','UserController@deleteUser');
+        Route::resource('/users', 'UserController')->except('show', 'edit', 'update', 'destroy');
+        
+        
     });
 
 });
