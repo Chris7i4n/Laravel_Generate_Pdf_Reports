@@ -91,7 +91,7 @@ class ReportsController extends Controller
         return view('dashboard.reports.createReports', compact('unities', 'contractedCompanies','recomendations'));
     }
 
-    public function store(Report $request)
+    public function store(ReportRequest $request)
     {
         
         $this->aditionalRequest($request);
@@ -114,7 +114,7 @@ class ReportsController extends Controller
 
     }
 
-    public function update(Resquest $request, Report $report){
+    public function update(ReportRequest $request, Report $report){
         
         $this->aditionalRequest($request);
         Auth::user()->perfil == 1 ? $request['approved'] = 1 : $request['approved'] = 0;
