@@ -64,7 +64,7 @@
                                             <td>{{$user ? $user->name : ""}}</td>
                                             <td>{{$user ? $user->email : ""}}</td>
                                             <td>
-                                                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" value="{{$user->id}}" onclick="buttonPressionado(this)">
+                                                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" value="{{$user->id}}" onclick="btnPressed(this)">
                                                 Excluir
                                                 </button>
                                             </td>
@@ -94,7 +94,7 @@
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
-          <button type="button" class="btn btn-primary" id="btnDelete" onclick="deletEmpresa(this.value)">Sim</button>
+          <button type="button" class="btn btn-primary" id="btnDelete" onclick="deleteCompany(this.value)">Sim</button>
         </div>
       </div>
     </div>
@@ -117,13 +117,13 @@
     
     <script>
 
-        let buttonPressionado = (self) => {
+        let btnPressed = (self) => {
             let x = self.value;
             let btnDelete = document.querySelector('#btnDelete');
             btnDelete.value = x;
         }
     
-        let deletEmpresa = (id) => {
+        let deleteCompany = (id) => {
             axios.post('/admin/users/delete/', {
                 id: id
             }).then(function (response) {
